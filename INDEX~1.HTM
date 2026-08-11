@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="kyle의 데일리 영어 퀴즈 — 구조 체득형 20문제">
-<title>데일리 영어 퀴즈 · 2026-08-11 (화)</title>
+<title>데일리 영어 퀴즈 · 어제 학습분 20문제</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
 <style>
   :root{
@@ -25,7 +25,6 @@
   }
   .wrap{max-width:780px; margin:0 auto;}
 
-  /* ---------- header ---------- */
   header.top{
     background:linear-gradient(135deg,var(--accent),var(--accent2));
     color:#fff; border-radius:0 0 18px 18px; padding:24px 20px 20px;
@@ -39,21 +38,22 @@
   .badge{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.34);
     padding:3px 10px; border-radius:999px; font-size:11.5px;}
 
-  /* ---------- mode banner ---------- */
-  .modebar{
-    display:none; align-items:flex-start; gap:10px; border-radius:12px;
-    padding:12px 14px; margin-bottom:16px; font-size:13.5px;
-  }
+  #boot{padding:60px 20px; text-align:center; color:var(--sub); font-size:14px;}
+  .spin{width:26px; height:26px; margin:0 auto 12px; border:3px solid var(--line);
+    border-top-color:var(--accent); border-radius:50%; animation:sp .8s linear infinite;}
+  @keyframes sp{to{transform:rotate(360deg);}}
+  #main{display:none;}
+
+  .modebar{display:none; align-items:flex-start; gap:10px; border-radius:12px;
+    padding:12px 14px; margin-bottom:16px; font-size:13.5px;}
   .modebar.review{background:var(--warn-soft); border:1px solid var(--warn-line); color:#7a4a08;}
   .modebar.feedback{background:var(--cmt-soft); border:1px solid var(--cmt-line); color:#0b4a6f;}
+  .modebar.err{background:var(--no-soft); border:1px solid var(--no-line); color:#8a1f1f;}
   .modebar .ic{font-size:19px; line-height:1.2; flex:none;}
   .modebar b{display:block; font-size:14px; margin-bottom:1px;}
 
-  /* ---------- study card ---------- */
-  details.study{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:2px 16px 8px; margin-bottom:18px;
-  }
+  details.study{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:2px 16px 8px; margin-bottom:18px;}
   details.study summary{cursor:pointer; font-weight:700; font-size:15px; padding:13px 0; list-style:none;}
   details.study summary::-webkit-details-marker{display:none;}
   details.study summary::before{content:"📘 ";}
@@ -61,11 +61,9 @@
   details.study[open] summary::after{content:" ▴";}
   .sblock{border-top:1px solid var(--line); padding:14px 0 4px;}
   .sblock h3{margin:0 0 8px; font-size:14.5px; color:var(--accent);}
-  .formula{
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     background:#141a2e; color:#c9d4ff; padding:11px 13px; border-radius:9px;
-    font-size:12.5px; overflow-x:auto; white-space:pre-wrap; word-break:break-word; margin:0 0 10px;
-  }
+    font-size:12.5px; overflow-x:auto; white-space:pre-wrap; word-break:break-word; margin:0 0 10px;}
   .ex{margin:0 0 9px; padding-left:17px;}
   .ex li{font-size:13.5px; margin-bottom:5px;}
   .ex .ko{color:var(--sub); font-size:12.5px;}
@@ -74,7 +72,6 @@
   .x{color:var(--no); font-weight:600;}
   .o{color:var(--ok); font-weight:600;}
 
-  /* ---------- questions ---------- */
   h2.part{font-size:16px; margin:26px 0 12px; padding-left:10px; border-left:4px solid var(--accent);}
   h2.part small{display:block; font-weight:400; font-size:12px; color:var(--sub); margin-top:2px;}
 
@@ -87,23 +84,21 @@
   .stem{font-size:15px; margin:0 0 12px; word-break:break-word;}
   .stem u{text-decoration:none; border-bottom:2px dotted var(--accent); padding:0 22px;}
 
-  label.opt{display:flex; gap:9px; align-items:flex-start; padding:9px 11px; margin-bottom:6px;
-    border:1px solid var(--line); border-radius:10px; cursor:pointer; font-size:14px;
-    transition:background .12s,border-color .12s;}
+  label.opt,.opt{display:flex; gap:9px; align-items:flex-start; padding:9px 11px; margin-bottom:6px;
+    border:1px solid var(--line); border-radius:10px; font-size:14px; transition:background .12s,border-color .12s;}
+  label.opt{cursor:pointer;}
   label.opt:hover{background:#fafbff; border-color:#c8ccdd;}
   label.opt input{margin-top:4px; flex:none;}
-  label.opt.ro{cursor:default;}
-  label.opt.ro:hover{background:#fff; border-color:var(--line);}
-  label.opt.picked{background:#eef2ff; border-color:var(--accent);}
-  label.opt.correct{background:var(--ok-soft); border-color:var(--ok-line);}
-  label.opt.wrongpick{background:var(--no-soft); border-color:var(--no-line);}
+  .opt.ro{cursor:default;}
+  .opt.picked{background:#eef2ff; border-color:var(--accent);}
+  .opt.correct{background:var(--ok-soft); border-color:var(--ok-line);}
+  .opt.wrongpick{background:var(--no-soft); border-color:var(--no-line);}
   .oletter{font-weight:700; color:var(--sub); flex:none;}
   .optmark{margin-left:auto; font-size:12px; font-weight:700; flex:none;}
 
   input.blank, textarea.tr, textarea.cmt, input.nm{
     width:100%; padding:10px 12px; font-size:15px; border:1px solid var(--line);
-    border-radius:10px; font-family:inherit; background:#fcfcff; color:var(--ink);
-  }
+    border-radius:10px; font-family:inherit; background:#fcfcff; color:var(--ink);}
   textarea.tr{min-height:64px; resize:vertical;}
   textarea.cmt{min-height:44px; resize:vertical; font-size:14px; background:#fff;}
   input.nm{font-size:14px;}
@@ -146,8 +141,8 @@
     border-radius:10px; padding:10px 12px; font-size:13.5px; color:#0b4a6f; white-space:pre-wrap;}
   .cmtshown b{display:block; font-size:11.5px; margin-bottom:3px; opacity:.8;}
 
-  /* ---------- panels ---------- */
   .panel{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 18px; margin-top:20px;}
+  .panel.hi{border:2px solid var(--accent); box-shadow:0 6px 22px rgba(79,70,229,.13);}
   .panel h3{margin:0 0 4px; font-size:16px;}
   .panel .lead{margin:0 0 14px; font-size:13.3px; color:var(--sub);}
   .row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;}
@@ -160,11 +155,19 @@
   .btn:disabled{opacity:.5; cursor:not-allowed;}
 
   .linkout{display:none; margin-top:12px;}
-  .linkout textarea{width:100%; min-height:86px; font-family:ui-monospace,Menlo,Consolas,monospace;
+  .linkbig{width:100%; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px;
+    padding:12px; border:2px solid var(--accent); border-radius:10px; background:#f6f7ff;
+    color:#1c2230; word-break:break-all; text-align:center;}
+  .linkout textarea{width:100%; min-height:70px; font-family:ui-monospace,Menlo,Consolas,monospace;
     font-size:11.5px; padding:10px; border:1px solid var(--line); border-radius:10px;
     background:#f8f9fd; color:#333; resize:vertical; word-break:break-all;}
   .note{font-size:12px; color:var(--sub); margin:8px 0 0;}
   .note.warnnote{color:var(--warn);}
+  .howto{background:#f7f8fc; border:1px solid var(--line); border-radius:10px;
+    padding:11px 13px; margin-top:12px; font-size:12.8px; color:var(--sub);}
+  .howto b{color:var(--ink);}
+  .howto ol{margin:6px 0 0; padding-left:18px;}
+  .howto li{margin-bottom:3px;}
 
   .submitbar{margin:26px 0 0; text-align:center;}
   .submitbar .btn{width:100%; max-width:360px; padding:14px 40px; font-size:16px;}
@@ -195,9 +198,6 @@
     opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; z-index:99;}
   .toast.on{opacity:1; transform:translateX(-50%) translateY(0);}
 
-  .pastelink{text-align:center; margin-top:14px;}
-  .pastelink a{color:var(--accent); font-size:12.8px; text-decoration:none; border-bottom:1px dotted var(--accent);}
-  #pasteBox{display:none; margin-top:12px;}
   footer{text-align:center; color:var(--sub); font-size:11.5px; margin-top:30px; line-height:1.8;}
   @media (max-width:420px){ .row > *{flex:1 1 100%;} }
 </style>
@@ -207,93 +207,117 @@
 <header class="top">
   <div class="inner">
     <p class="eyebrow">Daily English Quiz</p>
-    <h1 id="hTitle">데일리 영어 퀴즈</h1>
-    <p id="hSub">2026년 8월 11일 (화요일) · 총 20문제</p>
+    <h1>데일리 영어 퀴즈</h1>
+    <p id="hSub">어제 학습분 복습 · 총 20문제</p>
     <div class="badges">
-      <span class="badge">가정법 과거완료</span>
-      <span class="badge">wouldn't have had to</span>
-      <span class="badge">혼합 가정법</span>
-      <span class="badge">시간·거리</span>
+      <span class="badge">was going to</span>
+      <span class="badge">should have p.p.</span>
+      <span class="badge">현재완료</span>
+      <span class="badge">it turns out</span>
+      <span class="badge">원어민 덩어리</span>
     </div>
   </div>
 </header>
 
-<div class="wrap">
+<div id="boot"><div class="spin"></div>불러오는 중…</div>
+
+<div class="wrap" id="main">
 
 <div class="modebar review" id="mbReview">
   <span class="ic">✍️</span>
-  <div><b><span id="mbName">kyle</span>님이 푼 답안입니다</b>
-  객관식·빈칸은 자동 채점됐습니다. <b style="display:inline">영작 6문제</b>에 ⭕/❌를 눌러주시고, 어느 문항에든 코멘트를 남긴 뒤 맨 아래에서 <b style="display:inline">피드백 링크</b>를 만들어 돌려주세요.</div>
+  <div><b><span id="mbName">kyle</span>님이 푼 답안입니다 — 채점해주세요</b>
+  객관식·빈칸 14문항은 이미 자동 채점됐습니다. <b style="display:inline">영작 6문항</b>에 ⭕/❌를 누르고, 아무 문항에나 코멘트를 남긴 뒤 맨 아래 <b style="display:inline">채점 저장하기</b>를 누르면 끝입니다. 링크를 새로 만들 필요 없습니다.</div>
 </div>
 
 <div class="modebar feedback" id="mbFeedback">
   <span class="ic">💬</span>
-  <div><b><span id="fbName">선생님</span>의 첨삭이 도착했습니다</b>
+  <div><b><span id="fbName">채점자</span>의 첨삭이 도착했습니다</b>
   최종 점수와 문항별 코멘트를 확인하세요.</div>
+</div>
+
+<div class="modebar err" id="mbErr">
+  <span class="ic">⚠️</span>
+  <div><b>링크를 열 수 없습니다</b>
+  <span id="errMsg">이 링크는 만료됐거나 주소가 잘못됐습니다.</span></div>
 </div>
 
 <details class="study" id="studyCard" open>
 <summary>오늘의 학습 카드 — 이 4개만 보고 들어가세요</summary>
 
 <div class="sblock">
-  <h3>구조 1 · 가정법 과거완료 — 결과가 &lt;과거&gt;</h3>
-  <div class="formula">If + 주어 + had p.p. , 주어 + would have p.p.
-부정형  →  주어 + wouldn't have p.p.</div>
+  <h3>구조 1 · was going to + 동사원형 — "~하려고 했는데" (결국 못 함)</h3>
+  <div class="formula">주어 + was/were going to + 동사원형 , but + 실패한 이유
+회화체  →  I was gonna ~   (gonna 뒤도 반드시 동사원형)</div>
   <ul class="ex">
-    <li>If you had called me in advance, I would have told you.<br><span class="ko">미리 전화했더라면, 내가 알려줬을 텐데.</span></li>
-    <li>If I had charged my phone, I wouldn't have gotten lost.<br><span class="ko">폰을 충전했더라면, 길을 잃지 않았을 텐데.</span></li>
-    <li>If I had used a little less salt, this soup would've tasted much better.</li>
+    <li>I was going to go to the bank, but I got the closing time mixed up.<br><span class="ko">은행에 가려고 했는데, 마감 시간을 헷갈렸어.</span></li>
+    <li>I was going to call you, but it was already too late.</li>
   </ul>
   <div class="mistake">⚠️ <b>자주 하는 실수</b><br>
-    · <span class="x">if i booking ticket early…</span> → if절은 <b>had + p.p.</b>가 통째로 들어갑니다. -ing나 현재형이 아닙니다.<br>
-    · <span class="x">would have prepare</span> / <span class="x">will have prepared</span> → would 뒤는 <b>have + p.p.</b> 고정. will은 절대 안 됩니다.
+    · <span class="x">I was going to went</span> / <span class="x">I was gonna going</span> → to 뒤는 <b>무조건 동사원형</b>. 과거로 만드는 건 앞의 was 하나뿐입니다.<br>
+    · "가려고 했다"를 <span class="x">I wanted to go</span>로 바꾸지 마세요. wanted는 <b>바람</b>, was going to는 <b>이미 정해둔 계획</b>이라 뉘앙스가 다릅니다.
   </div>
 </div>
 
 <div class="sblock">
-  <h3>구조 2 · "~안 해도 됐을 텐데" — wouldn't have had to</h3>
-  <div class="formula">If + 주어 + had p.p. , 주어 + wouldn't have had to + 동사원형
-                                    ↑have  ↑had   ↑to   (셋 다 필요)</div>
+  <h3>구조 2 · should have p.p. — "~했어야 했는데" (안 한 것에 대한 후회)</h3>
+  <div class="formula">주어 + should have + p.p.      ( = should've p.p. )
+부정  →  주어 + shouldn't have + p.p.</div>
   <ul class="ex">
-    <li>If I'd booked my ticket in advance, I wouldn't have had to pay this much.<br><span class="ko">미리 예매했더라면, 이렇게 많이 안 내도 됐을 텐데.</span></li>
-    <li>If I hadn't missed the last train, I wouldn't have had to pay for a taxi.</li>
-    <li>If I had gone to the gym in the morning, I wouldn't have had to go in the afternoon.</li>
+    <li>I should've bought it on the spot.<br><span class="ko">그 자리에서 바로 샀어야 했는데.</span></li>
+    <li>I should have booked a table in advance.</li>
   </ul>
   <div class="mistake">⚠️ <b>자주 하는 실수</b><br>
-    · <span class="x">i dont have to pay</span> → 과거에 안 일어난 일이라 현재형이 아니라 <span class="o">wouldn't have had to pay</span>.<br>
-    · <span class="x">wouldn't had to</span> / <span class="x">wouldn't have to</span> → have와 had가 <b>둘 다</b> 있어야 "그때 안 해도 됐다"가 됩니다. to 뒤는 항상 동사원형.
+    · <span class="x">should bought</span> / <span class="x">should have buy</span> → 사이에 <b>have</b>가 반드시 들어가고, 그 뒤는 <b>과거분사</b>입니다.<br>
+    · <b>should have</b>(내 후회)와 <b>would have</b>(가정의 결과)를 헷갈리지 마세요. 후회는 should, if절이 붙으면 would.
   </div>
 </div>
 
 <div class="sblock">
-  <h3>구조 3 · 혼합 가정법 — 결과가 &lt;지금&gt;</h3>
-  <div class="formula">If + 주어 + had p.p. , 주어 + would/could + 동사원형   ( + now / by now )
-                                    ↑ have 없음!</div>
-  <p style="font-size:13px;margin:0 0 8px;color:var(--sub);"><b>판별법:</b> 문장 끝에 <b>now / by now</b>가 붙으면 → 주절에서 have를 뺍니다.</p>
+  <h3>구조 3 · 현재완료 두 얼굴 — 계속 / 아직</h3>
+  <div class="formula">계속  →  주어 + have been + -ing  ( + all day / for a week )
+아직  →  주어 + haven't/hasn't + p.p. + yet</div>
   <ul class="ex">
-    <li>If I had taken my medicine on time, I wouldn't be feeling this sick now.</li>
-    <li>If I hadn't deleted that picture, I could show it to you now.</li>
-    <li>If I hadn't sold that company's stock, I'd be pretty rich by now.</li>
+    <li>I've been sitting at a desk all day, so my back hurts a lot.<br><span class="ko">하루 종일 앉아 있었더니 허리가 너무 아파.</span></li>
+    <li>The package hasn't arrived yet.<br><span class="ko">택배가 아직 안 왔어.</span></li>
   </ul>
   <div class="mistake">⚠️ <b>자주 하는 실수</b><br>
-    · <span class="x">if i learn the piano when i was young, right now i good at it</span> → if절엔 <b>had learned</b>, 주절엔 <b>would be</b>. 동사를 빠뜨리지 마세요.<br>
-    · <span class="x">I could have shown it to you now</span> → now가 있는데 have를 넣으면 시점이 과거로 밀립니다. <span class="o">could show</span>.
+    · <span class="x">I am sitting all day</span> → 지금 이 순간만 뜻하게 됩니다. 아침부터 <b>쭉</b>이면 <span class="o">I've been sitting</span>.<br>
+    · <span class="x">The package didn't arrive yet</span> → yet과 어울리는 건 과거형이 아니라 <b>현재완료</b>: <span class="o">hasn't arrived yet</span>.
   </div>
 </div>
 
 <div class="sblock">
-  <h3>구조 4 · 시간·거리 표현</h3>
-  <div class="formula">It takes about 5 minutes on foot.      (foot 단수, on)
-It takes about 20 minutes by taxi.     (교통수단 = by + 무관사)
-a five-minute walk                     (하이픈 붙으면 minute 단수)</div>
+  <h3>구조 4 · I thought ~, but it turns out ~ — "~인 줄 알았는데 알고 보니"</h3>
+  <div class="formula">I thought (that) 주어 + 과거동사 , but it turns out (that) 주어 + 동사
+과거 시점으로 말할 땐  →  but it turned out ~</div>
   <ul class="ex">
-    <li>How long does it take from here? — It takes about 5 minutes on foot.</li>
-    <li>The company I work for is a five-minute walk from the subway station.</li>
-    <li>It's 10 minutes on foot.</li>
+    <li>I thought I had a cold, but it turns out I was just homesick.<br><span class="ko">감기인 줄 알았는데, 알고 보니 그냥 향수병이었어.</span></li>
+    <li>I thought Steven was normal, but it turns out he wasn't.</li>
   </ul>
   <div class="mistake">⚠️ <b>자주 하는 실수</b><br>
-    · <span class="x">five-minutes walk</span> → 하이픈으로 형용사가 되면 <b>단수</b>: <span class="o">a five-minute walk</span>. 관사 a도 필수.<br>
-    · <span class="x">by foot</span> / <span class="x">on feet</span> → 걸어서는 <span class="o">on foot</span> 하나로 외웁니다.
+    · <span class="x">I thought it was a cold</span> → 감기는 <b>걸리는</b> 것이라 <span class="o">I had a cold</span>. 아픈 증상은 have로 말합니다(have a headache, have a fever).<br>
+    · <span class="x">I thought that he is normal</span> → thought(과거)가 앞에 있으면 뒤도 <b>과거</b>로 당겨집니다.
+  </div>
+</div>
+
+<div class="sblock">
+  <h3>구조 5 · 원어민이 실제로 쓰는 덩어리 8개</h3>
+  <div class="formula">get + 목적어 + mixed up   헷갈리다      on the spot        그 자리에서 바로
+in person                실물로 보니    run long           예정보다 길어지다
+take reservations        예약을 받다    be able to + 동사원형  ~할 수 있다
+back in the day + used to  예전엔 ~하곤 했다
+as + 주어 + 동사          ~함에 따라 / ~하다 보니</div>
+  <ul class="ex">
+    <li>The meeting ran long, so I skipped lunch.</li>
+    <li>I heard they don't take reservations on weekends. — Can I book a table for five?</li>
+    <li>It looked spacious in the pictures, but it was actually pretty small in person.</li>
+    <li>My new shoes were uncomfortable at first, but they got more comfortable as I wore them.</li>
+    <li>Back in the day, I used to drink four bottles of soju with John.</li>
+  </ul>
+  <div class="mistake">⚠️ <b>자주 하는 실수</b><br>
+    · <span class="x">I will can attend</span> → 조동사는 두 개를 못 겹칩니다. <span class="o">I'll be able to attend</span>.<br>
+    · <span class="x">four soju bottle</span> → 단위는 <b>복수</b>, 순서도 정해져 있습니다: <span class="o">four bottles of soju</span>.<br>
+    · <span class="x">notebook</span>은 공책입니다. 노트북 컴퓨터는 <span class="o">laptop</span>.
   </div>
 </div>
 </details>
@@ -307,7 +331,6 @@ a five-minute walk                     (하이픈 붙으면 minute 단수)</div>
 <h2 class="part">Part 3. 한→영 영작 <small>먼저 직접 써보고 정답을 확인하세요 · 6문제</small></h2>
 <div id="part3"></div>
 
-<!-- 총평 (리뷰 모드) -->
 <div class="panel" id="overallPanel" style="display:none">
   <h3>총평 남기기</h3>
   <p class="lead">전체적으로 어땠는지 한마디 적어주세요. (선택)</p>
@@ -315,7 +338,6 @@ a five-minute walk                     (하이픈 붙으면 minute 단수)</div>
   <div style="margin-top:10px"><input class="nm" id="reviewerName" type="text" placeholder="채점한 사람 이름 (예: Sarah)"></div>
 </div>
 
-<!-- 풀기 모드 제출 -->
 <div class="submitbar" id="submitBar">
   <button class="btn primary" id="submitBtn">채점하기</button>
   <div class="miss" id="missBox"></div>
@@ -327,619 +349,593 @@ a five-minute walk                     (하이픈 붙으면 minute 단수)</div>
   <div class="breakdown" id="bdBox"></div>
   <p class="msg" id="msgBox"></p>
   <div class="overall" id="overallShow"><h4>💬 총평</h4><div id="overallText"></div></div>
-  <div class="review" id="reviewBox">
-    <h4>🔁 다시 볼 구조</h4>
-    <ul id="reviewList"></ul>
-  </div>
+  <div class="review" id="reviewBox"><h4>🔁 다시 볼 구조</h4><ul id="reviewList"></ul></div>
 </div>
 
-<!-- 공유 패널 (풀기 모드: 채점 후 노출) -->
-<div class="panel" id="sharePanel" style="display:none">
-  <h3>📤 내 답안 공유하기</h3>
-  <p class="lead">아래 링크를 보내면 상대가 내 답안을 그대로 보면서 영작을 채점하고 코멘트를 달 수 있습니다.</p>
-  <div style="margin-bottom:10px"><input class="nm" id="myName" type="text" placeholder="내 이름 (예: kyle)" value="kyle"></div>
-  <div class="row">
-    <button class="btn primary" id="makeShare">공유 링크 만들기</button>
-    <button class="btn ghost" id="copyShare" disabled>링크 복사</button>
-  </div>
+<!-- 풀기 모드: 올인원 링크 생성 -->
+<div class="panel hi" id="sharePanel" style="display:none">
+  <h3>🔗 올인원 링크 만들기</h3>
+  <p class="lead">링크 <b>딱 하나</b>만 만들어집니다. 상대는 그 링크로 채점하고, kyle은 <b>같은 링크</b>를 다시 열어 결과를 봅니다.</p>
+  <div style="margin-bottom:10px"><input class="nm" id="myName" type="text" placeholder="내 이름" value="kyle"></div>
+  <button class="btn primary wide" id="makeShare">올인원 링크 만들기</button>
   <div class="linkout" id="shareOut">
-    <textarea id="shareText" readonly></textarea>
-    <p class="note" id="shareNote"></p>
+    <div class="linkbig" id="shareBig"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn primary" id="copyShare">링크 복사</button>
+      <button class="btn ghost" id="copyBackup">백업 링크 복사</button>
+    </div>
+    <div class="howto">
+      <b>이 링크 하나로 끝납니다</b>
+      <ol>
+        <li>상대에게 링크 전송 → 상대가 열면 <b>채점 화면</b>이 뜹니다</li>
+        <li>상대가 채점하고 <b>[채점 저장하기]</b> 클릭 (회신 링크 필요 없음)</li>
+        <li>kyle이 <b>같은 링크</b>를 다시 열면 최종 점수와 코멘트가 보입니다</li>
+      </ol>
+    </div>
+    <p class="note warnnote" id="shareNote"></p>
   </div>
+  <p class="note" id="shareErr" style="display:none;color:var(--no)"></p>
 </div>
 
-<!-- 피드백 패널 (리뷰 모드) -->
-<div class="panel" id="fbPanel" style="display:none">
-  <h3>📮 채점 결과 돌려주기</h3>
-  <p class="lead">영작 ⭕/❌와 코멘트를 다 입력했다면, 아래 링크를 만들어 다시 보내주세요.</p>
-  <div class="row">
-    <button class="btn primary" id="makeFb">피드백 링크 만들기</button>
-    <button class="btn ghost" id="copyFb" disabled>링크 복사</button>
-  </div>
-  <div class="linkout" id="fbOut">
-    <textarea id="fbText" readonly></textarea>
-    <p class="note" id="fbNote"></p>
-  </div>
+<!-- 채점 모드: 저장 -->
+<div class="panel hi" id="savePanel" style="display:none">
+  <h3>💾 채점 저장하기</h3>
+  <p class="lead">저장하면 kyle이 원래 링크를 다시 열었을 때 바로 보입니다. 따로 회신하실 필요 없습니다.</p>
+  <button class="btn primary wide" id="saveFb">채점 저장하기</button>
+  <p class="note" id="saveNote"></p>
 </div>
 
-<div class="pastelink">
-  <a href="#" id="pasteToggle">받은 링크가 잘렸나요? 코드 직접 붙여넣기</a>
-  <div id="pasteBox">
-    <textarea class="cmt" id="pasteIn" placeholder="여기에 받은 링크 전체 또는 코드를 붙여넣으세요" style="min-height:70px;font-size:12px"></textarea>
-    <button class="btn ghost wide" id="pasteGo" style="margin-top:8px">열기</button>
-  </div>
+<div class="panel" id="regradePanel" style="display:none">
+  <button class="btn ghost wide" id="regradeBtn">채점 다시 하기</button>
 </div>
 
 <footer>
   구조를 외우지 말고, 재료를 바꿔 끼워보세요.<br>
-  <span id="footMode">풀기 모드</span> · 모든 데이터는 링크 안에만 담기며 서버로 전송되지 않습니다.
+  <span id="footMode">풀기 모드</span>
 </footer>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* ==================================================================
-   0. 퀴즈 데이터
-   ================================================================== */
-const QUIZ_DATE = "2026-08-11";
+/* ================= 데이터 ================= */
+const QUIZ_DATE = "어제 학습분";
+const BLOB_API  = "https://jsonblob.com/api/jsonBlob";
 
 const MC = [
-  { tag:"구조 1 · 가정법 과거완료",
-    ko:"네가 나한테 메시지를 보냈더라면, 내가 (그때) 말해줬을 텐데.",
-    stem:"If you had sent me a message, I ____ you.",
-    opts:["would have told","would tell","will have told","would have telling"], ans:0,
-    princ:"if절이 <b>had p.p.</b>로 과거를 뒤집으면, 주절은 <b>would have p.p.</b>로 짝을 맞춥니다. would 뒤는 예외 없이 have + 과거분사이고, 여기에 will이 끼어들 자리는 없습니다." },
-  { tag:"구조 2 · wouldn't have had to",
-    ko:"아침에 헬스장에 갔더라면, 오후에 안 가도 됐을 텐데.",
-    stem:"If I had gone to the gym in the morning, I ____ go in the afternoon.",
-    opts:["wouldn't have to","wouldn't had to","didn't have to","wouldn't have had to"], ans:3,
-    princ:"\"안 해도 됐을 텐데\"는 부품이 세 개입니다 — <b>wouldn't(가정) + have(과거완료) + had to(의무)</b>. 하나라도 빠지면 시점이 지금으로 당겨지거나 문법이 깨집니다. 그리고 had to 뒤는 언제나 동사원형." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"약을 제때 먹었더라면, 지금 이렇게 아프진 않을 텐데.",
-    stem:"If I had taken my medicine on time, I ____ this sick now.",
-    opts:["wouldn't have been feeling","wouldn't be feeling","wouldn't have felt","didn't feel"], ans:1,
-    princ:"원인은 과거(had p.p.)인데 결과는 <b>지금</b>입니다. 이럴 땐 주절에서 have를 빼고 <b>would + 동사원형</b>만 씁니다. 문장 끝의 now가 그 신호등이에요." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"그 회사 주식을 안 팔았더라면, 지금쯤 꽤 부자일 텐데.",
-    stem:"If I hadn't sold that company's stock, I ____ pretty rich by now.",
-    opts:["would have been","was","would be","would have had been"], ans:2,
-    princ:"by now도 now와 같은 신호입니다. 과거의 선택이 <b>현재 상태</b>를 바꿨다는 뜻이므로 would 뒤에 have를 넣지 않습니다. if절만 과거완료로 남습니다." },
-  { tag:"구조 4 · 시간·거리",
-    ko:"내가 다니는 회사는 지하철역에서 걸어서 5분 거리야.",
-    stem:"The company I work for is ____ from the subway station.",
-    opts:["a five-minutes walk","a five-minute walk","five minute walk","five-minutes walking"], ans:1,
-    princ:"숫자+단위가 하이픈으로 묶여 명사를 꾸미면 단위는 항상 <b>단수</b>가 됩니다(five-minute, ten-minute). 그리고 walk가 셀 수 있는 명사로 쓰였으니 <b>a</b>가 반드시 앞에 붙습니다." },
-  { tag:"구조 4 · 시간·거리",
-    ko:"걸어서 5분 정도 걸려요.",
-    stem:"It takes about 5 minutes ____.",
-    opts:["on foot","by foot","on feet","with walking"], ans:0,
-    princ:"교통수단은 <b>by + 무관사 명사</b>(by taxi, by subway)지만, 걸어서만 예외로 <b>on foot</b>입니다. 두 발이어도 foot은 단수로 굳어진 표현이라 통째로 외우는 게 빠릅니다." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"내가 그 사진을 안 지웠더라면, 지금 너한테 보여줄 수 있을 텐데.",
-    stem:"If I hadn't deleted that picture, I ____ it to you now.",
-    opts:["could have shown","can show","could show","could showing"], ans:2,
-    princ:"would 자리에 could가 와도 규칙은 같습니다. 결과가 지금이면 <b>could + 동사원형</b>. could have shown으로 쓰면 \"그때 보여줄 수 있었을 텐데\"가 되어 now와 충돌합니다." }
+  { tag:"구조 1 · was going to",
+    ko:"은행에 가려고 했는데, 마감 시간을 헷갈렸어.",
+    stem:"I ____ to the bank, but I got the closing time mixed up.",
+    opts:["was going to go","was going to went","am going to go","was gonna going"], ans:0,
+    princ:"과거로 만드는 일은 맨 앞의 <b>was</b> 하나가 다 합니다. 그래서 to 뒤에는 손대지 않은 <b>동사원형</b>이 그대로 옵니다. gonna는 going to의 축약일 뿐이라 뒤 규칙이 똑같습니다." },
+  { tag:"구조 5 · get ~ mixed up",
+    ko:"내가 회의 시간을 헷갈렸어.",
+    stem:"I got the meeting time ____.",
+    opts:["mix up","mixed up","mixing up","mix upped"], ans:1,
+    princ:"<b>get + 목적어 + 과거분사</b>는 \"목적어가 ~된 상태가 되다\"라는 틀입니다(get it done, get it fixed). 시간이 <b>섞여버린</b> 상태이므로 mixed가 옵니다. 내가 헷갈린 거라도 목적어 쪽이 당하는 형태예요." },
+  { tag:"구조 2 · should have p.p.",
+    ko:"그 자리에서 바로 샀어야 했는데.",
+    stem:"I ____ it on the spot.",
+    opts:["should buy","should bought","should have bought","should have buy"], ans:2,
+    princ:"조동사 뒤는 언제나 동사원형이라 <b>should + have</b>까지가 한 덩어리이고, 과거로 미루는 일은 그 뒤의 <b>과거분사</b>가 맡습니다. 조동사 자체를 과거로 바꾸려 하면 문장이 깨집니다." },
+  { tag:"구조 3 · 현재완료 진행",
+    ko:"하루 종일 책상에 앉아 있었더니 허리가 너무 아파.",
+    stem:"I ____ at a desk all day, so my back hurts a lot.",
+    opts:["am sitting","was sitting","have sat down","have been sitting"], ans:3,
+    princ:"과거 어느 시점에 시작해 <b>지금까지 이어지는</b> 행동은 have been + -ing입니다. am sitting은 지금 이 순간만, was sitting은 과거에 끝난 일만 뜻해서 all day와 어울리지 않습니다." },
+  { tag:"구조 4 · 시제 일치",
+    ko:"누나가 아프다고 했어.",
+    stem:"My older sister said that she ____ sick.",
+    opts:["is","was","has been","will be"], ans:1,
+    princ:"said(과거)가 앞에 서면 뒤 문장의 시제도 한 칸 뒤로 끌려갑니다. 지금도 아플 수 있지만, 문법은 <b>말한 시점</b>을 기준으로 맞춥니다 — said → was, will → would." },
+  { tag:"구조 5 · in person",
+    ko:"사진으로는 넓어 보였는데, 실제로 보니까 꽤 작더라.",
+    stem:"It looked spacious in the pictures, but it was actually pretty small ____.",
+    opts:["in real","at person","in person","by person"], ans:2,
+    princ:"<b>in person</b>은 화면·사진이 아니라 직접 만나거나 실물로 볼 때 쓰는 굳은 표현입니다(meet in person, look better in person). in real은 원어민이 쓰지 않고, in real life 정도가 되어야 말이 됩니다." },
+  { tag:"구조 5 · be able to",
+    ko:"9월 KBW 행사에 참석할 수 있을 것 같아.",
+    stem:"I think I ____ attend the KBW event in September.",
+    opts:["will be able to","will can","am able","will able to"], ans:0,
+    princ:"조동사는 두 개를 나란히 못 씁니다. 그래서 미래의 \"할 수 있다\"는 can을 빌려오지 않고 <b>will be able to</b>로 풉니다. 부정은 won't be able to." }
 ];
 
 const FB = [
-  { tag:"구조 1 · 가정법 과거완료",
-    ko:"면접 준비를 조금만 더 했더라면, 그 일자리를 얻었을 텐데.",
-    pre:"If I had prepared a little more for the interview, I", post:"the job.",
-    hint:"2~3단어 · would로 시작",
-    ans:"would have gotten|would've gotten|would have got|would've got|wouldve gotten|wouldve got",
-    show:"would have gotten (= would've gotten)",
-    princ:"if절에서 had prepared로 과거를 뒤집었으니 주절은 자동으로 would have p.p.입니다. 두 절의 시제가 한 세트로 움직인다고 생각하세요." },
-  { tag:"구조 2 · wouldn't have had to",
-    ko:"티켓을 미리 예매했더라면, 이렇게 많이 안 내도 됐을 텐데.",
-    pre:"If I'd booked my ticket in advance, I", post:"pay this much.",
-    hint:"4단어 · 축약형 가능",
-    ans:"wouldn't have had to|would not have had to|wouldnt have had to",
-    show:"wouldn't have had to",
-    princ:"의무(have to)에 가정법 과거완료를 씌우면 have to가 had to로 밀리고 앞에 have가 하나 더 붙습니다. 그래서 have와 had가 나란히 보이는 게 정상입니다." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"회의 자료를 미리 읽었더라면, 지금 이렇게 당황하고 있진 않을 텐데.",
-    pre:"If I had read the meeting materials beforehand, I", post:"so caught off guard now.",
+  { tag:"구조 2 · should have p.p.",
+    ko:"그때 자리를 미리 예약했어야 했는데.",
+    pre:"I", post:"a table in advance.",
+    hint:"3단어 · 축약형 가능",
+    ans:"should have booked|should've booked|shouldve booked|should have reserved|should've reserved|shouldve reserved",
+    show:"should have booked (= should've booked)",
+    princ:"후회는 <b>should have + 과거분사</b> 한 덩어리입니다. 예약하다는 book / reserve / make a reservation 셋 다 되지만, 캐주얼한 대화에서는 book이 가장 흔합니다." },
+  { tag:"구조 5 · run long",
+    ko:"회의가 길어져서 점심을 걸렀어.",
+    pre:"The meeting", post:", so I skipped lunch.",
+    hint:"2단어 · 과거형",
+    ans:"ran long|ran longer|went long", show:"ran long",
+    princ:"회의·수업처럼 <b>예정보다 늘어졌다</b>는 뜻은 run을 씁니다(The meeting ran long / ran over). was long이라고 하면 그냥 원래 긴 회의였다는 뜻이 되어 의미가 달라집니다." },
+  { tag:"구조 3 · haven't p.p. yet",
+    ko:"택배가 아직 안 왔어.",
+    pre:"The package", post:"yet.",
     hint:"2단어 · 축약형 가능",
-    ans:"wouldn't be|would not be|wouldnt be",
-    show:"wouldn't be",
-    princ:"끝에 now가 있으므로 주절에서 have를 버립니다. would + be만 남기면 \"지금 그 상태가 아닐 텐데\"라는 현재의 결과가 됩니다." },
-  { tag:"구조 1 · 가정법 과거완료",
-    ko:"내가 폰을 충전했더라면, 길을 잃지 않았을 텐데.",
-    pre:"If I", post:"my phone, I wouldn't have gotten lost.",
-    hint:"2단어 · if절 자리",
-    ans:"had charged|'d charged|d charged",
-    show:"had charged",
-    princ:"주절이 wouldn't have p.p.로 끝나 있으면 if절은 거꾸로 계산해도 반드시 had p.p.입니다. 두 절 중 하나만 봐도 나머지를 복원할 수 있어야 구조를 익힌 겁니다." },
-  { tag:"구조 4 · 시간·거리",
-    ko:"여기서 택시로 20분 정도 걸려요.",
-    pre:"It takes about 20 minutes", post:"",
-    hint:"2단어",
-    ans:"by taxi", show:"by taxi",
-    princ:"교통수단 앞에는 관사를 붙이지 않고 by만 씁니다(by taxi, by bus). a나 the를 넣으면 특정 택시를 가리키는 어색한 문장이 됩니다." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"그때 그 주식을 안 팔았더라면, 지금쯤 원룸 하나 살 수 있을 텐데.",
-    pre:"If I", post:"that stock, I could buy a studio apartment by now.",
-    hint:"2단어 · 부정 · if절 자리",
-    ans:"hadn't sold|had not sold|hadnt sold", show:"hadn't sold",
-    princ:"혼합 가정법이라고 해서 if절이 달라지지는 않습니다. 달라지는 건 주절뿐이에요. if절은 언제나 had p.p., 부정은 hadn't p.p.입니다." },
-  { tag:"구조 2 · wouldn't have had to",
-    ko:"막차를 놓치지 않았더라면, 택시비를 안 내도 됐을 텐데.",
-    pre:"If I hadn't missed the last train, I", post:"for a taxi.",
-    hint:"5단어 · pay까지 포함",
-    ans:"wouldn't have had to pay|would not have had to pay|wouldnt have had to pay",
-    show:"wouldn't have had to pay",
-    princ:"덩어리를 통째로 손에 익히세요 — wouldn't have had to + 동사원형. 뒤에 오는 동사는 pay든 go든 원형 그대로입니다." }
+    ans:"hasn't arrived|has not arrived|hasnt arrived|hasn't come|has not come",
+    show:"hasn't arrived",
+    princ:"yet은 \"지금까지도 아직\"이라는 뜻이라 <b>현재완료</b>와 짝을 이룹니다. didn't arrive라고 하면 과거 한 시점에서 끝나버려 지금 상황을 말하지 못합니다." },
+  { tag:"구조 1 · was going to",
+    ko:"너한테 전화하려고 했는데, 이미 너무 늦은 시간이었어.",
+    pre:"I", post:"call you, but it was already too late.",
+    hint:"3단어 (또는 gonna로 2단어)",
+    ans:"was going to|was gonna", show:"was going to (= was gonna)",
+    princ:"계획했다가 못 한 일은 was going to + 동사원형입니다. 뒤에 call이 원형 그대로 남아 있는 게 핵심 신호예요." },
+  { tag:"구조 5 · take reservations",
+    ko:"주말에는 예약을 안 받는대.",
+    pre:"I heard they don't", post:"on weekends.",
+    hint:"2단어 · 복수형 주의",
+    ans:"take reservations|take reservation", show:"take reservations",
+    princ:"가게 입장에서 예약을 <b>받는다</b>는 take reservations로 굳어 있습니다(항상 복수). 반대로 손님이 잡을 땐 make a reservation 또는 book a table입니다." },
+  { tag:"구조 4 · it turns out",
+    ko:"스티븐이 평범한 줄 알았는데, 알고 보니 아니었어.",
+    pre:"I thought Steven was normal, but", post:"he wasn't.",
+    hint:"3단어",
+    ans:"it turns out|it turned out", show:"it turns out (= it turned out)",
+    princ:"반전을 알릴 때 원어민이 쓰는 고정 표현입니다. 주어는 뜻 없는 it이고, 뒤에 that은 대개 생략합니다. 지금 막 알게 됐으면 turns out, 예전 일이면 turned out." },
+  { tag:"구조 5 · back in the day / used to",
+    ko:"예전엔 존이랑 소주를 네 병씩 마시곤 했어.",
+    pre:"Back in the day, I", post:"four bottles of soju with John.",
+    hint:"3단어",
+    ans:"used to drink|used to have", show:"used to drink",
+    princ:"used to + 동사원형은 <b>지금은 안 하는</b> 과거의 습관입니다. to 뒤가 원형이라는 점, 그리고 소주는 four bottles of soju처럼 단위를 복수로 세운다는 점을 함께 챙기세요." }
 ];
 
 const TR = [
-  { tag:"구조 1 · 가정법 과거완료",
-    ko:"소금을 조금만 덜 썼더라면, 이 국이 훨씬 더 맛있었을 텐데.",
-    model:"If I had used a little less salt, this soup would've tasted much better.",
-    princ:"if(had p.p.) + would have p.p. 한 세트. much better처럼 비교급을 강조할 땐 very가 아니라 much를 씁니다." },
-  { tag:"구조 2 · wouldn't have had to",
-    ko:"폰을 충전했더라면, 택시비를 안 내도 됐을 텐데.",
-    model:"If I had charged my phone, I wouldn't have had to pay for a taxi.",
-    princ:"\"~비를 내다\"는 pay for + 명사. pay a taxi라고 하면 택시 자체를 사는 말이 됩니다. 앞부분은 wouldn't have had to 덩어리 그대로." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"약을 제때 먹었더라면, 지금 헬스장에 갈 수 있을 텐데.",
-    model:"If I had taken my medicine on time, I could go to the gym now.",
-    princ:"원인은 과거, 결과는 지금 → 주절은 could + 동사원형. 약을 먹다는 eat이 아니라 take를 씁니다." },
-  { tag:"구조 4 · 시간·거리",
-    ko:"여기서 얼마나 걸려요? — 걸어서 10분 정도 걸려요.",
-    model:"How long does it take from here? — It takes about 10 minutes on foot.",
-    princ:"소요 시간의 주어는 항상 비인칭 it입니다(It takes ~). 답할 때도 It takes로 받거나 It's 10 minutes on foot으로 줄일 수 있습니다." },
-  { tag:"구조 1 · 가정법 과거완료",
-    ko:"강아지를 산책시켰더라면, 밤새 짖지 않았을 텐데.",
-    model:"If I had taken my dog for a walk, it wouldn't have barked all night.",
-    princ:"주어가 사람이 아니어도 규칙은 같습니다 — it wouldn't have p.p. 산책시키다는 take + 대상 + for a walk 또는 walk my dog." },
-  { tag:"구조 3 · 혼합 가정법",
-    ko:"면접 준비를 조금만 더 했더라면, 지금 그 회사에서 일하고 있을 텐데.",
-    model:"If I had prepared a little more for the interview, I would be working for that company now.",
-    princ:"같은 if절이라도 결과가 과거면 would have gotten, 결과가 지금이면 would be working. 끝의 now 하나가 주절 전체를 바꿉니다. 회사에 다니다는 work for." }
+  { tag:"구조 1 · was going to", ko:"너한테 전화하려고 했는데, 날짜를 헷갈렸어.",
+    model:"I was going to call you, but I got the date mixed up.",
+    princ:"두 덩어리의 조립입니다 — was going to + 동사원형(무산된 계획) / get + 목적어 + mixed up(헷갈리다). 회화에서는 앞부분을 I was gonna로 줄여 말합니다." },
+  { tag:"구조 2 · should have p.p.", ko:"그때 그 자리에서 바로 샀어야 했는데. 지금은 품절이야.",
+    model:"I should've bought it on the spot. It's sold out now.",
+    princ:"후회는 should have p.p.. on the spot은 \"고민 없이 그 자리에서 즉시\"라는 뜻이라 right away보다 장면이 선명합니다." },
+  { tag:"구조 3 · 현재완료", ko:"택배가 아직 안 왔어. 일주일째 기다리고 있어.",
+    model:"The package hasn't arrived yet. I've been waiting for a week.",
+    princ:"현재완료의 두 얼굴을 한 문장씩 씁니다 — 아직 안 일어난 일은 hasn't p.p. yet, 계속되는 상태는 have been -ing + for + 기간." },
+  { tag:"구조 4 · it turns out", ko:"감기인 줄 알았는데, 알고 보니 그냥 향수병이었어.",
+    model:"I thought I had a cold, but it turns out I was just homesick.",
+    princ:"증상은 be가 아니라 have로 말합니다(have a cold / a headache / a fever). homesick은 형용사라 앞에 be를 붙여 was homesick." },
+  { tag:"구조 5 · as + 주어 + 동사", ko:"새 신발이 처음엔 불편했는데, 신다 보니까 점점 편해졌어.",
+    model:"My new shoes were uncomfortable at first, but they got more comfortable as I wore them.",
+    princ:"\"~하다 보니 점점\"은 <b>as + 주어 + 동사</b>로 두 변화를 나란히 놓습니다. 상태 변화는 become보다 got이 훨씬 구어적입니다." },
+  { tag:"구조 5 · be able to (부정)", ko:"회의가 길어져서 다음 주 모임엔 못 갈 것 같아.",
+    model:"The meeting ran long, so I don't think I'll be able to make it next week.",
+    princ:"부정은 I don't think I'll be able to ~로 앞쪽에서 미리 부정하는 게 원어민식입니다. \"참석하다\"는 attend보다 make it이 캐주얼한 자리에 맞습니다." }
 ];
 
-/* ==================================================================
-   1. 유틸
-   ================================================================== */
+/* ================= 유틸 ================= */
 const L = ["A","B","C","D"];
 const $ = id => document.getElementById(id);
 
 function esc(s){
-  return String(s==null?"":s)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;");
+  return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 function norm(s){
-  return (s||"")
-    .toLowerCase()
-    .replace(/[‘’‛ʼ`´]/g,"'")
-    .replace(/[.,!?;:"“”]/g,"")
-    .replace(/\s+/g," ")
-    .trim();
+  return (s||"").toLowerCase().replace(/[‘’‛ʼ`´]/g,"'")
+    .replace(/[.,!?;:"“”]/g,"").replace(/\s+/g," ").trim();
 }
 function b64e(str){
-  const bytes = new TextEncoder().encode(str);
-  let bin = "";
-  for(let i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
-  return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  const b = new TextEncoder().encode(str); let s="";
+  for(let i=0;i<b.length;i++) s += String.fromCharCode(b[i]);
+  return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
 }
-function b64d(s){
-  s = String(s).trim().replace(/-/g,"+").replace(/_/g,"/");
-  while(s.length % 4) s += "=";
-  const bin = atob(s);
-  const bytes = new Uint8Array(bin.length);
-  for(let i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
-  return new TextDecoder().decode(bytes);
+function b64d(x){
+  x = String(x).trim().replace(/-/g,"+").replace(/_/g,"/");
+  while(x.length%4) x += "=";
+  const bin = atob(x), b = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) b[i]=bin.charCodeAt(i);
+  return new TextDecoder().decode(b);
 }
-function toast(msg){
-  const t = $("toast"); t.textContent = msg; t.classList.add("on");
-  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove("on"), 1900);
+function toast(m){
+  const t=$("toast"); t.textContent=m; t.classList.add("on");
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("on"),2200);
 }
 function copyText(txt){
   if(navigator.clipboard && window.isSecureContext){
-    navigator.clipboard.writeText(txt).then(()=>toast("복사했습니다 ✓"),()=>fallbackCopy(txt));
-  } else fallbackCopy(txt);
+    navigator.clipboard.writeText(txt).then(()=>toast("복사했습니다 ✓"),()=>fbCopy(txt));
+  } else fbCopy(txt);
 }
-function fallbackCopy(txt){
-  const ta = document.createElement("textarea");
-  ta.value = txt; ta.style.position="fixed"; ta.style.opacity="0";
+function fbCopy(txt){
+  const ta=document.createElement("textarea");
+  ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0";
   document.body.appendChild(ta); ta.select();
   try{ document.execCommand("copy"); toast("복사했습니다 ✓"); }
-  catch(e){ toast("복사 실패 — 아래 상자에서 직접 선택하세요"); }
+  catch(e){ toast("복사 실패 — 링크를 길게 눌러 직접 복사하세요"); }
   document.body.removeChild(ta);
 }
-function baseUrl(){
-  return location.origin + location.pathname;
+function baseUrl(){ return location.origin + location.pathname; }
+function scrollTo(el){ try{ if(el&&el.scrollIntoView) el.scrollIntoView({behavior:"smooth",block:"start"}); }catch(e){} }
+
+/* ---- 저장소 ---- */
+async function blobCreate(obj){
+  const r = await fetch(BLOB_API, {method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify(obj)});
+  if(!r.ok) throw new Error("create "+r.status);
+  let id = r.headers.get("x-jsonblob-id");
+  if(!id){ const loc=r.headers.get("Location")||""; id = loc.split("/").pop(); }
+  if(!id) throw new Error("no id");
+  return id;
 }
-function scrollTo(el){
-  try{ if(el && el.scrollIntoView) el.scrollIntoView({behavior:"smooth", block:"start"}); }
-  catch(e){ /* 구형 브라우저 무시 */ }
+async function blobRead(id){
+  const r = await fetch(BLOB_API+"/"+encodeURIComponent(id), {cache:"no-store"});
+  if(!r.ok) throw new Error("read "+r.status);
+  return await r.json();
 }
-
-/* 채점 (Part1 + Part2 자동) */
-function gradeMC(i, val){ return val !== null && val !== undefined && Number(val) === MC[i].ans; }
-function gradeFB(i, val){ return FB[i].ans.split("|").some(a => norm(a) === norm(val)); }
-
-/* ==================================================================
-   2. 모드 판별
-   ================================================================== */
-let MODE = "solve";   // solve | review | feedback
-let SUB  = null;      // 제출 데이터
-let FBD  = null;      // 피드백 데이터
-
-function readHash(raw){
-  const h = (raw !== undefined ? raw : location.hash).replace(/^#/, "");
-  if(!h) return null;
-  const m = h.match(/^(s|f)=(.+)$/);
-  if(!m) return null;
-  try{
-    const obj = JSON.parse(b64d(m[2]));
-    return { kind:m[1], obj:obj };
-  }catch(e){ return null; }
+async function blobWrite(id,obj){
+  const r = await fetch(BLOB_API+"/"+encodeURIComponent(id),
+    {method:"PUT", headers:{"Content-Type":"application/json"}, body: JSON.stringify(obj)});
+  if(!r.ok) throw new Error("write "+r.status);
+  return true;
 }
 
-const parsed = readHash();
-if(parsed && parsed.kind === "s" && parsed.obj && parsed.obj.mc){
-  MODE = "review"; SUB = parsed.obj;
-}else if(parsed && parsed.kind === "f" && parsed.obj && parsed.obj.s){
-  MODE = "feedback"; FBD = parsed.obj; SUB = parsed.obj.s;
+function gradeMC(i,v){ return v!==null && v!==undefined && Number(v)===MC[i].ans; }
+function gradeFB(i,v){ return FB[i].ans.split("|").some(a=>norm(a)===norm(v)); }
+
+/* ================= 상태 ================= */
+let MODE="solve", SUB=null, FBD=null, BLOB_ID=null, RO=false, REGRADE=false;
+const selfScore = {};
+
+/* ================= 부팅 ================= */
+async function boot(){
+  const h = location.hash.replace(/^#/,"");
+  const mb = h.match(/^b=([A-Za-z0-9_-]+)(:re)?$/);
+
+  if(mb){
+    BLOB_ID = mb[1]; REGRADE = !!mb[2];
+    try{
+      const d = await blobRead(BLOB_ID);
+      if(!d || !d.s || !d.s.mc) throw new Error("bad payload");
+      SUB = d.s;
+      if(d.f && !REGRADE){ FBD = d.f; MODE = "feedback"; }
+      else { if(d.f) FBD = d.f; MODE = "review"; }
+    }catch(e){
+      $("boot").style.display="none";
+      $("main").style.display="block";
+      $("mbErr").style.display="flex";
+      $("errMsg").textContent =
+        "이 링크의 답안 데이터를 불러오지 못했습니다. 만든 지 24시간이 지나 만료됐을 수 있습니다. kyle에게 링크를 다시 만들어 달라고 하세요.";
+      $("studyCard").open=false;
+      $("submitBar").style.display="none";
+      hideQuizBody();
+      return;
+    }
+  } else {
+    const m2 = h.match(/^(s|f)=(.+)$/);
+    if(m2){
+      try{
+        const o = JSON.parse(b64d(m2[2]));
+        if(m2[1]==="s" && o.mc){ MODE="review"; SUB=o; }
+        else if(m2[1]==="f" && o.s){ MODE="feedback"; FBD=o; SUB=o.s; }
+      }catch(e){ /* 잘못된 해시 → 풀기 모드 */ }
+    }
+  }
+
+  RO = (MODE!=="solve");
+  renderAll();
+  applyMode();
+  $("boot").style.display="none";
+  $("main").style.display="block";
+  if(MODE==="feedback") scrollTo($("result"));
 }
 
-/* ==================================================================
-   3. 렌더링
-   ================================================================== */
-const RO = (MODE !== "solve");     // 읽기 전용 여부
-let qn = 0;
-const qIndexMap = [];              // 전역 문항번호 -> {part, i}
+function hideQuizBody(){
+  ["part1","part2","part3"].forEach(id=>{ const e=$(id); if(e) e.style.display="none"; });
+  document.querySelectorAll("h2.part").forEach(e=>e.style.display="none");
+}
 
-function head(n, tag){
+/* ================= 렌더 ================= */
+function headHtml(n,tag){
   return '<div class="qhead"><span class="qnum">'+n+'</span><span class="tag">'+esc(tag)+'</span></div>';
 }
 function cmtInput(n){
   return '<div class="cmtbox"><span class="cl">💬 코멘트 (선택)</span>'+
          '<textarea class="cmt" id="cin'+n+'" placeholder="이 문항에 대해 한마디"></textarea></div>';
 }
-function cmtShow(n, who){
+function cmtShow(n){
   const c = FBD && FBD.cm ? FBD.cm[String(n)] : null;
   if(!c) return "";
-  return '<div class="cmtshown"><b>💬 '+esc(who)+'</b>'+esc(c)+'</div>';
+  return '<div class="cmtshown"><b>💬 '+esc(FBD.r||"채점자")+'</b>'+esc(c)+'</div>';
 }
 
-/* ---------- Part 1 ---------- */
-const p1 = $("part1");
-MC.forEach((q,i)=>{
-  qn++; const n = qn; qIndexMap.push({p:1,i:i,n:n});
-  const picked = SUB ? SUB.mc[i] : null;
-  let opts = "";
-  q.opts.forEach((o,j)=>{
-    if(RO){
-      let cls = "opt ro";
-      if(j === q.ans) cls += " correct";
-      if(picked === j && j !== q.ans) cls += " wrongpick";
-      else if(picked === j) cls += " picked";
-      let mark = "";
-      if(picked === j) mark = '<span class="optmark">👈 선택</span>';
-      else if(j === q.ans) mark = '<span class="optmark" style="color:var(--ok)">정답</span>';
-      opts += '<div class="'+cls+'"><span class="oletter">'+L[j]+'</span><span>'+esc(o)+'</span>'+mark+'</div>';
-    }else{
-      opts += '<label class="opt"><input type="radio" name="mc'+i+'" value="'+j+'">'+
+function renderAll(){
+  let n=0;
+  const who = SUB ? (SUB.n||"학습자") : "";
+
+  const p1=$("part1"); p1.innerHTML="";
+  MC.forEach((q,i)=>{
+    n++; const num=n; const picked = SUB ? SUB.mc[i] : null;
+    let opts="";
+    q.opts.forEach((o,j)=>{
+      if(RO){
+        let cls="opt ro";
+        if(j===q.ans) cls+=" correct";
+        if(picked===j && j!==q.ans) cls+=" wrongpick";
+        else if(picked===j) cls+=" picked";
+        let mk="";
+        if(picked===j) mk='<span class="optmark">👈 선택</span>';
+        else if(j===q.ans) mk='<span class="optmark" style="color:var(--ok)">정답</span>';
+        opts+='<div class="'+cls+'"><span class="oletter">'+L[j]+'</span><span>'+esc(o)+'</span>'+mk+'</div>';
+      }else{
+        opts+='<label class="opt"><input type="radio" name="mc'+i+'" value="'+j+'">'+
               '<span class="oletter">'+L[j]+'</span><span>'+esc(o)+'</span></label>';
-    }
+      }
+    });
+    const d=document.createElement("div"); d.className="q"; d.id="q"+num;
+    d.innerHTML = headHtml(num,q.tag)+
+      '<p class="ko-prompt">'+esc(q.ko)+'</p>'+
+      '<p class="stem">'+esc(q.stem).replace("____","<u></u>")+'</p>'+ opts+
+      ((RO && (picked===null||picked===undefined)) ? '<p class="hint">미응답</p>' : '')+
+      '<div class="fb" id="fb'+num+'"></div>'+
+      (MODE==="review" ? cmtInput(num) : "")+
+      (MODE==="feedback" ? cmtShow(num) : "");
+    p1.appendChild(d);
   });
-  const d = document.createElement("div");
-  d.className = "q"; d.id = "q"+n;
-  d.innerHTML = head(n,q.tag) +
-    '<p class="ko-prompt">'+esc(q.ko)+'</p>' +
-    '<p class="stem">'+esc(q.stem).replace("____","<u></u>")+'</p>' +
-    opts +
-    (picked === null || picked === undefined ? (RO?'<p class="hint">미응답</p>':'') : '') +
-    '<div class="fb" id="fb'+n+'"></div>' +
-    (MODE === "review" ? cmtInput(n) : "") +
-    (MODE === "feedback" ? cmtShow(n, FBD.r || "채점자") : "");
-  p1.appendChild(d);
-});
 
-/* ---------- Part 2 ---------- */
-const p2 = $("part2");
-FB.forEach((q,i)=>{
-  qn++; const n = qn; qIndexMap.push({p:2,i:i,n:n});
-  const v = SUB ? (SUB.fb[i]||"") : "";
-  const field = RO
-    ? '<div class="answered'+(v?"":" empty")+'"><span class="lbl">'+esc(SUB.n||"학습자")+'의 답</span>'+(v?esc(v):"(미응답)")+'</div>'
-    : '<input class="blank" type="text" id="fbin'+i+'" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="여기에 입력">'+
-      '<div class="hint">💡 '+esc(q.hint)+'</div>';
-  const d = document.createElement("div");
-  d.className = "q"; d.id = "q"+n;
-  d.innerHTML = head(n,q.tag) +
-    '<p class="ko-prompt">'+esc(q.ko)+'</p>' +
-    '<p class="stem">'+esc(q.pre)+' <u></u> '+esc(q.post)+'</p>' +
-    field +
-    '<div class="fb" id="fb'+n+'"></div>' +
-    (MODE === "review" ? cmtInput(n) : "") +
-    (MODE === "feedback" ? cmtShow(n, FBD.r || "채점자") : "");
-  p2.appendChild(d);
-});
+  const p2=$("part2"); p2.innerHTML="";
+  FB.forEach((q,i)=>{
+    n++; const num=n; const v = SUB ? (SUB.fb[i]||"") : "";
+    const field = RO
+      ? '<div class="answered'+(v?"":" empty")+'"><span class="lbl">'+esc(who)+'의 답</span>'+(v?esc(v):"(미응답)")+'</div>'
+      : '<input class="blank" type="text" id="fbin'+i+'" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="여기에 입력">'+
+        '<div class="hint">💡 '+esc(q.hint)+'</div>';
+    const d=document.createElement("div"); d.className="q"; d.id="q"+num;
+    d.innerHTML = headHtml(num,q.tag)+
+      '<p class="ko-prompt">'+esc(q.ko)+'</p>'+
+      '<p class="stem">'+esc(q.pre)+' <u></u> '+esc(q.post)+'</p>'+ field+
+      '<div class="fb" id="fb'+num+'"></div>'+
+      (MODE==="review" ? cmtInput(num) : "")+
+      (MODE==="feedback" ? cmtShow(num) : "");
+    p2.appendChild(d);
+  });
 
-/* ---------- Part 3 ---------- */
-const p3 = $("part3");
-const selfScore = {};
-TR.forEach((q,i)=>{
-  qn++; const n = qn; qIndexMap.push({p:3,i:i,n:n});
-  const v = SUB ? (SUB.tr[i]||"") : "";
-  let body;
-  if(RO){
-    body = '<div class="answered'+(v?"":" empty")+'"><span class="lbl">'+esc(SUB.n||"학습자")+'의 답</span>'+(v?esc(v):"(미응답)")+'</div>'+
-           '<div class="model show"><p class="ans">✅ '+esc(q.model)+'</p><p class="why">'+q.princ+'</p></div>';
-    if(MODE === "review"){
-      body += '<div class="selfgrade show" id="sg'+i+'">'+
+  const p3=$("part3"); p3.innerHTML="";
+  TR.forEach((q,i)=>{
+    n++; const num=n; const v = SUB ? (SUB.tr[i]||"") : "";
+    let body;
+    if(RO){
+      body='<div class="answered'+(v?"":" empty")+'"><span class="lbl">'+esc(who)+'의 답</span>'+(v?esc(v):"(미응답)")+'</div>'+
+           '<div class="model show" id="model'+i+'"><p class="ans">✅ '+esc(q.model)+'</p><p class="why">'+q.princ+'</p></div>';
+      if(MODE==="review"){
+        body+='<div class="selfgrade show" id="sg'+i+'">'+
               '<button type="button" data-i="'+i+'" data-v="1">⭕ 맞음</button>'+
               '<button type="button" data-i="'+i+'" data-v="0">❌ 틀림</button></div>';
-    }
-  }else{
-    body = '<textarea class="tr" id="trin'+i+'" placeholder="영어로 써보세요"></textarea>'+
+      }
+    }else{
+      body='<textarea class="tr" id="trin'+i+'" placeholder="영어로 써보세요"></textarea>'+
            '<button type="button" class="reveal" data-i="'+i+'">정답 보기</button>'+
            '<div class="model" id="model'+i+'"><p class="ans">✅ '+esc(q.model)+'</p><p class="why">'+q.princ+'</p></div>'+
            '<div class="selfgrade" id="sg'+i+'">'+
            '<button type="button" data-i="'+i+'" data-v="1">⭕ 맞음</button>'+
            '<button type="button" data-i="'+i+'" data-v="0">❌ 틀림</button></div>';
-  }
-  const d = document.createElement("div");
-  d.className = "q"; d.id = "q"+n;
-  d.innerHTML = head(n,q.tag) +
-    '<p class="stem" style="font-size:14.5px">'+esc(q.ko)+'</p>' +
-    body +
-    '<div class="fb" id="fb'+n+'"></div>' +
-    (MODE === "review" ? cmtInput(n) : "") +
-    (MODE === "feedback" ? cmtShow(n, FBD.r || "채점자") : "");
-  p3.appendChild(d);
-});
-
-/* 정답 보기 / 자가채점 버튼 */
-document.querySelectorAll(".reveal").forEach(b=>{
-  b.addEventListener("click", ()=>{
-    const i = b.dataset.i;
-    $("model"+i).classList.add("show");
-    $("sg"+i).classList.add("show");
-    b.style.display = "none";
+    }
+    const d=document.createElement("div"); d.className="q"; d.id="q"+num;
+    d.innerHTML = headHtml(num,q.tag)+
+      '<p class="stem" style="font-size:14.5px">'+esc(q.ko)+'</p>'+ body+
+      '<div class="fb" id="fb'+num+'"></div>'+
+      (MODE==="review" ? cmtInput(num) : "")+
+      (MODE==="feedback" ? cmtShow(num) : "");
+    p3.appendChild(d);
   });
-});
-document.querySelectorAll(".selfgrade button").forEach(b=>{
-  b.addEventListener("click", ()=>{
-    const i = b.dataset.i, v = b.dataset.v;
-    selfScore[i] = (v === "1");
-    document.querySelectorAll("#sg"+i+" button").forEach(x=>{ x.className=""; });
-    b.className = (v === "1") ? "sel-o" : "sel-x";
-  });
-});
 
-/* ==================================================================
-   4. 채점 렌더
-   ================================================================== */
-function renderFeedbackBox(n, ok, correctHtml, princ, pending){
-  const box = $("fb"+n);
-  box.className = "fb show " + (pending ? "pend" : (ok ? "good" : "bad"));
-  box.innerHTML =
-    '<div class="mark">'+(pending ? "⏳ 채점 대기" : (ok ? "⭕ 정답" : "❌ 오답"))+'</div>' +
-    (correctHtml ? '<p class="corr">'+correctHtml+'</p>' : "") +
-    '<p class="princ">'+princ+'</p>';
+  document.querySelectorAll(".reveal").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const i=b.dataset.i;
+      $("model"+i).classList.add("show"); $("sg"+i).classList.add("show");
+      b.style.display="none";
+    });
+  });
+  document.querySelectorAll(".selfgrade button").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const i=b.dataset.i, v=b.dataset.v;
+      selfScore[i] = (v==="1");
+      document.querySelectorAll("#sg"+i+" button").forEach(x=>{x.className="";});
+      b.className = (v==="1") ? "sel-o" : "sel-x";
+    });
+  });
+}
+
+/* ================= 채점 표시 ================= */
+function fbBox(n, ok, corr, princ, pend){
+  const box=$("fb"+n);
+  box.className = "fb show " + (pend ? "pend" : (ok ? "good" : "bad"));
+  box.innerHTML = '<div class="mark">'+(pend?"⏳ 채점 대기":(ok?"⭕ 정답":"❌ 오답"))+'</div>'+
+    (corr?'<p class="corr">'+corr+'</p>':"")+'<p class="princ">'+princ+'</p>';
 }
 
 function scoreAll(trGrades){
-  // trGrades: {i: bool} — solve모드는 selfScore, feedback모드는 FBD.tg
-  let mcOk=0, fbOk=0, trOk=0;
-  const weak = [], missing = [];
-  let n = 0;
+  let mcOk=0, fbOk=0, trOk=0, n=0;
+  const weak=[], missing=[];
 
   MC.forEach((q,i)=>{
     n++;
-    const picked = SUB ? SUB.mc[i] : (function(){
-      const s = document.querySelector('input[name="mc'+i+'"]:checked');
-      return s ? Number(s.value) : null;
-    })();
-    if(picked === null || picked === undefined) missing.push(n);
-    const ok = gradeMC(i, picked);
-    if(ok) mcOk++; else weak.push(q.tag);
-    renderFeedbackBox(n, ok,
-      ok ? "" : '정답: <b>'+L[q.ans]+') '+esc(q.opts[q.ans])+'</b>',
-      q.princ, false);
+    const picked = SUB ? SUB.mc[i] : (()=>{ const s=document.querySelector('input[name="mc'+i+'"]:checked'); return s?Number(s.value):null; })();
+    if(picked===null||picked===undefined) missing.push(n);
+    const ok=gradeMC(i,picked); if(ok) mcOk++; else weak.push(q.tag);
+    fbBox(n, ok, ok?"":'정답: <b>'+L[q.ans]+') '+esc(q.opts[q.ans])+'</b>', q.princ, false);
   });
-
   FB.forEach((q,i)=>{
     n++;
     const raw = SUB ? (SUB.fb[i]||"") : $("fbin"+i).value;
     if(!norm(raw)) missing.push(n);
-    const ok = gradeFB(i, raw);
-    if(ok) fbOk++; else weak.push(q.tag);
-    renderFeedbackBox(n, ok,
-      ok ? "" : '정답: <b>'+esc(q.show)+'</b>' + (norm(raw) ? ' &nbsp;/&nbsp; 쓴 답: '+esc(raw) : ""),
-      q.princ, false);
+    const ok=gradeFB(i,raw); if(ok) fbOk++; else weak.push(q.tag);
+    fbBox(n, ok, ok?"":'정답: <b>'+esc(q.show)+'</b>'+(norm(raw)?' &nbsp;/&nbsp; 쓴 답: '+esc(raw):""), q.princ, false);
   });
-
   TR.forEach((q,i)=>{
     n++;
-    const graded = trGrades && Object.prototype.hasOwnProperty.call(trGrades, String(i));
+    const graded = trGrades && Object.prototype.hasOwnProperty.call(trGrades,String(i));
     const ok = graded && !!trGrades[String(i)];
     if(!graded) missing.push(n);
     if(ok) trOk++; else weak.push(q.tag);
-    const who = (MODE === "feedback") ? (FBD.r ? esc(FBD.r)+" 채점" : "채점자") : "자가채점";
-    const box = $("fb"+n);
-    box.className = "fb show " + (ok ? "good" : "bad");
-    box.innerHTML =
-      '<div class="mark">'+(ok ? "⭕ 맞음" : (graded ? "❌ 틀림" : "❌ 채점 안 됨"))+' <span style="font-weight:400;font-size:11.5px;color:var(--sub)">('+who+')</span></div>' +
-      '<p class="corr">모범답안: <b>'+esc(q.model)+'</b></p>' +
+    const who = (MODE==="feedback") ? ((FBD&&FBD.r)?esc(FBD.r)+" 채점":"채점자") : "자가채점";
+    const box=$("fb"+n);
+    box.className="fb show "+(ok?"good":"bad");
+    box.innerHTML='<div class="mark">'+(ok?"⭕ 맞음":(graded?"❌ 틀림":"❌ 채점 안 됨"))+
+      ' <span style="font-weight:400;font-size:11.5px;color:var(--sub)">('+who+')</span></div>'+
+      '<p class="corr">모범답안: <b>'+esc(q.model)+'</b></p>'+
       '<p class="princ">'+q.princ+'</p>';
-    const m = $("model"+i); if(m) m.classList.add("show");
+    const m=$("model"+i); if(m) m.classList.add("show");
   });
 
-  return { mcOk, fbOk, trOk, total: mcOk+fbOk+trOk, weak:[...new Set(weak)], missing };
+  return { mcOk, fbOk, trOk, total:mcOk+fbOk+trOk, weak:[...new Set(weak)], missing };
 }
 
-function showResult(r, opts){
-  opts = opts || {};
-  $("whoLine").textContent = opts.who || "";
-  $("scoreNum").innerHTML = r.total + '<span> / 20</span>';
+function showResult(r,opt){
+  opt=opt||{};
+  $("whoLine").textContent = opt.who||"";
+  $("scoreNum").innerHTML = r.total+'<span> / 20</span>';
   $("bdBox").innerHTML =
-    '<div class="bd">객관식<b>'+r.mcOk+' / 7</b></div>' +
-    '<div class="bd">빈칸<b>'+r.fbOk+' / 7</b></div>' +
+    '<div class="bd">객관식<b>'+r.mcOk+' / 7</b></div>'+
+    '<div class="bd">빈칸<b>'+r.fbOk+' / 7</b></div>'+
     '<div class="bd">영작<b>'+r.trOk+' / 6</b></div>';
-
   let msg;
-  if(r.total >= 18)      msg = "🏆 거의 완벽해요. 가정법의 시제 짝짓기가 몸에 붙었습니다.";
-  else if(r.total >= 14) msg = "👍 뼈대는 확실히 잡혔어요. 틀린 건 대부분 have 한 개 차이일 겁니다.";
-  else if(r.total >= 9)  msg = "🙂 절반 이상 맞았습니다. now / by now가 있는지부터 먼저 보는 습관을 들이면 점수가 확 올라갑니다.";
-  else                   msg = "💪 학습 카드를 한 번 더 읽고 다시 풀어보세요. 공식 3개만 손에 익으면 되는 날입니다.";
+  if(r.total>=18) msg="🏆 거의 완벽해요. 가정법의 시제 짝짓기가 몸에 붙었습니다.";
+  else if(r.total>=14) msg="👍 뼈대는 확실히 잡혔어요. 틀린 건 대부분 have 한 개 차이일 겁니다.";
+  else if(r.total>=9) msg="🙂 절반 이상 맞았습니다. now / by now가 있는지부터 먼저 보는 습관을 들이면 점수가 확 올라갑니다.";
+  else msg="💪 학습 카드를 한 번 더 읽고 다시 풀어보세요. 공식 3개만 손에 익으면 되는 날입니다.";
   $("msgBox").textContent = msg;
-
-  const rv = $("reviewBox"); rv.style.display = "block";
+  const rv=$("reviewBox"); rv.style.display="block";
   $("reviewList").innerHTML = r.weak.length
     ? r.weak.map(t=>'<li>'+esc(t)+'</li>').join("")
     : '<li>없습니다. 오늘 구조 전부 통과 🎉</li>';
+  if(opt.overall){ $("overallShow").style.display="block"; $("overallText").textContent=opt.overall; }
+  $("result").style.display="block";
+}
 
-  if(opts.overall){
-    $("overallShow").style.display = "block";
-    $("overallText").textContent = opts.overall;
+/* ================= 모드별 동작 ================= */
+function applyMode(){
+  if(MODE==="solve"){
+    $("footMode").textContent="풀기 모드";
+    $("submitBtn").addEventListener("click", ()=>{
+      const r=scoreAll(selfScore);
+      const mb=$("missBox");
+      if(r.missing.length){
+        mb.style.display="block";
+        mb.innerHTML="⚠️ 응답하지 않은 문항: <b>"+r.missing.join(", ")+"번</b> (미응답은 오답 처리했어요)";
+      } else mb.style.display="none";
+      showResult(r,{who:"자동채점 14문항 + 자가채점 6문항"});
+      $("sharePanel").style.display="block";
+      scrollTo($("result"));
+    });
+
+    $("makeShare").addEventListener("click", async ()=>{
+      const btn=$("makeShare");
+      btn.disabled=true; btn.textContent="만드는 중…";
+      $("shareErr").style.display="none";
+      const payload = {
+        v:2, d:QUIZ_DATE,
+        n:($("myName").value||"kyle").trim().slice(0,24),
+        mc:MC.map((q,i)=>{const s=document.querySelector('input[name="mc'+i+'"]:checked'); return s?Number(s.value):null;}),
+        fb:FB.map((q,i)=>$("fbin"+i).value.trim().slice(0,120)),
+        tr:TR.map((q,i)=>$("trin"+i).value.trim().slice(0,300))
+      };
+      try{
+        const id = await blobCreate({s:payload});
+        const url = baseUrl()+"#b="+id;
+        $("shareBig").textContent = url;
+        $("shareOut").style.display="block";
+        $("shareNote").textContent =
+          "⏳ 이 링크는 마지막 저장 시점부터 24시간 동안 유효합니다. 상대가 그 안에 채점하면 다시 24시간 연장됩니다. 오래 보관하려면 [백업 링크 복사]도 함께 보관하세요.";
+        btn.textContent="링크 다시 만들기";
+        window.__backup = baseUrl()+"#s="+b64e(JSON.stringify(payload));
+        toast("링크 하나로 준비됐습니다");
+      }catch(e){
+        $("shareErr").style.display="block";
+        $("shareErr").textContent="온라인 저장에 실패했습니다("+e.message+"). 네트워크를 확인하거나, 아래 백업 링크 방식을 쓰세요.";
+        window.__backup = baseUrl()+"#s="+b64e(JSON.stringify(payload));
+        $("shareOut").style.display="block";
+        $("shareBig").textContent = window.__backup;
+        $("shareNote").textContent="※ 지금은 백업(자체 완결) 링크입니다. 이 링크로도 상대가 채점할 수 있지만, 결과는 회신 링크로 받아야 합니다.";
+        btn.textContent="다시 시도";
+      }
+      btn.disabled=false;
+    });
+
+    $("copyShare").addEventListener("click", ()=>copyText($("shareBig").textContent));
+    $("copyBackup").addEventListener("click", ()=>{
+      if(window.__backup) copyText(window.__backup); else toast("먼저 링크를 만들어주세요");
+    });
   }
-  $("result").style.display = "block";
-}
 
-/* ==================================================================
-   5. 모드별 초기화
-   ================================================================== */
-if(MODE === "solve"){
-  $("footMode").textContent = "풀기 모드";
-  $("submitBtn").addEventListener("click", ()=>{
-    const r = scoreAll(selfScore);
-    const mb = $("missBox");
-    if(r.missing.length){
-      mb.style.display = "block";
-      mb.innerHTML = "⚠️ 응답하지 않은 문항: <b>"+r.missing.join(", ")+"번</b> (미응답은 오답 처리했어요)";
-    }else mb.style.display = "none";
-    showResult(r, { who:"자동채점 14문항 + 자가채점 6문항" });
-    $("sharePanel").style.display = "block";
-    scrollTo($("result"));
-  });
+  if(MODE==="review"){
+    $("footMode").textContent="채점 모드";
+    $("mbReview").style.display="flex";
+    $("mbName").textContent = SUB.n||"학습자";
+    $("hSub").textContent = (SUB.d||QUIZ_DATE)+" · "+(SUB.n||"학습자")+"님의 답안 채점";
+    $("studyCard").open=false;
+    $("submitBar").style.display="none";
+    $("overallPanel").style.display="block";
+    if(BLOB_ID) $("savePanel").style.display="block";
 
-  $("makeShare").addEventListener("click", ()=>{
-    const payload = {
-      v:1, d:QUIZ_DATE,
-      n:($("myName").value || "kyle").trim().slice(0,24),
-      mc:MC.map((q,i)=>{ const s = document.querySelector('input[name="mc'+i+'"]:checked'); return s ? Number(s.value) : null; }),
-      fb:FB.map((q,i)=>$("fbin"+i).value.trim().slice(0,120)),
-      tr:TR.map((q,i)=>$("trin"+i).value.trim().slice(0,300))
-    };
-    const url = baseUrl() + "#s=" + b64e(JSON.stringify(payload));
-    $("shareText").value = url;
-    $("shareOut").style.display = "block";
-    $("copyShare").disabled = false;
-    const note = $("shareNote");
-    if(url.length > 1800){
-      note.className = "note warnnote";
-      note.textContent = "링크가 "+url.length+"자로 깁니다. 메신저에서 잘릴 수 있으니, 잘리면 상대에게 이 텍스트 전체를 복사해 보내고 사이트 하단 '코드 직접 붙여넣기'로 열어달라고 하세요.";
-    }else{
-      note.className = "note";
-      note.textContent = "링크 길이 "+url.length+"자 — 카톡·메일로 그대로 보내면 됩니다.";
+    let n=0;
+    MC.forEach((q,i)=>{ n++; const ok=gradeMC(i,SUB.mc[i]);
+      fbBox(n,ok, ok?"":'정답: <b>'+L[q.ans]+') '+esc(q.opts[q.ans])+'</b>', q.princ,false); });
+    FB.forEach((q,i)=>{ n++; const ok=gradeFB(i,SUB.fb[i]||"");
+      fbBox(n,ok, ok?"":'정답: <b>'+esc(q.show)+'</b>', q.princ,false); });
+    TR.forEach((q,i)=>{ n++; fbBox(n,false,"","위 ⭕/❌ 버튼으로 채점해주세요.",true); });
+
+    // 재채점이면 기존 값 복원
+    if(REGRADE && FBD){
+      (FBD.tg||[]).forEach((v,i)=>{
+        selfScore[String(i)] = !!v;
+        const b=document.querySelector('#sg'+i+' button[data-v="'+(v?1:0)+'"]');
+        if(b) b.className = v ? "sel-o" : "sel-x";
+      });
+      Object.keys(FBD.cm||{}).forEach(k=>{ const el=$("cin"+k); if(el) el.value=FBD.cm[k]; });
+      if(FBD.r) $("reviewerName").value=FBD.r;
+      if(FBD.all) $("overallIn").value=FBD.all;
     }
-    toast("링크를 만들었습니다");
-  });
-  $("copyShare").addEventListener("click", ()=>copyText($("shareText").value));
-}
 
-if(MODE === "review"){
-  $("footMode").textContent = "채점 모드";
-  $("mbReview").style.display = "flex";
-  $("mbName").textContent = SUB.n || "학습자";
-  $("hSub").textContent = (SUB.d || QUIZ_DATE) + " · " + (SUB.n || "학습자") + "님의 답안 채점";
-  $("studyCard").open = false;
-  $("submitBar").style.display = "none";
-  $("overallPanel").style.display = "block";
-  $("fbPanel").style.display = "block";
-
-  // 자동채점(Part1·2)은 즉시 표시, Part3는 대기 상태
-  let n = 0;
-  MC.forEach((q,i)=>{ n++;
-    const ok = gradeMC(i, SUB.mc[i]);
-    renderFeedbackBox(n, ok, ok?"":'정답: <b>'+L[q.ans]+') '+esc(q.opts[q.ans])+'</b>', q.princ, false);
-  });
-  FB.forEach((q,i)=>{ n++;
-    const ok = gradeFB(i, SUB.fb[i]||"");
-    renderFeedbackBox(n, ok, ok?"":'정답: <b>'+esc(q.show)+'</b>', q.princ, false);
-  });
-  TR.forEach((q,i)=>{ n++;
-    renderFeedbackBox(n, false, "", "위 ⭕/❌ 버튼으로 채점해주세요.", true);
-  });
-
-  $("makeFb").addEventListener("click", ()=>{
-    const tg = TR.map((q,i)=> selfScore[String(i)] === true ? 1 : 0);
-    const ungraded = TR.map((q,i)=>i).filter(i=>!Object.prototype.hasOwnProperty.call(selfScore,String(i)));
-    const cm = {};
-    for(let k=1;k<=20;k++){
-      const el = $("cin"+k);
-      if(el && el.value.trim()) cm[String(k)] = el.value.trim().slice(0,400);
-    }
-    const payload = {
-      v:1, s:SUB, tg:tg, cm:cm,
-      r:($("reviewerName").value||"채점자").trim().slice(0,24),
-      all:($("overallIn").value||"").trim().slice(0,600)
-    };
-    const url = baseUrl() + "#f=" + b64e(JSON.stringify(payload));
-    $("fbText").value = url;
-    $("fbOut").style.display = "block";
-    $("copyFb").disabled = false;
-    const note = $("fbNote");
-    let t = "링크 길이 "+url.length+"자.";
-    if(ungraded.length) t += " ⚠️ 아직 채점 안 한 영작: "+ungraded.map(i=>i+15).join(", ")+"번 (오답 처리됩니다)";
-    if(url.length > 1800) t += " 메신저에서 잘리면 텍스트 전체를 보내고 '코드 직접 붙여넣기'로 열어달라고 하세요.";
-    note.className = "note" + ((ungraded.length || url.length>1800) ? " warnnote" : "");
-    note.textContent = t;
-    toast("피드백 링크를 만들었습니다");
-  });
-  $("copyFb").addEventListener("click", ()=>copyText($("fbText").value));
-}
-
-if(MODE === "feedback"){
-  $("footMode").textContent = "첨삭 확인 모드";
-  $("mbFeedback").style.display = "flex";
-  $("fbName").textContent = FBD.r || "채점자";
-  $("hSub").textContent = (SUB.d || QUIZ_DATE) + " · " + (SUB.n || "학습자") + "님 답안 · " + (FBD.r || "채점자") + " 첨삭";
-  $("studyCard").open = false;
-  $("submitBar").style.display = "none";
-
-  const tg = {};
-  (FBD.tg || []).forEach((v,i)=>{ tg[String(i)] = !!v; });
-  const r = scoreAll(tg);
-  showResult(r, {
-    who: (SUB.n || "학습자") + "의 답안 · " + (FBD.r || "채점자") + " 채점",
-    overall: FBD.all || ""
-  });
-  scrollTo($("result"));
-}
-
-/* ==================================================================
-   6. 코드 붙여넣기
-   ================================================================== */
-$("pasteToggle").addEventListener("click",(e)=>{
-  e.preventDefault();
-  const b = $("pasteBox");
-  b.style.display = (b.style.display === "block") ? "none" : "block";
-});
-$("pasteGo").addEventListener("click", ()=>{
-  const raw = $("pasteIn").value.trim();
-  if(!raw){ toast("코드를 붙여넣어 주세요"); return; }
-  let frag = raw;
-  const hashAt = raw.indexOf("#");
-  if(hashAt >= 0) frag = raw.slice(hashAt+1);
-  if(!/^(s|f)=/.test(frag)){
-    // 순수 코드만 붙여넣은 경우 — 두 종류 다 시도
-    if(readHash("#s="+frag)) frag = "s="+frag;
-    else if(readHash("#f="+frag)) frag = "f="+frag;
+    if($("saveFb")) $("saveFb").addEventListener("click", async ()=>{
+      const btn=$("saveFb"); btn.disabled=true; btn.textContent="저장 중…";
+      const tg = TR.map((q,i)=> selfScore[String(i)]===true ? 1 : 0);
+      const ungraded = TR.map((q,i)=>i).filter(i=>!Object.prototype.hasOwnProperty.call(selfScore,String(i)));
+      const cm={};
+      for(let k=1;k<=20;k++){ const el=$("cin"+k); if(el && el.value.trim()) cm[String(k)]=el.value.trim().slice(0,400); }
+      const f = { tg, cm, r:($("reviewerName").value||"채점자").trim().slice(0,24),
+                  all:($("overallIn").value||"").trim().slice(0,600), at:new Date().toISOString() };
+      try{
+        await blobWrite(BLOB_ID, {s:SUB, f:f});
+        $("saveNote").className="note";
+        $("saveNote").textContent="✅ 저장 완료. "+(SUB.n||"학습자")+"님이 같은 링크를 열면 바로 보입니다."+
+          (ungraded.length ? " (채점 안 한 영작 "+ungraded.map(i=>i+15).join(", ")+"번은 오답 처리됐습니다)" : "");
+        btn.textContent="저장됨 ✓ — 결과 보기";
+        btn.disabled=false;
+        btn.onclick=()=>{ location.hash="b="+BLOB_ID; location.reload(); };
+        toast("저장했습니다 — 회신할 필요 없습니다");
+      }catch(e){
+        $("saveNote").className="note warnnote";
+        $("saveNote").textContent="저장 실패("+e.message+"). 링크가 만료됐거나 네트워크 문제입니다. 다시 시도해주세요.";
+        btn.textContent="다시 저장하기"; btn.disabled=false;
+      }
+    });
   }
-  if(!readHash("#"+frag)){ toast("코드를 읽을 수 없습니다 — 전체를 복사했는지 확인해주세요"); return; }
-  location.hash = frag;
-  location.reload();
-});
 
-window.addEventListener("hashchange", ()=>location.reload());
+  if(MODE==="feedback"){
+    $("footMode").textContent="첨삭 확인 모드";
+    $("mbFeedback").style.display="flex";
+    $("fbName").textContent = (FBD&&FBD.r)||"채점자";
+    $("hSub").textContent = (SUB.d||QUIZ_DATE)+" · "+(SUB.n||"학습자")+"님 답안 · "+((FBD&&FBD.r)||"채점자")+" 첨삭";
+    $("studyCard").open=false;
+    $("submitBar").style.display="none";
+    const tg={}; ((FBD&&FBD.tg)||[]).forEach((v,i)=>{ tg[String(i)]=!!v; });
+    const r=scoreAll(tg);
+    showResult(r,{ who:(SUB.n||"학습자")+"의 답안 · "+((FBD&&FBD.r)||"채점자")+" 채점",
+                   overall:(FBD&&FBD.all)||"" });
+    if(BLOB_ID){
+      $("regradePanel").style.display="block";
+      $("regradeBtn").addEventListener("click",()=>{ location.hash="b="+BLOB_ID+":re"; location.reload(); });
+    }
+  }
+}
+
+window.addEventListener("hashchange",()=>location.reload());
+boot();
 </script>
 </body>
 </html>
