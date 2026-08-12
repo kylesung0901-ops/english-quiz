@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>데일리 영어 퀴즈 — 2026-08-12 (수)</title>
+<style>
+:root{--bg:#f5f6fa;--card:#ffffff;--ink:#1f2430;--sub:#5b6272;--accent:#3552c8;--accent-soft:#e8edfb;--ok:#188a4f;--ok-soft:#e3f4ea;--no:#c53030;--no-soft:#fdeaea;--warn:#b7791f;--warn-soft:#fdf3df;--line:#e3e6ee;--mono:'SF Mono',Consolas,'Courier New',monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif;font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+header h1{font-size:1.45rem;margin:10px 0 6px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:20px;padding:4px 14px;font-size:.85rem;font-weight:700;margin-bottom:4px}
+.focus{font-size:.9rem;color:var(--sub);margin:2px 0 10px}
+.note{background:var(--warn-soft);border:1px solid #f0dfb6;border-radius:10px;padding:8px 12px;font-size:.83rem;color:#7a5815;margin:8px 0}
+#banner{display:none;background:var(--no-soft);border:2px solid var(--no);color:var(--no);border-radius:12px;padding:14px 16px;font-weight:700;margin:12px 0}
+details.block{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:2px 16px 8px;margin:12px 0}
+details.block>summary{cursor:pointer;font-weight:800;font-size:1.02rem;padding:11px 0;list-style:none}
+details.block>summary::before{content:'▸ ';color:var(--accent)}
+details[open].block>summary::before{content:'▾ '}
+.card{border-top:1px dashed var(--line);padding:12px 0}
+.card h3{margin:0 0 6px;font-size:.98rem}
+.tagchip{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.72rem;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+.formula{font-family:var(--mono);background:#f0f2f8;border-radius:8px;padding:8px 12px;font-size:.85rem;white-space:pre-wrap;margin:6px 0}
+.exs{margin:6px 0 6px;padding-left:18px}
+.exs li{margin:3px 0}
+.mist{background:var(--no-soft);border-radius:8px;padding:8px 12px;font-size:.87rem;margin:6px 0}
+.mist b{color:var(--no)}
+.pron{display:flex;gap:10px;align-items:baseline;border-top:1px dashed var(--line);padding:8px 0;font-size:.93rem;flex-wrap:wrap}
+.pron .k{font-family:var(--mono);font-weight:700;white-space:nowrap}
+.pron .snd{color:var(--accent);font-weight:800;white-space:nowrap}
+.pron .why{color:var(--sub);font-size:.85rem}
+h2.part{font-size:1.1rem;margin:26px 0 4px}
+h2.part small{font-weight:400;color:var(--sub);font-size:.82rem;display:block}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+.q .qhead{font-weight:700;margin-bottom:8px}
+.q .qnum{color:var(--accent);font-weight:800;margin-right:6px}
+.opts label{display:flex;gap:8px;align-items:flex-start;padding:7px 10px;border:1px solid var(--line);border-radius:10px;margin:6px 0;cursor:pointer;font-size:.95rem}
+.opts label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.opts input{margin-top:4px}
+.fbline{font-size:1rem;margin:8px 0}
+.fbline input{border:none;border-bottom:2px solid var(--accent);background:#f8f9fd;padding:4px 8px;font-size:1rem;width:150px;text-align:center;font-family:var(--mono)}
+.hint{color:var(--sub);font-size:.82rem}
+textarea.tr{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.95rem;font-family:inherit;min-height:56px;margin-top:6px}
+button{font-family:inherit;cursor:pointer;border:none;border-radius:10px;font-weight:700}
+.btn-ghost{background:var(--accent-soft);color:var(--accent);padding:8px 14px;font-size:.88rem;margin-top:8px}
+.btn-main{display:block;width:100%;background:var(--accent);color:#fff;font-size:1.08rem;padding:15px;border-radius:14px;margin:24px 0 8px}
+.btn-sub{background:var(--ok);color:#fff;padding:12px 18px;font-size:.95rem;margin-top:10px}
+.reveal{display:none;background:#f7f8fc;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.reveal .model{font-weight:800}
+.markrow{margin-top:8px;font-size:.93rem}
+.markrow label{margin-right:14px;cursor:pointer}
+#result{display:none;background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:18px;margin-top:22px}
+.score-big{font-size:2rem;font-weight:900;color:var(--accent);text-align:center}
+.bandmsg{text-align:center;font-size:.98rem;margin:6px 0 14px}
+.rrow{border-top:1px dashed var(--line);padding:9px 0;font-size:.9rem}
+.rrow .mark-ok{color:var(--ok);font-weight:900}
+.rrow .mark-no{color:var(--no);font-weight:900}
+.rrow .ansline{margin:2px 0}
+.rrow .why{color:var(--sub);font-size:.86rem}
+.redo{background:var(--warn-soft);border-radius:10px;padding:10px 12px;margin-top:12px;font-size:.9rem}
+.linkbox{display:none;margin-top:14px;background:#10131c;color:#9fd3ff;border-radius:12px;padding:12px;font-family:var(--mono);font-size:.8rem;word-break:break-all}
+.copybtn{background:#2b3446;color:#fff;padding:6px 12px;font-size:.8rem;margin-top:8px}
+.gradec{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:.88rem;font-family:inherit;margin-top:6px;min-height:36px}
+.kyleans{background:#eef1f9;border-radius:8px;padding:6px 10px;font-size:.93rem;margin:6px 0;font-family:var(--mono)}
+.pill-ok{background:var(--ok-soft);color:var(--ok);border-radius:8px;padding:2px 8px;font-weight:800;font-size:.82rem}
+.pill-no{background:var(--no-soft);color:var(--no);border-radius:8px;padding:2px 8px;font-weight:800;font-size:.82rem}
+.overall{background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin-top:14px}
+footer{margin-top:34px;font-size:.78rem;color:var(--sub);text-align:center}
+@media(max-width:480px){.wrap{padding:12px 10px 70px}.fbline input{width:120px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="badge" id="datebadge">2026년 8월 12일 (수)</div>
+  <h1>🎯 데일리 영어 퀴즈</h1>
+  <div class="focus">오늘의 초점 — <b>전달하기 said+would</b> · <b>전치사 뒤 -ing</b> · <b>결국 ~하게 되다</b> · <b>단어 선택 함정</b> · <b>발음·연음</b></div>
+  <div class="note">🔗 올인원 링크는 <b>마지막 저장 기준 24시간 뒤 만료</b>됩니다. 열어보는 것만으로는 연장되지 않아요 — 채점·확인은 하루 안에!</div>
+</header>
+
+<div id="banner"></div>
+
+<details open class="block" id="cards">
+<summary>📚 오늘의 학습 카드 (풀기 전에 읽기)</summary>
+
+<div class="card">
+<h3>1. 들은 말 전달하기 <span class="tagchip">S5</span></h3>
+<div class="formula">A said (that) + 주어 + would + 동사원형
+현재→과거로 한 칸 이동:  will→would · is→was</div>
+<ul class="exs">
+<li>The dentist said the treatment <b>would take</b> about a month.</li>
+<li>My coworker said she <b>would send</b> me the file by noon.</li>
+<li>I heard the cafe downstairs <b>is closing</b> next month. (heard로 전할 때)</li>
+</ul>
+<div class="mist">⚠️ 자주 하는 실수 — <b>“house owner says air conditionor change will be next month”</b> → said 뒤에서는 will이 아니라 <b>would</b>. / <b>“my friend say she make me meeting”</b> → say에 시제가 없고, make도 <b>would + 동사원형</b>이어야 해요.</div>
+</div>
+
+<div class="card">
+<h3>2. 전치사 뒤에는 무조건 -ing <span class="tagchip">S6</span></h3>
+<div class="formula">about / of / in / without / after / for  +  동사-ing</div>
+<ul class="exs">
+<li>I'm worried <b>about making</b> a mistake in the interview.</li>
+<li>Thanks <b>for inviting</b> me to the party.</li>
+<li>You can't pass the test <b>without studying</b>.</li>
+</ul>
+<div class="mist">⚠️ 자주 하는 실수 — <b>“it's dosen't work about talk with him”</b> → “~해봐야 소용없다”는 <b>There's no point in + -ing</b> 한 덩어리로. 전치사 뒤 동사원형은 금지!</div>
+</div>
+
+<div class="card">
+<h3>3. ~할까 하다가 → 결국 / 점점 ~하게 됐다 <span class="tagchip">S22</span></h3>
+<div class="formula">was thinking about + -ing   ~할까 하다가
+ended up + -ing             결국 ~했다
+have come to + 동사원형      (시간이 지나) ~하게 됐다</div>
+<ul class="exs">
+<li>I was thinking about <b>getting</b> bangs, but I ended up just <b>getting a trim</b>.</li>
+<li>After a few weeks, I've <b>come to like</b> the new office.</li>
+</ul>
+<div class="mist">⚠️ 자주 하는 실수 — <b>“i thinging of getting taxi, but i work on my way to home”</b> → 결말은 <b>ended up + -ing</b>. / <b>“since i living here, i like silent more and more”</b> → <b>After living here for a while, I've come to ~</b> 패턴으로.</div>
+</div>
+
+<div class="card">
+<h3>4. 단어 선택 함정 5종 <span class="tagchip">S12</span></h3>
+<div class="formula">노트북 = laptop (notebook은 공책!)
+집주인 = landlord      부장님 = manager
+세탁소 = the dry cleaners      가사 = lyrics</div>
+<ul class="exs">
+<li>My <b>laptop</b> battery dies so fast these days.</li>
+<li>I asked my <b>landlord</b> if I could keep a cat.</li>
+</ul>
+<div class="mist">⚠️ 자주 하는 실수 — <b>“my new notebook is not working”</b>(notebook=공책), <b>“house owner”</b>(→landlord), <b>“laundery shop”</b>(→the dry cleaners), <b>“i didn't know words”</b>(가사→lyrics).</div>
+</div>
+</details>
+
+<details open class="block" id="pronnote">
+<summary>🔊 발음·연음 노트 (채점 없음 — 소리 내서 3번씩)</summary>
+<div class="pron"><span class="k">said he'd</span><span class="snd">[쎄디드]</span><span class="why">said의 d에 he가 붙으며 h가 사라지고, he'd는 [이드]로 약해져요</span></div>
+<div class="pron"><span class="k">ended up</span><span class="snd">[엔디덥]</span><span class="why">d가 뒤 모음 u에 붙어 한 단어처럼 굴러가요</span></div>
+<div class="pron"><span class="k">no point in</span><span class="snd">[노 포이닌]</span><span class="why">point의 t가 탈락하고 n이 in과 이어져요</span></div>
+<div class="pron"><span class="k">about it</span><span class="snd">[어바우릿]</span><span class="why">t가 모음 사이에 끼면 ㄹ 소리로 굴러가요</span></div>
+<div class="pron"><span class="k">let me know</span><span class="snd">[렘미 노우]</span><span class="why">t가 m 앞에서 삼켜져 거의 안 들려요</span></div>
+<div class="pron"><span class="k">sign up for</span><span class="snd">[싸이넙 포]</span><span class="why">n이 up에 붙고, for는 약하게 [퍼/포]</span></div>
+</details>
+
+<main id="quiz"></main>
+<section id="result"></section>
+
+<footer>매일 아침 자동 출제 · 결과는 올인원 링크 하나로 주고받기 · jsonblob 저장(24h)</footer>
+</div>
+
+<script>
+'use strict';
+/* ================= 데이터 ================= */
+var QUIZ_DATE='2026-08-12';
+var BASE=(typeof location!=='undefined'&&location.protocol.indexOf('http')===0)?(location.origin+location.pathname):'https://kylesung0901-ops.github.io/english-quiz/';
+var BLOB_API='https://jsonblob.com/api/jsonBlob';
+var STRUCT={S5:'전달하기 said+would',S6:'전치사 뒤 -ing',S22:'결국 ~하게 되다 (end up / come to)',S12:'단어 선택 함정',S26:'발음·연음'};
+
+var MC=[
+{ko:'"부동산 중개인이 토요일에 그 집을 보여주겠다고 했어요." — 맞는 문장은?',
+ opts:['The real estate agent said he will show me the house on Saturday.','The real estate agent said he would show me the house on Saturday.','The real estate agent says he would showing me the house on Saturday.','The real estate agent said he would showed me the house on Saturday.'],
+ a:1,tag:'S5',ex:'said가 이끄는 과거 보고문에서는 will이 would로 한 칸 내려가고, would 뒤는 동사원형입니다. 원어민은 어제 들은 말을 옮길 때 거의 반사적으로 "He said he would ~"라고 말해요.'},
+{ko:'"지금 와서 걱정해봐야 소용없어요." — 맞는 문장은?',
+ opts:["There's no point in worry about it now.","There's no point to worried about it now.","There's no point in worrying about it now.","It doesn't work about worry it now."],
+ a:2,tag:'S6',ex:'전치사 in 뒤에는 반드시 -ing. "~해봐야 소용없다"를 원어민은 There\'s no point in -ing 한 덩어리로 씁니다. D는 한국어 직역이라 뜻이 전달되지 않아요.'},
+{ko:'"버스를 기다릴까 하다가 결국 그냥 자전거를 탔어요." — 맞는 문장은?',
+ opts:['I was thinking about waiting for the bus, but I ended up riding my bike.','I was thinking about wait for the bus, but I ended up to ride my bike.','I thinking about waiting for the bus, but I ended up rode my bike.','I was thinking about waiting for the bus, but I ended up ride my bike.'],
+ a:0,tag:'S22',ex:'be thinking about -ing(~할까 하다가)와 end up -ing(결국 ~했다) 둘 다 -ing를 받습니다. 원어민은 계획이 바뀐 이야기를 이 두 덩어리로 이어 붙여요.'},
+{ko:'"회사에서 쓸 노트북을 새로 알아보고 있어요." — 맞는 문장은?',
+ opts:["I'm looking for a new notebook for work.","I'm looking for a new note PC for work.","I'm looking for a new laptop for work.","I'm looking for a new hand computer for work."],
+ a:2,tag:'S12',ex:'노트북 컴퓨터는 laptop입니다. notebook이라고 하면 원어민은 종이 공책(문구)을 떠올려요.'},
+{ko:'"집주인이 이번 주에 현관 도어락을 바꿔주겠다고 했어요." — 맞는 문장은?',
+ opts:['The house owner said he will change the door lock this week.','My landlord says he would replaced the door lock this week.','The house owner said he would replacing the door lock this week.','My landlord said he would replace the door lock this week.'],
+ a:3,tag:'S5',ex:'집주인은 landlord(house owner는 어색), said 뒤에서 will→would, would 뒤는 동사원형. 세 가지가 한 문장에 다 들어 있어요.'},
+{ko:'"몇 달 다녀보니까 이 수영 강습이 점점 좋아졌어요." — 맞는 문장은?',
+ opts:['Since I going to this swimming class, I like it more and more.','After a few months, I\'ve come to really enjoy this swimming class.','After a few months, I came to enjoying this swimming class.','I come to like this swimming class more and more from a few months.'],
+ a:1,tag:'S22',ex:'시간이 지나며 생긴 변화는 have come to + 동사원형. "Since I going"처럼 접속사 뒤에 주어+동사 없이 -ing만 오면 안 돼요(After -ing는 가능).'},
+{ko:'🔊 원어민이 <b>[노 포이닌 웨이링]</b> 이라고 말했다면, 원래 문장은?',
+ opts:["There's no point in waiting.","There's no point in riding.","There's no pointing in wading.","There's no plan in waiting."],
+ a:0,tag:'S26',ex:'point의 t가 탈락하며 in과 붙어 [포이닌], waiting의 t는 모음 사이에서 ㄹ로 굴러 [웨이링]이 됩니다. 원어민의 빠른 말에서 t는 자주 사라지거나 ㄹ이 돼요.'}
+];
+
+var FB=[
+{ko:'의사 선생님이 다음 주에 검사 결과를 알려주겠다고 했어요.',en:'The doctor said he ___ me know the results next week.',hint:'2단어',ans:['would let'],tag:'S5',ex:'said 뒤 시제 일치(will→would) + let me know(알려주다) 덩어리. 원어민은 "알려줄게"를 I\'ll let you know라고 해요.'},
+{ko:'단백질을 충분히 먹지 않고는 근육을 만들 수 없어요.',en:"You can't build muscle without ___ enough protein.",hint:'1단어',ans:['eating','having'],tag:'S6',ex:'전치사 without 뒤에는 -ing. "~없이는 못 한다"는 can\'t ~ without -ing 패턴이 국룰이에요.'},
+{ko:'저녁을 해 먹을까 하다가 결국 치킨을 시켰어요.',en:'I was thinking about cooking dinner, but I ___ ordering fried chicken.',hint:'2단어',ans:['ended up'],tag:'S22',ex:'결국 ~하게 됐다 = ended up + -ing. 원어민은 "결국"을 finally보다 end up으로 훨씬 자주 표현해요.'},
+{ko:'이 노래 가사가 너무 슬퍼요.',en:'The ___ of this song are so sad.',hint:'1단어',ans:['lyrics'],tag:'S12',ex:'가사는 lyrics(항상 복수형). words라고 하면 그냥 "단어들"로 들려요. 동사도 are로 받는 것 확인!'},
+{ko:'부장님이 회의를 금요일로 미루겠다고 했어요.',en:'My ___ said she would push the meeting to Friday.',hint:'1단어',ans:['manager'],tag:'S12',ex:'회사의 부장님·팀장님은 회화에서 my manager. director는 임원급이라 과장되게 들려요. 뒤의 said ~ would도 함께 눈에 담기.'},
+{ko:'요가 수업에 등록할까 생각 중이에요.',en:"I'm thinking about ___ for a yoga class.",hint:'2단어',ans:['signing up'],tag:'S6',ex:'전치사 about 뒤 -ing + sign up for(등록하다) 덩어리. register보다 sign up for가 훨씬 구어체예요.'},
+{ko:'한동안 재택근무를 해 보니, 출퇴근 없는 생활이 좋아지게 됐어요.',en:"After working from home for a while, I've ___ enjoy life without commuting.",hint:'2단어',ans:['come to'],tag:'S22',ex:'(시간이 지나) ~하게 되다 = have come to + 동사원형. 앞의 After -ing로 기간을 깔아주는 것까지가 세트예요.'}
+];
+
+var TR=[
+{ko:'룸메이트가 이번 달 관리비를 자기가 내겠다고 했어요.',model:'My roommate said he would pay the maintenance fee this month.',tag:'S5',ex:'said 뒤 will→would + 동사원형. 관리비는 maintenance fee. (he 대신 she도 정답)'},
+{ko:'저는 음악을 안 듣고는 운동을 못 해요.',model:"I can't work out without listening to music.",tag:'S6',ex:"can't ~ without + -ing. 헬스·운동하다는 exercise보다 work out이 더 구어체예요."},
+{ko:'영화를 보러 갈까 하다가 결국 집에서 넷플릭스 봤어요.',model:'I was thinking about going to the movies, but I ended up watching Netflix at home.',tag:'S22',ex:'was thinking about -ing → ended up -ing. "영화 보러 가다"는 go to the movies가 자연스러워요.'},
+{ko:'세탁소에서 내 정장이 내일 준비될 거라고 했어요.',model:'The dry cleaners said my suit would be ready tomorrow.',tag:'S12',ex:'세탁소 = the dry cleaners(laundry shop ✗). said 뒤라서 will be → would be. (They said ~로 시작해도 정답)'},
+{ko:'혼자 살아 보니까 요리하는 게 점점 재미있어졌어요.',model:"After living alone for a while, I've come to enjoy cooking.",tag:'S22',ex:'After + -ing로 기간을 깔고, have come to + 동사원형으로 변화를 말해요. "since I living ~"은 틀린 형태!'},
+{ko:'친구가 공항에 데리러 오겠다고 했는데, 아직 연락이 없어요.',model:"My friend said she would pick me up at the airport, but I haven't heard from her yet.",tag:'S5',ex:'said+would / 데리러 오다 = pick ~ up / "아직 소식 없다"는 haven\'t heard from ~ yet(현재완료). (he도 정답)'}
+];
+
+/* ================= 헬퍼 ================= */
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function norm(s){return (s||'').toLowerCase().replace(/[’‘`´]/g,"'").replace(/[.,!?;:"()\[\]…~—-]/g,' ').replace(/\s+/g,' ').trim();}
+function fbOk(input,answers){var n=norm(input);for(var i=0;i<answers.length;i++){if(norm(answers[i])===n)return true;}return false;}
+function b64e(o){var s=btoa(unescape(encodeURIComponent(JSON.stringify(o))));return s.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function b64d(s){s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return JSON.parse(decodeURIComponent(escape(atob(s))));}
+function detectMode(hash){
+  if(!hash||hash==='#')return{mode:'solve'};
+  var m=hash.replace(/^#/,'');
+  if(m.indexOf('b=')===0){var rest=m.slice(2);if(/:re$/.test(rest))return{mode:'blob-regrade',id:rest.slice(0,-3)};return{mode:'blob',id:rest};}
+  if(m.indexOf('s=')===0)return{mode:'backup-grade',data:m.slice(2)};
+  if(m.indexOf('f=')===0)return{mode:'backup-review',data:m.slice(2)};
+  return{mode:'solve'};
+}
+function showBanner(msg){var b=document.getElementById('banner');b.innerHTML=msg;b.style.display='block';document.getElementById('quiz').innerHTML='';document.getElementById('result').style.display='none';}
+function letter(i){return['A','B','C','D'][i];}
+function bandMsg(sc){
+  if(sc>=18)return'🏆 완벽에 가까워요! 이 구조들은 이제 카일 것이 됐어요.';
+  if(sc>=14)return'👍 좋아요! 틀린 구조만 한 번 더 소리 내서 읽으면 끝.';
+  if(sc>=10)return'💪 절반 이상! 아래 "다시 볼 구조"를 내일 아침에 딱 5분만 복습해요.';
+  return'🌱 오늘은 씨 뿌리는 날. 학습 카드부터 다시 읽고 내일 같은 구조로 다시 만나요!';
+}
+/* ================= jsonblob ================= */
+function blobPost(obj){return fetch(BLOB_API,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)}).then(function(r){if(!r.ok)throw new Error('post fail');var id=r.headers.get('x-jsonblob-id');if(!id){var loc=r.headers.get('Location')||r.headers.get('location')||'';id=loc.split('/').pop();}if(!id)throw new Error('no id');return id;});}
+function blobPut(id,obj){return fetch(BLOB_API+'/'+id,{method:'PUT',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)}).then(function(r){if(!r.ok)throw new Error('put fail');return true;});}
+function blobGet(id){return fetch(BLOB_API+'/'+id,{headers:{'Accept':'application/json'}}).then(function(r){if(!r.ok)throw new Error('get fail');return r.json();});}
+
+/* ================= 풀기 모드 ================= */
+function renderSolve(){
+  var h='';
+  h+='<h2 class="part">✏️ Part 1. 객관식 <small>7문제 · 자동 채점</small></h2>';
+  MC.forEach(function(q,i){
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+1)+'.</span>'+q.ko+' <span class="tagchip">'+q.tag+'</span></div><div class="opts">';
+    q.opts.forEach(function(o,j){h+='<label><input type="radio" name="mc'+i+'" value="'+j+'"><span><b>'+letter(j)+'.</b> '+esc(o)+'</span></label>';});
+    h+='</div></div>';
+  });
+  h+='<h2 class="part">⌨️ Part 2. 빈칸 채우기 <small>7문제 · 자동 채점 (대소문자·문장부호 무시)</small></h2>';
+  FB.forEach(function(q,i){
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+8)+'.</span>'+esc(q.ko)+' <span class="tagchip">'+q.tag+'</span></div>';
+    h+='<div class="fbline">'+esc(q.en).replace('___','<input type="text" id="fb'+i+'" autocomplete="off" autocapitalize="off">')+'</div>';
+    h+='<div class="hint">힌트: '+q.hint+'</div></div>';
+  });
+  h+='<h2 class="part">🗣️ Part 3. 한→영 영작 <small>6문제 · [정답 보기] 후 스스로 ⭕/❌</small></h2>';
+  TR.forEach(function(q,i){
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+15)+'.</span>'+esc(q.ko)+' <span class="tagchip">'+q.tag+'</span></div>';
+    h+='<textarea class="tr" id="tr'+i+'" placeholder="여기에 영어로 써 보세요 (채점 선생님이 보게 돼요)"></textarea>';
+    h+='<button class="btn-ghost" onclick="document.getElementById(\'rv'+i+'\').style.display=\'block\';this.style.display=\'none\'">정답 보기</button>';
+    h+='<div class="reveal" id="rv'+i+'"><div class="model">'+esc(q.model)+'</div><div class="why">'+q.ex+'</div>';
+    h+='<div class="markrow">내 답은? <label><input type="radio" name="trm'+i+'" value="1"> ⭕ 맞았다</label><label><input type="radio" name="trm'+i+'" value="0"> ❌ 틀렸다</label></div></div></div>';
+  });
+  h+='<button class="btn-main" onclick="gradeAll()">📋 채점하기</button>';
+  document.getElementById('quiz').innerHTML=h;
+}
+
+function collectAnswers(){
+  var mc=MC.map(function(_,i){var c=document.querySelector('input[name="mc'+i+'"]:checked');return c?parseInt(c.value,10):null;});
+  var fb=FB.map(function(_,i){return document.getElementById('fb'+i).value||'';});
+  var tr=TR.map(function(_,i){return document.getElementById('tr'+i).value||'';});
+  var trm=TR.map(function(_,i){var c=document.querySelector('input[name="trm'+i+'"]:checked');return c?parseInt(c.value,10):null;});
+  return{mc:mc,fb:fb,tr:tr,trm:trm};
+}
+function autoMarks(ans){
+  var mcM=MC.map(function(q,i){return ans.mc[i]===q.a?1:0;});
+  var fbM=FB.map(function(q,i){return fbOk(ans.fb[i],q.ans)?1:0;});
+  return{mc:mcM,fb:fbM};
+}
+window.gradeAll=function(){
+  var ans=collectAnswers();
+  var miss=[];
+  ans.mc.forEach(function(v,i){if(v===null)miss.push(i+1);});
+  ans.fb.forEach(function(v,i){if(!norm(v))miss.push(i+8);});
+  ans.trm.forEach(function(v,i){if(v===null)miss.push(i+15);});
+  if(miss.length){if(!confirm('아직 안 푼 문항: '+miss.join(', ')+'번\n(영작은 [정답 보기] 후 ⭕/❌ 선택까지!)\n\n이대로 채점할까요?'))return;}
+  var am=autoMarks(ans);
+  var trScore=ans.trm.reduce(function(s,v){return s+(v===1?1:0);},0);
+  var total=am.mc.reduce(function(a,b){return a+b;},0)+am.fb.reduce(function(a,b){return a+b;},0)+trScore;
+  renderResult(ans,am,total,null,null);
+  window.__lastPayload={v:1,kind:'kyle-daily-quiz',date:QUIZ_DATE,created:new Date().toISOString(),answers:ans};
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+};
+function renderResult(ans,am,total,grading,blobId){
+  var r=document.getElementById('result');
+  var h='<div class="score-big">'+total+' / 20</div><div class="bandmsg">'+bandMsg(total)+'</div>';
+  var wrongTags={};
+  function row(n,ok,tag,body){if(!ok)wrongTags[tag]=1;return'<div class="rrow"><span class="'+(ok?'mark-ok':'mark-no')+'">'+(ok?'⭕':'❌')+'</span> <b>'+n+'번</b> <span class="tagchip">'+tag+' '+STRUCT[tag]+'</span>'+body+'</div>';}
+  MC.forEach(function(q,i){
+    var my=ans.mc[i]===null?'무응답':letter(ans.mc[i]);
+    h+=row(i+1,am.mc[i]===1,q.tag,'<div class="ansline">내 답: '+my+' → 정답: <b>'+letter(q.a)+'. '+esc(q.opts[q.a])+'</b></div><div class="why">'+q.ex+'</div>'+cmt(grading,i));
+  });
+  FB.forEach(function(q,i){
+    h+=row(i+8,am.fb[i]===1,q.tag,'<div class="ansline">내 답: '+esc(ans.fb[i]||'무응답')+' → 정답: <b>'+esc(q.ans.join(' / '))+'</b></div><div class="why">'+q.ex+'</div>'+cmt(grading,i+7));
+  });
+  TR.forEach(function(q,i){
+    var mk=grading?grading.trMarks[i]:ans.trm[i];
+    h+=row(i+15,mk===1,q.tag,'<div class="ansline">내 답: '+esc(ans.tr[i]||'무응답')+'</div><div class="ansline">모범답안: <b>'+esc(q.model)+'</b></div><div class="why">'+q.ex+'</div>'+cmt(grading,i+14));
+  });
+  var wt=Object.keys(wrongTags);
+  if(wt.length)h+='<div class="redo">🔁 <b>다시 볼 구조:</b> '+wt.map(function(t){return t+' '+STRUCT[t];}).join(' · ')+'</div>';
+  else h+='<div class="redo">🎉 다시 볼 구조가 없어요. 전부 통과!</div>';
+  if(grading&&grading.overall)h+='<div class="overall"><b>👩‍🏫 선생님 총평</b><br>'+esc(grading.overall)+'</div>';
+  if(!grading){
+    h+='<button class="btn-sub" onclick="makeLink()">🔗 올인원 링크 만들기 (채점 부탁용)</button>';
+    h+='<div class="linkbox" id="linkbox"></div>';
+  }
+  r.innerHTML=h;r.style.display='block';
+  function cmt(g,idx){return(g&&g.comments&&g.comments[idx])?'<div class="ansline">💬 <b>코멘트:</b> '+esc(g.comments[idx])+'</div>':'';}
+}
+window.makeLink=function(){
+  var p=window.__lastPayload;if(!p)return;
+  var box=document.getElementById('linkbox');
+  box.style.display='block';box.textContent='저장소에 올리는 중…';
+  blobPost(p).then(function(id){
+    var url=BASE+'#b='+id;
+    box.innerHTML='이 링크 하나만 보내면 끝!<br><b id="lnk">'+url+'</b><br><button class="copybtn" onclick="copyLink()">복사하기</button><div style="color:#ffd28a;margin-top:6px">⏳ 24시간 안에 채점받으세요 (마지막 저장 기준 만료)</div>';
+  }).catch(function(){
+    var url=BASE+'#s='+b64e(p);
+    box.innerHTML='저장소 연결 실패 → <b>백업 링크</b>로 만들었어요 (기능 동일):<br><b id="lnk">'+url+'</b><br><button class="copybtn" onclick="copyLink()">복사하기</button>';
+  });
+};
+window.copyLink=function(){
+  var t=document.getElementById('lnk').textContent;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('복사됐어요!');});}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('복사됐어요!');}
+};
+
+/* ================= 채점 모드 ================= */
+function renderGrading(data,opts){
+  var ans=data.answers,am=autoMarks(ans);
+  var h='<h2 class="part">👩‍🏫 채점 모드 <small>'+esc(data.date||'')+' 제출 · 객관식/빈칸은 자동 채점되어 있어요. 영작 ⭕/❌와 코멘트만 달아주세요.</small></h2>';
+  MC.forEach(function(q,i){
+    var ok=am.mc[i]===1,my=ans.mc[i]===null?'무응답':letter(ans.mc[i])+'. '+q.opts[ans.mc[i]];
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+1)+'.</span>'+q.ko+' <span class="tagchip">'+q.tag+'</span> '+(ok?'<span class="pill-ok">⭕ 자동</span>':'<span class="pill-no">❌ 자동</span>')+'</div>';
+    h+='<div class="kyleans">카일: '+esc(my)+'</div><div class="hint">정답: '+letter(q.a)+'. '+esc(q.opts[q.a])+'</div>';
+    h+='<textarea class="gradec" id="c'+i+'" placeholder="코멘트 (선택)"></textarea></div>';
+  });
+  FB.forEach(function(q,i){
+    var ok=am.fb[i]===1;
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+8)+'.</span>'+esc(q.ko)+' <span class="tagchip">'+q.tag+'</span> '+(ok?'<span class="pill-ok">⭕ 자동</span>':'<span class="pill-no">❌ 자동</span>')+'</div>';
+    h+='<div class="fbline">'+esc(q.en).replace('___','<b>[ '+esc(ans.fb[i]||'무응답')+' ]</b>')+'</div><div class="hint">정답: '+esc(q.ans.join(' / '))+'</div>';
+    h+='<textarea class="gradec" id="c'+(i+7)+'" placeholder="코멘트 (선택)"></textarea></div>';
+  });
+  TR.forEach(function(q,i){
+    var self=ans.trm[i];
+    h+='<div class="q"><div class="qhead"><span class="qnum">'+(i+15)+'.</span>'+esc(q.ko)+' <span class="tagchip">'+q.tag+'</span></div>';
+    h+='<div class="kyleans">카일: '+esc(ans.tr[i]||'무응답')+'</div><div class="hint">모범답안: '+esc(q.model)+' · 카일 자가채점: '+(self===1?'⭕':self===0?'❌':'-')+'</div>';
+    h+='<div class="markrow"><label><input type="radio" name="g'+i+'" value="1" '+(self===1?'checked':'')+'> ⭕</label><label><input type="radio" name="g'+i+'" value="0" '+(self===0?'checked':'')+'> ❌</label></div>';
+    h+='<textarea class="gradec" id="c'+(i+14)+'" placeholder="코멘트 (선택)"></textarea></div>';
+  });
+  h+='<div class="q"><div class="qhead">📝 총평</div><textarea class="gradec" id="overall" style="min-height:70px" placeholder="오늘 전체적으로 어땠는지 한마디"></textarea></div>';
+  h+='<button class="btn-main" onclick="saveGrading()">💾 채점 저장하기</button><div class="linkbox" id="linkbox"></div>';
+  document.getElementById('quiz').innerHTML=h;
+  if(data.grading){
+    TR.forEach(function(_,i){var v=data.grading.trMarks[i];var el=document.querySelector('input[name="g'+i+'"][value="'+v+'"]');if(el)el.checked=true;});
+    (data.grading.comments||[]).forEach(function(c,idx){var el=document.getElementById('c'+idx);if(el&&c)el.value=c;});
+    var ov=document.getElementById('overall');if(ov&&data.grading.overall)ov.value=data.grading.overall;
+  }
+  window.__gradeCtx={data:data,blobId:opts.blobId||null,backup:!!opts.backup};
+}
+window.saveGrading=function(){
+  var ctx=window.__gradeCtx,data=ctx.data,ans=data.answers,am=autoMarks(ans);
+  var trMarks=TR.map(function(_,i){var c=document.querySelector('input[name="g'+i+'"]:checked');return c?parseInt(c.value,10):null;});
+  var missing=trMarks.map(function(v,i){return v===null?i+15:null;}).filter(function(x){return x!==null;});
+  if(missing.length){alert('영작 '+missing.join(', ')+'번의 ⭕/❌를 선택해 주세요.');return;}
+  var comments=[];for(var i=0;i<20;i++){var el=document.getElementById('c'+i);comments.push(el?el.value.trim():'');}
+  var overall=(document.getElementById('overall').value||'').trim();
+  var score=am.mc.reduce(function(a,b){return a+b;},0)+am.fb.reduce(function(a,b){return a+b;},0)+trMarks.reduce(function(s,v){return s+(v===1?1:0);},0);
+  var grading={trMarks:trMarks,comments:comments,overall:overall,score:score,gradedAt:new Date().toISOString()};
+  var full=JSON.parse(JSON.stringify(data));full.grading=grading;
+  var box=document.getElementById('linkbox');box.style.display='block';
+  if(ctx.backup||!ctx.blobId){
+    var url=BASE+'#f='+b64e(full);
+    box.innerHTML='저장소 없이 채점 완료! 아래 <b>결과 링크</b>를 카일에게 보내주세요:<br><b id="lnk">'+url+'</b><br><button class="copybtn" onclick="copyLink()">복사하기</button>';
+    return;
+  }
+  box.textContent='저장 중…';
+  blobPut(ctx.blobId,full).then(function(){
+    box.innerHTML='✅ 저장 완료! 카일이 <b>받았던 그 링크 그대로</b> 열면 채점 결과가 보여요. 따로 보낼 것 없음.<div style="color:#ffd28a;margin-top:6px">⏳ 지금부터 24시간 뒤 만료</div>';
+  }).catch(function(){
+    var url=BASE+'#f='+b64e(full);
+    box.innerHTML='저장소 연결 실패 → <b>백업 결과 링크</b>로 저장했어요. 이 링크를 카일에게 보내주세요:<br><b id="lnk">'+url+'</b><br><button class="copybtn" onclick="copyLink()">복사하기</button>';
+  });
+};
+
+/* ================= 첨삭 확인 모드 ================= */
+function renderReview(data,blobId){
+  var ans=data.answers,am=autoMarks(ans),g=data.grading;
+  var h='<h2 class="part">✅ 첨삭 확인 <small>선생님 채점 완료 ('+esc((g.gradedAt||'').slice(0,10))+')</small></h2>';
+  document.getElementById('quiz').innerHTML=h;
+  renderResult(ans,am,g.score,g,blobId);
+  if(blobId){
+    var r=document.getElementById('result');
+    r.innerHTML+='<button class="btn-sub" style="background:var(--warn)" onclick="location.hash=\'#b='+blobId+':re\';location.reload()">✍️ 채점 다시 하기</button>';
+  }
+}
+
+/* ================= 라우터 ================= */
+function init(){
+  var m=detectMode(location.hash);
+  try{
+    if(m.mode==='solve'){renderSolve();}
+    else if(m.mode==='blob'||m.mode==='blob-regrade'){
+      document.getElementById('quiz').innerHTML='<div class="q">불러오는 중…</div>';
+      blobGet(m.id).then(function(data){
+        if(!data||!data.answers)throw new Error('bad');
+        if(data.grading&&m.mode==='blob')renderReview(data,m.id);
+        else renderGrading(data,{blobId:m.id});
+      }).catch(function(){
+        showBanner('⛔ 링크가 만료되었거나 손상되었습니다.<br>올인원 링크는 마지막 저장 후 24시간이 지나면 지워져요. 카일에게 새 링크를 요청해 주세요.');
+      });
+    }
+    else if(m.mode==='backup-grade'){
+      var d;try{d={v:1,date:QUIZ_DATE,answers:b64d(m.data).answers||b64d(m.data)};if(!d.answers.mc)throw 0;}catch(e){showBanner('⛔ 백업 링크가 손상되었습니다. 카일에게 새 링크를 요청해 주세요.');return;}
+      renderGrading(d,{backup:true});
+    }
+    else if(m.mode==='backup-review'){
+      var f;try{f=b64d(m.data);if(!f.answers||!f.grading)throw 0;}catch(e){showBanner('⛔ 결과 링크가 손상되었습니다. 선생님께 다시 요청해 주세요.');return;}
+      renderReview(f,null);
+    }
+  }catch(e){showBanner('⛔ 페이지를 여는 중 문제가 생겼어요. 새로고침(Ctrl+Shift+R) 해 주세요.');}
+}
+window.addEventListener('hashchange',function(){location.reload();});
+window.__quiz={MC:MC,FB:FB,TR:TR,norm:norm,fbOk:fbOk,detectMode:detectMode,b64e:b64e,b64d:b64d,autoMarks:autoMarks};
+init();
+</script>
+</body>
+</html>
