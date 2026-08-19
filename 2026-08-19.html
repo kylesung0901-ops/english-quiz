@@ -216,7 +216,7 @@ The more 주어+동사, the more 주어+동사</pre>
 
 <div id="panel"></div>
 
-<div class="foot">저장소는 마지막 저장 시점부터 <b>24시간</b> 뒤 만료됩니다 (읽기만으로는 연장되지 않습니다).<br>개인정보·민감정보는 적지 마세요.</div>
+<div class="foot">공유 링크에는 답안 <b>백업이 내장</b>되어 있어 저장소가 만료돼도 그대로 열립니다 (최소 2주 이상 유지 · 열 때마다 자동 연장).<br>개인정보·민감정보는 적지 마세요.</div>
 </div>
 
 <script>
@@ -367,17 +367,19 @@ function makeLink(payload,kind,box,label){
   box.style.display="block";
   box.innerHTML='<div style="font-size:13px;color:#6b7280">링크 만드는 중…</div>';
   return blobCreate(payload).then(function(id){
-    if(id){ show(BASE()+"#b="+id, false); return; }
-    var long=BASE()+"#"+kind+"="+b64e(payload);
+    var bk=b64e(payload);
+    var long=id?(BASE()+"#b="+id+"~"+bk):(BASE()+"#"+kind+"="+bk);
     return shorten(long).then(function(sh){
-      if(sh) show(sh,false); else show(long,true);
+      if(sh) show(sh,false);
+      else if(id) show(BASE()+"#b="+id,false);
+      else show(long,true);
     });
   });
   function show(url,isLong){
     box.innerHTML='<div style="font-weight:800;font-size:14px;margin-bottom:6px">'+esc(label)+'</div>'+
       '<input id="lnkin" readonly value="'+esc(url)+'">'+
       '<div class="stack"><button class="btn sm sec" id="lnkcopy">복사하기</button></div>'+
-      (isLong?'<div class="warn">주소 줄이기에 실패했습니다. 주소가 매우 기니 반드시 <b>[복사하기]</b>로 통째로 복사해서 보내세요. 손으로 자르면 깨집니다.</div>':'<div class="hint">이 링크 하나로 상대가 채점하고, 같은 링크에서 결과를 확인합니다. 마지막 저장 후 24시간 뒤 만료.</div>');
+      (isLong?'<div class="warn">주소 줄이기에 실패했습니다. 주소가 매우 기니 반드시 <b>[복사하기]</b>로 통째로 복사해서 보내세요. 손으로 자르면 깨집니다.</div>':'<div class="hint">이 링크 하나로 상대가 채점하고, 같은 링크에서 결과를 확인합니다. 백업 내장이라 만료 걱정 없이 2주 이상 유지됩니다.</div>');
     $("#lnkcopy").onclick=function(){ var el=$("#lnkin"); el.select(); el.setSelectionRange(0,99999); try{document.execCommand("copy");}catch(e){} if(navigator.clipboard) navigator.clipboard.writeText(url); this.textContent="복사됨 ✓"; };
   }
 }
@@ -572,13 +574,16 @@ function fail(msg){
   var h=decodeURIComponent(location.hash.slice(1));
   try{
     if(h.indexOf("b=")===0){
-      var v=h.slice(2), re=false;
+      var v=h.slice(2), re=false, bk=null;
       if(v.slice(-3)===":re"){re=true;v=v.slice(0,-3);}
+      var ti=v.indexOf("~"); if(ti>=0){bk=v.slice(ti+1);v=v.slice(0,ti);}
       $("#content").style.display="none";
       $("#banner").innerHTML='<div class="warn">불러오는 중…</div>';
       blobGet(v).then(function(d){
         $("#banner").innerHTML="";
-        if(!d||!d.v){ fail("링크가 만료되었거나 손상되었습니다. 저장소는 마지막 저장 후 24시간이 지나면 사라집니다. kyle에게 새 링크를 요청하세요."); return; }
+        if((!d||!d.v)&&bk){ try{ var rec=b64d(bk); if(rec&&rec.v){ d=rec; } }catch(e){} }
+        if(!d||!d.v){ fail("링크가 만료되었거나 손상되었습니다. kyle에게 새 링크를 요청하세요."); return; }
+        blobPut(v,d);
         if(d.graded&&!re) renderReview(d,v); else renderGrade(d,v);
       });
       return;
