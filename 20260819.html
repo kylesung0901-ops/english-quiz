@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>kyle 데일리 영어 퀴즈 · 2026-08-19 (수) 2교시</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--line:#e3e6ea;--txt:#1c1f23;--sub:#6b7280;--ok:#128a4b;--no:#c62828;--acc:#2563eb;--accbg:#eef3ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;margin-bottom:12px}
+h1{font-size:19px;margin:0 0 6px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.badge{font-size:12px;background:var(--accbg);color:var(--acc);border-radius:999px;padding:3px 10px;font-weight:700}
+.note{font-size:12px;color:var(--sub);margin-top:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:12px}
+summary{font-weight:800;font-size:15px;cursor:pointer;outline:none}
+.card{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.card:first-of-type{border-top:0;margin-top:8px}
+.ctitle{font-weight:800;font-size:14px;margin-bottom:6px}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+pre.formula{background:#f1f3f6;border:1px solid var(--line);border-radius:8px;padding:9px 10px;margin:6px 0;overflow-x:auto;font-size:13px;white-space:pre-wrap}
+ul.ex{margin:6px 0 0;padding-left:18px}
+ul.ex li{margin:3px 0;font-size:14px}
+.xo{background:#fff8f8;border:1px solid #f2d6d6;border-radius:9px;padding:8px 10px;margin-top:9px}
+.xo .x{color:var(--no);font-size:13.5px}
+.xo .o{color:var(--ok);font-size:13.5px;margin-top:2px}
+.xo .p{color:var(--sub);font-size:12px;margin-top:4px}
+.pron{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:12px}
+.pron h2{font-size:15px;margin:0 0 8px}
+.prow{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;border-top:1px dashed var(--line);padding:7px 0}
+.prow:first-of-type{border-top:0}
+.pen{font-weight:700;font-size:14px}
+.pko{color:var(--acc);font-weight:800;font-size:14px}
+.pwhy{color:var(--sub);font-size:12.5px;width:100%}
+section.part{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+section.part h2{font-size:16px;margin:0 0 4px}
+section.part .sub{font-size:12.5px;color:var(--sub);margin-bottom:10px}
+.q{border-top:1px solid var(--line);padding:12px 0}
+.q:first-of-type{border-top:0}
+.qh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.qn{font-weight:800;font-size:13px;background:#111827;color:#fff;border-radius:6px;padding:1px 8px}
+.tag{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.ko{font-size:14px;margin:2px 0 6px}
+.stem{font-size:15px;margin:4px 0 8px}
+.stem b{color:var(--acc)}
+label.opt{display:block;border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin:5px 0;font-size:14.5px;cursor:pointer;background:#fff}
+label.opt input{margin-right:7px}
+input.txt,textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:9px 10px;font-size:15px;font-family:inherit;background:#fff}
+textarea{min-height:62px;resize:vertical}
+.hint{font-size:12px;color:var(--sub);margin-top:5px}
+button{font-family:inherit;font-weight:700;border-radius:10px;cursor:pointer}
+.btn{background:var(--acc);color:#fff;border:0;padding:13px 18px;font-size:16px;width:100%}
+.btn.sec{background:#fff;color:var(--acc);border:1px solid var(--acc)}
+.btn.sm{width:auto;padding:7px 12px;font-size:13px}
+.reveal{background:#f1f3f6;border:1px solid var(--line);border-radius:9px;padding:9px 10px;margin-top:8px;font-size:14px;display:none}
+.reveal .m{font-weight:700}
+.reveal .k{color:var(--sub);font-size:12.5px;margin-top:4px}
+.selfmark{display:none;gap:8px;margin-top:8px}
+.selfmark label{border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer;background:#fff}
+.res{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;display:none}
+.score{font-size:26px;font-weight:900;text-align:center;margin:4px 0}
+.scoresub{text-align:center;color:var(--sub);font-size:13px;margin-bottom:10px}
+.rrow{border-top:1px solid var(--line);padding:9px 0;font-size:14px}
+.rrow:first-of-type{border-top:0}
+.rmark{font-weight:900;margin-right:6px}
+.rok{color:var(--ok)}.rno{color:var(--no)}
+.rline{font-size:13.5px;margin-top:3px}
+.rline .x{color:var(--no)}.rline .o{color:var(--ok);font-weight:700}
+.warn{background:#fff8e6;border:1px solid #f0dfa8;border-radius:10px;padding:9px 11px;font-size:13.5px;margin:10px 0}
+.err{background:#fdecec;border:1px solid #f3c2c2;color:#a01d1d;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:12px}
+.linkbox{background:var(--accbg);border:1px solid #cfe0ff;border-radius:10px;padding:11px;margin-top:10px;display:none}
+.linkbox input{width:100%;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:8px;font-family:ui-monospace,monospace}
+.cbox{margin-top:6px}
+.stack{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.stack button{flex:1;min-width:150px}
+.foot{text-align:center;color:var(--sub);font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>kyle 데일리 영어 퀴즈</h1>
+  <div class="note" id="hdrdate">2026년 8월 19일 (수) 2교시 · 총 20문제</div>
+  <div class="badges">
+    <span class="badge">S3 가정법 과거완료</span>
+    <span class="badge">S2 관계사 생략</span>
+    <span class="badge">S23 leave·get·keep</span>
+    <span class="badge">S27 At first</span>
+    <span class="badge">S13 was going to</span>
+    <span class="badge">🔊 연음</span>
+  </div>
+  <div class="note" id="modenote"></div>
+</header>
+
+<div id="banner"></div>
+
+<div id="content">
+
+<details open id="cards">
+<summary>📘 오늘의 학습 카드 — 새로 외울 것 5개 (먼저 읽고 시작)</summary>
+
+<div class="card">
+  <div class="ctitle">1. S3 · 가정법 과거완료 — "~했더라면 …했을/안 해도 됐을 텐데"</div>
+  <pre class="formula">If + 주어 + had p.p.,  주어 + would have p.p.
+"~ 안 해도 됐을 텐데" = wouldn't have had to + 동사원형</pre>
+  <ul class="ex">
+    <li>If I <b>had renewed</b> my passport earlier, I <b>wouldn't have had to</b> pay the rush fee.</li>
+    <li>If I'd ordered the cake a day earlier, I wouldn't have had to stand in line.</li>
+    <li>If I'd turned on the heater earlier, the house <b>wouldn't have been</b> this cold.</li>
+  </ul>
+  <div class="xo">
+    <div class="x">❌ if i booking ticket early, i dont have to see expensive price</div>
+    <div class="o">⭕ If I'd booked my ticket in advance, I wouldn't have had to pay this much.</div>
+    <div class="p">had p.p. → wouldn't have had to</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ctitle">2. S2 · 명사 꾸미기 — what 금지, 명사 뒤에 바로 주어+동사</div>
+  <pre class="formula">명사 + [주어 + 동사] ...   ← 동사 수는 맨 앞 명사에 맞춤
+원래 문장의 전치사는 끝에 남긴다 (stay at → the campsite we stayed at)</pre>
+  <ul class="ex">
+    <li>The sneakers I ordered last week <b>are</b> still stuck in customs.</li>
+    <li>The campsite we stayed <b>at</b> last weekend had no hot water.</li>
+    <li>The instructor I take lessons <b>from</b> is strict but fair.</li>
+  </ul>
+  <div class="xo">
+    <div class="x">❌ my new notebook is not working what i bought lastyear</div>
+    <div class="o">⭕ The laptop I bought last year keeps shutting down these days.</div>
+    <div class="p">what 빼고 명사+주어+동사</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ctitle">3. S23 · 상태 만들기 — leave / get / keep</div>
+  <pre class="formula">leave + 목적어 + 형용사      ~한 채로 두다
+get + 형용사/과거분사        ~한 상태가 되다
+keep + -ing                 자꾸 ~하다</pre>
+  <ul class="ex">
+    <li>I <b>left</b> the sunroof <b>open</b> last night, so the seats <b>got</b> all wet.</li>
+    <li>My banking app <b>keeps logging</b> me out.</li>
+  </ul>
+  <div class="xo">
+    <div class="x">❌ i did open the winkodw, so my room wet</div>
+    <div class="o">⭕ I left the window open when I went out, so my room got completely soaked.</div>
+    <div class="p">left+목적어+open / got+젖은상태</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ctitle">4. S27 · 처음엔 ~였는데, 할수록 점점 — At first / the more</div>
+  <pre class="formula">At first, 주어 + 과거동사        (first time ❌)
+The more 주어+동사, the more 주어+동사</pre>
+  <ul class="ex">
+    <li><b>At first</b>, I was scared of the water, but <b>the more</b> I practice, <b>the more</b> comfortable I get.</li>
+    <li>At first, the job felt overwhelming, but the more I did it, the easier it got.</li>
+  </ul>
+  <div class="xo">
+    <div class="x">❌ frist time i can't eat that, because so spicy, but i can suck it up</div>
+    <div class="o">⭕ At first, it was so spicy that I couldn't eat it, but the more I ate it, the more I liked it.</div>
+    <div class="p">처음엔=At first·과거는 couldn't</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ctitle">5. S13 · "~하려고 했는데" — was going to + 동사원형</div>
+  <pre class="formula">주어 + was/were going to + 동사원형, but ~
+회화에서는 was gonna [워즈거너]</pre>
+  <ul class="ex">
+    <li>I <b>was going to</b> grab lunch with her, but she had to cancel.</li>
+    <li>I was gonna leave early, but the meeting ran long.</li>
+  </ul>
+  <div class="xo">
+    <div class="x">❌ i was going to went to the bank</div>
+    <div class="o">⭕ I was going to go to the bank.</div>
+    <div class="p">to 뒤는 무조건 동사원형</div>
+  </div>
+</div>
+</details>
+
+<div class="pron">
+  <h2>🔊 발음·연음 노트 (채점 대상 아님 · 소리 내어 3번)</h2>
+  <div class="prow"><span class="pen">was gonna</span><span class="pko">[워즈거너]</span><span class="pwhy">going to는 회화에서 gonna로 뭉개집니다.</span></div>
+  <div class="prow"><span class="pen">wouldn't have been</span><span class="pko">[우르너브 빈]</span><span class="pwhy">t 탈락 + have가 [어브]로 약해집니다.</span></div>
+  <div class="prow"><span class="pen">left it open</span><span class="pko">[레프리 로픈]</span><span class="pwhy">t가 모음 사이에서 ㄹ로 굴러 다 붙습니다.</span></div>
+  <div class="prow"><span class="pen">sign up for</span><span class="pko">[싸이넙 포]</span><span class="pwhy">n이 up에 붙어 [넙]이 됩니다.</span></div>
+  <div class="prow"><span class="pen">must be</span><span class="pko">[머쓰비]</span><span class="pwhy">t가 탈락하고 s와 b가 바로 이어집니다.</span></div>
+  <div class="prow"><span class="pen">the more I ate it</span><span class="pko">[더 모라이 에이릿]</span><span class="pwhy">more I가 [모라이], ate it이 [에이릿]으로 붙습니다.</span></div>
+</div>
+
+<section class="part">
+  <h2>Part 1. 객관식 <span class="tag">7문제</span></h2>
+  <div class="sub">가장 자연스러운 것 하나만 고르세요.</div>
+  <div id="mcList"></div>
+</section>
+
+<section class="part">
+  <h2>Part 2. 빈칸 채우기 <span class="tag">7문제</span></h2>
+  <div class="sub">괄호 안 단어 수에 맞춰 쓰세요. 대소문자·문장부호는 채점에 영향 없습니다.</div>
+  <div id="fbList"></div>
+</section>
+
+<section class="part">
+  <h2>Part 3. 한 → 영 영작 <span class="tag">6문제</span></h2>
+  <div class="sub">전부 <b>절이 2개</b>인 문장입니다. 뒷절까지 반드시 옮기세요. 쓴 다음 [정답 보기]를 누르고 스스로 ⭕/❌를 찍으세요.</div>
+  <div id="trList"></div>
+</section>
+
+<div style="margin:16px 0"><button class="btn" id="gradeBtn">채점하기</button></div>
+
+<div class="res" id="res"></div>
+
+</div>
+
+<div id="panel"></div>
+
+<div class="foot">공유 링크에는 답안 <b>백업이 내장</b>되어 있어 저장소가 만료돼도 그대로 열립니다 (최소 2주 이상 유지 · 열 때마다 자동 연장).<br>개인정보·민감정보는 적지 마세요.</div>
+</div>
+
+<script>
+"use strict";
+var QUIZ_DATE="2026-08-19-2";
+
+var MC=[
+ {tag:"S3 가정법", ko:"여권을 미리 갱신했더라면, 급행 수수료를 안 내도 됐을 텐데요.",
+  stem:"If I ___ my passport earlier, I wouldn't have had to pay the rush fee.",
+  opts:["renewed","had renewed","have renewed","would renew"], ans:1,
+  exp:{x:"If I renewed / would renew", o:"If I had renewed", p:"If절은 had p.p."}},
+
+ {tag:"S2 수 일치", ko:"지난주에 주문한 운동화가 아직 통관에 묶여 있어요.",
+  stem:"The sneakers I ordered last week ___ still stuck in customs.",
+  opts:["is","be","are","has been"], ans:2,
+  exp:{x:"The sneakers ... is", o:"The sneakers ... are", p:"동사 수는 맨 앞 명사"}},
+
+ {tag:"S23 leave", ko:"어젯밤 선루프를 열어 놔서 시트가 다 젖었어요.",
+  stem:"I ___ the sunroof open last night, so the seats got all wet.",
+  opts:["kept","left","put","stayed"], ans:1,
+  exp:{x:"I opened the sunroof and...", o:"I left the sunroof open", p:"leave+목적어+형용사"}},
+
+ {tag:"S13 was going to", ko:"수영 강습 등록하려고 했는데, 5분 만에 마감됐어요.",
+  stem:"I ___ sign up for the swimming class, but it filled up in five minutes.",
+  opts:["was going to","was going","went to","would went"], ans:0,
+  exp:{x:"i was going / would went", o:"was going to + 동사원형", p:"계획했다가 못 함"}},
+
+ {tag:"S27 At first", ko:"처음엔 그 국밥집이 너무 짜다고 생각했는데, 갈수록 점점 중독됐어요.",
+  stem:"___, I thought the soup place was too salty, but the more I went, the more I got hooked.",
+  opts:["First time","At the first","At first","For the first"], ans:2,
+  exp:{x:"first time i thought...", o:"At first, I thought...", p:"처음엔 = At first"}},
+
+ {tag:"S2 전치사 끝", ko:"지난 주말에 묵었던 캠핑장은 온수가 안 나왔어요.",
+  stem:"The campsite we stayed ___ last weekend had no hot water.",
+  opts:["to","in it","(아무것도 안 붙임)","at"], ans:3,
+  exp:{x:"the campsite we stayed", o:"the campsite we stayed at", p:"stay at의 at은 끝에"}},
+
+ {tag:"🔊 연음", ko:"원어민이 [아이 워즈거너 콜류] 라고 말했습니다.",
+  stem:"원래 문장은?",
+  opts:["I was gonna call you.","I was gone to call you.","I want a call you.","I was gonna called you."], ans:0,
+  exp:{x:"[거너] 뒤에 called 착각", o:"was gonna + 동사원형 call", p:"gonna = going to"}}
+];
+
+var FB=[
+ {tag:"S3 had to 부정", ko:"케이크를 하루만 일찍 주문했더라면, 줄 안 서도 됐을 텐데요.",
+  stem:"If I'd ordered the cake a day earlier, I ___ ___ ___ ___ stand in line.", ans:"wouldn't have had to|would not have had to|wouldnt have had to", words:4,
+  exp:{x:"i dont have to stand", o:"wouldn't have had to stand", p:"안 해도 됐을 텐데"}},
+
+ {tag:"S2 전치사 끝", ko:"내가 수업을 듣는 강사님은 엄하지만 공정해요.",
+  stem:"The instructor I take lessons ___ is strict but fair.", ans:"from|with", words:1,
+  exp:{x:"the instructor I take lessons", o:"take lessons from → from 끝에", p:"동사구 전치사 남기기"}},
+
+ {tag:"S23 keep", ko:"은행 앱이 열 때마다 자꾸 로그아웃돼요.",
+  stem:"My banking app ___ ___ me out every time I open it.", ans:"keeps logging", words:2,
+  exp:{x:"my app always logout me", o:"keeps logging me out", p:"자꾸 ~하다 = keep -ing"}},
+
+ {tag:"S13 was going to", ko:"일찍 나오려고 했는데, 전시가 생각보다 좋아서요.",
+  stem:"I ___ ___ ___ leave early, but the exhibition was better than I expected.", ans:"was going to", words:3,
+  exp:{x:"i will leave early but", o:"I was going to leave", p:"~하려고 했는데"}},
+
+ {tag:"S8 whenever", ko:"요리 방송을 볼 때마다 배가 고파져요.",
+  stem:"___ I watch a cooking show, I get hungry.", ans:"whenever|every time", words:1,
+  exp:{x:"when I watch (매번 뉘앙스 없음)", o:"Whenever I watch", p:"~할 때마다 = whenever"}},
+
+ {tag:"S12 단어", ko:"멜로디는 좋은데 가사를 못 외우겠어요.",
+  stem:"I love the melody, but I can't memorize the ___.", ans:"lyrics", words:1,
+  exp:{x:"the words of the song", o:"the lyrics", p:"가사 = lyrics"}},
+
+ {tag:"S3 가정법", ko:"렌터카를 미리 예약했더라면, 할인을 받았을 텐데요.",
+  stem:"If I ___ ___ the rental car in advance, I would've gotten the discount.", ans:"had booked|had reserved|'d booked", words:2,
+  exp:{x:"If I booked / If I book", o:"If I had booked", p:"If절은 had p.p."}}
+];
+
+var TR=[
+ {tag:"S3 wouldn't have been", ko:"히터를 미리 틀어놨더라면, 집이 이렇게 춥지는 않았을 텐데요.",
+  model:"If I'd turned on the heater earlier, the house wouldn't have been this cold.",
+  key:"wouldn't have + been (been 빠뜨리면 ❌) / 절 2개 확인"},
+
+ {tag:"S2 관계사 생략", ko:"어제 조립한 책장이 생각보다 훨씬 튼튼해서, 하나 더 주문했어요.",
+  model:"The bookshelf I put together yesterday is way sturdier than I expected, so I ordered another one.",
+  key:"명사+주어+동사 (what ❌) / so 뒷절('하나 더 주문')까지 절 2개 확인"},
+
+ {tag:"S23 leave", ko:"빨래를 밖에 널어놓고 나갔는데, 갑자기 비가 와서 전부 다시 빨아야 했어요.",
+  model:"I left the laundry out when I went out, but it suddenly rained, so I had to wash everything again.",
+  key:"left the laundry out / had to + 동사원형 / 절 3개 전부 확인"},
+
+ {tag:"S27 At first", ko:"처음엔 물이 무서웠는데, 연습할수록 점점 편해지고 있어요.",
+  model:"At first, I was scared of the water, but the more I practice, the more comfortable I get.",
+  key:"At first 문두 + the more, the more / 절 2개 확인"},
+
+ {tag:"S13 sign up for", ko:"이번 달에 자격증 시험을 신청하려고 했는데, 접수 기간을 착각했어요.",
+  model:"I was going to sign up for the exam this month, but I got the application period mixed up.",
+  key:"was going to + sign up for (for까지) / get ~ mixed up / 절 2개 확인"},
+
+ {tag:"S24 must be", ko:"저 푸드트럭은 줄이 끝이 없는 걸 보니, 틀림없이 맛있나 봐요.",
+  model:"That food truck must be really good, because the line never ends.",
+  key:"근거가 뚜렷하면 must be (might ❌) / because절까지 절 2개 확인"}
+];
+
+/* ---------- utils ---------- */
+function $(s){return document.querySelector(s);}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function norm(s){return String(s||"").toLowerCase().replace(/[‘’ʼ`´]/g,"'").replace(/[.,!?;:"“”]/g,"").replace(/\s+/g," ").trim();}
+function okFB(i,v){var a=FB[i].ans.split("|");for(var k=0;k<a.length;k++){if(norm(a[k])===norm(v))return true;}return false;}
+function BASE(){ if(location.protocol==="file:") return "https://kylesung0901-ops.github.io/english-quiz/"; return location.origin+location.pathname; }
+function b64e(o){var s=JSON.stringify(o);var b=new TextEncoder().encode(s);var bin="";for(var i=0;i<b.length;i++)bin+=String.fromCharCode(b[i]);return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");}
+function b64d(t){t=String(t).replace(/-/g,"+").replace(/_/g,"/");while(t.length%4)t+="=";var bin=atob(t);var a=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return JSON.parse(new TextDecoder().decode(a));}
+
+var BLOB="https://jsonblob.com/api/jsonBlob";
+function blobCreate(d){
+  var tries=0;
+  function go(){
+    tries++;
+    return fetch(BLOB,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
+      .then(function(r){
+        var id=r.headers.get("x-jsonblob-id");
+        if(!id){var loc=r.headers.get("Location")||r.headers.get("location"); if(loc) id=loc.split("/").pop();}
+        if(id) return id;
+        if(tries<2) return go();
+        return null;
+      })
+      .catch(function(){ if(tries<2) return go(); return null; });
+  }
+  return go();
+}
+function blobPut(id,d){return fetch(BLOB+"/"+id,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.ok;}).catch(function(){return false;});}
+function blobGet(id){return fetch(BLOB+"/"+id,{headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});}
+
+function shorten(long){
+  return new Promise(function(res){
+    var hosts=["https://is.gd/create.php","https://v.gd/create.php"],i=0;
+    function go(){
+      if(i>=hosts.length){res(null);return;}
+      var host=hosts[i++], cb="sg"+Date.now()+Math.floor(Math.random()*9999), done=false, s=document.createElement("script");
+      var t=setTimeout(function(){fin(null);},7000);
+      function fin(u){ if(done)return; done=true; clearTimeout(t); try{delete window[cb];}catch(e){window[cb]=undefined;} if(s.parentNode)s.parentNode.removeChild(s); if(u)res(u); else go(); }
+      window[cb]=function(d){ fin(d&&d.shorturl?d.shorturl:null); };
+      s.onerror=function(){fin(null);};
+      s.src=host+"?format=json&url="+encodeURIComponent(long)+"&callback="+cb;
+      document.body.appendChild(s);
+    }
+    go();
+  });
+}
+
+/* payload -> single share link, blob first, backup+shorten fallback */
+function makeLink(payload,kind,box,label){
+  box.style.display="block";
+  box.innerHTML='<div style="font-size:13px;color:#6b7280">링크 만드는 중…</div>';
+  return blobCreate(payload).then(function(id){
+    var bk=b64e(payload);
+    var long=id?(BASE()+"#b="+id+"~"+bk):(BASE()+"#"+kind+"="+bk);
+    return shorten(long).then(function(sh){
+      if(sh) show(sh,false);
+      else if(id) show(BASE()+"#b="+id,false);
+      else show(long,true);
+    });
+  });
+  function show(url,isLong){
+    box.innerHTML='<div style="font-weight:800;font-size:14px;margin-bottom:6px">'+esc(label)+'</div>'+
+      '<input id="lnkin" readonly value="'+esc(url)+'">'+
+      '<div class="stack"><button class="btn sm sec" id="lnkcopy">복사하기</button></div>'+
+      (isLong?'<div class="warn">주소 줄이기에 실패했습니다. 주소가 매우 기니 반드시 <b>[복사하기]</b>로 통째로 복사해서 보내세요. 손으로 자르면 깨집니다.</div>':'<div class="hint">이 링크 하나로 상대가 채점하고, 같은 링크에서 결과를 확인합니다. 백업 내장이라 만료 걱정 없이 2주 이상 유지됩니다.</div>');
+    $("#lnkcopy").onclick=function(){ var el=$("#lnkin"); el.select(); el.setSelectionRange(0,99999); try{document.execCommand("copy");}catch(e){} if(navigator.clipboard) navigator.clipboard.writeText(url); this.textContent="복사됨 ✓"; };
+  }
+}
+
+/* ---------- render solve ---------- */
+function renderSolve(){
+  var h="";
+  MC.forEach(function(q,i){
+    h+='<div class="q"><div class="qh"><span class="qn">'+(i+1)+'</span><span class="tag">'+esc(q.tag)+'</span></div>'+
+       '<div class="ko">'+esc(q.ko)+'</div><div class="stem">'+esc(q.stem)+'</div>';
+    q.opts.forEach(function(o,k){
+      h+='<label class="opt"><input type="radio" name="mc'+i+'" value="'+k+'">'+"ABCD"[k]+". "+esc(o)+'</label>';
+    });
+    h+='</div>';
+  });
+  $("#mcList").innerHTML=h;
+
+  h="";
+  FB.forEach(function(q,i){
+    h+='<div class="q"><div class="qh"><span class="qn">'+(i+8)+'</span><span class="tag">'+esc(q.tag)+'</span></div>'+
+       '<div class="ko">'+esc(q.ko)+'</div><div class="stem">'+esc(q.stem)+'</div>'+
+       '<input class="txt" id="fb'+i+'" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="빈칸에 들어갈 말만 쓰세요">'+
+       '<div class="hint">('+q.words+'단어)</div></div>';
+  });
+  $("#fbList").innerHTML=h;
+
+  h="";
+  TR.forEach(function(q,i){
+    h+='<div class="q"><div class="qh"><span class="qn">'+(i+15)+'</span><span class="tag">'+esc(q.tag)+'</span></div>'+
+       '<div class="ko">'+esc(q.ko)+'</div>'+
+       '<textarea id="tr'+i+'" placeholder="영어로 쓰세요 (절 2개)"></textarea>'+
+       '<div class="stack"><button class="btn sm sec" data-rv="'+i+'">정답 보기</button></div>'+
+       '<div class="reveal" id="rv'+i+'"><div class="m">'+esc(q.model)+'</div><div class="k">핵심 — '+esc(q.key)+'</div></div>'+
+       '<div class="selfmark" id="sm'+i+'">'+
+         '<label><input type="radio" name="tm'+i+'" value="1"> ⭕ 맞음</label>'+
+         '<label><input type="radio" name="tm'+i+'" value="0"> ❌ 틀림</label>'+
+       '</div></div>';
+  });
+  $("#trList").innerHTML=h;
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-rv]"),function(b){
+    b.onclick=function(){ var i=this.getAttribute("data-rv"); $("#rv"+i).style.display="block"; $("#sm"+i).style.display="flex"; this.style.display="none"; };
+  });
+  $("#gradeBtn").onclick=doGrade;
+}
+
+function collect(){
+  var mc=MC.map(function(q,i){var el=document.querySelector('input[name="mc'+i+'"]:checked');return el?parseInt(el.value,10):-1;});
+  var fb=FB.map(function(q,i){return $("#fb"+i).value;});
+  var tr=TR.map(function(q,i){return $("#tr"+i).value;});
+  var tm=TR.map(function(q,i){var el=document.querySelector('input[name="tm'+i+'"]:checked');return el?parseInt(el.value,10):-1;});
+  return {v:1,date:QUIZ_DATE,mc:mc,fb:fb,tr:tr,tm:tm,graded:false};
+}
+
+function doGrade(){
+  var a=collect(), miss=[];
+  a.mc.forEach(function(v,i){if(v<0)miss.push(i+1);});
+  a.fb.forEach(function(v,i){if(!norm(v))miss.push(i+8);});
+  a.tr.forEach(function(v,i){if(!norm(v))miss.push(i+15);});
+  a.tm.forEach(function(v,i){if(v<0&&norm(a.tr[i]))miss.push(i+15);});
+  var score=0, rows="", again={};
+  MC.forEach(function(q,i){
+    var ok=a.mc[i]===q.ans; if(ok)score++;
+    if(!ok)again[q.tag]=1;
+    rows+=rrow(i+1,q.tag,ok,(a.mc[i]>=0?("ABCD"[a.mc[i]]+". "+q.opts[a.mc[i]]):"(미응답)"),"ABCD"[q.ans]+". "+q.opts[q.ans],q.exp);
+  });
+  FB.forEach(function(q,i){
+    var ok=okFB(i,a.fb[i]); if(ok)score++;
+    if(!ok)again[q.tag]=1;
+    rows+=rrow(i+8,q.tag,ok,(norm(a.fb[i])?a.fb[i]:"(미응답)"),q.ans.split("|")[0],q.exp);
+  });
+  TR.forEach(function(q,i){
+    var ok=a.tm[i]===1; if(ok)score++;
+    if(!ok)again[q.tag]=1;
+    rows+=rrow(i+15,q.tag,ok,(norm(a.tr[i])?a.tr[i]:"(미응답)"),q.model,{x:"뒷절 누락·신호 단어 누락 주의",o:q.key,p:"절 2개 확인"});
+  });
+
+  var msg = score>=18?"거의 완벽합니다. 오늘 구조는 몸에 붙었어요.":
+            score>=14?"좋습니다. 틀린 2~3개만 소리 내어 5번 읽고 넘어가세요.":
+            score>=10?"절반은 잡았습니다. 아래 '다시 볼 구조'만 골라 다시 보세요.":
+                      "괜찮습니다. 오늘은 학습 카드 5개를 소리 내어 읽는 것부터 다시 하세요.";
+  var ag=Object.keys(again);
+  var html='<div class="score">'+score+' / 20</div><div class="scoresub">'+esc(msg)+'</div>';
+  if(miss.length) html+='<div class="warn">미응답 문항: '+miss.sort(function(x,y){return x-y;}).filter(function(v,i,arr){return arr.indexOf(v)===i;}).join(", ")+'번 — 비워두면 오답 처리됩니다.</div>';
+  html+=rows;
+  if(ag.length) html+='<div class="warn"><b>다시 볼 구조</b><br>'+ag.map(esc).join(" · ")+'</div>';
+  html+='<div class="stack"><button class="btn" id="mkLink">올인원 링크 만들기 (선생님께 보내기)</button></div><div class="linkbox" id="lb"></div>';
+  var r=$("#res"); r.style.display="block"; r.innerHTML=html;
+  if(r.scrollIntoView) r.scrollIntoView({behavior:"smooth",block:"start"});
+  a.selfScore=score;
+  $("#mkLink").onclick=function(){ this.disabled=true; makeLink(a,"s",$("#lb"),"이 링크 하나만 보내세요"); };
+}
+
+function rrow(n,tag,ok,mine,ansTxt,exp){
+  return '<div class="rrow"><span class="rmark '+(ok?"rok":"rno")+'">'+(ok?"⭕":"❌")+'</span><b>'+n+'</b> <span class="tag">'+esc(tag)+'</span>'+
+    '<div class="rline">내 답: '+esc(mine)+'</div>'+
+    (ok?'':'<div class="rline"><span class="x">❌ '+esc(exp.x)+'</span> → <span class="o">⭕ '+esc(exp.o)+'</span></div>'+
+        '<div class="rline" style="color:#6b7280;font-size:12.5px">'+esc(exp.p)+'</div>'+
+        '<div class="rline">정답: <b>'+esc(ansTxt)+'</b></div>')+
+    '</div>';
+}
+
+/* ---------- grading mode (선생님) ---------- */
+function renderGrade(data,blobId){
+  $("#content").style.display="none";
+  $("#modenote").textContent="채점 모드 — kyle의 답안을 확인하고 코멘트를 남긴 뒤 [채점 저장하기]를 누르세요.";
+  var h='<section class="part"><h2>✍️ 채점하기</h2><div class="sub">객관식·빈칸은 자동 채점되어 있습니다. 영작 6문항만 ⭕/❌를 찍어주세요.</div>';
+  var auto=0;
+  MC.forEach(function(q,i){
+    var ok=data.mc[i]===q.ans; if(ok)auto++;
+    h+=gblock(i+1,q.tag,q.ko,(data.mc[i]>=0?("ABCD"[data.mc[i]]+". "+q.opts[data.mc[i]]):"(미응답)"),"ABCD"[q.ans]+". "+q.opts[q.ans],ok,null,i,data);
+  });
+  FB.forEach(function(q,i){
+    var ok=okFB(i,data.fb[i]); if(ok)auto++;
+    h+=gblock(i+8,q.tag,q.ko,(norm(data.fb[i])?data.fb[i]:"(미응답)"),q.ans.split("|")[0],ok,null,i+7,data);
+  });
+  TR.forEach(function(q,i){
+    h+=gblock(i+15,q.tag,q.ko,(norm(data.tr[i])?data.tr[i]:"(미응답)"),q.model,null,i,i+14,data);
+  });
+  h+='<div class="q"><div class="ctitle">총평</div><textarea id="overall" placeholder="오늘 총평 한두 줄">'+esc(data.overall||"")+'</textarea></div>';
+  h+='<div class="stack"><button class="btn" id="saveG">채점 저장하기</button></div><div class="linkbox" id="lb2"></div></section>';
+  $("#panel").innerHTML=h;
+
+  $("#saveG").onclick=function(){
+    var out=JSON.parse(JSON.stringify(data));
+    out.graded=true;
+    out.trOk=TR.map(function(q,i){var el=document.querySelector('input[name="g'+(i+14)+'"]:checked');return el?parseInt(el.value,10):0;});
+    out.comments=[];
+    for(var k=0;k<20;k++){var c=document.getElementById("cm"+k);out.comments.push(c?c.value:"");}
+    out.overall=$("#overall").value;
+    var s=0; MC.forEach(function(q,i){if(data.mc[i]===q.ans)s++;}); FB.forEach(function(q,i){if(okFB(i,data.fb[i]))s++;});
+    out.trOk.forEach(function(v){if(v===1)s++;});
+    out.finalScore=s;
+    this.disabled=true; this.textContent="저장 중…";
+    var self=this;
+    if(blobId){
+      blobPut(blobId,out).then(function(ok){
+        if(ok){ location.hash="b="+blobId; location.reload(); }
+        else { makeLink(out,"f",$("#lb2"),"결과 링크 (kyle에게 보내세요)"); self.textContent="저장 실패 — 아래 링크로 보내세요"; }
+      });
+    } else {
+      makeLink(out,"f",$("#lb2"),"결과 링크 (kyle에게 보내세요)");
+      self.textContent="완료";
+    }
+  };
+}
+function gblock(n,tag,ko,mine,ans,autoOk,_x,ci,data){
+  var s='<div class="q"><div class="qh"><span class="qn">'+n+'</span><span class="tag">'+esc(tag)+'</span>'+
+    (autoOk===null?'':'<span class="rmark '+(autoOk?"rok":"rno")+'">'+(autoOk?"⭕":"❌")+'</span>')+'</div>'+
+    '<div class="ko">'+esc(ko)+'</div>'+
+    '<div class="rline">kyle 답: <b>'+esc(mine)+'</b></div>'+
+    '<div class="rline">정답/모범답안: '+esc(ans)+'</div>';
+  if(autoOk===null){
+    var pre=(data.trOk&&data.trOk[ci]===1)?1:((data.trOk&&data.trOk[ci]===0)?0:-1);
+    s+='<div class="selfmark" style="display:flex">'+
+       '<label><input type="radio" name="g'+ci+'" value="1"'+(pre===1?" checked":"")+'> ⭕</label>'+
+       '<label><input type="radio" name="g'+ci+'" value="0"'+(pre===0?" checked":"")+'> ❌</label></div>';
+  }
+  var idx=(n-1);
+  s+='<div class="cbox"><input class="txt" id="cm'+idx+'" placeholder="코멘트 (선택)" value="'+esc((data.comments&&data.comments[idx])||"")+'"></div></div>';
+  return s;
+}
+
+/* ---------- review mode ---------- */
+function renderReview(data,blobId){
+  $("#content").style.display="none";
+  $("#modenote").textContent="첨삭 확인 모드";
+  var h='<section class="part"><h2>📩 첨삭 결과</h2>';
+  h+='<div class="score">'+(data.finalScore!=null?data.finalScore:"-")+' / 20</div>';
+  if(data.overall) h+='<div class="warn"><b>총평</b><br>'+esc(data.overall)+'</div>';
+  MC.forEach(function(q,i){ h+=rvrow(i+1,q.tag,data.mc[i]===q.ans,(data.mc[i]>=0?("ABCD"[data.mc[i]]+". "+q.opts[data.mc[i]]):"(미응답)"),"ABCD"[q.ans]+". "+q.opts[q.ans],q.exp,data.comments&&data.comments[i]); });
+  FB.forEach(function(q,i){ h+=rvrow(i+8,q.tag,okFB(i,data.fb[i]),(norm(data.fb[i])?data.fb[i]:"(미응답)"),q.ans.split("|")[0],q.exp,data.comments&&data.comments[i+7]); });
+  TR.forEach(function(q,i){ h+=rvrow(i+15,q.tag,(data.trOk&&data.trOk[i]===1),(norm(data.tr[i])?data.tr[i]:"(미응답)"),q.model,{x:"뒷절·신호 단어 누락 주의",o:q.key,p:"절 2개 확인"},data.comments&&data.comments[i+14]); });
+  h+='<div class="stack"><button class="btn sec" id="regrade">채점 다시 하기</button></div></section>';
+  $("#panel").innerHTML=h;
+  $("#regrade").onclick=function(){ if(blobId){location.hash="b="+blobId+":re";location.reload();} else {renderGrade(data,null);} };
+}
+function rvrow(n,tag,ok,mine,ans,exp,cm){
+  return '<div class="rrow"><span class="rmark '+(ok?"rok":"rno")+'">'+(ok?"⭕":"❌")+'</span><b>'+n+'</b> <span class="tag">'+esc(tag)+'</span>'+
+   '<div class="rline">내 답: '+esc(mine)+'</div>'+
+   (ok?'':'<div class="rline"><span class="x">❌ '+esc(exp.x)+'</span> → <span class="o">⭕ '+esc(exp.o)+'</span></div><div class="rline">정답: <b>'+esc(ans)+'</b></div>')+
+   (cm?'<div class="rline" style="color:#2563eb">💬 '+esc(cm)+'</div>':'')+'</div>';
+}
+
+function fail(msg){
+  $("#content").style.display="none";
+  $("#banner").innerHTML='<div class="err">'+esc(msg)+'</div>';
+}
+
+/* ---------- boot ---------- */
+(function(){
+  var h=decodeURIComponent(location.hash.slice(1));
+  try{
+    if(h.indexOf("b=")===0){
+      var v=h.slice(2), re=false, bk=null;
+      if(v.slice(-3)===":re"){re=true;v=v.slice(0,-3);}
+      var ti=v.indexOf("~"); if(ti>=0){bk=v.slice(ti+1);v=v.slice(0,ti);}
+      $("#content").style.display="none";
+      $("#banner").innerHTML='<div class="warn">불러오는 중…</div>';
+      blobGet(v).then(function(d){
+        $("#banner").innerHTML="";
+        if((!d||!d.v)&&bk){ try{ var rec=b64d(bk); if(rec&&rec.v){ d=rec; } }catch(e){} }
+        if(!d||!d.v){ fail("링크가 만료되었거나 손상되었습니다. kyle에게 새 링크를 요청하세요."); return; }
+        blobPut(v,d);
+        if(d.graded&&!re) renderReview(d,v); else renderGrade(d,v);
+      });
+      return;
+    }
+    if(h.indexOf("s=")===0){ var d1=b64d(h.slice(2)); $("#banner").innerHTML=""; renderGrade(d1,null); return; }
+    if(h.indexOf("f=")===0){ var d2=b64d(h.slice(2)); $("#banner").innerHTML=""; renderReview(d2,null); return; }
+  }catch(e){ fail("링크가 손상되었습니다. 주소가 중간에 잘렸을 수 있습니다. 전체 주소를 다시 받아 열어보세요."); return; }
+  renderSolve();
+})();
+</script>
+</body>
+</html>
