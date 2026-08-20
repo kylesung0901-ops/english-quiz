@@ -634,7 +634,6 @@ function renderSolve(){
     var c=el('div','q'); c.id='mc'+i;
     var hd=el('div','qhead');
     hd.appendChild(el('span','qnum','Q'+(i+1)));
-    hd.appendChild(el('span','tag',esc(q.tag)));
     c.appendChild(hd);
     c.appendChild(el('div','ko-prompt',esc(q.ko)));
     c.appendChild(el('div','hint',esc(q.q)));
@@ -657,7 +656,6 @@ function renderSolve(){
     var c=el('div','q'); c.id='fb'+i;
     var hd=el('div','qhead');
     hd.appendChild(el('span','qnum','Q'+(MC.length+i+1)));
-    hd.appendChild(el('span','tag',esc(q.tag)));
     c.appendChild(hd);
     c.appendChild(el('div','ko-prompt',esc(q.ko)));
     c.appendChild(el('div','blank',esc(q.s)));
@@ -674,7 +672,6 @@ function renderSolve(){
     var c=el('div','q'); c.id='tr'+i;
     var hd=el('div','qhead');
     hd.appendChild(el('span','qnum','Q'+(MC.length+FB.length+i+1)));
-    hd.appendChild(el('span','tag',esc(q.tag)));
     c.appendChild(hd);
     c.appendChild(el('div','ko-prompt',esc(q.ko)));
     var ta=el('textarea',''); ta.placeholder='영어로 써 보세요';
@@ -683,6 +680,7 @@ function renderSolve(){
     var show=el('button','btn sec sm','정답 보기'); show.style.marginTop='8px';
     var mbox=el('div','hidden');
     mbox.appendChild(el('div','model','<span class="lb">모범답안</span>'+esc(q.m)));
+    mbox.appendChild(el('div','hint','구조: '+esc(q.tag)));
     mbox.appendChild(el('div','hint','🔑 '+esc(q.k)));
     mbox.appendChild(el('div','hint','스스로 채점하세요 (선생님이 다시 봐 줍니다)'));
     var mark=el('div','mark'); mark.style.marginTop='8px';
@@ -718,7 +716,7 @@ function doGrade(out, btn){
     var ok=(ans.mc[i]===q.a);
     if(ok) score++; else { weak.push(q.tag); if(ans.mc[i]!==null) labels[ans.mc[i]].classList.add('wrong'); }
     var r=c.querySelector('.res'); r.className='res '+(ok?'ok':'no');
-    r.innerHTML=(ok?'⭕ 정답':'❌ 오답 — 정답 '+'ABCD'[q.a])+
+    r.innerHTML=(ok?'⭕ 정답':'❌ 오답 — 정답 '+'ABCD'[q.a])+' <span class="tag">'+esc(q.tag)+'</span>'+
       (q.bad?'<div class="arrow"><span class="b">❌ '+esc(q.bad)+'</span> → <span class="g">⭕ '+esc(q.good)+'</span></div>':'')+
       '<div class="hint">'+esc(q.pt)+'</div>';
     c.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
@@ -727,7 +725,7 @@ function doGrade(out, btn){
     var c=document.getElementById('fb'+i), ok=matchFB(ans.fb[i],q.a);
     if(ok) score++; else weak.push(q.tag);
     var r=c.querySelector('.res'); r.className='res '+(ok?'ok':'no');
-    r.innerHTML=(ok?'⭕ 정답':'❌ 오답')+
+    r.innerHTML=(ok?'⭕ 정답':'❌ 오답')+' <span class="tag">'+esc(q.tag)+'</span>'+
       '<div class="arrow"><span class="b">❌ '+esc(ans.fb[i]||'(무응답)')+
       '</span> → <span class="g">⭕ '+esc(q.a[0])+'</span></div><div class="hint">'+esc(q.pt)+'</div>';
     c.querySelector('input').disabled=true;
