@@ -509,9 +509,7 @@ function linkBox(title, longUrl, note){
       t.select(); try{document.execCommand('copy'); btn.textContent='복사됨 ✓';}catch(e){}
       document.body.removeChild(t); }
   };
-  if(longUrl.length>4500){ ready(longUrl,'단축 서비스 한도(오천 자)를 넘는 링크입니다. [복사하기] 버튼으로 통째로 보내세요.'); }
-  else if(longUrl.length>220){ shorten(longUrl,function(u){ if(u) ready(u);
-    else ready(longUrl,'주소 단축에 실패했습니다. 주소가 기니 반드시 [복사하기] 버튼으로 통째로 보내세요.'); }); }
+  if(longUrl.length>220){ ready(longUrl,'긴 링크입니다. [복사하기] 버튼으로 통째로 보내세요.'); }
   else ready(longUrl);
   return box;
 }
@@ -528,7 +526,7 @@ function header(sub, badges){
 }
 function foot(){
   app.appendChild(el('div','foot',
-    '이 페이지 주소는 만료가 없습니다. 채점용 저장(jsonblob)만 <b>마지막 쓰기 기준 24시간</b> 뒤 만료됩니다.<br>'+
+    '이 페이지 주소와 답안·결과 코드는 <b>만료가 없습니다</b>.<br>'+
     '민감한 개인정보는 적지 마세요. · 화면이 갱신되지 않으면 <b>Ctrl+Shift+R</b>'));
 }
 
@@ -696,6 +694,23 @@ function renderSolve(){
   var gradeBtn=el('button','btn','📝 채점하기'); app.appendChild(gradeBtn);
   var out=el('div',''); app.appendChild(out);
   gradeBtn.onclick=function(){ doGrade(out, gradeBtn); };
+  var pw=el('details','');
+  pw.appendChild(el('summary','','📥 받은 코드로 채점하기 / 결과 보기'));
+  var pt2=el('textarea',''); pt2.placeholder='받은 코드(또는 링크 전체)를 붙여넣으세요';
+  pw.appendChild(pt2);
+  var pb=el('button','btn sec sm','열기'); pb.style.marginTop='8px';
+  pb.onclick=function(){
+    var raw=String(pt2.value||'').trim();
+    var m2=raw.match(/#[sf]=([A-Za-z0-9_-]+)/);
+    var codeIn=m2?m2[1]:raw.replace(/\s+/g,'');
+    var dd=null; try{ dd=b64d(codeIn); }catch(e){ dd=null; }
+    if(!dd||!dd.a){ alert('코드를 읽지 못했습니다. 통째로 다시 복사해서 붙여넣어 주세요.'); return; }
+    app.innerHTML='';
+    if(dd.q) bind(dd.q);
+    if(dd.g) renderReview(dd,null); else renderGrade(dd,null);
+  };
+  pw.appendChild(pb);
+  app.appendChild(pw);
   foot();
 }
 
@@ -753,21 +768,21 @@ function doGrade(out, btn){
   out.appendChild(mk);
   var lz=el('div',''); out.appendChild(lz);
   mk.onclick=function(){
-    mk.disabled=true; mk.textContent='링크 만드는 중…';
-    var payload={v:2,d:QUIZ.date,q:QUIZ,a:ans,self:trSelf,score:score};
     var lite={v:2,d:QUIZ.date,a:ans,self:trSelf,score:score};
-    blobCreate(payload,function(id){
-      lz.innerHTML='';
-      if(id){
-        lz.appendChild(linkBox('선생님께 이 링크 하나만 보내세요', BASE+'#b='+id,
-          '선생님이 채점하면 <b>같은 링크</b>에서 결과를 볼 수 있습니다. 마지막 쓰기 기준 24시간 유효.'));
-      } else {
-        lz.appendChild(el('div','banner info','저장소 연결에 실패해 백업 링크로 만들었습니다. 이 링크는 <b>오늘 날짜 주소</b>에서 열어야 같은 문제로 보입니다.'));
-        lz.appendChild(linkBox('선생님께 이 링크 하나만 보내세요', BASE+'#s='+b64e(lite),
-          '백업 링크입니다. 채점 결과는 선생님이 새로 만들어 준 링크로 확인하세요.'));
-      }
-      mk.style.display='none';
-    });
+    var code=b64e(lite);
+    lz.innerHTML='';
+    lz.appendChild(linkBox('방법 1. 선생님께 이 링크를 보내세요', BASE+'#s='+code,
+      '오늘 날짜 주소로 만든 링크라 같은 문제로 열립니다.'));
+    var cb=el('div','linkbox');
+    cb.appendChild(el('div','','<b>방법 2. 링크가 안 열리면 이 답안 코드를 보내세요</b>'));
+    var ta2=el('textarea',''); ta2.readOnly=true; ta2.value=code; ta2.style.minHeight='90px'; ta2.style.fontFamily='var(--mono)'; ta2.style.fontSize='12px';
+    cb.appendChild(ta2);
+    var cp=el('button','btn sec sm','코드 복사하기'); cp.style.marginTop='8px';
+    cp.onclick=function(){ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(function(){cp.textContent='복사됨 ✓';});} else {ta2.select();try{document.execCommand('copy');cp.textContent='복사됨 ✓';}catch(e){}} };
+    cb.appendChild(cp);
+    cb.appendChild(el('div','hint','선생님은 오늘 날짜 페이지 맨 아래 [받은 코드로 채점하기]에 붙여넣으면 됩니다.'));
+    lz.appendChild(cb);
+    mk.style.display='none';
   };
   if(out.offsetTop) window.scrollTo({top:out.offsetTop-20,behavior:'smooth'});
 }
@@ -829,28 +844,20 @@ function renderGrade(data, blobId){
     var total=0; for(var k2=1;k2<=TOTAL;k2++) if(marks[k2]===1) total++;
     var newData={v:2,d:data.d||QUIZ.date,q:QUIZ,a:a,self:self,score:data.score,
       g:{marks:marks,comments:comments,overall:ota.value,total:total}};
-    save.disabled=true; save.textContent='저장 중…'; out.innerHTML='';
-    if(blobId){
-      blobUpdate(blobId,newData,function(ok){
-        if(ok){
-          out.appendChild(el('div','banner info','✅ 저장 완료. kyle이 <b>같은 링크</b>를 새로고침하면 첨삭 결과가 보입니다.'));
-          out.appendChild(linkBox('결과 확인 링크 (kyle이 받은 그 링크와 동일)',BASE+'#b='+blobId,'마지막 저장 기준 24시간 유효합니다.'));
-        } else {
-          out.appendChild(el('div','banner info','저장소 쓰기에 실패해 백업 링크로 만들었습니다.'));
-          var liteF={v:2,d:newData.d,a:a,self:self,score:data.score,g:newData.g};
-          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(liteF),''));
-        }
-        save.style.display='none';
-      });
-    } else {
-      blobCreate(newData,function(id){
-        if(id) out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#b='+id,'마지막 저장 기준 24시간 유효합니다.'));
-        else { out.appendChild(el('div','banner info','저장소 연결 실패 — 백업 링크입니다.'));
-          var liteF2={v:2,d:newData.d,a:a,self:self,score:data.score,g:newData.g};
-          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(liteF2),'')); }
-        save.style.display='none';
-      });
-    }
+    save.disabled=true; out.innerHTML='';
+    var liteF={v:2,d:newData.d,a:a,self:self,score:data.score,g:newData.g};
+    var codeF=b64e(liteF);
+    out.appendChild(linkBox('방법 1. kyle에게 이 결과 링크를 보내세요',BASE+'#f='+codeF,'오늘 날짜 주소로 열어야 같은 문제로 보입니다.'));
+    var cb2=el('div','linkbox');
+    cb2.appendChild(el('div','','<b>방법 2. 링크가 안 열리면 이 결과 코드를 보내세요</b>'));
+    var taF=el('textarea',''); taF.readOnly=true; taF.value=codeF; taF.style.minHeight='90px'; taF.style.fontFamily='var(--mono)'; taF.style.fontSize='12px';
+    cb2.appendChild(taF);
+    var cpF=el('button','btn sec sm','코드 복사하기'); cpF.style.marginTop='8px';
+    cpF.onclick=function(){ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(codeF).then(function(){cpF.textContent='복사됨 ✓';});} else {taF.select();try{document.execCommand('copy');cpF.textContent='복사됨 ✓';}catch(e){}} };
+    cb2.appendChild(cpF);
+    cb2.appendChild(el('div','hint','kyle은 오늘 날짜 페이지 맨 아래 [받은 코드로 채점하기]에 붙여넣으면 결과가 보입니다.'));
+    out.appendChild(cb2);
+    save.style.display='none';
   };
   foot();
 }
