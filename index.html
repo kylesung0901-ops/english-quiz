@@ -594,7 +594,7 @@ function renderStudy(){
   if(QUIZ.kit && QUIZ.kit.length){
     var kt=el('details'); kt.setAttribute('open','');
     kt.appendChild(el('summary','','🎧 화상영어 생존 키트 — John과 통화할 때 막히면 이걸로 버틴다'));
-    kt.appendChild(el('div','hint','대화가 막혔을 때 츨묵하지 않는 게 실력입니다. 아래 8개는 무조건 자동으로 나와야 합니다.'));
+    kt.appendChild(el('div','hint','대화가 막혔을 때 침묵하지 않는 게 실력입니다. 아래 8개는 무조건 자동으로 나와야 합니다.'));
     var ul2=el('ul','ex');
     QUIZ.kit.forEach(function(p){
       ul2.appendChild(el('li','','<b>'+esc(p[0])+'</b> <span class="ko">— '+esc(p[1])+'</span>'));
