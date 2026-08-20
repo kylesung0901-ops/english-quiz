@@ -509,7 +509,8 @@ function linkBox(title, longUrl, note){
       t.select(); try{document.execCommand('copy'); btn.textContent='복사됨 ✓';}catch(e){}
       document.body.removeChild(t); }
   };
-  if(longUrl.length>220){ shorten(longUrl,function(u){ if(u) ready(u);
+  if(longUrl.length>4500){ ready(longUrl,'단축 서비스 한도(오천 자)를 넘는 링크입니다. [복사하기] 버튼으로 통째로 보내세요.'); }
+  else if(longUrl.length>220){ shorten(longUrl,function(u){ if(u) ready(u);
     else ready(longUrl,'주소 단축에 실패했습니다. 주소가 기니 반드시 [복사하기] 버튼으로 통째로 보내세요.'); }); }
   else ready(longUrl);
   return box;
@@ -754,14 +755,15 @@ function doGrade(out, btn){
   mk.onclick=function(){
     mk.disabled=true; mk.textContent='링크 만드는 중…';
     var payload={v:2,d:QUIZ.date,q:QUIZ,a:ans,self:trSelf,score:score};
+    var lite={v:2,d:QUIZ.date,a:ans,self:trSelf,score:score};
     blobCreate(payload,function(id){
       lz.innerHTML='';
       if(id){
         lz.appendChild(linkBox('선생님께 이 링크 하나만 보내세요', BASE+'#b='+id,
           '선생님이 채점하면 <b>같은 링크</b>에서 결과를 볼 수 있습니다. 마지막 쓰기 기준 24시간 유효.'));
       } else {
-        lz.appendChild(el('div','banner info','저장소 연결에 실패해 백업 링크로 만들었습니다.'));
-        lz.appendChild(linkBox('선생님께 이 링크 하나만 보내세요', BASE+'#s='+b64e(payload),
+        lz.appendChild(el('div','banner info','저장소 연결에 실패해 백업 링크로 만들었습니다. 이 링크는 <b>오늘 날짜 주소</b>에서 열어야 같은 문제로 보입니다.'));
+        lz.appendChild(linkBox('선생님께 이 링크 하나만 보내세요', BASE+'#s='+b64e(lite),
           '백업 링크입니다. 채점 결과는 선생님이 새로 만들어 준 링크로 확인하세요.'));
       }
       mk.style.display='none';
@@ -835,7 +837,8 @@ function renderGrade(data, blobId){
           out.appendChild(linkBox('결과 확인 링크 (kyle이 받은 그 링크와 동일)',BASE+'#b='+blobId,'마지막 저장 기준 24시간 유효합니다.'));
         } else {
           out.appendChild(el('div','banner info','저장소 쓰기에 실패해 백업 링크로 만들었습니다.'));
-          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(newData),''));
+          var liteF={v:2,d:newData.d,a:a,self:self,score:data.score,g:newData.g};
+          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(liteF),''));
         }
         save.style.display='none';
       });
@@ -843,7 +846,8 @@ function renderGrade(data, blobId){
       blobCreate(newData,function(id){
         if(id) out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#b='+id,'마지막 저장 기준 24시간 유효합니다.'));
         else { out.appendChild(el('div','banner info','저장소 연결 실패 — 백업 링크입니다.'));
-          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(newData),'')); }
+          var liteF2={v:2,d:newData.d,a:a,self:self,score:data.score,g:newData.g};
+          out.appendChild(linkBox('kyle에게 이 링크를 보내세요',BASE+'#f='+b64e(liteF2),'')); }
         save.style.display='none';
       });
     }
