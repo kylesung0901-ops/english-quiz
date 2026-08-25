@@ -414,6 +414,17 @@ function norm(s){
   return String(s||'').replace(/[‘’ʼ´`]/g,"'").replace(/[“”]/g,'"')
     .toLowerCase().replace(/[.,!?;:"()]/g,'').replace(/\s+/g,' ').trim();
 }
+
+/* 영작 자동 판정 — 대문자·마침표·쉼표·홑따옴표 모양은 채점하지 않는다 (kyle 확정 2026-08-25).
+   내용이 모범답안과 같으면 자가 채점 버튼과 무관하게 무조건 맞음 처리한다. */
+function trAuto(mine, model){
+  var a=norm(mine), b=norm(model);
+  return !!a && a===b;
+}
+function trOK(mine, model, self){
+  if(trAuto(mine, model)) return true;
+  return self===1;
+}
 function matchFB(user, list){
   var u=norm(user); if(!u) return false;
   for(var i=0;i<list.length;i++){
@@ -798,7 +809,7 @@ function resultBlocks(score, weak){
   });
   b.push(imgSec('Part 3. 한 → 영 영작 (자가 채점)'));
   TR.forEach(function(q,i){ n++;
-    var ok=(trSelf[i]===1);
+    var ok=trOK(ans.tr[i], q.m, trSelf[i]);
     b.push(row(n, ok, q.ko, ans.tr[i]||'(무응답)', q.m, q.tag, '', '', q.k));
   });
   var uniq=(weak||[]).filter(function(v,i,a){ return a.indexOf(v)===i; });
@@ -932,13 +943,23 @@ function renderSolve(){
     mbox.appendChild(el('div','model','<span class="lb">모범답안</span>'+esc(q.m)));
     mbox.appendChild(el('div','hint','구조: '+esc(q.tag)));
     mbox.appendChild(el('div','hint','🔑 '+esc(q.k)));
-    mbox.appendChild(el('div','hint','스스로 채점하세요 (선생님이 다시 봐 줍니다)'));
+    mbox.appendChild(el('div','hint','스스로 채점하세요 · 대문자·마침표·쉼표는 채점에 넣지 않습니다'));
+    var auto=el('div',''); mbox.appendChild(auto);
     var mark=el('div','mark'); mark.style.marginTop='8px';
     var bo=el('button','','⭕ 맞음'), bn=el('button','','❌ 틀림');
     bo.onclick=function(){ trSelf[i]=1; bo.className='on-ok'; bn.className=''; };
     bn.onclick=function(){ trSelf[i]=0; bn.className='on-no'; bo.className=''; };
     mark.appendChild(bo); mark.appendChild(bn); mbox.appendChild(mark);
-    show.onclick=function(){ mbox.classList.remove('hidden'); show.style.display='none'; };
+    show.onclick=function(){
+      mbox.classList.remove('hidden'); show.style.display='none';
+      var mine=String(ta.value||'').trim();
+      if(mine && norm(mine)===norm(q.m)){
+        trSelf[i]=1; bo.className='on-ok'; bn.className='';
+        auto.innerHTML='<div class="banner info" style="margin-top:8px;">'
+          + '✅ 자동으로 <b>맞음</b> 처리했습니다. 단어와 순서가 모범답안과 같습니다.<br>'
+          + '<span style="font-size:12.5px;opacity:.85;">대문자·마침표·쉼표·홑따옴표 모양은 채점하지 않습니다.</span></div>';
+      }
+    };
     c.appendChild(show); c.appendChild(mbox); app.appendChild(c);
   });
 
@@ -997,7 +1018,7 @@ function doGrade(out, btn){
       '</span> → <span class="g">⭕ '+esc(q.a[0])+'</span></div><div class="hint">'+esc(q.pt)+'</div>';
     c.querySelector('input').disabled=true;
   });
-  TR.forEach(function(q,i){ if(trSelf[i]===1) score++; else weak.push(q.tag); });
+  TR.forEach(function(q,i){ if(trOK(ans.tr[i], q.m, trSelf[i])) score++; else weak.push(q.tag); });
 
   var msg = score>=27?'거의 완벽해요. 오늘 구조는 몸에 붙었습니다.'
           : score>=21?'좋아요. 틀린 구조만 내일 한 번 더 짚읍시다.'
@@ -1091,7 +1112,7 @@ function renderGrade(data, blobId){
     block(idx,q.tag,q.ko+'  〔'+q.s+'〕',a.fb[i],q.a[0],q.pt,matchFB(a.fb[i],q.a)?1:0); });
   app.appendChild(el('h2','sec','Part 3. 영작'));
   TR.forEach(function(q,i){ idx++;
-    block(idx,q.tag,q.ko,a.tr[i],q.m,q.k,(self[i]===1?1:(self[i]===0?0:null))); });
+    block(idx,q.tag,q.ko,a.tr[i],q.m,q.k,(trAuto(a.tr[i],q.m)?1:(self[i]===1?1:(self[i]===0?0:null)))); });
 
   var ov=el('div','card'); ov.appendChild(el('div','','<b>📩 총평</b>'));
   var ota=el('textarea',''); ota.placeholder='오늘 kyle에게 한 마디 (짧게)'; ota.style.marginTop='8px';
