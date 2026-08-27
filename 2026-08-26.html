@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kyle 데일리 영어 퀴즈 · 2026-08-27 (목) · 30문제</title>
+<title>kyle 데일리 영어 퀴즈 · 2026-08-26 (수) · 30문제</title>
 <style>
 :root{
   --bg:#f7f8fa; --card:#ffffff; --line:#e3e6ec; --ink:#1c2029; --sub:#666e7d;
@@ -116,7 +116,7 @@ table.sig td:last-child{font-family:var(--mono);font-size:13.5px;color:var(--acc
 
 <script>
 /* ============================================================
-   kyle 데일리 영어 퀴즈 — 2026-08-27 (목) 30문제 · 여름 나들이 특집 + 고질 3종 집중
+   kyle 데일리 영어 퀴즈 — 2026-08-26 (수) 30문제 · 어제 급소 재저격 + 후회·가정법 복귀
    분석 결과: ① 관사 12회 ② 뒷절 누락 7회 ③ to vs -ing 6회 ④ 과거시제 6회 ⑤ 수일치 6회
    출제 원칙: kyle이 실제로 틀린 것만. 여기에 수업 신규 표현을 섞는다.
    채점: 대문자·마침표·쉼표는 보지 않는다 (trAuto / trOK)
@@ -126,297 +126,279 @@ var BASE = (location.protocol === 'file:' || !location.origin || location.origin
   ? FALLBACK_BASE : (location.origin + location.pathname);
 
 var QUIZ = {
-date:'2026-08-27', day:'목요일', edition:'목요일판 · 여름 나들이 특집 + 고질 3종(관사·keeps·be able to) 집중',
-badges:['① 관사','고장엔 keeps -ing','will be able to','to vs -ing','④ 과거','여름 나들이 특집','🔊 연음','🖼 이미지 저장'],
+date:'2026-08-26', day:'수요일', edition:'수요일판 · 어제 급소 재저격 + 후회·가정법 복귀',
+badges:['① 관사','② 뒷절','③ to vs -ing','④ 과거','⑤ 수일치','후회 should’ve 복귀','가정법 If I’d 복귀','수업 표현','🔊 연음','🖼 이미지 저장'],
+
+/* ---------- 통암기 12문장 — 어제 안 나온 첨삭 수정본 10 + 예전 첨삭 2 ---------- */
+memo:[
+ ['The public transportation is convenient, and there are lots of walking trails nearby.','대중교통이 편리하고, 근처에 산책로도 많아요.'],
+ ['It wasn’t as good as I expected.','기대했던 것만큼 좋지는 않았어요.'],
+ ['If you want to become fluent in a foreign language, you need to practice speaking out loud every day.','외국어를 유창하게 하고 싶으면, 매일 소리 내어 말하는 연습을 해야 해요.'],
+ ['I wouldn’t mind if you called me tomorrow morning, as long as you let me know in advance.','미리 알려만 주시면, 내일 아침에 전화 주셔도 괜찮아요.'],
+ ['I’m going grocery shopping at the supermarket near my house after work tonight.','오늘 밤 퇴근하고 집 근처 마트에서 장을 볼 거예요.'],
+ ['My friend said she would set me up on a blind date.','친구가 소개팅을 시켜 주겠다고 했어요.'],
+ ['I haven’t been sleeping well lately, so I’ve been tired and sleepy during the day.','요즘 잠을 잘 못 자서, 낮에 계속 피곤하고 졸려요.'],
+ ['The sound quality of my new wireless earbuds is much better than I expected.','새 무선 이어폰 음질이 생각보다 훨씬 좋아요.'],
+ ['The lights in the conference room are so dim that I can barely read the slides.','회의실 조명이 너무 어두워서 발표 자료가 잘 안 보여요.'],
+ ['It’s so cold outside, so I’m relaxing in the living room with a cup of hot tea.','밖이 너무 추워서, 거실에서 따뜻한 차 한 잔 마시며 쉬고 있어요.'],
+ ['I only know the title of that song. I don’t really know the lyrics.','그 노래 제목만 알아요. 가사는 잘 몰라요.'],
+ ['I left my wallet at home, so I had to go back inside.','지갑을 집에 두고 나와서, 다시 들어가야 했어요.']
+],
 
 /* ---------- 진단 카드 5 ---------- */
 diag:[
- ['1위 — 관사: 명사 앞에서 한 박자 멈추기 (고질 · 12회)','i live in one room, so most scary thing is my luggage increase','I live in a studio apartment, so I’m most afraid of accumulating too much stuff.','⭕ 쓰세요 a studio apartment (관사 + 원룸은 studio apartment)   ❌ 쓰지 마세요 one room · 관사 없이 studio apartment'],
- ['계속 ~해요 — keeps + -ing (고질 · miss 6)','the fan is keep stop when i sleep','The fan keeps stopping while I’m sleeping.','⭕ 쓰세요 keeps + -ING (단수 주어)   ❌ 쓰지 마세요 is keep stop · keep stop'],
- ['~할 수 있을 거예요 — will BE able to (고질 · miss 3)','i will able to rent a car','I’ll be able to rent a car once I get my license.','⭕ 쓰세요 will BE able to + 동사원형   ❌ 쓰지 마세요 will able to · will can'],
- ['접착제 what 금지 — 명사 뒤에 주어+동사 바로 붙이기 (3회 재발)','my new notebook is not working what i bought lastyear','The laptop I bought last year keeps shutting down these days.','⭕ 쓰세요 The laptop I bought last year (what 없이 바로 붙이기) · 노트북은 laptop   ❌ 쓰지 마세요 what i bought · notebook(공책)'],
- ['문장 후반부(시간·장소구)까지 끝까지 (2위 · 7회)','I feel uncomfortable when i work time, my mom call me','I feel uncomfortable when my mom calls me during work hours.','⭕ 쓰세요 during work hours 까지 붙이기 (during + 명사) · calls (3인칭 -s)   ❌ 쓰지 마세요 when i work time (when절 붕괴) · 뒷부분 통째 누락']
-],
-
-/* ---------- 통암기 12문장 ---------- */
-memo:[
- ['My legs were sore for two days.','다리가 이틀 동안 뻐근했어요. (기간은 for)'],
- ['You remind me of my cousin.','너를 보면 내 사촌이 생각나. (remind — 주어가 You면 -s 없음)'],
- ['I couldn’t fall asleep at night, so I had to watch TV until early morning.','밤에 잠이 안 와서, 새벽까지 TV를 봐야 했어요.'],
- ['It takes about 40 minutes by subway.','지하철로 40분쯤 걸려요. (그냥 걸리는 시간은 하이픈 없이 복수 minutes)'],
- ['I dropped John off at Hongdae Station.','John을 홍대입구역에 내려 줬어요.'],
- ['I walked Gahyun to the station.','가현이를 역까지 바래다줬어요.'],
- ['I just go with the flow.','저는 그냥 흐름에 맡기는 편이에요.'],
- ['I’m not familiar with this neighborhood yet.','이 동네는 아직 잘 몰라요.'],
- ['I got off work at seven yesterday.','어제 7시에 퇴근했어요. (과거는 got)'],
- ['That restaurant must be good because it’s always busy.','저 식당은 항상 붐비는 걸 보니 맛있는 게 분명해요.'],
- ['It looked fine on the outside, but it was completely rotten inside.','겉은 멀쩡해 보였는데, 속은 완전히 상해 있었어요.'],
- ['I was late for the meeting because I missed the bus.','버스를 놓쳐서 회의에 늦었어요. (be late FOR)']
+ ['1위 — 관사·어순: 명사 앞에서 한 박자 멈추기 (고질 · 누적 6회)','do you know good place for pasta?','Do you know a good pasta place nearby?','⭕ 쓰세요 a good pasta place (관사+형용사+명사 순서)   ❌ 쓰지 마세요 good place for pasta · 관사 없이 명사만'],
+ ['수일치 — 주어가 복수면 동사도 복수 (누적 6회)','conference room lights is too dark / You reminds me of ~','The lights in the conference room are so dim. / You remind me of ~','⭕ 쓰세요 lights ARE · You remind   ❌ 쓰지 마세요 lights is · You reminds'],
+ ['to vs -ing — 동사마다 뒤 형태가 정해져 있다 (6회)','i cut late-night snack for lose my weight','I’m going to stop eating late-night snacks to manage my weight.','⭕ 쓰세요 stop + -ING · 목적은 to + 동사원형   ❌ 쓰지 마세요 for lose (for + 동사원형은 없는 문법)'],
+ ['시제를 조동사에 싣기 — 오늘 복귀한 최다 실수 (고질 1위 · 누적 6회)','i shoud took the picture / i should ask give me window seat','I should’ve taken more pictures. / I should’ve asked for a window seat.','⭕ 쓰세요 should’ve + p.p. (~했어야 했는데)   ❌ 쓰지 마세요 should + 과거동사 · should ask give me'],
+ ['가정법 과거완료 — 했더라면 → 했을 텐데 (miss 3 복귀)','if i waited a little bit more, i could meet you','If I’d waited a little longer, I could’ve met you.','⭕ 쓰세요 If I’d + p.p. → would’ve·could’ve + p.p.   ❌ 쓰지 마세요 If I waited → could meet (시제가 조동사에 안 실림)']
 ],
 
 /* ---------- 신호 반사 카드 ---------- */
 signal:[
- ['~하려고 했는데 (못 했어요)','I was going to + 동사원형, but ~'],
- ['결국 ~하게 됐어요','I ended up + -ing'],
- ['~할 수 있게 될 거예요','I’ll be able to + 동사원형'],
- ['(고장) 계속 ~해요','It keeps + -ing'],
- ['~해 봐야 소용없어요','There’s no point in + -ing'],
- ['알고 보니 ~였어요','It turned out (that) ~'],
- ['~하고 나서야 …했어요','I didn’t ~ until ~'],
- ['~인 게 분명해요','It must be ~'],
- ['~하는 데 한 시간 걸렸어요','It took me an hour to + 동사원형'],
- ['~는 잘 몰라요 / 익숙하지 않아요','I’m not familiar with ~']
-],
-
-/* ---------- 구조 카드 4 ---------- */
-cards:[
- {t:'구조 카드 1 — 관사: 명사 앞에 자리부터 만들기 (오류 1위)',
-  f:'하나·처음 말하는 것   →  a + 명사  (모음 소리 앞은 an)\n서로 아는 바로 그것   →  the + 명사\n내 것               →  my + 명사\n★ 명사를 말하기 전에 반드시 한 박자: a? an? the? my?',
-  ex:[['I bought a watermelon at the supermarket.','마트에서 수박 한 통을 샀어요.'],['I bought an ice tray and an electric toothbrush.','얼음 트레이랑 전동 칫솔을 샀어요. (모음 소리 앞 an)'],['The slippers I ordered are too small.','(그) 주문한 슬리퍼가 너무 작아요.']],
-  fixes:[['i bought watermelon at supermarket','I bought a watermelon at the supermarket.','❌ 이렇게 쓰면 안 됩니다 — 관사 전부 누락. 명사마다 앞자리를 만드세요.']]},
- {t:'구조 카드 2 — 고장·반복: 단수 주어 + keeps + -ing (miss 6)',
-  f:'지금 자꾸 그래요   →  주어 + keeps + -ing\n과거에 자꾸 그랬어요 →  주어 + kept + -ing\n★ be동사를 끼우지 않는다. 동사에 -s, 뒤에는 -ing.',
-  ex:[['The electric kettle keeps turning off by itself.','전기 주전자가 계속 저절로 꺼져요.'],['My watch kept stopping, so I took it to a watch shop.','시계가 자꾸 멈춰서 시계방에 가져갔어요.']],
-  fixes:[['the kettle is keep turn off','The kettle keeps turning off.','❌ 이렇게 쓰면 안 됩니다 — is keep · keep turn. be동사 없이 keeps + -ing 입니다.']]},
- {t:'구조 카드 3 — 미래의 가능: will BE able to (miss 3)',
-  f:'will + be able to + 동사원형\n★ will can (X) · will able to (X) — be 를 빠뜨리면 무너집니다.',
-  ex:[['If I buy a blender, I’ll be able to make smoothies every morning.','믹서기를 사면 아침마다 스무디를 만들 수 있을 거예요.'],['Once I top up my Hi-pass card, I’ll be able to go straight through.','하이패스를 충전하면 그냥 통과할 수 있을 거예요.']],
-  fixes:[['i will able to go / i will can go','I’ll be able to go.','❌ 이렇게 쓰면 안 됩니다 — will able to · will can. 반드시 will BE able to.']]},
- {t:'구조 카드 4 — to vs -ing: 동사마다 뒤 모양이 정해져 있다 (6회)',
-  f:'-ING 팀 : finish -ing · practice -ing · stop -ing · end up -ing · no point in -ing\nTO 팀  : decide to · need to · plan to · forget to\n★ 감으로 고르지 말고 팀을 외우세요.',
-  ex:[['I finally finished knitting the scarf.','목도리 뜨는 걸 드디어 끝냈어요.'],['I ended up boiling the corn instead.','결국 옥수수를 그냥 삶았어요.'],['There’s no point in going now.','지금 가 봐야 소용없어요.']],
-  fixes:[['i finished to knit / end up to boil','I finished knitting. / I ended up boiling.','❌ 이렇게 쓰면 안 됩니다 — finish to · end up to. 이 동사들 뒤는 -ING 입니다.']]}
+ ['~했어야 했는데','I should’ve + p.p.'],
+ ['~하지 말걸 그랬어','I shouldn’t have + p.p.'],
+ ['~했더라면 …했을 텐데','If I’d + p.p., I would’ve + p.p.'],
+ ['~라던데요 / ~한대요','I heard (that) + 문장'],
+ ['~한 이유는 …라서예요','The reason why ~ is ~'],
+ ['아직 못 ~했어요','I still haven’t + p.p.'],
+ ['요즘 계속 ~하고 있어요','I’ve been -ing'],
+ ['잠깐 들를게요','I’ll drop by + 장소'],
+ ['훨씬 (비교 강조)','much + 비교급 + than'],
+ ['넘어졌어요 (fall의 과거)','I fell']
 ],
 
 /* ---------- 화상영어 생존 키트 ---------- */
 kit:[
- ['Sorry, I lost you for a second.','소리가 잠깐 끊겼어요'],
- ['Wait, let me start over.','잠깐만요, 처음부터 다시 말할게요'],
- ['It’s on the tip of my tongue.','그 단어가 혀끝에서 맴돌아요'],
- ['How should I put it...','뭐라고 해야 하지… (시간 벌기)'],
- ['Exactly!','바로 그거예요! (강한 맞장구)'],
- ['Sorry, my internet is acting up.','인터넷이 좀 말썽이에요'],
- ['Long story short, I couldn’t go.','짧게 말하면, 못 갔어요 (요약 신호)']
+ ['Sorry, what do you mean by that?','그게 무슨 뜻이에요?'],
+ ['How do you say 향초 in English?','○○를 영어로 뭐라고 해요?'],
+ ['Let me think for a second...','잠깐 생각 좀 할게요 (시간 벌기)'],
+ ['That makes sense.','아 그렇구나 (맞장구)'],
+ ['Could you say that again, a bit slower?','조금만 천천히 다시 말해 줄래요?'],
+ ['I didn’t catch that.','지금 그 말을 못 알아들었어요'],
+ ['What about you?','당신은요? (질문 되돌리기)'],
+ ['Can you hear me okay?','제 소리 잘 들리나요?']
 ],
 
 /* ---------- 발음·연음 노트 ---------- */
 pron:[
- ['picked up','[픽떱]','picked의 -ked가 up과 붙어 [떱]으로 끝납니다'],
- ['not until','[나럼틸]','not의 t가 모음 사이에서 [r]처럼 굴러 until과 붙습니다'],
- ['get it fixed','[게릿 삑스트]','get it이 [게릿] 한 덩어리로 붙습니다'],
- ['turned off','[턴더프]','turned의 d가 off와 이어집니다'],
- ['covered in','[커버딘]','covered의 d가 in과 붙습니다'],
- ['What do you do?','[워르유 두]','what do you가 한 덩어리로 뭉개집니다'],
- ['wouldn’t have had to','[우르너브 해투]','wouldn’t have가 [우르너브]로 줄어듭니다']
+ ['thought about','[쏘러바웃]','thought의 t가 about과 붙어 한 덩어리로 굴러갑니다'],
+ ['said he’d','[쎄디드]','he의 h가 사라지고 said와 붙습니다'],
+ ['figure out','[피겨라웃]','figure의 r가 out과 이어집니다'],
+ ['ended up','[엔디덥]','ended의 -ed가 up과 붙어 [덥]으로 끝납니다'],
+ ['signed up for','[싸인덥 뽀]','signed의 d가 up에 붙고 for는 약하게 [뽀]'],
+ ['a lot easier','[얼라리지어]','lot의 t가 모음 사이에서 [r]처럼 굴러갑니다'],
+ ['got locked out','[갓 락따웃]','locked의 -ked가 out과 붙습니다'],
+ ['half an hour','[해퍼나워]','half의 f가 an과 붙고 hour의 h는 소리가 없습니다']
 ],
 
 /* ---------- Part 1. 객관식 10 ---------- */
 mc:[
 {tag:'① 관사',
- ko:'퇴근길에 마트에 들러서 수박 한 통을 샀어요.',
+ ko:'너무 더워서, 어제 휴대용 선풍기를 하나 샀어요.',
  q:'가장 자연스러운 문장은?',
- o:['I bought watermelon at supermarket on my way home.',
-    'I buying a watermelon at the supermarket my way home.',
-    'I bought a watermelon at the supermarket on my way home.',
-    'I bought a watermelon at the supermarket to my home way.'],
- a:2, bad:'i bought watermelon at supermarket', good:'I bought a watermelon at the supermarket on my way home.', pt:'⭕ 쓰세요 a watermelon · the supermarket (명사마다 관사 자리)   ❌ 쓰지 마세요 관사 없이 watermelon · supermarket'},
-
-{tag:'SRS · keeps -ing',
- ko:'전기 주전자가 계속 저절로 꺼져요.',
- q:'가장 자연스러운 문장은?',
- o:['The electric kettle keeps turning off by itself.',
-    'The electric kettle is keep turning off by itself.',
-    'The electric kettle keep turn off by itself.',
-    'The electric kettle was keeps turning off by itself.'],
- a:0, bad:'the kettle is keep turn off (be동사+원형 습관)', good:'The electric kettle keeps turning off by itself.', pt:'⭕ 쓰세요 keeps + -ING (단수 주어)   ❌ 쓰지 마세요 is keep · keep turn'},
+ o:['It was so hot, so I bought portable fan yesterday.',
+    'It was so hot, so I am buying portable fan yesterday.',
+    'It was so hot, so I bought a portable fan yesterday.',
+    'It is so hot, so I will bought portable fan yesterday.'],
+ a:2, bad:'i bought portable fan', good:'I bought a portable fan yesterday.', pt:'⭕ 쓰세요 a portable fan (하나 살 때 a)   ❌ 쓰지 마세요 관사 없이 portable fan'},
 
 {tag:'③ to vs -ing',
- ko:'뜨개질 클래스에서 목도리 뜨는 걸 드디어 끝냈어요.',
+ ko:'인터넷 해지할 때, 셋톱박스 반납하는 거 잊지 마세요.',
  q:'가장 자연스러운 문장은?',
- o:['I finally finished to knit the scarf at my knitting class.',
-    'I finally finished knitting the scarf at my knitting class.',
-    'I finally finish to knitting the scarf at my knitting class.',
-    'I finally was finished knit the scarf at my knitting class.'],
- a:1, bad:'finished to knit (to를 붙이는 습관)', good:'I finally finished knitting the scarf.', pt:'⭕ 쓰세요 finished + -ING   ❌ 쓰지 마세요 finished to knit'},
+ o:['Don’t forget to return the set-top box when you cancel the internet.',
+    'Don’t forget return the set-top box when you cancel the internet.',
+    'Don’t forget for returning set-top box when you cancel internet.',
+    'You don’t forget returned the set-top box when cancel the internet.'],
+ a:0, bad:'don’t for get umbrella (같은 습관)', good:'Don’t forget to return the set-top box.', pt:'⭕ 쓰세요 forget TO + 동사원형 (앞으로 할 일)   ❌ 쓰지 마세요 forget + 동사원형 · forget for -ing'},
 
-{tag:'④ 과거',
- ko:'오늘 아침엔 안개가 너무 짙어서, 앞이 잘 안 보였어요.',
+{tag:'⑦ 비교구문',
+ ko:'전자책 리더기 화면이 눈이 생각보다 훨씬 편해요.',
  q:'가장 자연스러운 문장은?',
- o:['The fog is so thick this morning that I can not saw far ahead.',
-    'The fog was so thick this morning what I couldn’t see far ahead.',
-    'Fog so thick this morning, so I no see far ahead.',
-    'The fog was so thick this morning that I couldn’t see far ahead.'],
- a:3, bad:'과거 이야기에 is · can’t 를 쓰는 습관', good:'The fog was so thick this morning that I couldn’t see far ahead.', pt:'⭕ 쓰세요 was so ~ that I couldn’t (끝까지 과거)   ❌ 쓰지 마세요 is · can’t · 접착제 what'},
+ o:['My e-reader screen is very more easy for my eyes than I expect.',
+    'The screen on my e-reader is easier much on my eyes than expected I.',
+    'The screen on my e-reader is much easy on my eyes than I expected.',
+    'The screen on my e-reader is much easier on my eyes than I expected.'],
+ a:3, bad:'sound quality is clean than i expected (같은 습관)', good:'The screen is much easier on my eyes than I expected.', pt:'⭕ 쓰세요 much + 비교급(easier) + than   ❌ 쓰지 마세요 very better · much easy'},
 
-{tag:'SRS · will be able to',
- ko:'하이패스 카드를 충전해 두면, 톨게이트를 안 멈추고 지나갈 수 있을 거예요.',
+{tag:'④ 과거 시제',
+ ko:'어제 옆집에서 사다리를 빌려서 커튼을 달았어요.',
  q:'가장 자연스러운 문장은?',
- o:['Once I top up my Hi-pass card, I will can go straight through the tollgate.',
-    'Once I top up my Hi-pass card, I’ll be able to go straight through the tollgate.',
-    'Once I top up my Hi-pass card, I will able to go straight through the tollgate.',
-    'Once I top up my Hi-pass card, I be able going through the tollgate straight.'],
- a:1, bad:'will can · will able to (be 누락 습관)', good:'Once I top up my Hi-pass card, I’ll be able to go straight through the tollgate.', pt:'⭕ 쓰세요 will BE able to + 동사원형   ❌ 쓰지 마세요 will can · will able to'},
+ o:['I borrow a ladder from my neighbor yesterday and hang the curtains.',
+    'I borrowed a ladder from my neighbor yesterday and hung the curtains.',
+    'I am borrow ladder from neighbor yesterday and hanged curtain.',
+    'I will borrowed a ladder yesterday from my neighbor and hang curtains.'],
+ a:1, bad:'i borrow two books (같은 습관)', good:'I borrowed a ladder yesterday and hung the curtains.', pt:'⭕ 쓰세요 yesterday 가 보이면 borrowed · hung (전부 과거)   ❌ 쓰지 마세요 borrow · hang (현재형)'},
 
-{tag:'🔊 연음',
- ko:'주말에 입을 한복을 대여점에서 찾아왔어요 — I picked up a hanbok at the rental shop.',
- q:'picked up 을 원어민처럼 이어 읽으면?',
- o:['[픽떱]',
-    '[픽케드 업]',
-    '[피크드 우프]',
-    '[픽업트]'],
- a:0, bad:'[픽케드 업] 처럼 또박또박 끊어 읽기', good:'picked up → [픽떱]', pt:'⭕ 쓰세요 [픽떱] (-ked가 up과 붙음)   ❌ 쓰지 마세요 [픽케드 업] 끊어 읽기'},
-
-{tag:'SRS · while vs during',
- ko:'우리가 아쿠아리움을 둘러보는 동안, 밖에는 비가 그쳤어요.',
+{tag:'⑤ 수일치',
+ ko:'베란다 의자들이 먼지로 뒤덮여 있어요.',
  q:'가장 자연스러운 문장은?',
- o:['It stopped raining during we were looking around the aquarium.',
-    'It stopped raining while the aquarium tour we were.',
-    'It stopped raining while we were looking around the aquarium.',
-    'It stop rained during the we look aquarium.'],
- a:2, bad:'during + 주어 + 동사 (during 뒤에 문장을 붙이는 습관)', good:'It stopped raining while we were looking around the aquarium.', pt:'⭕ 쓰세요 while + 주어 + 동사   ❌ 쓰지 마세요 during + 주어 + 동사 (during 뒤엔 명사만)'},
+ o:['The chairs on the balcony are covered in dust.',
+    'The chairs on the balcony is covered in dust.',
+    'The chair on the balcony are cover in dusts.',
+    'The chairs on balcony covered dust is.'],
+ a:0, bad:'lights is too dark (같은 습관)', good:'The chairs on the balcony are covered in dust.', pt:'⭕ 쓰세요 chairs ARE (복수 주어는 are)   ❌ 쓰지 마세요 chairs is'},
 
-{tag:'⑧ 관계사 + ⑤ 수일치',
- ko:'지난주에 주문한 슬리퍼가 너무 작아요.',
+{tag:'⑦ 비교구문',
+ ko:'새 무선 청소기가 기대만큼 강력하지 않았어요.',
  q:'가장 자연스러운 문장은?',
- o:['The slippers what I ordered last week are too small.',
-    'The slippers I ordered them last week is too small.',
-    'The slippers ordered I last week too small are.',
-    'The slippers I ordered last week are too small.'],
- a:3, bad:'접착제로 what 을 쓰는 습관 · is (수일치)', good:'The slippers I ordered last week are too small.', pt:'⭕ 쓰세요 The slippers I ordered ~ ARE (what 없이 바로 붙이고, 동사는 slippers 복수에 맞춤)   ❌ 쓰지 마세요 what I ordered · is too small'},
+ o:['The new cordless vacuum wasn’t as powerful than I expected.',
+    'The new cordless vacuum wasn’t so powerful so I expect.',
+    'The new cordless vacuum wasn’t as powerful as I expected.',
+    'The new cordless vacuum was not powerful as much as like I expected.'],
+ a:2, bad:'it’s not fun what i expected (같은 습관)', good:'It wasn’t as powerful as I expected.', pt:'⭕ 쓰세요 not as + 형용사 + as (기대만큼 ~않다)   ❌ 쓰지 마세요 as ~ than · what I expected'},
+
+{tag:'수업 · drop by',
+ ko:'집에 가는 길에 나사 사러 철물점에 잠깐 들를 거예요.',
+ q:'가장 자연스러운 문장은?',
+ o:['I’ll drop by the hardware store on my way home to get some screws.',
+    'I’ll drop by to the hardware store on my way home to get some screws.',
+    'I’ll dropping by hardware store on the way home for get screw.',
+    'I drop will by the hardware store to my way home get some screws.'],
+ a:0, bad:'잠깐 들르다 를 go 로만 말함', good:'I’ll drop by the hardware store on my way home.', pt:'⭕ 쓰세요 drop by + 장소 (전치사 없이 바로)   ❌ 쓰지 마세요 drop by TO + 장소'},
+
+{tag:'SRS · should’ve',
+ ko:'기차 탈 때 창가 자리를 달라고 할걸 그랬어요.',
+ q:'가장 자연스러운 문장은?',
+ o:['I should asked for a window seat on the train.',
+    'I should’ve asked for a window seat on the train.',
+    'I’m should ask window seat on the train.',
+    'I should asking for the window seats on train.'],
+ a:1, bad:'i should ask give me near by window seat', good:'I should’ve asked for a window seat.', pt:'⭕ 쓰세요 should’ve + p.p. (~할걸 그랬다)   ❌ 쓰지 마세요 should + 과거동사 · should asking'},
 
 {tag:'⑩ 품사',
- ko:'저는 스페인어가 유창해지는 게 목표예요.',
+ ko:'테이블에서 QR로 주문하는 게 정말 편리해요.',
  q:'가장 자연스러운 문장은?',
- o:['My goal is to become fluent in Spanish.',
-    'My goal is to become fluency in Spanish.',
-    'My goal is to fluent become Spanish in.',
-    'My goal is become to fluently at Spanish.'],
- a:0, bad:'fluency (명사) 를 형용사 자리에 넣는 습관', good:'My goal is to become fluent in Spanish.', pt:'⭕ 쓰세요 become fluent IN + 언어 (형용사)   ❌ 쓰지 마세요 become fluency · fluent at'},
+ o:['Ordering with the QR code at the table is really convenience.',
+    'Ordering with QR code at table is really convenienting.',
+    'To order QR code at the table is for convenient really.',
+    'Ordering with the QR code at the table is really convenient.'],
+ a:3, bad:'walking trail is very convenience', good:'Ordering with the QR code is really convenient.', pt:'⭕ 쓰세요 convenient (형용사 — is 뒤)   ❌ 쓰지 마세요 convenience (명사) · convenienting (없는 말)'},
 
-{tag:'SRS · come to',
- ko:'오디오북을 듣기 시작하고 나서, 출근길이 즐거워지게 됐어요.',
- q:'가장 자연스러운 문장은?',
- o:['After I started listening to audiobooks, I’ve come to enjoying my commute.',
-    'After I started listening to audiobooks, I’ve come to enjoy my commute.',
-    'After I started listening to audiobooks, I’ve come enjoy to my commute.',
-    'After I started listening to audiobooks, I come to enjoyed my commute.'],
- a:1, bad:'come to enjoying (come to 뒤에 -ing 를 붙이는 습관)', good:'After I started listening to audiobooks, I’ve come to enjoy my commute.', pt:'⭕ 쓰세요 come to + 동사원형 (~하게 되다)   ❌ 쓰지 마세요 come to enjoying'}
+{tag:'🔊 연음',
+ ko:'하루 종일 그 생각을 했어요.',
+ q:'[아이 쏘러바웃 잇 올 데이] 로 들렸다면 실제 문장은?',
+ o:['I sort it out all day.',
+    'I thought about it all day.',
+    'I taught it about all day.',
+    'I am thinking about it all day.'],
+ a:1, bad:'쏘러바웃 을 sort it out 으로 받아 적음', good:'I thought about it all day.', pt:'⭕ 실제 문장 I thought about it   thought의 t가 about과 붙어 [쏘러바웃]으로 굴러갑니다'}
 ],
 
 /* ---------- Part 2. 빈칸 10 — 전부 첫 글자 힌트 ---------- */
 fb:[
 {tag:'① 관사',
- ko:'다음 주 여행 가서 쓰려고 전동 칫솔을 하나 샀어요.',
- s:'I bought ______ ______ ______ for my trip next week.',
- a:['an electric toothbrush'], hint:'3단어 · a_ e_______ t_________ · 전동 칫솔 하나',
- bad:'i bought electric toothbrush (관사 누락 습관)', good:'I bought an electric toothbrush for my trip next week.', pt:'⭕ 쓰세요 an electric toothbrush (모음 소리 앞 → an)   ❌ 쓰지 마세요 a electric · 관사 없이'},
+ ko:'방 공기가 너무 건조해서, 어제 가습기를 하나 샀어요.',
+ s:'The air in my room is really dry, so I bought ______ ______ yesterday.',
+ a:['a humidifier'], hint:'2단어 · a h________ · 가습기 하나',
+ bad:'i bought humidifier (관사 누락 습관)', good:'I bought a humidifier yesterday.', pt:'⭕ 쓰세요 a humidifier (처음 말하는 물건 하나 → a)   ❌ 쓰지 마세요 관사 없이 humidifier'},
 
-{tag:'SRS · keeps -ing',
- ko:'블랙박스가 무슨 이유인지 계속 재부팅돼요.',
- s:'My dashcam ______ ______ for some reason.',
- a:['keeps restarting'], hint:'2단어 · k____ r_________ · 계속 재부팅',
- bad:'my dashcam is keep restart (be동사+원형 습관)', good:'My dashcam keeps restarting for some reason.', pt:'⭕ 쓰세요 keeps + -ING (단수 주어)   ❌ 쓰지 마세요 is keep restart'},
+{tag:'① 관사',
+ ko:'서류를 봉투에 넣어서 접수처에 냈어요.',
+ s:'I put the papers in ______ ______ and handed them in at the front desk.',
+ a:['an envelope'], hint:'2단어 · a_ e_______ · 봉투 하나',
+ bad:'i put paper in envelope (관사 누락 습관)', good:'I put the papers in an envelope.', pt:'⭕ 쓰세요 an envelope (모음 소리 앞 → an)   ❌ 쓰지 마세요 a envelope · 관사 없이 envelope'},
 
-{tag:'③ to vs -ing · SRS',
- ko:'지금 가 봐야 소용없어요 — 불꽃축제 명당은 벌써 다 찼어요.',
- s:'There’s no ______ ______ ______ now — the good spots for the fireworks are already taken.',
- a:['point in going'], hint:'3단어 · p____ i_ g____ · ~해 봐야 소용없다',
- bad:'it doesn’t work to go now (직역 습관)', good:'There’s no point in going now.', pt:'⭕ 쓰세요 There’s no point in + -ING   ❌ 쓰지 마세요 no point to go'},
+{tag:'③ to vs -ing',
+ ko:'손톱 물어뜯는 걸 끊으려고 노력 중이에요.',
+ s:'I’m trying to stop ______ my nails.',
+ a:['biting'], hint:'1단어 · b_____ · 물어뜯는 것',
+ bad:'stop to bite 로 말하는 습관', good:'I’m trying to stop biting my nails.', pt:'⭕ 쓰세요 stop + -ING (그만두다)   ❌ 쓰지 마세요 stop to bite (물려고 멈추다 — 뜻이 반대)'},
 
-{tag:'④ 과거',
- ko:'구내식당이 오늘 일찍 닫아서, 밖에 나가서 사 먹어야 했어요.',
- s:'The company cafeteria closed early today, so I ______ ______ ______ out.',
- a:['had to eat'], hint:'3단어 · h__ t_ e__ · ~해야 했다(과거)',
- bad:'i have to eat out (과거인데 현재형 습관)', good:'The company cafeteria closed early today, so I had to eat out.', pt:'⭕ 쓰세요 had to + 동사원형 (과거)   ❌ 쓰지 마세요 have to (현재형)'},
+{tag:'③ to vs -ing',
+ ko:'요리 수업 전에 야채 써는 걸 연습해야 해요.',
+ s:'I need to practice ______ vegetables before the cooking class.',
+ a:['chopping','cutting'], hint:'1단어 · c_______ · 써는 것',
+ bad:'practice to chop 으로 말하는 습관', good:'I need to practice chopping vegetables.', pt:'⭕ 쓰세요 practice + -ING   ❌ 쓰지 마세요 practice to chop'},
 
-{tag:'SRS · will be able to',
- ko:'케이블카를 타면, 안 걷고도 남산 정상까지 갈 수 있을 거예요.',
- s:'If we take the cable car, we ______ ______ ______ ______ get to the top of Namsan without walking.',
- a:['will be able to'], hint:'4단어 · w___ b_ a___ t_ · ~할 수 있을 거다',
- bad:'we will can go (조동사 두 개 습관)', good:'If we take the cable car, we will be able to get to the top without walking.', pt:'⭕ 쓰세요 will BE able to + 동사원형   ❌ 쓰지 마세요 will can · will able to'},
+{tag:'⑤ 수일치',
+ ko:'새로 산 선글라스가 알이 꽤 어두워요.',
+ s:'My new sunglasses ______ pretty dark.',
+ a:['are'], hint:'1단어 · a__ · 항상 복수 취급',
+ bad:'sunglasses is 로 말하는 습관', good:'My new sunglasses are pretty dark.', pt:'⭕ 쓰세요 sunglasses ARE (안경·바지처럼 항상 복수)   ❌ 쓰지 마세요 sunglasses is'},
 
-{tag:'SRS · get + p.p.',
- ko:'고궁 야간개장 중에 일행을 놓쳐서, 하마터면 길을 잃을 뻔했어요.',
- s:'I lost my group and almost ______ ______ during the palace night opening.',
- a:['got lost'], hint:'2단어 · g__ l___ · 길을 잃은 상태가 됐다',
- bad:'i almost was lose my way (be+원형 습관)', good:'I lost my group and almost got lost during the palace night opening.', pt:'⭕ 쓰세요 got + p.p. (그런 상태가 됐다) · during + 명사   ❌ 쓰지 마세요 was lose · became lost'},
+{tag:'⑥ 동사구',
+ ko:'회사가 제 면접을 일주일 뒤로 미뤘어요.',
+ s:'The company ______ my interview back by a week.',
+ a:['pushed'], hint:'1단어 · p_____ · 미뤘다 (과거형)',
+ bad:'i have to postpone my airplane ticket (반쪽 습관)', good:'The company pushed my interview back by a week.', pt:'⭕ 쓰세요 pushed ~ back by (미룬 폭까지 한 세트)   ❌ 쓰지 마세요 push (현재형) · 뒤의 back 빼먹기'},
 
-{tag:'SRS · was going to',
- ko:'헌 옷을 기부하려고 했는데, 수거함이 꽉 차 있었어요.',
- s:'I ______ ______ ______ donate my old clothes, but the collection bin was completely full.',
- a:['was going to'], hint:'3단어 · w__ g____ t_ · ~하려고 했는데',
- bad:'i will donate but ~ (과거 계획인데 will 습관)', good:'I was going to donate my old clothes, but the collection bin was completely full.', pt:'⭕ 쓰세요 was going to + 동사원형 (하려던 계획)   ❌ 쓰지 마세요 was go to · wanted to(=바람)'},
+{tag:'⑥ 동사구 · ⑧ 관계사',
+ ko:'지난달에 신청한 통신비 환급금이 드디어 들어왔어요.',
+ s:'The refund I ______ ______ last month finally came in.',
+ a:['applied for'], hint:'2단어 · a______ f__ · ~을 신청했다',
+ bad:'the credit card arrived what i ordered (같은 습관)', good:'The refund I applied for last month finally came in.', pt:'⭕ 쓰세요 apply FOR (전치사까지 한 세트) · what 없이 명사+주어+동사   ❌ 쓰지 마세요 apply 반쪽 · what 붙이기'},
 
-{tag:'SRS · drop off',
- ko:'출근길에 동생을 태권도장 앞에 내려 줬어요.',
- s:'I ______ ______ my brother at the taekwondo studio on my way to work.',
- a:['dropped off'], hint:'2단어 · d______ o__ · (사람을) 내려 주다 · 과거',
- bad:'i left my brother to taekwondo (leave A to B 습관)', good:'I dropped off my brother at the taekwondo studio on my way to work.', pt:'⭕ 쓰세요 drop off A at B / drop A off at B   ❌ 쓰지 마세요 leave A to B'},
+{tag:'⑨ have been -ing',
+ ko:'한 달째 집에서 운동하고 있어요.',
+ s:'I ______ ______ ______ out at home for a month.',
+ a:['have been working'], hint:'3단어 · h___ b___ w______ · 요즘 계속',
+ bad:'i work out for a month (현재형 습관)', good:'I have been working out at home for a month.', pt:'⭕ 쓰세요 have been -ing (요즘 계속 하는 중)   ❌ 쓰지 마세요 현재형 + for a month'},
 
-{tag:'⑨ still haven’t',
- ko:'수건들이 낡아 가는데, 아직도 새것을 못 샀어요.',
- s:'My towels are getting old, but I ______ ______ ______ new ones.',
- a:['still haven’t bought','still havent bought'], hint:'3단어 · s____ h______ b_____ · 아직도 못 샀다',
- bad:'i didn’t buy new ones yet (didn’t ~ yet 습관)', good:'My towels are getting old, but I still haven’t bought new ones.', pt:'⭕ 쓰세요 still haven’t + p.p. (아직도 못 ~)   ❌ 쓰지 마세요 still didn’t buy'},
+{tag:'SRS · I heard',
+ ko:'우리 주차장에 전기차 충전기가 생긴대요.',
+ s:'I ______ we’re getting an EV charger in our parking lot.',
+ a:['heard'], hint:'1단어 · h____ · ~라던데요 (전달 신호)',
+ bad:'전달 신호를 버리는 습관', good:'I heard we’re getting an EV charger.', pt:'⭕ 쓰세요 문장 맨 앞에 I heard   ❌ 쓰지 마세요 신호 없이 바로 본문부터'},
 
-{tag:'SRS · hadn’t p.p.',
- ko:'시식코너 음식이 그렇게 맛있었던 건, 아침부터 아무것도 안 먹었기 때문이었어요.',
- s:'The free samples at the mart tasted amazing because I ______ ______ anything since morning.',
- a:['hadn’t eaten','hadnt eaten'], hint:'2단어 · h_____ e____ · (그 전까지) 안 먹었었다',
- bad:'because i didn’t eat anything (그냥 과거로만 쓰는 습관)', good:'The free samples tasted amazing because I hadn’t eaten anything since morning.', pt:'⭕ 쓰세요 hadn’t + p.p. (과거보다 더 전 일)   ❌ 쓰지 마세요 didn’t ate · don’t eat'}
+{tag:'② 뒷절',
+ ko:'지난주에 맞춤 액자를 주문했는데, 토요일 아침에 나와요.',
+ s:'I ordered a custom frame last week, and it will be ready ______ ______ ______.',
+ a:['on saturday morning'], hint:'3단어 · o_ S_______ m______ · 토요일 아침에',
+ bad:'시간·장소 부사구를 통째로 버리는 습관', good:'It will be ready on Saturday morning.', pt:'⭕ 쓰세요 on Saturday morning (요일 앞 on · 끝까지)   ❌ 쓰지 마세요 뒷부분을 통째로 빼기'}
 ],
 
-/* ---------- Part 3. 영작 10 = 배열 3 + 부분 4 + 전체 3 ---------- */
+/* ---------- Part 3. 영작 10 — 단어 배열 3 + 부분 영작 4 + 전체 영작 3 ---------- */
 tr:[
-{tag:'SRS · keeps -ing',
- ko:'〔단어 배열〕 순서만 맞추세요: [ so / keeps stopping / I took it / my watch / to a watch shop ]  — 손목시계가 자꾸 멈춰서, 시계방에 가져갔어요.',
- m:'My watch keeps stopping, so I took it to a watch shop.',
- k:'keeps + -ing (자꾸 멈춘다) / took (과거) / a watch shop (관사) — 절 2개 확인'},
-
-{tag:'SRS · will be able to',
- ko:'〔단어 배열〕 순서만 맞추세요: [ make smoothies / if I buy / I’ll be able to / a blender / every morning ]  — 믹서기를 사면, 아침마다 스무디를 만들 수 있을 거예요.',
- m:'If I buy a blender, I’ll be able to make smoothies every morning.',
- k:'If + 현재 → I’ll be able to + 동사원형 / a blender (관사) — 절 2개 확인'},
-
 {tag:'SRS · should’ve',
- ko:'〔단어 배열〕 순서만 맞추세요: [ but / I should’ve / got burned / put on sunscreen / my shoulders ]  — 선크림을 발랐어야 했는데, 어깨가 다 타 버렸어요.',
- m:'I should’ve put on sunscreen, but my shoulders got burned.',
- k:'should’ve + p.p. (~했어야 했는데) / put on (바르는 동작) / got burned (탄 상태가 됐다) — 절 2개 확인'},
+ ko:'〔단어 배열〕 순서만 맞추세요: [ before / I should’ve / the typhoon came / taped the windows ]  — 태풍이 오기 전에 창문에 테이프를 붙였어야 했는데.',
+ m:'I should’ve taped the windows before the typhoon came.',
+ k:'should’ve + p.p. (~했어야 했는데) / before + 주어 + 동사 — 절 2개 확인'},
 
-{tag:'③ ended up',
- ko:'옥수수를 찌려고 했는데, 결국 그냥 냄비에 삶았어요.  〔앞절 제공〕 I was going to steam the corn, but ______',
- m:'I was going to steam the corn, but I ended up boiling it instead.',
- k:'뒷절만 쓰세요 : I ended up boiling it instead — ended up + -ING (결국 ~하게 됐다) — 절 2개 확인'},
+{tag:'SRS · If I’d → would’ve',
+ ko:'〔단어 배열〕 순서만 맞추세요: [ dinner / if I’d set the timer / would’ve been ready on time / on the rice cooker ]  — 밥솥 타이머를 맞춰 뒀더라면, 저녁이 제때 준비됐을 텐데.',
+ m:'If I’d set the timer on the rice cooker, dinner would’ve been ready on time.',
+ k:'If I’d + p.p. → would’ve + p.p. (했더라면 → 했을 텐데) — 절 2개 확인'},
 
-{tag:'④ 과거 couldn’t',
- ko:'워터파크가 너무 붐벼서, 슬라이드는 하나도 못 탔어요.  〔앞절 제공〕 The water park was way too crowded, so ______',
- m:'The water park was way too crowded, so I couldn’t ride any of the slides.',
- k:'뒷절만 쓰세요 : I couldn’t ride any of the slides — couldn’t (과거) · any of the slides 까지 — 절 2개 확인'},
+{tag:'⑧ 관계사 생략',
+ ko:'〔단어 배열〕 순서만 맞추세요: [ arrived this morning / the keyboard / last week / I ordered ]  — 지난주에 주문한 키보드가 오늘 아침에 도착했어요.',
+ m:'The keyboard I ordered last week arrived this morning.',
+ k:'명사 + 주어 + 동사 (what 없이 바로 붙이기) / arrived 과거 — 절 2개 확인'},
 
-{tag:'SRS · ran out of + had to',
- ko:'화장실 휴지가 다 떨어져서, 가게까지 뛰어가야 했어요.  〔앞절 제공〕 We ran out of toilet paper, so ______',
- m:'We ran out of toilet paper, so I had to run to the store.',
- k:'뒷절만 쓰세요 : I had to run to the store — had to + 동사원형 (과거) · the store (관사) — 절 2개 확인'},
+{tag:'② 뒷절 + ① 관사',
+ ko:'테니스 레슨을 등록했고, 토요일 아침마다 수업이 있어요.  〔앞절 제공〕 I signed up for tennis lessons, and ______',
+ m:'I signed up for tennis lessons, and I have a class every Saturday morning.',
+ k:'뒷절만 쓰세요 : I have a class every Saturday morning — a class (관사) · every Saturday morning 까지 끝까지 — 절 2개 확인'},
 
-{tag:'④ 과거 + ② 뒷절',
- ko:'아이스링크에서 처음 타 봐서, 내내 벽을 잡고 있었어요.  〔앞절 제공〕 It was my first time skating at an ice rink, so ______',
- m:'It was my first time skating at an ice rink, so I held onto the wall the whole time.',
- k:'뒷절만 쓰세요 : I held onto the wall the whole time — held (과거) · the whole time 까지 끝까지 — 절 2개 확인'},
-
-{tag:'① 관사 + ④ 과거',
- ko:'오늘 너무 더워서, 다이소에서 얼음 트레이를 하나 샀어요.',
- m:'It was so hot today that I bought an ice tray at Daiso.',
- k:'It was so hot (과거) / an ice tray (모음 소리 앞 an) — 절 2개 확인'},
-
-{tag:'⑦ 비교',
- ko:'전화벨이 울리면 긴장돼서, 통화보다 문자하는 게 더 편해요.',
- m:'I get nervous when the phone rings, so I’m more comfortable texting than calling.',
- k:'when + 주어 + 동사 / more comfortable -ing A than -ing B (비교) — 절 2개 확인'},
+{tag:'⑨ still haven’t',
+ ko:'그 팝업스토어가 지난달에 열렸는데, 아직 못 가 봤어요.  〔앞절 제공〕 The pop-up store opened last month, but ______',
+ m:'The pop-up store opened last month, but I still haven’t been there.',
+ k:'뒷절만 쓰세요 : I still haven’t been there — still haven’t + p.p. (아직 못 ~) — 절 2개 확인'},
 
 {tag:'④ 과거 + ② 뒷절',
- ko:'해변에 좀 늦게 도착해서, 그늘 자리를 찾는 데 한 시간이 걸렸어요.',
- m:'We got to the beach a little late, so it took us an hour to find a shady spot.',
- k:'got (과거) / it took us an hour to + 동사원형 / a shady spot (관사) — 절 2개 확인'}
+ ko:'그 삼계탕집은 항상 대기가 있어서, 우리는 아침 일찍 갔어요.  〔앞절 제공〕 There’s always a wait at that samgyetang place, so ______',
+ m:'There’s always a wait at that samgyetang place, so we went there early in the morning.',
+ k:'뒷절만 쓰세요 : we went there early in the morning — went (과거) · early in the morning 까지 — 절 2개 확인'},
+
+{tag:'④ 과거 + ⑦ 비교',
+ ko:'주말 동안 친구네 앵무새를 봐줬는데, 생각보다 시끄러웠어요.  〔앞절 제공〕 I looked after my friend’s parrot over the weekend, and ______',
+ m:'I looked after my friend’s parrot over the weekend, and it was louder than I expected.',
+ k:'뒷절만 쓰세요 : it was louder than I expected — was (과거) · 비교급 + than I expected — 절 2개 확인'},
+
+{tag:'SRS · The reason why',
+ ko:'제가 저녁마다 향초를 켜는 이유는 긴장이 풀리기 때문이에요.',
+ m:'The reason why I light a candle every evening is it helps me relax.',
+ k:'The reason why + 문장 + is + 문장 / a candle (관사) — 절 2개 확인'},
+
+{tag:'수업 · 반차',
+ ko:'지난 금요일에 오전 반차라서, 일찍 고향에 내려갔어요.',
+ m:'I had my morning off last Friday, so I went down to my hometown early.',
+ k:'I had my morning off (오전 반차) / went down to (고향에 내려가다) — 절 2개 확인'},
+
+{tag:'수업 · I wouldn’t mind',
+ ko:'내일 아침에 미리 전화 주셔도 저는 괜찮아요.',
+ m:'I wouldn’t mind if you called me tomorrow morning.',
+ k:'I wouldn’t mind if + 주어 + 과거형(called) — 공손한 허락 — 절 2개 확인'}
 ]
 };
 
