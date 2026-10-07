@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kyle 데일리 영어 퀴즈 · 2026-10-07 (수) · 30문제</title>
+<title>kyle 데일리 영어 퀴즈 · 2026-10-03 (토) · 30문제</title>
 <style>
 :root{
   --bg:#f7f8fa; --card:#ffffff; --line:#e3e6ec; --ink:#1c2029; --sub:#666e7d;
@@ -126,658 +126,679 @@ var BASE = (location.protocol === 'file:' || !location.origin || location.origin
   ? FALLBACK_BASE : (location.origin + location.pathname);
 
 var QUIZ = {
- "date": "2026-10-07",
- "day": "수요일",
- "edition": "대과거 had + 과거분사 . get + 목적어 + 과거분사 . used to + 동사원형 . while(주어+동사) vs during(명사) . There is/are 수일치 . 수여동사(사람 먼저 + 관사 + 물건) . 고질(관사 a/an/the . 과거분사 . 수일치 . 뒷절 . 동사구) 곳곳에 . 4대 끊김 A/B/C/D . 힌트=문법 이름만 . 배열 칩 셔플 . 10-06/10-05 구조 회피",
+ "date": "2026-10-03",
+ "day": "토요일",
+ "edition": "토요일 - 신규 구조 세트: to부정사 vs 동명사 목적어 . 주격 관계대명사 who/which/that + 수일치 . 조동사 might/may/could 추측 + had better 충고 . 전치사 at/on/in + by vs until . There is/are 수일치 . 고질(관사 a/an/the . 과거분사 . 수일치 . 뒷절)을 곳곳에 . 힌트=문법 이름만 . 배열 칩 셔플 . 10-02/10-01 구조는 회피",
  "badges": [
-  "대과거 had + 과거분사",
-  "get + 목적어 + 과거분사",
-  "used to + 동사원형",
-  "while(문장) vs during(명사)",
-  "There is / are 수일치",
-  "수여동사 사람 + 물건 어순",
+  "★ to부정사 vs 동명사 목적어",
+  "주격 관계대명사 who/which/that",
+  "조동사 might/may/could 추측",
+  "had better 충고",
+  "전치사 at/on/in · by/until",
+  "There is/are 수일치",
   "★ 관사 a/an/the (고질)",
-  "★ 뒷절 생산 (영작 전부 2절)",
   "영작 = 배열5 + 부분4 + 전체1",
-  "🔊 연음 got it [가릿]"
+  "🔊 연음 want to [워너]",
+  "🖼 이미지 저장"
  ],
  "diag": [
   [
-   "★ 고질 - 관사: 셀 수 있는 단수 앞엔 한 박자 멈추고 a/an, 아는 것엔 the",
-   "I got haircut at new place yesterday",
-   "I got a haircut at a new place yesterday.",
-   "⭕ 쓰세요 a haircut / a new place   ❌ 쓰지 마세요 got haircut / at new place"
+   "★ 고질 - 관사: 셀 수 있는 단수 명사 앞에는 한 박자 멈추고 a/an",
+   "I forgot to bring umbrella",
+   "I forgot to bring an umbrella.",
+   "⭕ 쓰세요 an umbrella (셀 수 있는 단수 앞 a/an)   ❌ 쓰지 마세요 bring umbrella"
   ],
   [
-   "대과거 - 두 과거 중 더 먼저 일어난 일은 had + 과거분사",
-   "When I arrived the movie already start",
-   "When I arrived, the movie had already started.",
-   "⭕ 쓰세요 had already started (had + 과거분사)   ❌ 쓰지 마세요 already start / has already started"
+   "★ to부정사 목적 vs 동명사: '~하려고(목적)'는 to부정사, for -ing 아님",
+   "It's a good idea to head out early for avoiding rush hour",
+   "It's a good idea to head out early to avoid rush hour.",
+   "⭕ 쓰세요 to avoid (목적은 to부정사)   ❌ 쓰지 마세요 for avoiding"
   ],
   [
-   "서비스 받다 - get + 목적어 + 과거분사",
-   "I fixed my phone at the shop",
-   "I got my phone fixed at the shop.",
-   "⭕ 쓰세요 got my phone fixed (남이 고쳐 줌)   ❌ 쓰지 마세요 I fixed my phone (내가 직접 고친 뜻)"
+   "★ 고질 - 현재완료 과거분사: have 뒤에는 반드시 과거분사",
+   "I have live here for two years",
+   "I have lived here for two years.",
+   "⭕ 쓰세요 have lived (have + 과거분사)   ❌ 쓰지 마세요 have live"
   ],
   [
-   "★ 고질 - 수일치: 주어가 One이면 동사도 단수 is/was",
-   "One of my friends are a doctor",
-   "One of my friends is a doctor.",
-   "⭕ 쓰세요 One of my friends is (주어 One → is)   ❌ 쓰지 마세요 One of my friends are"
+   "★ 관계대명사 수일치: 선행사가 단수면 관계절 동사도 -s",
+   "I use an app that save money",
+   "I use an app that saves money.",
+   "⭕ 쓰세요 that saves (단수 선행사 → 동사 -s)   ❌ 쓰지 마세요 that save"
   ],
   [
-   "수여동사 - 사람 먼저, 그다음 물건(+관사)",
-   "My mom made for me a cake",
-   "My mom made me a cake.",
-   "⭕ 쓰세요 made me a cake (사람 + 관사 a)   ❌ 쓰지 마세요 made for me a cake"
+   "★ 전치사 by vs until: 완료 시점은 by, 계속은 until",
+   "I have to finish it until Friday",
+   "I have to finish it by Friday.",
+   "⭕ 쓰세요 finish by Friday (완료 시점 by)   ❌ 쓰지 마세요 finish until Friday"
   ]
  ],
  "starters": [
   [
-   "By the time I ~, it had already ~",
-   "내가 ~했을 땐 이미 ~해 버린 뒤였어요 (대과거)",
-   "회상"
+   "I decided to ~",
+   "저는 ~하기로 했어요 (계획을 말할 때)",
+   "결정"
   ],
   [
-   "I got it ~ed",
-   "그거 ~받았어요 (get + 목적어 + 과거분사)",
-   "서비스"
+   "I keep ~ing",
+   "저는 자꾸 ~하게 돼요 (반복되는 습관)",
+   "습관"
   ],
   [
-   "I used to ~, but not anymore",
-   "예전엔 ~했는데 지금은 안 해요 (과거 습관)",
-   "과거"
+   "He's the one who ~",
+   "그 사람이 ~한 사람이에요 (사람 설명)",
+   "사람 소개"
   ],
   [
-   "While I was ~ing, ~",
-   "제가 ~하고 있는 동안 ~했어요 (while + 과거진행)",
-   "상황"
+   "It might ~",
+   "~할지도 몰라요 (조심스런 추측)",
+   "추측"
   ],
   [
-   "There used to be ~ here",
-   "예전에 여기 ~이 있었어요",
-   "회상"
+   "You'd better ~",
+   "~하는 게 좋을 거예요 (충고)",
+   "충고"
   ],
   [
-   "One of them is ~",
-   "그중 하나가 ~예요 (주어 One → is)",
-   "설명"
+   "There's something I want to ~",
+   "~하고 싶은 게 있어요 (화제 꺼내기)",
+   "화제 꺼내기"
   ],
   [
-   "My ~ got me ~",
-   "~가 저한테 ~를 사/만들어 줬어요 (수여동사 어순)",
-   "소개"
+   "I'll get it done by ~",
+   "~까지 끝낼게요 (마감 약속)",
+   "마감 약속"
   ],
   [
-   "I had never ~ before",
-   "그 전엔 ~해 본 적이 없었어요 (대과거 경험)",
-   "경험"
+   "I'm not really into ~ing",
+   "저는 ~하는 걸 별로 안 좋아해요 (취향)",
+   "취향"
   ],
   [
-   "Could you take a look at ~?",
-   "~ 좀 봐 주실래요? (요청)",
-   "화상영어"
+   "That's the place where ~",
+   "거기가 ~하는 곳이에요 (장소 설명)",
+   "장소 설명"
   ],
   [
-   "During the ~, I ~",
-   "~ 동안 저는 ~했어요 (during + 명사)",
-   "일과"
+   "Let me think about it for a second.",
+   "잠깐 생각 좀 해 볼게요 (시간을 벌 때)",
+   "시간 벌기"
   ]
  ],
  "memo": [
   [
-   "By the time I got to the platform, the train had already left.",
-   "제가 승강장에 도착했을 땐, 기차는 이미 떠난 뒤였어요."
+   "I forgot to bring an umbrella, so I got soaked.",
+   "우산 가져오는 걸 깜빡해서 흠뻑 젖었어요."
   ],
   [
-   "I got my laptop repaired at the service center yesterday.",
-   "저는 어제 서비스 센터에서 노트북을 수리받았어요."
+   "It's a good idea to head out early to avoid the traffic.",
+   "차 막히는 걸 피하려면 일찍 나가는 게 좋아요."
   ],
   [
-   "I used to take the subway to work, but now I ride my bike.",
-   "저는 예전에 지하철로 출근했는데, 지금은 자전거를 타요."
+   "I use an app that saves a lot of money.",
+   "저는 돈을 많이 아껴 주는 앱을 써요."
   ],
   [
-   "While I was cooking dinner, the smoke alarm went off.",
-   "제가 저녁을 만들고 있는 동안, 화재경보기가 울렸어요."
+   "John is the coworker who sits next to me.",
+   "존은 제 옆에 앉는 동료예요."
   ],
   [
-   "There are a few seats left, but one of them is broken.",
-   "자리가 몇 개 남았는데, 그중 하나는 고장 났어요."
+   "You'd better leave now, or you'll miss the last bus.",
+   "지금 나가는 게 좋아요, 안 그러면 막차를 놓쳐요."
   ],
   [
-   "My aunt bought me a thick jacket because it was getting cold.",
-   "이모가 날이 추워져서 저에게 두꺼운 재킷을 사 주셨어요."
+   "It might rain later, so bring a jacket.",
+   "이따 비가 올지도 모르니까 재킷 챙겨요."
   ],
   [
-   "I had never been to a water park before last summer.",
-   "저는 작년 여름 전까지 워터파크에 가 본 적이 없었어요."
+   "I have to finish the report by Friday.",
+   "저는 금요일까지 보고서를 끝내야 해요."
   ],
   [
-   "I got my hair cut short, and everyone said it looked great.",
-   "저는 머리를 짧게 잘랐는데, 모두가 잘 어울린다고 했어요."
+   "I'll stay at the office until six.",
+   "저는 6시까지 사무실에 있을 거예요."
   ],
   [
-   "During the long holiday, I finally got my bike fixed.",
-   "긴 연휴 동안, 저는 드디어 자전거를 수리받았어요."
+   "There are a few things I want to ask you.",
+   "당신에게 물어보고 싶은 게 몇 가지 있어요."
   ],
   [
-   "There used to be a small bakery here, but it closed down.",
-   "예전에 여기 작은 빵집이 있었는데, 문을 닫았어요."
+   "I'm thinking about taking an online course.",
+   "저는 온라인 강의를 들을까 생각 중이에요."
   ],
   [
-   "While we were waiting for the bus, it started to pour.",
-   "우리가 버스를 기다리는 동안, 비가 쏟아지기 시작했어요."
+   "I decided to sell my old monitor.",
+   "저는 오래된 모니터를 팔기로 했어요."
   ],
   [
-   "One of my shoes got soaked, so I had to change my socks.",
-   "제 신발 중 한 짝이 흠뻑 젖어서, 저는 양말을 갈아 신어야 했어요."
+   "Let me get back to you on that.",
+   "그건 제가 다시 알려 드릴게요."
   ]
  ],
  "signal": [
   [
-   "(더 먼저 일어난 일) 이미 ~해 버린 뒤였다 - 대과거",
-   "had + already + 과거분사"
+   "~하기로 결정하다 (to부정사 목적어)",
+   "decide / plan / want + to + 동사원형"
   ],
   [
-   "내가 ~했을 때쯤엔 - 시점 신호",
-   "By the time + 주어 + 과거동사, ~ had 과거분사"
+   "~하는 걸 끝내다/피하다 (동명사 목적어)",
+   "finish / avoid / keep / enjoy + 동사-ing"
   ],
   [
-   "(남에게) ~받다 / ~하게 하다",
-   "get + 목적어 + 과거분사 (got it fixed)"
+   "~하는 사람 (주격 관계대명사)",
+   "the person who + 동사 (사람)"
   ],
   [
-   "예전엔 ~하곤 했다 (지금은 아님)",
-   "used to + 동사원형"
+   "~하는 사물 (주격 관계대명사)",
+   "the thing which / that + 동사 (사물)"
   ],
   [
-   "예전에 ~이 있었다",
-   "There used to be + 명사"
+   "선행사가 단수면 관계절 동사도 -s",
+   "an app that saves (save ❌)"
   ],
   [
-   "~하고 있는 동안 (주어+동사)",
-   "while + 주어 + was/were + 동사-ing"
+   "~할지도 몰라요 (추측)",
+   "might / may / could + 동사원형"
   ],
   [
-   "~ 동안 (명사 덩어리)",
-   "during + 명사"
+   "~하는 게 좋겠다 (충고)",
+   "had better + 동사원형 (= 'd better)"
   ],
   [
-   "~이 몇 개 있다 / 그중 하나가 ~다",
-   "There are + 복수 / One of the 복수 + is"
+   "(완료 시점) ~까지",
+   "by + 시점 (finish by Friday)"
   ],
   [
-   "(사람)에게 (물건)을 사/만들어 주다",
-   "bought/made + 사람 + 관사 + 물건"
+   "(계속) ~까지 쭉",
+   "until + 시점 (stay until six)"
   ],
   [
-   "🔊 연음 받아쓰기 - got it [가릿]",
-   "got it fixed = [가릿 픽스트]"
+   "🔊 연음 받아쓰기 - want to [워너]",
+   "I want to go = [아이 워너 고]"
   ]
  ],
  "cards": [
   {
-   "t": "★ 구조 카드 1 - 대과거: 더 먼저 일어난 일은 had + 과거분사",
-   "f": "두 과거 사건 중 더 먼저 일어난 일   had + 과거분사 - When I arrived, the train had already left.\n자주 쓰는 신호   by the time ~ / before ~ / already / never ~ before\n과거 이야기엔 has 아니라 had   has left(현재완료) → had left(대과거)\n★ '~했을 때 이미 ~해 버린 뒤였다' 는 뒷일=과거(arrived), 앞일=had 과거분사\n❌ 이렇게 쓰면 안 됩니다 - already left(had 누락) . has already left(과거엔 had) . had already leave(과거분사 left)",
+   "t": "★ 구조 카드 1 - to부정사 목적어 vs 동명사 목적어",
+   "f": "to부정사를 받는 동사   want / need / decide / plan / hope / forget + to + 동사원형\n동명사를 받는 동사     enjoy / finish / keep / avoid / stop / mind + 동사-ing\n예          I decided to leave. / I finished eating.\n★ stop to do(~하려고 멈추다) vs stop doing(~하던 걸 멈추다) - 의미가 다름\n❌ 이렇게 쓰면 안 됩니다 - want going(want + to) . enjoy to watch(enjoy + -ing) . decided leaving",
    "ex": [
     [
-     "By the time we got there, the shop had already closed.",
-     "우리가 도착했을 땐, 그 가게는 이미 문을 닫은 뒤였어요."
+     "I'm planning to visit my parents this weekend.",
+     "저는 이번 주말에 부모님을 뵈러 갈 계획이에요."
     ],
     [
-     "I had never eaten sushi before I visited Japan.",
-     "저는 일본에 가 보기 전까지 초밥을 먹어 본 적이 없었어요."
+     "She keeps forgetting her password.",
+     "그녀는 비밀번호를 자꾸 잊어버려요."
     ],
     [
-     "She had finished her homework before dinner started.",
-     "그녀는 저녁이 시작되기 전에 숙제를 끝냈어요."
+     "Would you mind opening the window?",
+     "창문 좀 열어 주시겠어요?"
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 2 - get + 목적어 + 과거분사 (남이 ~해 주게 하다)",
-   "f": "남에게 서비스를 받다   get + 목적어 + 과거분사 - I got my car washed.\n내가 직접 한 게 아님   I washed my car(내가 직접) vs I got my car washed(세차 맡김)\n과거는 got, 과거분사 꼬리 주의   fix→fixed . cut→cut . repair→repaired\n★ 목적어가 가운데, 과거분사가 마지막. get + 목적어 + 과거분사 순서 고정\n❌ 이렇게 쓰면 안 됩니다 - got my car wash(과거분사 washed) . got washed my car(어순) . get(과거 got)",
+   "t": "★ 구조 카드 2 - 주격 관계대명사 who / which / that + 수일치",
+   "f": "사람       the person who + 동사\n사물       the thing which / that + 동사\n★ 선행사가 단수면 관계절 동사도 -s : an app that saves\n★ 관계절 안의 동사도 시제를 맞춘다 : the man who lived here\n❌ 이렇게 쓰면 안 됩니다 - the app what saves(what 오용) . who for 사물 . that save(단수인데 -s 빠짐)",
    "ex": [
     [
-     "I got my watch repaired at the mall.",
-     "저는 쇼핑몰에서 시계를 수리받았어요."
+     "He is the engineer who fixed our server.",
+     "그가 우리 서버를 고쳐 준 엔지니어예요."
     ],
     [
-     "We got the photos printed for the album.",
-     "우리는 앨범에 넣으려고 사진을 인화했어요."
+     "This is the cafe that opens at 7 a.m.",
+     "여기가 아침 7시에 여는 카페예요."
     ],
     [
-     "He got his tooth pulled last week.",
-     "그는 지난주에 이를 뽑았어요."
+     "I know a shop that sells cheap monitors.",
+     "저는 싼 모니터를 파는 가게를 알아요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 3 - while(+주어+동사) vs during(+명사)",
-   "f": "while 뒤   주어 + 동사 (문장) - while I was eating\nduring 뒤   명사 (덩어리) - during lunch\n과거의 '~하는 동안'   while + 주어 + was/were + 동사-ing\n★ 뜻은 같아도 뒤에 오는 모양이 다르다. 문장이면 while, 명사면 during\n❌ 이렇게 쓰면 안 됩니다 - during I was eating(during + 명사) . while lunch(while + 문장) . while I eating(was 누락)",
+   "t": "★ 구조 카드 3 - 조동사 might/may/could 추측 · had better 충고",
+   "f": "추측       might / may / could + 동사원형 (~일지도 모른다)\n충고       had better + 동사원형 (~하는 게 좋겠다, 'd better)\n부정       had better not + 동사원형\n★ 조동사 뒤에는 언제나 동사원형, to 없음\n❌ 이렇게 쓰면 안 됩니다 - might rains(원형) . had better to go(원형) . may is(may be)",
    "ex": [
     [
-     "While I was studying, my phone kept buzzing.",
-     "제가 공부하는 동안, 전화기가 계속 울렸어요."
+     "It might snow this weekend.",
+     "이번 주말에 눈이 올지도 몰라요."
     ],
     [
-     "I fell asleep during the movie.",
-     "저는 영화 보는 동안 잠들었어요."
+     "You'd better back up your files.",
+     "파일을 백업해 두는 게 좋겠어요."
     ],
     [
-     "During the trip, we took hundreds of photos.",
-     "여행 동안, 우리는 사진을 수백 장 찍었어요."
+     "We'd better not be late.",
+     "우리 늦지 않는 게 좋겠어요."
+    ]
+   ]
+  },
+  {
+   "t": "★ 구조 카드 4 - 전치사 at/on/in · by vs until · There is/are",
+   "f": "시각 at(at 7)  요일·날짜 on(on Monday)  월·연·공간 in(in May)\n완료 by(finish by Friday) vs 계속 until(stay until six)\nThere is + 단수 / There are + 복수 (수일치)\n❌ 이렇게 쓰면 안 됩니다 - in Monday(on) . finish until Friday(완료는 by) . There is two(복수 are)",
+   "ex": [
+    [
+     "The store opens at 9 on weekdays.",
+     "그 가게는 평일 9시에 열어요."
+    ],
+    [
+     "Please reply by tomorrow.",
+     "내일까지 답장 주세요."
+    ],
+    [
+     "There are a few seats left.",
+     "자리가 몇 개 남아 있어요."
     ]
    ]
   }
  ],
  "kit": [
   [
-   "Sorry, could you repeat the last part?",
-   "죄송한데, 마지막 부분 다시 말해 주실래요?"
+   "Can you recommend a good way to practice this?",
+   "이거 연습할 좋은 방법 추천해 주실 수 있어요?"
   ],
   [
-   "How would you say this more naturally?",
-   "이걸 더 자연스럽게 하면 어떻게 말해요?"
+   "Is this expression natural?",
+   "이 표현 자연스러워요?"
   ],
   [
-   "Give me a second to put it into words.",
-   "말로 옮길 시간 좀 주세요."
+   "How would a native say this?",
+   "원어민은 이걸 어떻게 말해요?"
   ],
   [
-   "Did I use that word correctly?",
-   "제가 그 단어 맞게 썼나요?"
+   "Can you give me a similar example?",
+   "비슷한 예문 하나 들어 주실 수 있어요?"
   ],
   [
-   "Can you type that in the chat?",
-   "그거 채팅창에 적어 주실래요?"
+   "I'll make a note of that.",
+   "그거 메모해 둘게요."
   ],
   [
-   "I know what I mean, but not how to say it.",
-   "무슨 말인지는 아는데, 어떻게 말할지 모르겠어요."
+   "What's the difference between these two?",
+   "이 둘의 차이가 뭐예요?"
+  ],
+  [
+   "Could you use it in a sentence?",
+   "문장으로 한번 써 주실 수 있어요?"
   ],
   [
    "Let's move on to the next one.",
    "다음 걸로 넘어가요."
-  ],
-  [
-   "That makes sense now, thank you.",
-   "이제 이해됐어요, 고마워요."
   ]
  ],
  "pron": [
   [
-   "got it",
-   "[가릿]",
-   "got it 이 [가릿] (I got it fixed = 아이 가릿 픽스트)"
+   "want to",
+   "[워너]",
+   "want to 가 뭉쳐 [워너] (I want to go = 아이 워너 고)"
   ],
   [
-   "had a",
-   "[해더]",
-   "had a 가 [해더] (I had a call = 아이 해더 콜)"
-  ],
-  [
-   "picked it up",
-   "[픽키럽]",
-   "picked it up 이 [픽키럽] (I picked it up = 아이 픽키럽)"
-  ],
-  [
-   "in front of",
-   "[인프러너브]",
-   "in front of 가 [인프러너브] (in front of the store = 인프러너브 더 스토어)"
+   "have to",
+   "[햅투]",
+   "have to 는 [햅투] (I have to go = 아이 햅투 고)"
   ],
   [
    "a couple of",
-   "[어커플러브]",
-   "a couple of 가 [어커플러브] (a couple of days = 어커플러브 데이즈)"
+   "[어커플럽]",
+   "a couple of 가 [어커플럽] (a couple of days)"
   ],
   [
    "next to",
    "[넥스투]",
-   "next to 가 [넥스투] (next to the bank = 넥스투 더 뱅크)"
+   "next to 는 [넥스투] (sits next to me)"
   ],
   [
-   "take a look",
-   "[테이껄룩]",
-   "take a look 이 [테이껄룩] (take a look at this = 테이껄룩 앳 디스)"
+   "pick it up",
+   "[피키럽]",
+   "pick it up 은 [피키럽] (I'll pick it up later)"
+  ],
+  [
+   "in an hour",
+   "[이너나워]",
+   "in an hour 가 [이너나워] (in an hour)"
+  ],
+  [
+   "what should I",
+   "[왓슈다이]",
+   "what should I 는 [왓슈다이] (What should I do?)"
   ]
  ],
  "mc": [
   {
-   "tag": "대과거 had 과거분사",
-   "ko": "제가 역에 도착했을 때, 기차는 이미 떠난 뒤였어요.",
+   "tag": "to부정사 목적어 want to",
+   "ko": "저는 제 오래된 모니터를 온라인으로 팔고 싶어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "By the time I arrived at the station, the train had already left.",
-    "By the time I arrived at the station, the train already left.",
-    "By the time I arrived at the station, the train has already left.",
-    "By the time I was arriving, the train had already left."
+    "I want to sell my old monitor online.",
+    "I want selling my old monitor online.",
+    "I want sell my old monitor online.",
+    "I am want to sell my old monitor online."
    ],
    "a": 0,
-   "bad": "already left(had 누락) . has already left(과거엔 had) . was arriving(과거 arrived)",
-   "good": "By the time I arrived at the station, the train had already left.",
-   "pt": "⭕ 쓰세요 had already left (had + 과거분사)   ❌ 쓰지 마세요 already left . has already left"
+   "bad": "want selling(want는 to부정사) . want sell(to 필요) . am want to",
+   "good": "I want to sell my old monitor online.",
+   "pt": "⭕ 쓰세요 want to sell (want + to + 동사원형)   ❌ 쓰지 마세요 want selling . want sell"
   },
   {
-   "tag": "get + 목적어 + 과거분사",
-   "ko": "저는 어제 시계를 수리받았어요.",
+   "tag": "주격 관계대명사 who + 수일치",
+   "ko": "존은 제 옆에 앉는 동료예요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I got my watch repair yesterday.",
-    "I got my watch repaired yesterday.",
-    "I got my watch repairing yesterday.",
-    "I got repaired my watch yesterday."
+    "John is the coworker who sit next to me.",
+    "John is the coworker who sits next to me.",
+    "John is the coworker which sits next to me.",
+    "John is the coworker who sitting next to me."
    ],
    "a": 1,
-   "bad": "repair(과거분사 repaired) . repairing(-ing 아님) . got repaired my watch(어순)",
-   "good": "I got my watch repaired yesterday.",
-   "pt": "⭕ 쓰세요 got my watch repaired (get + 목적어 + 과거분사)   ❌ 쓰지 마세요 got my watch repair"
+   "bad": "who sit(선행사 단수 - sits) . which(사람은 who) . who sitting(동사 활용)",
+   "good": "John is the coworker who sits next to me.",
+   "pt": "⭕ 쓰세요 who sits (사람 + who + 동사-s)   ❌ 쓰지 마세요 who sit . which"
   },
   {
-   "tag": "used to + 동사원형",
-   "ko": "저는 예전에 이 동네에 살았었어요 (지금은 아니에요).",
+   "tag": "조동사 might 추측",
+   "ko": "오늘 오후 늦게 비가 올지도 몰라요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I used to living in this neighborhood.",
-    "I use to live in this neighborhood.",
-    "I used to live in this neighborhood.",
-    "I am used to live in this neighborhood."
+    "It might rains later this afternoon.",
+    "It might to rain later this afternoon.",
+    "It might rain later this afternoon.",
+    "It will might rain later this afternoon."
    ],
    "a": 2,
-   "bad": "used to living(to + 동사원형) . use to(used to) . am used to(습관은 used to + 원형)",
-   "good": "I used to live in this neighborhood.",
-   "pt": "⭕ 쓰세요 used to live (used to + 동사원형)   ❌ 쓰지 마세요 use to live . used to living"
+   "bad": "might rains(조동사 뒤 원형) . might to rain . will might(조동사 중복)",
+   "good": "It might rain later this afternoon.",
+   "pt": "⭕ 쓰세요 might rain (조동사 + 동사원형)   ❌ 쓰지 마세요 might rains . might to rain"
   },
   {
-   "tag": "while + 주어 + 과거진행",
-   "ko": "제가 설거지를 하고 있는 동안, 전화기가 울렸어요.",
+   "tag": "전치사 at/on (요일·시각)",
+   "ko": "그 회의는 토요일 오전 10시에 시작해요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "During I was doing the dishes, my phone rang.",
-    "While I doing the dishes, my phone rang.",
-    "While I was do the dishes, my phone rang.",
-    "While I was doing the dishes, my phone rang."
+    "The meeting starts at Saturday on 10 a.m.",
+    "The meeting starting on Saturday at 10 a.m.",
+    "The meeting start in Saturday in 10 a.m.",
+    "The meeting starts on Saturday at 10 a.m."
    ],
    "a": 3,
-   "bad": "During + 문장(During 뒤엔 명사) . While I doing(was 누락) . was do(was + -ing)",
-   "good": "While I was doing the dishes, my phone rang.",
-   "pt": "⭕ 쓰세요 While I was doing (while + 주어 + was -ing)   ❌ 쓰지 마세요 During I was doing"
+   "bad": "at Saturday / on 10(요일 on, 시각 at) . starting(동사는 starts) . start in Saturday",
+   "good": "The meeting starts on Saturday at 10 a.m.",
+   "pt": "⭕ 쓰세요 on Saturday / at 10 a.m. (요일 on, 시각 at)   ❌ 쓰지 마세요 at Saturday . in 10 a.m."
   },
   {
-   "tag": "during + 명사",
-   "ko": "저는 휴가 동안 책을 세 권 읽었어요.",
+   "tag": "There are 수일치",
+   "ko": "게시판에 공지가 세 개 붙어 있어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I read three books while my vacation.",
-    "I read three books during my vacation.",
-    "I read three books during I was on vacation.",
-    "I read three book during my vacation."
-   ],
-   "a": 1,
-   "bad": "while + 명사(while 뒤엔 문장) . during + 문장 . three book(복수 books)",
-   "good": "I read three books during my vacation.",
-   "pt": "⭕ 쓰세요 during my vacation (during + 명사)   ❌ 쓰지 마세요 while my vacation"
-  },
-  {
-   "tag": "There are 복수 수일치",
-   "ko": "테이블 위에 사과가 몇 개 있어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "There is a few apples on the table.",
-    "There have a few apples on the table.",
-    "There are a few apples on the table.",
-    "It are a few apples on the table."
+    "There is three notices on the board.",
+    "There are three notice on the board.",
+    "There are three notices on the board.",
+    "There has three notices on the board."
    ],
    "a": 2,
-   "bad": "There is + 복수(are) . There have(There is/are) . It are",
-   "good": "There are a few apples on the table.",
-   "pt": "⭕ 쓰세요 There are a few apples (복수 → are)   ❌ 쓰지 마세요 There is a few apples"
+   "bad": "There is(복수는 are) . three notice(복수 -s) . There has",
+   "good": "There are three notices on the board.",
+   "pt": "⭕ 쓰세요 There are three notices (복수 → are + 명사-s)   ❌ 쓰지 마세요 There is three . three notice"
   },
   {
-   "tag": "One of 복수 + is 수일치",
-   "ko": "제 가방 단추 중 하나가 떨어졌어요.",
+   "tag": "동명사 목적어 avoid -ing",
+   "ko": "저는 아침 러시아워에 운전하는 걸 피해요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "One of the buttons on my bag is missing.",
-    "One of the buttons on my bag are missing.",
-    "There is one of the buttons missing on my bag.",
-    "One of the buttons on my bag has missing."
+    "I avoid driving during the morning rush hour.",
+    "I avoid to drive during the morning rush hour.",
+    "I avoid drive during the morning rush hour.",
+    "I am avoid driving during the morning rush hour."
    ],
    "a": 0,
-   "bad": "are(주어 One → is) . There is one of ~(어색한 구조) . has missing(is missing)",
-   "good": "One of the buttons on my bag is missing.",
-   "pt": "⭕ 쓰세요 One of the buttons ... is (주어 One → is)   ❌ 쓰지 마세요 One of the buttons are"
+   "bad": "avoid to drive(avoid는 동명사) . avoid drive . am avoid",
+   "good": "I avoid driving during the morning rush hour.",
+   "pt": "⭕ 쓰세요 avoid driving (avoid + 동사-ing)   ❌ 쓰지 마세요 avoid to drive . avoid drive"
   },
   {
-   "tag": "수여동사 사람 + 물건 어순",
-   "ko": "제 친구가 저에게 생일 선물을 사 줬어요.",
+   "tag": "주격 관계대명사 that + 수일치 + 관사",
+   "ko": "저는 돈을 많이 아껴 주는 앱을 하나 써요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "My friend bought for me a birthday present.",
-    "My friend bought me birthday present.",
-    "My friend buy me a birthday present.",
-    "My friend bought me a birthday present."
+    "I use an app that save a lot of money.",
+    "I am use an app what save a lot of money.",
+    "I use a app what saves lots of money.",
+    "I use an app that saves a lot of money."
    ],
    "a": 3,
-   "bad": "bought for me(수여동사 bought me ~) . me birthday present(관사 a 누락) . buy(과거 bought)",
-   "good": "My friend bought me a birthday present.",
-   "pt": "⭕ 쓰세요 bought me a birthday present (사람 먼저 + 관사 a)   ❌ 쓰지 마세요 bought for me . me birthday present"
+   "bad": "that save(선행사 단수 - saves) . am use(be+원형 금지) . a app / what(모음 앞 an, 관계대명사 that)",
+   "good": "I use an app that saves a lot of money.",
+   "pt": "⭕ 쓰세요 an app that saves (an + 단수, that + 동사-s)   ❌ 쓰지 마세요 that save . what . a app"
   },
   {
-   "tag": "연음 got it [가릿]",
-   "ko": "🔊 들리는 대로 - [아이 가릿 픽스트 라스트 위크] : 올바르게 쓴 문장은?",
+   "tag": "조동사 had better 충고",
+   "ko": "너 지금 나가는 게 좋겠다, 안 그러면 막차를 놓쳐.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I got it fix last week.",
-    "I got it fixed last week.",
-    "I got it fixing last week.",
-    "I getted it fixed last week."
+    "You had better to leave now, or you'll miss the last bus.",
+    "You had better leave now, or you'll miss the last bus.",
+    "You had better leaving now, or you'll miss the last bus.",
+    "You better had leave now, or you'll miss the last bus."
    ],
    "a": 1,
-   "bad": "got it fix(과거분사 fixed) . fixing(-ing 아님) . getted(과거 got)",
-   "good": "I got it fixed last week.",
-   "pt": "⭕ 쓰세요 got it fixed (got it [가릿] + 과거분사)   ❌ 쓰지 마세요 got it fix . getted"
+   "bad": "had better to(뒤에 동사원형) . had better leaving . better had",
+   "good": "You had better leave now, or you'll miss the last bus.",
+   "pt": "⭕ 쓰세요 had better leave (had better + 동사원형)   ❌ 쓰지 마세요 had better to leave . leaving"
   },
   {
-   "tag": "There used to be",
-   "ko": "예전에 이 자리에 작은 서점이 하나 있었어요.",
+   "tag": "전치사 by vs until (완료 시점)",
+   "ko": "저는 이 보고서를 금요일까지 끝내야 해요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "There used to be a small bookstore here.",
-    "There used to being a small bookstore here.",
-    "There was used to a small bookstore here.",
-    "There used to be small bookstore here."
+    "I have to finish this report until Friday.",
+    "I have to finish this report by Friday.",
+    "I have to finish this report in Friday.",
+    "I have to finish this report by to Friday."
+   ],
+   "a": 1,
+   "bad": "finish until Friday(완료 시점은 by) . in Friday . by to Friday",
+   "good": "I have to finish this report by Friday.",
+   "pt": "⭕ 쓰세요 finish by Friday (완료 시점은 by)   ❌ 쓰지 마세요 finish until Friday . in Friday"
+  },
+  {
+   "tag": "🔊 연음 받아쓰기 (want to)",
+   "ko": "원어민이 [아이 워너 셀 디스 폰] 이라고 말했어요. 올바른 문장은?",
+   "q": "들은 대로 올바르게 쓴 문장은?",
+   "o": [
+    "I want to sell this phone.",
+    "I want sell this phone.",
+    "I wanna selling this phone.",
+    "I am want to sell this phone."
    ],
    "a": 0,
-   "bad": "used to being(to + 동사원형 be) . was used to(There used to be) . be small bookstore(관사 a 누락)",
-   "good": "There used to be a small bookstore here.",
-   "pt": "⭕ 쓰세요 There used to be a small bookstore (used to + be, 관사 a)   ❌ 쓰지 마세요 used to being . be small bookstore"
+   "bad": "[워너]의 철자는 want to . want sell(to 누락) . wanna selling",
+   "good": "I want to sell this phone.",
+   "pt": "⭕ 쓰세요 want to [워너] (I want to ~)   ❌ 쓰지 마세요 want sell . 철자를 wanna로 쓰지 않기"
   }
  ],
  "fb": [
   {
-   "tag": "대과거 had already 과거분사",
-   "ko": "제가 공항에 도착했을 때, 비행기는 이미 이륙한 뒤였어요.",
-   "s": "When I got to the airport, the plane ______ ______ ______ off.",
+   "tag": "to부정사 목적어 decided to",
+   "ko": "저는 제 오래된 모니터를 온라인으로 팔기로 결정했어요.",
+   "s": "I ______ ______ sell my old monitor online.",
    "a": [
-    "had already taken"
+    "decided to"
    ],
-   "hint": "3칸 . h__ a______ t____ . (대과거) 이미 이륙해 버렸다(had + already + 과거분사 take→taken off)",
-   "bad": "has already taken(과거엔 had) . already took(had 누락) . had already take(과거분사 taken)",
-   "good": "When I got to the airport, the plane had already taken off.",
-   "pt": "⭕ 쓰세요 had already taken off (had + 과거분사)   ❌ 쓰지 마세요 has already taken . already took"
+   "hint": "2칸 . d______ t_ . 결정했다(decide 과거) + to",
+   "bad": "decide to(과거는 decided) . decided selling(decide는 to부정사)",
+   "good": "I decided to sell my old monitor online.",
+   "pt": "⭕ 쓰세요 decided to sell (decide + to + 동사원형)   ❌ 쓰지 마세요 decided selling . decide to"
   },
   {
-   "tag": "get + 목적어 + 과거분사",
-   "ko": "저는 주말에 머리를 잘랐어요 (미용실에서).",
-   "s": "I ______ ______ ______ ______ over the weekend.",
+   "tag": "주격 관계대명사 who + 수일치",
+   "ko": "등산 모임을 이끄는 사람은 제 사촌이에요.",
+   "s": "The person ______ ______ our hiking club is my cousin.",
    "a": [
-    "got my hair cut"
+    "who leads"
    ],
-   "hint": "4칸 . g__ m_ h___ c__ . (get + 목적어 + 과거분사) 머리를 자르게 했다(get 과거 + my hair + cut)",
-   "bad": "cut my hair(get my hair cut) . got my hair cutted(cut의 과거분사 cut) . get(과거 got)",
-   "good": "I got my hair cut over the weekend.",
-   "pt": "⭕ 쓰세요 got my hair cut (get + 목적어 + 과거분사)   ❌ 쓰지 마세요 cutted . got my hair cutting"
+   "hint": "2칸 . w__ l____ . 사람(who) + 이끌다(lead) 선행사 단수 -s",
+   "bad": "who lead(선행사 단수 - leads) . which leads(사람은 who)",
+   "good": "The person who leads our hiking club is my cousin.",
+   "pt": "⭕ 쓰세요 who leads (사람 + who + 동사-s)   ❌ 쓰지 마세요 who lead . which"
   },
   {
-   "tag": "used to + 동사원형",
-   "ko": "저는 어렸을 때 피아노를 치곤 했어요 (지금은 안 쳐요).",
-   "s": "I ______ ______ ______ the piano when I was young.",
+   "tag": "조동사 may 추측",
+   "ko": "그 택배는 1층 보관함에 있을지도 몰라요.",
+   "s": "The parcel ______ ______ in the locker on the first floor.",
    "a": [
-    "used to play"
+    "may be",
+    "might be"
    ],
-   "hint": "3칸 . u___ t_ p___ . (과거 습관) 치곤 했다(used to + 동사원형)",
-   "bad": "use to play(used to) . used to playing(to + 동사원형) . was used to play",
-   "good": "I used to play the piano when I was young.",
-   "pt": "⭕ 쓰세요 used to play (used to + 동사원형)   ❌ 쓰지 마세요 use to play . used to playing"
+   "hint": "2칸 . m__ b_ . ~일지도 모른다(may/might) + be",
+   "bad": "may is(조동사 뒤 be 원형) . maybe(붙이면 '아마' 부사)",
+   "good": "The parcel may be in the locker on the first floor.",
+   "pt": "⭕ 쓰세요 may be (조동사 + be)   ❌ 쓰지 마세요 may is . maybe(부사)"
   },
   {
-   "tag": "while + 주어 + 과거진행",
-   "ko": "제가 샤워를 하고 있는 동안 초인종이 울렸어요.",
-   "s": "The doorbell rang while I ______ ______.",
+   "tag": "전치사 in (월 앞)",
+   "ko": "그 사진 전시회는 10월에 열려요.",
+   "s": "The photo exhibition is held ______ ______.",
    "a": [
-    "was showering"
+    "in october"
    ],
-   "hint": "2칸 . w__ s________ . (while + 주어 + 과거진행) 샤워하고 있었다(was + 동사-ing)",
-   "bad": "was shower(진행 showering) . am showering(과거 was) . showered(진행형 필요)",
-   "good": "The doorbell rang while I was showering.",
-   "pt": "⭕ 쓰세요 while I was showering (while + 주어 + was -ing)   ❌ 쓰지 마세요 during I was showering"
+   "hint": "2칸 . i_ O______ . (월 앞은) in + 달 이름",
+   "bad": "on October(월은 in) . at October",
+   "good": "The photo exhibition is held in October.",
+   "pt": "⭕ 쓰세요 in October (월 앞은 in)   ❌ 쓰지 마세요 on October . at October"
   },
   {
-   "tag": "during + 명사",
-   "ko": "저는 회의 중에 메모를 많이 했어요.",
-   "s": "I took a lot of notes ______ ______ ______.",
+   "tag": "There are 수일치",
+   "ko": "그 양조장에는 수제 맥주가 여섯 종류 있어요.",
+   "s": "______ ______ six kinds of craft beer at the brewery.",
    "a": [
-    "during the meeting"
+    "there are"
    ],
-   "hint": "3칸 . d______ t__ m______ . (during + 명사) 회의 중에(during + the + 명사)",
-   "bad": "while the meeting(during + 명사) . during meeting(관사 the 누락) . in during the meeting",
-   "good": "I took a lot of notes during the meeting.",
-   "pt": "⭕ 쓰세요 during the meeting (during + 명사)   ❌ 쓰지 마세요 while the meeting"
+   "hint": "2칸 . t____ a__ . (복수 주어) There + are",
+   "bad": "There is(복수는 are) . There has",
+   "good": "There are six kinds of craft beer at the brewery.",
+   "pt": "⭕ 쓰세요 There are six kinds (복수 → are)   ❌ 쓰지 마세요 There is . There has"
   },
   {
-   "tag": "There are 복수 수일치",
-   "ko": "냉장고에 계란이 몇 개 남아 있어요.",
-   "s": "______ ______ a few eggs left in the fridge.",
+   "tag": "동명사 목적어 finished -ing",
+   "ko": "저는 지난주에 그 온라인 코딩 강의를 다 끝냈어요.",
+   "s": "I ______ ______ the online coding course last week.",
    "a": [
-    "There are"
+    "finished taking"
    ],
-   "hint": "2칸 . T____ a__ . (복수 주어 eggs → are) 계란이 몇 개 있다(There + are + 복수)",
-   "bad": "There is(복수 → are) . There have . It are",
-   "good": "There are a few eggs left in the fridge.",
-   "pt": "⭕ 쓰세요 There are a few eggs (복수 → are)   ❌ 쓰지 마세요 There is a few eggs"
+   "hint": "2칸 . f_______ t_____ . 끝냈다(finish 과거) + take의 -ing",
+   "bad": "finished to take(finish는 동명사) . finish taking(과거 finished)",
+   "good": "I finished taking the online coding course last week.",
+   "pt": "⭕ 쓰세요 finished taking (finish + 동사-ing)   ❌ 쓰지 마세요 finished to take"
   },
   {
-   "tag": "One of 복수 + is 수일치",
-   "ko": "제 신발 중 한 짝이 젖었어요.",
-   "s": "One of my ______ ______ wet.",
+   "tag": "주격 관계대명사 which + 과거",
+   "ko": "이건 지난주에 고장 난 그 엘리베이터예요.",
+   "s": "This is the elevator ______ ______ down last week.",
    "a": [
-    "shoes is"
+    "which broke",
+    "that broke"
    ],
-   "hint": "2칸 . s____ i_ . (of 뒤 복수 shoes, 주어 One → is) 신발 중 하나가 젖었다",
-   "bad": "shoe is(of 뒤 복수 shoes) . shoes are(주어 One → is) . shoes be",
-   "good": "One of my shoes is wet.",
-   "pt": "⭕ 쓰세요 One of my shoes is wet (of 뒤 복수 + 주어 One → is)   ❌ 쓰지 마세요 shoes are . one of my shoe"
+   "hint": "2칸 . w____/t___ b____ . 사물(which/that) + 고장나다(break 과거 broke)",
+   "bad": "who broke(사물은 which/that) . which breaks(과거 broke) . what broke",
+   "good": "This is the elevator which broke down last week.",
+   "pt": "⭕ 쓰세요 which/that broke (사물 + which/that + 과거동사)   ❌ 쓰지 마세요 who broke . what broke"
   },
   {
-   "tag": "수여동사 사람 + 관사 + 물건",
-   "ko": "저희 할머니가 저에게 따뜻한 스웨터를 만들어 주셨어요.",
-   "s": "My grandmother ______ ______ ______ warm sweater.",
+   "tag": "조동사 had better 충고",
+   "ko": "너 지금 보일러 수리 기사를 부르는 게 좋겠다.",
+   "s": "You ______ ______ call the boiler technician now.",
    "a": [
-    "made me a"
+    "had better",
+    "'d better"
    ],
-   "hint": "3칸 . m___ m_ a . (수여동사 어순: 사람 먼저 + 관사 a) 저에게 만들어 줬다(make 과거 + me + a)",
-   "bad": "made for me a(수여동사 made me ~) . made me(관사 a 누락) . make me a(과거 made)",
-   "good": "My grandmother made me a warm sweater.",
-   "pt": "⭕ 쓰세요 made me a warm sweater (사람 먼저 + 관사 a)   ❌ 쓰지 마세요 made for me . made me warm sweater"
+   "hint": "2칸 . h__ b_____ . ~하는 게 좋겠다(had better) + 동사원형",
+   "bad": "had better to call(뒤에 원형) . better call(had 필요)",
+   "good": "You had better call the boiler technician now.",
+   "pt": "⭕ 쓰세요 had better call (had better + 동사원형)   ❌ 쓰지 마세요 had better to call"
   },
   {
-   "tag": "대과거 경험 had never 과거분사",
-   "ko": "저는 그 식당에 가 보기 전까지 태국 음식을 먹어 본 적이 없었어요.",
-   "s": "I ______ ______ ______ Thai food before I went to that restaurant.",
+   "tag": "전치사 until (계속)",
+   "ko": "저는 이번 달 말까지 넷플릭스를 유지할 거예요.",
+   "s": "I'll keep Netflix ______ ______ ______ of this month.",
    "a": [
-    "had never tried"
+    "until the end"
    ],
-   "hint": "3칸 . h__ n____ t____ . (대과거 경험) 먹어 본 적이 없었다(had + never + 과거분사 try→tried)",
-   "bad": "have never tried(과거엔 had) . had never try(과거분사 tried) . never tried(had 누락)",
-   "good": "I had never tried Thai food before I went to that restaurant.",
-   "pt": "⭕ 쓰세요 had never tried (had + 과거분사)   ❌ 쓰지 마세요 have never tried . had never try"
+   "hint": "3칸 . u____ t__ e__ . (계속) until + the end",
+   "bad": "by the end(계속은 until) . until to",
+   "good": "I'll keep Netflix until the end of this month.",
+   "pt": "⭕ 쓰세요 until the end (계속은 until)   ❌ 쓰지 마세요 by the end"
   },
   {
-   "tag": "There used to be",
-   "ko": "예전에 우리 학교 옆에 문구점이 하나 있었어요.",
-   "s": "There ______ ______ ______ a stationery shop next to our school.",
+   "tag": "There is 수일치 + 관사",
+   "ko": "주방에 커피 머신이 한 대 있어요.",
+   "s": "______ ______ ______ coffee machine in the kitchen.",
    "a": [
-    "used to be"
+    "there is a"
    ],
-   "hint": "3칸 . u___ t_ b_ . (과거에 있었다) 예전에 ~이 있었다(There + used to + be)",
-   "bad": "use to be(used to) . used to being(to + be) . was used to be",
-   "good": "There used to be a stationery shop next to our school.",
-   "pt": "⭕ 쓰세요 There used to be a shop (used to + be)   ❌ 쓰지 마세요 use to be . used to being"
+   "hint": "3칸 . t____ i_ a . (단수) There is + 관사 a",
+   "bad": "There are a(단수는 is) . There is(관사 a 누락)",
+   "good": "There is a coffee machine in the kitchen.",
+   "pt": "⭕ 쓰세요 There is a coffee machine (단수 → is + a)   ❌ 쓰지 마세요 There are a . There is coffee machine"
   }
  ],
  "tr": [
   {
-   "tag": "대과거 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so we missed / had already started / The movie / when we arrived, / the opening scene. ] - 그 영화는 우리가 도착했을 때 이미 시작한 뒤여서, 우리는 첫 장면을 놓쳤어요.",
-   "m": "The movie had already started when we arrived, so we missed the opening scene.",
-   "k": "The movie had already started when we arrived(대과거 had + 과거분사) / so we missed the opening scene 뒷절(과거 missed, 관사 the) - 절 2개 확인"
+   "tag": "to부정사 vs 동명사 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ putting it off. / to buy / I want / but I keep / a new keyboard, ] - 새 키보드를 사고 싶지만, 자꾸 미루게 돼요.",
+   "m": "I want to buy a new keyboard, but I keep putting it off.",
+   "k": "I want to buy a new keyboard(want + to부정사) / but I keep putting it off 뒷절(keep + 동명사) - 절 2개 확인"
   },
   {
-   "tag": "get + 목적어 + 과거분사 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ but it broke again / a week later. / I got / my phone screen fixed, ] - 저는 휴대폰 화면을 고쳤는데, 일주일 뒤에 또 고장 났어요.",
-   "m": "I got my phone screen fixed, but it broke again a week later.",
-   "k": "I got my phone screen fixed(get + 목적어 + 과거분사) / but it broke again a week later 뒷절(과거 broke) - 절 2개 확인"
+   "tag": "주격 관계대명사 who + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ and she often helps me. / who lives next door / The woman / is kind, ] - 옆집에 사는 여자분은 친절하고, 저를 자주 도와줘요.",
+   "m": "The woman who lives next door is kind, and she often helps me.",
+   "k": "The woman who lives next door is kind(관계 who + lives) / and she often helps me 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "used to + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ but now / a lot of coffee, / I only drink tea. / I used to drink ] - 저는 예전에 커피를 많이 마셨는데, 지금은 차만 마셔요.",
-   "m": "I used to drink a lot of coffee, but now I only drink tea.",
-   "k": "I used to drink a lot of coffee(과거 습관 used to + 동사원형) / but now I only drink tea 뒷절(현재 drink) - 절 2개 확인"
+   "tag": "조동사 might 추측 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ go jogging. / It might rain tonight, / so I will not ] - 오늘 밤 비가 올지도 몰라서, 저는 조깅하러 안 갈 거예요.",
+   "m": "It might rain tonight, so I will not go jogging.",
+   "k": "It might rain tonight(might + 원형) / so I will not go jogging 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "while + 과거진행 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ it started / for the bus, / to rain heavily. / While I was waiting ] - 제가 버스를 기다리고 있는 동안, 비가 세차게 내리기 시작했어요.",
-   "m": "While I was waiting for the bus, it started to rain heavily.",
-   "k": "While I was waiting for the bus(while + 주어 + was -ing) / it started to rain heavily 뒷절(과거 started) - 절 2개 확인"
+   "tag": "전치사 by 완료 시점 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I woke up early. / by nine, / I have to join / the video meeting ] - 저는 9시까지 화상회의에 들어가야 해서, 일찍 일어났어요.",
+   "m": "I have to join the video meeting by nine, so I woke up early.",
+   "k": "I have to join the video meeting by nine(완료 by) / so I woke up early 뒷절(과거 woke) - 절 2개 확인"
   },
   {
-   "tag": "수여동사 사람 + 물건 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I rode it / a new bike, / to school every day. / My uncle bought me ] - 삼촌이 저에게 새 자전거를 사 주셔서, 저는 그걸 타고 매일 학교에 갔어요.",
-   "m": "My uncle bought me a new bike, so I rode it to school every day.",
-   "k": "My uncle bought me a new bike(수여동사 사람 먼저 + 관사 a) / so I rode it to school every day 뒷절(과거 rode) - 절 2개 확인"
+   "tag": "There is 수일치 + 관사 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ and everyone likes it. / in the office, / There is / a new water dispenser ] - 사무실에 새 정수기가 있는데, 다들 좋아해요.",
+   "m": "There is a new water dispenser in the office, and everyone likes it.",
+   "k": "There is a new water dispenser in the office(단수 is + 관사 a) / and everyone likes it 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "대과거 (부분 영작 . 뒷절 끝까지)",
-   "ko": "제가 집에 돌아왔을 때, 누군가 이미 설거지를 다 해 놓았더라고요.  〔앞절 제공〕 When I got home, ______  〔쓸 표현 : 뒷절 - 주어는 '누군가' + 과거완료 틀(had + 과거분사) + '이미'(already) + '설거지를 다 하다'(do의 과거분사) - 뒷절 끝까지〕",
-   "m": "When I got home, someone had already done the dishes.",
-   "k": "뒷절만 쓰세요 : someone had already done the dishes - 절 2개 확인"
+   "tag": "to부정사 목적어 + 관사 (부분 영작 . 뒷절 끝까지)",
+   "ko": "저는 지하철을 타고 싶었지만, 전동킥보드를 타기로 했어요.  〔앞절 제공〕 I wanted to take the subway, but ______  〔쓸 표현 : 뒷절 - 주어('나') + 결정했다(decide 과거) + to + 타다(ride) + 관사 a + 명사('전동킥보드 electric scooter') - 뒷절 끝까지〕",
+   "m": "I wanted to take the subway, but I decided to ride an electric scooter.",
+   "k": "뒷절만 쓰세요 : I decided to ride an electric scooter - 절 2개 확인"
   },
   {
-   "tag": "There is/are 수일치 (부분 영작 . 뒷절 끝까지)",
-   "ko": "주차장에 자리가 많았는데, 빈자리는 딱 하나만 남아 있었어요.  〔앞절 제공〕 There were many spaces in the parking lot, but ______  〔쓸 표현 : 뒷절 - there + be동사(주어가 단수 '빈자리 하나'라서 과거 was로 수일치) + '딱 하나 남은'을 영어로(수량 하나 + 단수명사 + 남다 left) - 뒷절 끝까지〕",
-   "m": "There were many spaces in the parking lot, but there was only one spot left.",
-   "k": "뒷절만 쓰세요 : there was only one spot left - 절 2개 확인"
+   "tag": "주격 관계대명사 that + 수일치 + 관사 (부분 영작 . 뒷절 끝까지)",
+   "ko": "제 친구는 길고양이 사진을 많이 찍지만, 저는 밥 주는 시간을 알려 주는 앱을 써요.  〔앞절 제공〕 My friend takes many cat photos, but ______  〔쓸 표현 : 뒷절 - 주어('나') + 쓰다(use) + 관사 an + 명사('앱 app') + 관계대명사 that + 알려 주다(remind)의 3인칭 단수형(-s) + 목적어(me) + 밥 주는 시간 부분(전치사 + 동명사로) - 뒷절 끝까지〕",
+   "m": "My friend takes many cat photos, but I use an app that reminds me of feeding time.",
+   "k": "뒷절만 쓰세요 : I use an app that reminds me of feeding time - 절 2개 확인"
   },
   {
-   "tag": "get + 목적어 + 과거분사 (부분 영작 . 뒷절 끝까지)",
-   "ko": "제 안경다리가 부러져서, 저는 그걸 안경점에서 고쳤어요.  〔앞절 제공〕 The arm of my glasses broke, so ______  〔쓸 표현 : 뒷절 - 주어 '나' + get의 과거형 + 목적어 '그것들'(glasses는 복수) + 과거분사(고치다 → 과거분사) + 장소 '그 가게에서'(전치사 at + the + 명사) - 뒷절 끝까지〕",
-   "m": "The arm of my glasses broke, so I got them fixed at the shop.",
-   "k": "뒷절만 쓰세요 : I got them fixed at the shop - 절 2개 확인"
+   "tag": "had better 충고 + 관사 (부분 영작 . 뒷절 끝까지)",
+   "ko": "제 이가 좀 아프지만, 아직 치과 예약을 안 했어요.  〔앞절 제공〕 My tooth hurts a little, but ______  〔쓸 표현 : 뒷절 - 'had better'(~하는 게 좋겠다) + 동사원형('예약하다 book') + 관사 a + 명사('dentist appointment') + 신호어 'soon(곧)' - 뒷절 끝까지〕",
+   "m": "My tooth hurts a little, but I had better book a dentist appointment soon.",
+   "k": "뒷절만 쓰세요 : I had better book a dentist appointment soon - 절 2개 확인"
   },
   {
-   "tag": "used to (부분 영작 . 뒷절 끝까지)",
-   "ko": "저는 예전에 아침마다 조깅을 하곤 했는데, 무릎을 다친 뒤로 그만둬야 했어요.  〔앞절 제공〕 I used to go jogging every morning, but ______  〔쓸 표현 : 뒷절 - 주어 '나' + '~해야 했다'(had to + 동사원형 '그만두다') + 시간절 '무릎을 다친 뒤로'(after I + 과거 '다치다' + my knee) - 뒷절 끝까지〕",
-   "m": "I used to go jogging every morning, but I had to quit after I hurt my knee.",
-   "k": "뒷절만 쓰세요 : I had to quit after I hurt my knee - 절 2개 확인"
+   "tag": "전치사 by 완료 시점 + 신호어 yet (부분 영작 . 뒷절 끝까지)",
+   "ko": "저는 아직 주차 등록을 못 했지만, 금요일까지는 끝내야 해요.  〔앞절 제공〕 I haven't registered for parking yet, but ______  〔쓸 표현 : 뒷절 - 주어('나') + 의무 조동사(have to) + 동사('끝내다') + 목적어(그것) + 완료 시점 전치사(by) + 요일('금요일') - 뒷절 끝까지〕",
+   "m": "I haven't registered for parking yet, but I have to finish it by Friday.",
+   "k": "뒷절만 쓰세요 : I have to finish it by Friday - 절 2개 확인"
   },
   {
-   "tag": "while + 과거진행 (전체 영작 . 절 2개)",
-   "ko": "〔전체 영작〕 제가 저녁을 만들고 있는 동안, 제 남동생이 상을 차렸어요.  〔쓸 표현 : 앞절은 'while + 주어(나) + 과거진행(was + 동사-ing : 저녁을 만들다)' . 뒷절은 '남동생(my brother)이 상을 차렸다' : 과거동사 '차리다'(불규칙 과거) + 목적어 '상'(the + 명사) - 절 2개〕",
-   "m": "While I was making dinner, my brother set the table.",
-   "k": "While I was making dinner(while + 주어 + was -ing) / my brother set the table 뒷절(과거 set, 관사 the) - 절 2개 확인"
+   "tag": "There are 수일치 + 신호어 yet (전체 영작 . 절 2개)",
+   "ko": "〔전체 영작〕 식탁 위에 고지서가 두 장 있는데, 저는 아직 그걸 안 냈어요.  〔쓸 표현 : 앞절은 'There are'(복수 수일치) + 수량('두 장 two') + 명사('고지서 bills', 복수 -s) + 위치('식탁 위에' = 전치사 on + the + 명사) . 뒷절은 주어('나') + 아직 ~안 했다(haven't + 과거분사 paid) + 목적어(그것들) + 신호어 'yet' - 절 2개〕",
+   "m": "There are two bills on the table, but I haven't paid them yet.",
+   "k": "There are two bills on the table(복수 are + bills -s) / but I haven't paid them yet 뒷절 - 절 2개 확인"
   }
  ]
 };
@@ -1096,7 +1117,7 @@ function imgPrint(title, sub, blocks, color){
   try{ w = window.open('', '_blank'); }catch(e){ w = null; }
   if(!w) return false;
   var html = '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">'
-    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-07 (수) · 30문제</title><style>'
+    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-03 (토) · 30문제</title><style>'
     + 'body{margin:0;padding:22px;background:#fff;color:#1c2029;line-height:1.6;font-size:15px;'
     + 'font-family:' + IMG_FONT + ';}'
     + '@page{size:A4;margin:11mm;}'

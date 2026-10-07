@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kyle 데일리 영어 퀴즈 · 2026-10-07 (수) · 30문제</title>
+<title>kyle 데일리 영어 퀴즈 · 2026-10-05 (월) · 30문제</title>
 <style>
 :root{
   --bg:#f7f8fa; --card:#ffffff; --line:#e3e6ec; --ink:#1c2029; --sub:#666e7d;
@@ -126,658 +126,659 @@ var BASE = (location.protocol === 'file:' || !location.origin || location.origin
   ? FALLBACK_BASE : (location.origin + location.pathname);
 
 var QUIZ = {
- "date": "2026-10-07",
- "day": "수요일",
- "edition": "대과거 had + 과거분사 . get + 목적어 + 과거분사 . used to + 동사원형 . while(주어+동사) vs during(명사) . There is/are 수일치 . 수여동사(사람 먼저 + 관사 + 물건) . 고질(관사 a/an/the . 과거분사 . 수일치 . 뒷절 . 동사구) 곳곳에 . 4대 끊김 A/B/C/D . 힌트=문법 이름만 . 배열 칩 셔플 . 10-06/10-05 구조 회피",
+ "date": "2026-10-05",
+ "day": "월요일",
+ "edition": "현재완료(경험/완료 ever·already·yet) . 가정법 과거 If I were/had . 관계부사 where/when . so~that/too~to/enough to . 가산불가산 a few/a little . 고질(관사 a/an/the . 과거분사 . 수일치 . 뒷절 . 사역 make) 곳곳에 . 4대 끊김 A/B/C/D . 힌트=문법 이름만 . 배열 칩 셔플 . 10-04/10-03 구조 회피",
  "badges": [
-  "대과거 had + 과거분사",
-  "get + 목적어 + 과거분사",
-  "used to + 동사원형",
-  "while(문장) vs during(명사)",
-  "There is / are 수일치",
-  "수여동사 사람 + 물건 어순",
+  "현재완료 ever/already/yet",
+  "가정법 과거 If I were/had",
+  "★ 관계부사 where/when",
+  "so~that / too~to / enough to",
+  "가산불가산 a few / a little",
   "★ 관사 a/an/the (고질)",
-  "★ 뒷절 생산 (영작 전부 2절)",
+  "사역 make (고질)",
   "영작 = 배열5 + 부분4 + 전체1",
-  "🔊 연음 got it [가릿]"
+  "🔊 연음 think about it [씽커바우릿]",
+  "🖼 이미지 저장"
  ],
  "diag": [
   [
-   "★ 고질 - 관사: 셀 수 있는 단수 앞엔 한 박자 멈추고 a/an, 아는 것엔 the",
-   "I got haircut at new place yesterday",
-   "I got a haircut at a new place yesterday.",
-   "⭕ 쓰세요 a haircut / a new place   ❌ 쓰지 마세요 got haircut / at new place"
+   "★ 고질 - 관사: 셀 수 있는 단수 명사 앞에는 한 박자 멈추고 a/an",
+   "I watched movie yesterday",
+   "I watched a movie yesterday.",
+   "⭕ 쓰세요 a movie (셀 수 있는 단수 앞 a)   ❌ 쓰지 마세요 watched movie"
   ],
   [
-   "대과거 - 두 과거 중 더 먼저 일어난 일은 had + 과거분사",
-   "When I arrived the movie already start",
-   "When I arrived, the movie had already started.",
-   "⭕ 쓰세요 had already started (had + 과거분사)   ❌ 쓰지 마세요 already start / has already started"
+   "★ 고질 - 현재완료 과거분사: have 뒤에는 과거형이 아니라 과거분사(see→seen)",
+   "I have never saw snow",
+   "I have never seen snow.",
+   "⭕ 쓰세요 have never seen (have + 과거분사)   ❌ 쓰지 마세요 have never saw"
   ],
   [
-   "서비스 받다 - get + 목적어 + 과거분사",
-   "I fixed my phone at the shop",
-   "I got my phone fixed at the shop.",
-   "⭕ 쓰세요 got my phone fixed (남이 고쳐 줌)   ❌ 쓰지 마세요 I fixed my phone (내가 직접 고친 뜻)"
+   "★ 가정법 과거: 지금과 반대 가정은 were + would (was/will 아님)",
+   "If I was you, I will take it",
+   "If I were you, I would take it.",
+   "⭕ 쓰세요 If I were you, I would take   ❌ 쓰지 마세요 If I was you, I will take"
   ],
   [
-   "★ 고질 - 수일치: 주어가 One이면 동사도 단수 is/was",
-   "One of my friends are a doctor",
-   "One of my friends is a doctor.",
-   "⭕ 쓰세요 One of my friends is (주어 One → is)   ❌ 쓰지 마세요 One of my friends are"
+   "★ 관계부사 - what 오용: (장소)~한 곳에는 what 이 아니라 where",
+   "This is the place what I was born",
+   "This is the place where I was born.",
+   "⭕ 쓰세요 the place where I was born   ❌ 쓰지 마세요 the place what I was born"
   ],
   [
-   "수여동사 - 사람 먼저, 그다음 물건(+관사)",
-   "My mom made for me a cake",
-   "My mom made me a cake.",
-   "⭕ 쓰세요 made me a cake (사람 + 관사 a)   ❌ 쓰지 마세요 made for me a cake"
+   "★ 고질 - 사역 make 수일치 + 동사구 + 뒷절: 3인칭 makes, '듣다'는 listen to",
+   "The song make me happy, so I listen it everyday",
+   "The song makes me happy, so I listen to it every day.",
+   "⭕ 쓰세요 makes me happy / listen to it   ❌ 쓰지 마세요 make / listen it"
   ]
  ],
  "starters": [
   [
-   "By the time I ~, it had already ~",
-   "내가 ~했을 땐 이미 ~해 버린 뒤였어요 (대과거)",
+   "I've already ~",
+   "저 이미 ~했어요 (완료)",
+   "완료"
+  ],
+  [
+   "I haven't ~ yet",
+   "저 아직 ~ 못 했어요 (미완료)",
+   "미완료"
+  ],
+  [
+   "If I had more time, I'd ~",
+   "시간이 더 있으면 ~할 텐데요 (가정)",
+   "가정"
+  ],
+  [
+   "It was so good that ~",
+   "너무 좋아서 ~했어요 (결과)",
+   "결과"
+  ],
+  [
+   "I still remember the day when ~",
+   "~했던 그날이 아직 생각나요 (회상)",
    "회상"
   ],
   [
-   "I got it ~ed",
-   "그거 ~받았어요 (get + 목적어 + 과거분사)",
-   "서비스"
+   "I forgot to ~",
+   "~하는 걸 깜빡했어요 (실수)",
+   "실수"
   ],
   [
-   "I used to ~, but not anymore",
-   "예전엔 ~했는데 지금은 안 해요 (과거 습관)",
-   "과거"
+   "I didn't have time to ~",
+   "~할 시간이 없었어요 (변명)",
+   "변명"
   ],
   [
-   "While I was ~ing, ~",
-   "제가 ~하고 있는 동안 ~했어요 (while + 과거진행)",
-   "상황"
+   "When was the last time you ~?",
+   "마지막으로 ~한 게 언제예요? (질문)",
+   "질문"
   ],
   [
-   "There used to be ~ here",
-   "예전에 여기 ~이 있었어요",
-   "회상"
+   "I'm heading out now.",
+   "저 이제 나가요 (출발)",
+   "출발"
   ],
   [
-   "One of them is ~",
-   "그중 하나가 ~예요 (주어 One → is)",
-   "설명"
-  ],
-  [
-   "My ~ got me ~",
-   "~가 저한테 ~를 사/만들어 줬어요 (수여동사 어순)",
-   "소개"
-  ],
-  [
-   "I had never ~ before",
-   "그 전엔 ~해 본 적이 없었어요 (대과거 경험)",
-   "경험"
-  ],
-  [
-   "Could you take a look at ~?",
-   "~ 좀 봐 주실래요? (요청)",
-   "화상영어"
-  ],
-  [
-   "During the ~, I ~",
-   "~ 동안 저는 ~했어요 (during + 명사)",
-   "일과"
+   "To tell you the truth, ~",
+   "사실대로 말하자면 ~ (솔직)",
+   "솔직"
   ]
  ],
  "memo": [
   [
-   "By the time I got to the platform, the train had already left.",
-   "제가 승강장에 도착했을 땐, 기차는 이미 떠난 뒤였어요."
+   "I have been to Vietnam three times, but I've never been to China.",
+   "저는 베트남에 세 번 가 봤지만, 중국엔 한 번도 못 가 봤어요."
   ],
   [
-   "I got my laptop repaired at the service center yesterday.",
-   "저는 어제 서비스 센터에서 노트북을 수리받았어요."
+   "I haven't finished my report yet.",
+   "저는 아직 보고서를 다 못 끝냈어요."
   ],
   [
-   "I used to take the subway to work, but now I ride my bike.",
-   "저는 예전에 지하철로 출근했는데, 지금은 자전거를 타요."
+   "If I were you, I would take that job.",
+   "제가 당신이라면, 그 일자리를 받아들일 거예요."
   ],
   [
-   "While I was cooking dinner, the smoke alarm went off.",
-   "제가 저녁을 만들고 있는 동안, 화재경보기가 울렸어요."
+   "This is the cafe where we first met.",
+   "여기가 우리가 처음 만난 그 카페예요."
   ],
   [
-   "There are a few seats left, but one of them is broken.",
-   "자리가 몇 개 남았는데, 그중 하나는 고장 났어요."
+   "I still remember the day when I moved to Seoul.",
+   "저는 제가 서울로 이사한 그날이 아직 생각나요."
   ],
   [
-   "My aunt bought me a thick jacket because it was getting cold.",
-   "이모가 날이 추워져서 저에게 두꺼운 재킷을 사 주셨어요."
+   "The box was so heavy that I couldn't lift it.",
+   "그 상자가 너무 무거워서 저는 들 수 없었어요."
   ],
   [
-   "I had never been to a water park before last summer.",
-   "저는 작년 여름 전까지 워터파크에 가 본 적이 없었어요."
+   "The coffee was too hot to drink.",
+   "그 커피는 너무 뜨거워서 마실 수 없었어요."
   ],
   [
-   "I got my hair cut short, and everyone said it looked great.",
-   "저는 머리를 짧게 잘랐는데, 모두가 잘 어울린다고 했어요."
+   "He is tall enough to reach the top shelf.",
+   "그는 맨 위 선반에 닿을 만큼 키가 커요."
   ],
   [
-   "During the long holiday, I finally got my bike fixed.",
-   "긴 연휴 동안, 저는 드디어 자전거를 수리받았어요."
+   "I only had a few minutes, so I grabbed a coffee and an egg tart.",
+   "저는 몇 분밖에 없어서, 커피 한 잔이랑 에그타르트 하나를 샀어요."
   ],
   [
-   "There used to be a small bakery here, but it closed down.",
-   "예전에 여기 작은 빵집이 있었는데, 문을 닫았어요."
+   "The news made all of us really happy.",
+   "그 소식은 우리 모두를 정말 행복하게 만들었어요."
   ],
   [
-   "While we were waiting for the bus, it started to pour.",
-   "우리가 버스를 기다리는 동안, 비가 쏟아지기 시작했어요."
+   "I forgot to bring an umbrella this morning.",
+   "저는 오늘 아침에 우산 챙기는 걸 깜빡했어요."
   ],
   [
-   "One of my shoes got soaked, so I had to change my socks.",
-   "제 신발 중 한 짝이 흠뻑 젖어서, 저는 양말을 갈아 신어야 했어요."
+   "I didn't have time to do the dishes before I left.",
+   "저는 나가기 전에 설거지할 시간이 없었어요."
   ]
  ],
  "signal": [
   [
-   "(더 먼저 일어난 일) 이미 ~해 버린 뒤였다 - 대과거",
-   "had + already + 과거분사"
+   "이미 ~했다 (완료 · 신호 already)",
+   "have / has already + 과거분사"
   ],
   [
-   "내가 ~했을 때쯤엔 - 시점 신호",
-   "By the time + 주어 + 과거동사, ~ had 과거분사"
+   "아직 ~ 못 했다 (미완료 · 신호 yet)",
+   "haven't / hasn't + 과거분사 + yet"
   ],
   [
-   "(남에게) ~받다 / ~하게 하다",
-   "get + 목적어 + 과거분사 (got it fixed)"
+   "한 번쯤 ~해 본 적 있다 / 없다 (경험)",
+   "have / has (never) been to + 장소"
   ],
   [
-   "예전엔 ~하곤 했다 (지금은 아님)",
-   "used to + 동사원형"
+   "제가 당신이라면 …할 텐데 (지금 반대 가정)",
+   "If I were you, I would + 동사원형"
   ],
   [
-   "예전에 ~이 있었다",
-   "There used to be + 명사"
+   "만약 ~라면 …할 텐데",
+   "If + 주어 + 과거동사, 주어 would + 동사원형"
   ],
   [
-   "~하고 있는 동안 (주어+동사)",
-   "while + 주어 + was/were + 동사-ing"
+   "(장소) ~하는 그곳",
+   "the place where + 주어 + 동사 (관계부사)"
   ],
   [
-   "~ 동안 (명사 덩어리)",
-   "during + 명사"
+   "(때) ~하는 그날 / 그해",
+   "the day / year when + 주어 + 동사 (관계부사)"
   ],
   [
-   "~이 몇 개 있다 / 그중 하나가 ~다",
-   "There are + 복수 / One of the 복수 + is"
+   "너무 ~해서 …하다 (결과)",
+   "so + 형용사 + that + 주어 + 동사"
   ],
   [
-   "(사람)에게 (물건)을 사/만들어 주다",
-   "bought/made + 사람 + 관사 + 물건"
+   "너무 ~해서 …할 수 없다 / …할 만큼 충분히",
+   "too + 형용사 + to + 동사원형 / 형용사 + enough to + 동사원형"
   ],
   [
-   "🔊 연음 받아쓰기 - got it [가릿]",
-   "got it fixed = [가릿 픽스트]"
+   "🔊 연음 받아쓰기 - think about it [씽커바우릿]",
+   "I'll think about it = [아일 씽커바우릿]"
   ]
  ],
  "cards": [
   {
-   "t": "★ 구조 카드 1 - 대과거: 더 먼저 일어난 일은 had + 과거분사",
-   "f": "두 과거 사건 중 더 먼저 일어난 일   had + 과거분사 - When I arrived, the train had already left.\n자주 쓰는 신호   by the time ~ / before ~ / already / never ~ before\n과거 이야기엔 has 아니라 had   has left(현재완료) → had left(대과거)\n★ '~했을 때 이미 ~해 버린 뒤였다' 는 뒷일=과거(arrived), 앞일=had 과거분사\n❌ 이렇게 쓰면 안 됩니다 - already left(had 누락) . has already left(과거엔 had) . had already leave(과거분사 left)",
+   "t": "★ 구조 카드 1 - 현재완료 (경험 · 완료 · 미완료)",
+   "f": "경험     have / has + 과거분사 - I have been to Japan. (가 본 적 있다)\n한 번도   have never + 과거분사 - I have never seen snow.\n완료     have already + 과거분사 - I have already eaten.\n미완료   haven't + 과거분사 + yet - I haven't finished yet.\n★ have 뒤에는 '과거형'이 아니라 '과거분사'. 시간 신호 ever / never / already / yet 를 버리지 말 것\n❌ 이렇게 쓰면 안 됩니다 - have went(과거분사 gone) . have saw(seen) . didn't finish yet(미완료는 haven't p.p. yet)",
    "ex": [
     [
-     "By the time we got there, the shop had already closed.",
-     "우리가 도착했을 땐, 그 가게는 이미 문을 닫은 뒤였어요."
+     "I have already eaten lunch.",
+     "저는 이미 점심을 먹었어요."
     ],
     [
-     "I had never eaten sushi before I visited Japan.",
-     "저는 일본에 가 보기 전까지 초밥을 먹어 본 적이 없었어요."
+     "I haven't read the book yet.",
+     "저는 아직 그 책을 못 읽었어요."
     ],
     [
-     "She had finished her homework before dinner started.",
-     "그녀는 저녁이 시작되기 전에 숙제를 끝냈어요."
+     "I have never been abroad.",
+     "저는 해외에 한 번도 못 나가 봤어요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 2 - get + 목적어 + 과거분사 (남이 ~해 주게 하다)",
-   "f": "남에게 서비스를 받다   get + 목적어 + 과거분사 - I got my car washed.\n내가 직접 한 게 아님   I washed my car(내가 직접) vs I got my car washed(세차 맡김)\n과거는 got, 과거분사 꼬리 주의   fix→fixed . cut→cut . repair→repaired\n★ 목적어가 가운데, 과거분사가 마지막. get + 목적어 + 과거분사 순서 고정\n❌ 이렇게 쓰면 안 됩니다 - got my car wash(과거분사 washed) . got washed my car(어순) . get(과거 got)",
+   "t": "★ 구조 카드 2 - 가정법 과거 + 관계부사 where / when",
+   "f": "가정법   If + 주어 + 과거동사, 주어 + would + 동사원형 - 지금과 반대되는 상상\nbe동사   If I were you / If I were rich (was 아님)\n관계부사  (장소) the place where ~ / (때) the day when ~\n★ 장소 뒤에는 where, 때 뒤에는 when. '명사 + what' 은 틀린다\n❌ 이렇게 쓰면 안 됩니다 - If I was(가정법은 were) . I will(would) . the place what(where)",
    "ex": [
     [
-     "I got my watch repaired at the mall.",
-     "저는 쇼핑몰에서 시계를 수리받았어요."
+     "If I had more money, I would travel more.",
+     "돈이 더 있다면, 여행을 더 다닐 텐데요."
     ],
     [
-     "We got the photos printed for the album.",
-     "우리는 앨범에 넣으려고 사진을 인화했어요."
+     "This is the town where I grew up.",
+     "여기가 제가 자란 동네예요."
     ],
     [
-     "He got his tooth pulled last week.",
-     "그는 지난주에 이를 뽑았어요."
+     "I remember the day when we first met.",
+     "저는 우리가 처음 만난 그날을 기억해요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 3 - while(+주어+동사) vs during(+명사)",
-   "f": "while 뒤   주어 + 동사 (문장) - while I was eating\nduring 뒤   명사 (덩어리) - during lunch\n과거의 '~하는 동안'   while + 주어 + was/were + 동사-ing\n★ 뜻은 같아도 뒤에 오는 모양이 다르다. 문장이면 while, 명사면 during\n❌ 이렇게 쓰면 안 됩니다 - during I was eating(during + 명사) . while lunch(while + 문장) . while I eating(was 누락)",
+   "t": "★ 구조 카드 3 - 정도 / 결과 (so~that · too~to · enough to)",
+   "f": "so + 형용사 + that + 주어 + 동사   너무 ~해서 …하다 - so tired that I slept\ntoo + 형용사 + to + 동사원형        너무 ~해서 …할 수 없다 - too hot to drink\n형용사 + enough to + 동사원형        …할 만큼 충분히 ~한 - tall enough to reach\n★ 어순 주의 - enough 는 형용사 '뒤' (tall enough), too 는 형용사 '앞'\n❌ 이렇게 쓰면 안 됩니다 - so hot to drink(too~to) . too ~ that . enough tall(tall enough)",
    "ex": [
     [
-     "While I was studying, my phone kept buzzing.",
-     "제가 공부하는 동안, 전화기가 계속 울렸어요."
+     "I was so sleepy that I went to bed early.",
+     "너무 졸려서 일찍 잤어요."
     ],
     [
-     "I fell asleep during the movie.",
-     "저는 영화 보는 동안 잠들었어요."
+     "It was too expensive to buy.",
+     "너무 비싸서 살 수 없었어요."
     ],
     [
-     "During the trip, we took hundreds of photos.",
-     "여행 동안, 우리는 사진을 수백 장 찍었어요."
+     "She is old enough to drive.",
+     "그녀는 운전할 만큼 나이가 됐어요."
     ]
    ]
   }
  ],
  "kit": [
   [
-   "Sorry, could you repeat the last part?",
-   "죄송한데, 마지막 부분 다시 말해 주실래요?"
+   "Can you say that one more time?",
+   "그거 한 번만 더 말해 주실래요?"
   ],
   [
-   "How would you say this more naturally?",
-   "이걸 더 자연스럽게 하면 어떻게 말해요?"
+   "I didn't catch that.",
+   "방금 그거 못 알아들었어요."
   ],
   [
-   "Give me a second to put it into words.",
-   "말로 옮길 시간 좀 주세요."
+   "What do you mean by that?",
+   "그게 무슨 뜻이에요?"
   ],
   [
-   "Did I use that word correctly?",
-   "제가 그 단어 맞게 썼나요?"
+   "How do you spell it?",
+   "그거 철자가 어떻게 돼요?"
   ],
   [
-   "Can you type that in the chat?",
-   "그거 채팅창에 적어 주실래요?"
+   "Can you slow down a little?",
+   "조금만 천천히 말해 주실래요?"
   ],
   [
-   "I know what I mean, but not how to say it.",
-   "무슨 말인지는 아는데, 어떻게 말할지 모르겠어요."
+   "Let me rephrase that.",
+   "다시 말해 볼게요."
   ],
   [
-   "Let's move on to the next one.",
-   "다음 걸로 넘어가요."
+   "Is that correct?",
+   "이거 맞아요?"
   ],
   [
-   "That makes sense now, thank you.",
-   "이제 이해됐어요, 고마워요."
+   "Thank you, that helps a lot.",
+   "고마워요, 정말 도움이 돼요."
   ]
  ],
  "pron": [
   [
-   "got it",
-   "[가릿]",
-   "got it 이 [가릿] (I got it fixed = 아이 가릿 픽스트)"
+   "think about it",
+   "[씽커바우릿]",
+   "think about it 이 뭉쳐 [씽커바우릿] (I'll think about it = 아일 씽커바우릿)"
   ],
   [
-   "had a",
-   "[해더]",
-   "had a 가 [해더] (I had a call = 아이 해더 콜)"
+   "going to",
+   "[거너]",
+   "going to 가 [거너] (I'm going to go = 암 거너 고)"
   ],
   [
-   "picked it up",
-   "[픽키럽]",
-   "picked it up 이 [픽키럽] (I picked it up = 아이 픽키럽)"
+   "a piece of",
+   "[어피써브]",
+   "a piece of 가 [어피써브] (a piece of cake)"
   ],
   [
-   "in front of",
-   "[인프러너브]",
-   "in front of 가 [인프러너브] (in front of the store = 인프러너브 더 스토어)"
+   "check it out",
+   "[췌키라웃]",
+   "check it out 이 [췌키라웃] (check it out)"
   ],
   [
-   "a couple of",
-   "[어커플러브]",
-   "a couple of 가 [어커플러브] (a couple of days = 어커플러브 데이즈)"
+   "turn it off",
+   "[터니럽]",
+   "turn it off 가 [터니럽] (turn it off)"
   ],
   [
-   "next to",
-   "[넥스투]",
-   "next to 가 [넥스투] (next to the bank = 넥스투 더 뱅크)"
+   "none of them",
+   "[나너브뎀]",
+   "none of them 이 [나너브뎀] (none of them)"
   ],
   [
-   "take a look",
-   "[테이껄룩]",
-   "take a look 이 [테이껄룩] (take a look at this = 테이껄룩 앳 디스)"
+   "could have",
+   "[쿠더브]",
+   "could have 가 [쿠더브] (I could have done it)"
   ]
  ],
  "mc": [
   {
-   "tag": "대과거 had 과거분사",
-   "ko": "제가 역에 도착했을 때, 기차는 이미 떠난 뒤였어요.",
+   "tag": "현재완료 경험 have never been",
+   "ko": "저는 해외에 한 번도 나가 본 적이 없어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "By the time I arrived at the station, the train had already left.",
-    "By the time I arrived at the station, the train already left.",
-    "By the time I arrived at the station, the train has already left.",
-    "By the time I was arriving, the train had already left."
+    "I have never been abroad.",
+    "I have never went abroad.",
+    "I never been abroad.",
+    "I have never being abroad."
    ],
    "a": 0,
-   "bad": "already left(had 누락) . has already left(과거엔 had) . was arriving(과거 arrived)",
-   "good": "By the time I arrived at the station, the train had already left.",
-   "pt": "⭕ 쓰세요 had already left (had + 과거분사)   ❌ 쓰지 마세요 already left . has already left"
+   "bad": "have never went(과거분사 been/gone) . never been(have 누락) . being(과거분사 아님)",
+   "good": "I have never been abroad.",
+   "pt": "⭕ 쓰세요 have never been (have + 과거분사)   ❌ 쓰지 마세요 have never went . never been"
   },
   {
-   "tag": "get + 목적어 + 과거분사",
-   "ko": "저는 어제 시계를 수리받았어요.",
+   "tag": "현재완료 완료 have already eaten",
+   "ko": "저는 이미 점심을 먹었어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I got my watch repair yesterday.",
-    "I got my watch repaired yesterday.",
-    "I got my watch repairing yesterday.",
-    "I got repaired my watch yesterday."
+    "I already eaten lunch.",
+    "I have already eaten lunch.",
+    "I have already ate lunch.",
+    "I am already eaten lunch."
    ],
    "a": 1,
-   "bad": "repair(과거분사 repaired) . repairing(-ing 아님) . got repaired my watch(어순)",
-   "good": "I got my watch repaired yesterday.",
-   "pt": "⭕ 쓰세요 got my watch repaired (get + 목적어 + 과거분사)   ❌ 쓰지 마세요 got my watch repair"
+   "bad": "already eaten(have 누락) . have already ate(과거분사 eaten) . am eaten(be 오류)",
+   "good": "I have already eaten lunch.",
+   "pt": "⭕ 쓰세요 have already eaten (have + 과거분사)   ❌ 쓰지 마세요 have already ate . already eaten"
   },
   {
-   "tag": "used to + 동사원형",
-   "ko": "저는 예전에 이 동네에 살았었어요 (지금은 아니에요).",
+   "tag": "가정법 과거 If I were",
+   "ko": "제가 당신이라면, 저는 그 제안을 받아들일 거예요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I used to living in this neighborhood.",
-    "I use to live in this neighborhood.",
-    "I used to live in this neighborhood.",
-    "I am used to live in this neighborhood."
+    "If I am you, I will accept the offer.",
+    "If I were you, I would accept the offer.",
+    "If I was you, I would accept the offer.",
+    "If I were you, I accept the offer."
+   ],
+   "a": 1,
+   "bad": "If I am you(가정법은 were) . If I was(were) . I accept(would 누락)",
+   "good": "If I were you, I would accept the offer.",
+   "pt": "⭕ 쓰세요 If I were you, I would accept (were + would)   ❌ 쓰지 마세요 If I was . I will / I accept"
+  },
+  {
+   "tag": "관계부사 where",
+   "ko": "여기가 제가 자란 동네예요.",
+   "q": "가장 자연스러운 문장은?",
+   "o": [
+    "This is the town where I grew up.",
+    "This is the town what I grew up.",
+    "This is the town which I grew up in it.",
+    "This is the town I grew up where."
+   ],
+   "a": 0,
+   "bad": "what I grew up(관계부사는 where) . in it(목적어 중복) . where 어순 오류",
+   "good": "This is the town where I grew up.",
+   "pt": "⭕ 쓰세요 the town where I grew up (장소 + where)   ❌ 쓰지 마세요 the town what . 어순 오류"
+  },
+  {
+   "tag": "so ~ that",
+   "ko": "저는 너무 피곤해서 일찍 잠자리에 들었어요.",
+   "q": "가장 자연스러운 문장은?",
+   "o": [
+    "I was too tired that I went to bed early.",
+    "I was so tired that I went to bed early.",
+    "I was so tired to go to bed early.",
+    "I was so tired so I went to bed early."
+   ],
+   "a": 1,
+   "bad": "too tired that(so~that가 맞음) . so tired to(결과는 that) . so~so(중복)",
+   "good": "I was so tired that I went to bed early.",
+   "pt": "⭕ 쓰세요 so tired that (so + 형용사 + that)   ❌ 쓰지 마세요 too tired that . so tired to"
+  },
+  {
+   "tag": "가산 a few",
+   "ko": "저는 질문이 몇 개 있어요.",
+   "q": "가장 자연스러운 문장은?",
+   "o": [
+    "I have a little questions.",
+    "I have a few question.",
+    "I have a few questions.",
+    "I have much questions."
    ],
    "a": 2,
-   "bad": "used to living(to + 동사원형) . use to(used to) . am used to(습관은 used to + 원형)",
-   "good": "I used to live in this neighborhood.",
-   "pt": "⭕ 쓰세요 used to live (used to + 동사원형)   ❌ 쓰지 마세요 use to live . used to living"
+   "bad": "a little questions(셀 수 있으면 a few) . a few question(복수 -s) . much questions(가산엔 many)",
+   "good": "I have a few questions.",
+   "pt": "⭕ 쓰세요 a few questions (가산 복수 + a few)   ❌ 쓰지 마세요 a little questions . much questions"
   },
   {
-   "tag": "while + 주어 + 과거진행",
-   "ko": "제가 설거지를 하고 있는 동안, 전화기가 울렸어요.",
-   "q": "가장 자연스러운 문장은?",
+   "tag": "연음 think about it",
+   "ko": "[아일 씽커바우릿] 으로 들리는 연음을 살려, 가장 자연스러운 문장을 고르세요.",
+   "q": "원어민 발음: [아일 씽커바우릿]",
    "o": [
-    "During I was doing the dishes, my phone rang.",
-    "While I doing the dishes, my phone rang.",
-    "While I was do the dishes, my phone rang.",
-    "While I was doing the dishes, my phone rang."
+    "I'll think it about.",
+    "I'll thinking about it.",
+    "I'll think about.",
+    "I'll think about it."
    ],
    "a": 3,
-   "bad": "During + 문장(During 뒤엔 명사) . While I doing(was 누락) . was do(was + -ing)",
-   "good": "While I was doing the dishes, my phone rang.",
-   "pt": "⭕ 쓰세요 While I was doing (while + 주어 + was -ing)   ❌ 쓰지 마세요 During I was doing"
+   "bad": "think it about(어순) . thinking(동사원형) . think about(목적어 it 누락)",
+   "good": "I'll think about it.",
+   "pt": "⭕ 쓰세요 think about it [씽커바우릿] (목적어 it)   ❌ 쓰지 마세요 think it about . think about"
   },
   {
-   "tag": "during + 명사",
-   "ko": "저는 휴가 동안 책을 세 권 읽었어요.",
+   "tag": "too ~ to",
+   "ko": "그 아이는 너무 어려서 그 영화를 볼 수 없어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I read three books while my vacation.",
-    "I read three books during my vacation.",
-    "I read three books during I was on vacation.",
-    "I read three book during my vacation."
-   ],
-   "a": 1,
-   "bad": "while + 명사(while 뒤엔 문장) . during + 문장 . three book(복수 books)",
-   "good": "I read three books during my vacation.",
-   "pt": "⭕ 쓰세요 during my vacation (during + 명사)   ❌ 쓰지 마세요 while my vacation"
-  },
-  {
-   "tag": "There are 복수 수일치",
-   "ko": "테이블 위에 사과가 몇 개 있어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "There is a few apples on the table.",
-    "There have a few apples on the table.",
-    "There are a few apples on the table.",
-    "It are a few apples on the table."
+    "The kid is so young that watch the movie.",
+    "The kid is too young for watching the movie.",
+    "The kid is too young to watch the movie.",
+    "The kid is enough young to watch the movie."
    ],
    "a": 2,
-   "bad": "There is + 복수(are) . There have(There is/are) . It are",
-   "good": "There are a few apples on the table.",
-   "pt": "⭕ 쓰세요 There are a few apples (복수 → are)   ❌ 쓰지 마세요 There is a few apples"
+   "bad": "so young that(too~to가 맞음) . for watching(to + 동사원형) . enough young(어순은 tall enough, 여기선 too)",
+   "good": "The kid is too young to watch the movie.",
+   "pt": "⭕ 쓰세요 too young to watch (too + 형용사 + to + 동사원형)   ❌ 쓰지 마세요 so young that . for watching"
   },
   {
-   "tag": "One of 복수 + is 수일치",
-   "ko": "제 가방 단추 중 하나가 떨어졌어요.",
+   "tag": "관계부사 when",
+   "ko": "저는 우리가 처음 만난 날을 아직 기억해요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "One of the buttons on my bag is missing.",
-    "One of the buttons on my bag are missing.",
-    "There is one of the buttons missing on my bag.",
-    "One of the buttons on my bag has missing."
-   ],
-   "a": 0,
-   "bad": "are(주어 One → is) . There is one of ~(어색한 구조) . has missing(is missing)",
-   "good": "One of the buttons on my bag is missing.",
-   "pt": "⭕ 쓰세요 One of the buttons ... is (주어 One → is)   ❌ 쓰지 마세요 One of the buttons are"
-  },
-  {
-   "tag": "수여동사 사람 + 물건 어순",
-   "ko": "제 친구가 저에게 생일 선물을 사 줬어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "My friend bought for me a birthday present.",
-    "My friend bought me birthday present.",
-    "My friend buy me a birthday present.",
-    "My friend bought me a birthday present."
+    "I still remember the day we first met when.",
+    "I still remember the day what we first met.",
+    "I still remember the day which we first met.",
+    "I still remember the day when we first met."
    ],
    "a": 3,
-   "bad": "bought for me(수여동사 bought me ~) . me birthday present(관사 a 누락) . buy(과거 bought)",
-   "good": "My friend bought me a birthday present.",
-   "pt": "⭕ 쓰세요 bought me a birthday present (사람 먼저 + 관사 a)   ❌ 쓰지 마세요 bought for me . me birthday present"
+   "bad": "day ~ when(어순) . what we met(관계부사는 when) . which(때에는 when)",
+   "good": "I still remember the day when we first met.",
+   "pt": "⭕ 쓰세요 the day when we first met (때 + when)   ❌ 쓰지 마세요 the day what . 어순 오류"
   },
   {
-   "tag": "연음 got it [가릿]",
-   "ko": "🔊 들리는 대로 - [아이 가릿 픽스트 라스트 위크] : 올바르게 쓴 문장은?",
+   "tag": "사역 make 과거",
+   "ko": "그 영화는 저를 울게 만들었어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I got it fix last week.",
-    "I got it fixed last week.",
-    "I got it fixing last week.",
-    "I getted it fixed last week."
-   ],
-   "a": 1,
-   "bad": "got it fix(과거분사 fixed) . fixing(-ing 아님) . getted(과거 got)",
-   "good": "I got it fixed last week.",
-   "pt": "⭕ 쓰세요 got it fixed (got it [가릿] + 과거분사)   ❌ 쓰지 마세요 got it fix . getted"
-  },
-  {
-   "tag": "There used to be",
-   "ko": "예전에 이 자리에 작은 서점이 하나 있었어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "There used to be a small bookstore here.",
-    "There used to being a small bookstore here.",
-    "There was used to a small bookstore here.",
-    "There used to be small bookstore here."
+    "The movie made me cry.",
+    "The movie made me to cry.",
+    "The movie made me crying.",
+    "The movie make me cry."
    ],
    "a": 0,
-   "bad": "used to being(to + 동사원형 be) . was used to(There used to be) . be small bookstore(관사 a 누락)",
-   "good": "There used to be a small bookstore here.",
-   "pt": "⭕ 쓰세요 There used to be a small bookstore (used to + be, 관사 a)   ❌ 쓰지 마세요 used to being . be small bookstore"
+   "bad": "made me to cry(사역 make는 to 없음) . made me crying(동사원형) . make(과거 made)",
+   "good": "The movie made me cry.",
+   "pt": "⭕ 쓰세요 made me cry (make + 사람 + 동사원형)   ❌ 쓰지 마세요 made me to cry . made me crying"
   }
  ],
  "fb": [
   {
-   "tag": "대과거 had already 과거분사",
-   "ko": "제가 공항에 도착했을 때, 비행기는 이미 이륙한 뒤였어요.",
-   "s": "When I got to the airport, the plane ______ ______ ______ off.",
+   "tag": "현재완료 경험 have been",
+   "ko": "저는 호주에 두 번 가 봤어요.",
+   "s": "I ______ ______ to Australia twice.",
    "a": [
-    "had already taken"
+    "have been"
    ],
-   "hint": "3칸 . h__ a______ t____ . (대과거) 이미 이륙해 버렸다(had + already + 과거분사 take→taken off)",
-   "bad": "has already taken(과거엔 had) . already took(had 누락) . had already take(과거분사 taken)",
-   "good": "When I got to the airport, the plane had already taken off.",
-   "pt": "⭕ 쓰세요 had already taken off (had + 과거분사)   ❌ 쓰지 마세요 has already taken . already took"
+   "hint": "2칸 . h___ b___ . ~에 가 본 적 있다(현재완료 경험, be의 과거분사 been)",
+   "bad": "have went(과거분사 been/gone) . has been(주어 I는 have) . been(have 누락)",
+   "good": "I have been to Australia twice.",
+   "pt": "⭕ 쓰세요 have been to (have + 과거분사 been)   ❌ 쓰지 마세요 have went . been(have 빠짐)"
   },
   {
-   "tag": "get + 목적어 + 과거분사",
-   "ko": "저는 주말에 머리를 잘랐어요 (미용실에서).",
-   "s": "I ______ ______ ______ ______ over the weekend.",
+   "tag": "현재완료 완료 have already read",
+   "ko": "저는 그 책을 이미 다 읽었어요.",
+   "s": "I ______ ______ ______ the book.",
    "a": [
-    "got my hair cut"
+    "have already read",
+    "have read already"
    ],
-   "hint": "4칸 . g__ m_ h___ c__ . (get + 목적어 + 과거분사) 머리를 자르게 했다(get 과거 + my hair + cut)",
-   "bad": "cut my hair(get my hair cut) . got my hair cutted(cut의 과거분사 cut) . get(과거 got)",
-   "good": "I got my hair cut over the weekend.",
-   "pt": "⭕ 쓰세요 got my hair cut (get + 목적어 + 과거분사)   ❌ 쓰지 마세요 cutted . got my hair cutting"
+   "hint": "3칸 . h___ a______ r___ . 이미 ~했다(have + already + 과거분사, read는 불규칙)",
+   "bad": "already read(have 누락) . has already read(주어 I는 have) . have already readed(불규칙 read)",
+   "good": "I have already read the book.",
+   "pt": "⭕ 쓰세요 have already read (have + already + 과거분사)   ❌ 쓰지 마세요 already read(have 빠짐)"
   },
   {
-   "tag": "used to + 동사원형",
-   "ko": "저는 어렸을 때 피아노를 치곤 했어요 (지금은 안 쳐요).",
-   "s": "I ______ ______ ______ the piano when I was young.",
+   "tag": "가정법 과거 would",
+   "ko": "제가 부자라면, 저는 세계 일주를 할 텐데요.",
+   "s": "If I were rich, I ______ ______ around the world.",
    "a": [
-    "used to play"
+    "would travel"
    ],
-   "hint": "3칸 . u___ t_ p___ . (과거 습관) 치곤 했다(used to + 동사원형)",
-   "bad": "use to play(used to) . used to playing(to + 동사원형) . was used to play",
-   "good": "I used to play the piano when I was young.",
-   "pt": "⭕ 쓰세요 used to play (used to + 동사원형)   ❌ 쓰지 마세요 use to play . used to playing"
+   "hint": "2칸 . w____ t_____ . …할 텐데(would + 동사원형 travel)",
+   "bad": "will travel(가정법은 would) . would traveled(would + 동사원형) . would to travel",
+   "good": "If I were rich, I would travel around the world.",
+   "pt": "⭕ 쓰세요 would travel (would + 동사원형)   ❌ 쓰지 마세요 will travel . would traveled"
   },
   {
-   "tag": "while + 주어 + 과거진행",
-   "ko": "제가 샤워를 하고 있는 동안 초인종이 울렸어요.",
-   "s": "The doorbell rang while I ______ ______.",
+   "tag": "관계부사 where",
+   "ko": "여기가 우리가 처음 만난 그 카페예요.",
+   "s": "This is the cafe ______ we first met.",
    "a": [
-    "was showering"
+    "where"
    ],
-   "hint": "2칸 . w__ s________ . (while + 주어 + 과거진행) 샤워하고 있었다(was + 동사-ing)",
-   "bad": "was shower(진행 showering) . am showering(과거 was) . showered(진행형 필요)",
-   "good": "The doorbell rang while I was showering.",
-   "pt": "⭕ 쓰세요 while I was showering (while + 주어 + was -ing)   ❌ 쓰지 마세요 during I was showering"
+   "hint": "1칸 . w____ . (장소) ~한 그곳(관계부사)",
+   "bad": "what(관계부사는 where) . which(장소엔 where) . that we met in",
+   "good": "This is the cafe where we first met.",
+   "pt": "⭕ 쓰세요 the cafe where we first met (장소 + where)   ❌ 쓰지 마세요 the cafe what"
   },
   {
-   "tag": "during + 명사",
-   "ko": "저는 회의 중에 메모를 많이 했어요.",
-   "s": "I took a lot of notes ______ ______ ______.",
+   "tag": "so ~ that",
+   "ko": "그 상자가 너무 무거워서 저는 그걸 들 수 없었어요.",
+   "s": "The box was ______ ______ that I couldn't lift it.",
    "a": [
-    "during the meeting"
+    "so heavy"
    ],
-   "hint": "3칸 . d______ t__ m______ . (during + 명사) 회의 중에(during + the + 명사)",
-   "bad": "while the meeting(during + 명사) . during meeting(관사 the 누락) . in during the meeting",
-   "good": "I took a lot of notes during the meeting.",
-   "pt": "⭕ 쓰세요 during the meeting (during + 명사)   ❌ 쓰지 마세요 while the meeting"
+   "hint": "2칸 . s_ h____ . 너무 ~해서(so + 형용사) + that",
+   "bad": "too heavy that(so~that) . very heavy(결과 that는 so) . so heavy to(that 자리)",
+   "good": "The box was so heavy that I couldn't lift it.",
+   "pt": "⭕ 쓰세요 so heavy that (so + 형용사 + that)   ❌ 쓰지 마세요 too heavy that"
   },
   {
-   "tag": "There are 복수 수일치",
-   "ko": "냉장고에 계란이 몇 개 남아 있어요.",
-   "s": "______ ______ a few eggs left in the fridge.",
+   "tag": "불가산 a little",
+   "ko": "커피에 우유를 조금만 넣어 주세요.",
+   "s": "Please add just ______ ______ milk.",
    "a": [
-    "There are"
+    "a little"
    ],
-   "hint": "2칸 . T____ a__ . (복수 주어 eggs → are) 계란이 몇 개 있다(There + are + 복수)",
-   "bad": "There is(복수 → are) . There have . It are",
-   "good": "There are a few eggs left in the fridge.",
-   "pt": "⭕ 쓰세요 There are a few eggs (복수 → are)   ❌ 쓰지 마세요 There is a few eggs"
+   "hint": "2칸 . a l_____ . (셀 수 없는 것) 조금(a little + 단수명사)",
+   "bad": "a few(milk는 불가산 a little) . little milk(a 누락) . much milk(조금은 a little)",
+   "good": "Please add just a little milk.",
+   "pt": "⭕ 쓰세요 a little milk (불가산 + a little)   ❌ 쓰지 마세요 a few milk . little milk(a 빠짐)"
   },
   {
-   "tag": "One of 복수 + is 수일치",
-   "ko": "제 신발 중 한 짝이 젖었어요.",
-   "s": "One of my ______ ______ wet.",
+   "tag": "too ~ to",
+   "ko": "그 커피는 너무 뜨거워서 마실 수 없었어요.",
+   "s": "The coffee was ______ ______ to drink.",
    "a": [
-    "shoes is"
+    "too hot"
    ],
-   "hint": "2칸 . s____ i_ . (of 뒤 복수 shoes, 주어 One → is) 신발 중 하나가 젖었다",
-   "bad": "shoe is(of 뒤 복수 shoes) . shoes are(주어 One → is) . shoes be",
-   "good": "One of my shoes is wet.",
-   "pt": "⭕ 쓰세요 One of my shoes is wet (of 뒤 복수 + 주어 One → is)   ❌ 쓰지 마세요 shoes are . one of my shoe"
+   "hint": "2칸 . t__ h__ . 너무 ~해서 …할 수 없다(too + 형용사 + to)",
+   "bad": "so hot to(too~to) . hot too(어순) . too hot for drink(to + 동사원형)",
+   "good": "The coffee was too hot to drink.",
+   "pt": "⭕ 쓰세요 too hot to drink (too + 형용사 + to + 동사원형)   ❌ 쓰지 마세요 so hot to . for drink"
   },
   {
-   "tag": "수여동사 사람 + 관사 + 물건",
-   "ko": "저희 할머니가 저에게 따뜻한 스웨터를 만들어 주셨어요.",
-   "s": "My grandmother ______ ______ ______ warm sweater.",
+   "tag": "관계부사 when",
+   "ko": "저는 제가 운전을 배운 그 해를 아직 기억해요.",
+   "s": "I still remember the year ______ I learned to drive.",
    "a": [
-    "made me a"
+    "when"
    ],
-   "hint": "3칸 . m___ m_ a . (수여동사 어순: 사람 먼저 + 관사 a) 저에게 만들어 줬다(make 과거 + me + a)",
-   "bad": "made for me a(수여동사 made me ~) . made me(관사 a 누락) . make me a(과거 made)",
-   "good": "My grandmother made me a warm sweater.",
-   "pt": "⭕ 쓰세요 made me a warm sweater (사람 먼저 + 관사 a)   ❌ 쓰지 마세요 made for me . made me warm sweater"
+   "hint": "1칸 . w___ . (때) ~한 그해(관계부사)",
+   "bad": "what(관계부사는 when) . which(때엔 when) . where(때는 when, 장소는 where)",
+   "good": "I still remember the year when I learned to drive.",
+   "pt": "⭕ 쓰세요 the year when I learned (때 + when)   ❌ 쓰지 마세요 the year what"
   },
   {
-   "tag": "대과거 경험 had never 과거분사",
-   "ko": "저는 그 식당에 가 보기 전까지 태국 음식을 먹어 본 적이 없었어요.",
-   "s": "I ______ ______ ______ Thai food before I went to that restaurant.",
+   "tag": "enough to",
+   "ko": "그는 맨 위 선반에 닿을 만큼 키가 커요.",
+   "s": "He is tall ______ ______ reach the top shelf.",
    "a": [
-    "had never tried"
+    "enough to"
    ],
-   "hint": "3칸 . h__ n____ t____ . (대과거 경험) 먹어 본 적이 없었다(had + never + 과거분사 try→tried)",
-   "bad": "have never tried(과거엔 had) . had never try(과거분사 tried) . never tried(had 누락)",
-   "good": "I had never tried Thai food before I went to that restaurant.",
-   "pt": "⭕ 쓰세요 had never tried (had + 과거분사)   ❌ 쓰지 마세요 have never tried . had never try"
+   "hint": "2칸 . e_____ t_ . …할 만큼 충분히(형용사 + enough to + 동사원형)",
+   "bad": "enough tall(어순: tall enough) . to enough(순서) . enough for reach(to + 동사원형)",
+   "good": "He is tall enough to reach the top shelf.",
+   "pt": "⭕ 쓰세요 tall enough to reach (형용사 + enough to + 동사원형)   ❌ 쓰지 마세요 enough tall . enough for reach"
   },
   {
-   "tag": "There used to be",
-   "ko": "예전에 우리 학교 옆에 문구점이 하나 있었어요.",
-   "s": "There ______ ______ ______ a stationery shop next to our school.",
+   "tag": "사역 make 과거",
+   "ko": "그 소식은 우리 모두를 행복하게 만들었어요.",
+   "s": "The news ______ all of us happy.",
    "a": [
-    "used to be"
+    "made"
    ],
-   "hint": "3칸 . u___ t_ b_ . (과거에 있었다) 예전에 ~이 있었다(There + used to + be)",
-   "bad": "use to be(used to) . used to being(to + be) . was used to be",
-   "good": "There used to be a stationery shop next to our school.",
-   "pt": "⭕ 쓰세요 There used to be a shop (used to + be)   ❌ 쓰지 마세요 use to be . used to being"
+   "hint": "1칸 . m___ . (사역) ~하게 만들었다(make 과거 + 목적어 + 형용사)",
+   "bad": "make(과거 made) . made us to happy(형용사 앞 to 없음) . making",
+   "good": "The news made all of us happy.",
+   "pt": "⭕ 쓰세요 made all of us happy (make 과거 + 목적어 + 형용사)   ❌ 쓰지 마세요 make . to happy"
   }
  ],
  "tr": [
   {
-   "tag": "대과거 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so we missed / had already started / The movie / when we arrived, / the opening scene. ] - 그 영화는 우리가 도착했을 때 이미 시작한 뒤여서, 우리는 첫 장면을 놓쳤어요.",
-   "m": "The movie had already started when we arrived, so we missed the opening scene.",
-   "k": "The movie had already started when we arrived(대과거 had + 과거분사) / so we missed the opening scene 뒷절(과거 missed, 관사 the) - 절 2개 확인"
+   "tag": "현재완료 경험/미완료 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ to London yet. / I have been / but I haven't been / to Paris, ] - 저는 파리에 가 본 적은 있지만, 런던에는 아직 못 가 봤어요.",
+   "m": "I have been to Paris, but I haven't been to London yet.",
+   "k": "I have been to Paris(현재완료 경험) / but I haven't been to London yet 뒷절(미완료 yet) - 절 2개 확인"
   },
   {
-   "tag": "get + 목적어 + 과거분사 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ but it broke again / a week later. / I got / my phone screen fixed, ] - 저는 휴대폰 화면을 고쳤는데, 일주일 뒤에 또 고장 났어요.",
-   "m": "I got my phone screen fixed, but it broke again a week later.",
-   "k": "I got my phone screen fixed(get + 목적어 + 과거분사) / but it broke again a week later 뒷절(과거 broke) - 절 2개 확인"
+   "tag": "가정법 과거 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ I would buy / If I had / a new laptop. / more money, ] - 제가 돈이 더 있다면, 저는 새 노트북을 살 텐데요.",
+   "m": "If I had more money, I would buy a new laptop.",
+   "k": "If I had more money(가정법 과거) / I would buy a new laptop 뒷절(would + 동사원형, 관사 a) - 절 2개 확인"
   },
   {
-   "tag": "used to + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ but now / a lot of coffee, / I only drink tea. / I used to drink ] - 저는 예전에 커피를 많이 마셨는데, 지금은 차만 마셔요.",
-   "m": "I used to drink a lot of coffee, but now I only drink tea.",
-   "k": "I used to drink a lot of coffee(과거 습관 used to + 동사원형) / but now I only drink tea 뒷절(현재 drink) - 절 2개 확인"
+   "tag": "관계부사 where + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ and it has changed a lot. / This is the town / where I grew up, ] - 여기가 제가 자란 동네인데, 많이 변했어요.",
+   "m": "This is the town where I grew up, and it has changed a lot.",
+   "k": "This is the town where I grew up(관계부사 where) / and it has changed a lot 뒷절(현재완료) - 절 2개 확인"
   },
   {
-   "tag": "while + 과거진행 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ it started / for the bus, / to rain heavily. / While I was waiting ] - 제가 버스를 기다리고 있는 동안, 비가 세차게 내리기 시작했어요.",
-   "m": "While I was waiting for the bus, it started to rain heavily.",
-   "k": "While I was waiting for the bus(while + 주어 + was -ing) / it started to rain heavily 뒷절(과거 started) - 절 2개 확인"
+   "tag": "so ~ that + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ that I couldn't watch it / The movie was / to the end. / so long ] - 그 영화가 너무 길어서, 저는 끝까지 못 봤어요.",
+   "m": "The movie was so long that I couldn't watch it to the end.",
+   "k": "The movie was so long(so + 형용사) / that I couldn't watch it to the end 뒷절(that + 결과) - 절 2개 확인"
   },
   {
-   "tag": "수여동사 사람 + 물건 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I rode it / a new bike, / to school every day. / My uncle bought me ] - 삼촌이 저에게 새 자전거를 사 주셔서, 저는 그걸 타고 매일 학교에 갔어요.",
-   "m": "My uncle bought me a new bike, so I rode it to school every day.",
-   "k": "My uncle bought me a new bike(수여동사 사람 먼저 + 관사 a) / so I rode it to school every day 뒷절(과거 rode) - 절 2개 확인"
+   "tag": "사역 make + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I turned up / The song makes me / the volume. / want to dance, ] - 그 노래는 저를 춤추고 싶게 만들어서, 저는 볼륨을 높였어요.",
+   "m": "The song makes me want to dance, so I turned up the volume.",
+   "k": "The song makes me want to dance(사역 make + 동사원형) / so I turned up the volume 뒷절(동사구 turn up) - 절 2개 확인"
   },
   {
-   "tag": "대과거 (부분 영작 . 뒷절 끝까지)",
-   "ko": "제가 집에 돌아왔을 때, 누군가 이미 설거지를 다 해 놓았더라고요.  〔앞절 제공〕 When I got home, ______  〔쓸 표현 : 뒷절 - 주어는 '누군가' + 과거완료 틀(had + 과거분사) + '이미'(already) + '설거지를 다 하다'(do의 과거분사) - 뒷절 끝까지〕",
-   "m": "When I got home, someone had already done the dishes.",
-   "k": "뒷절만 쓰세요 : someone had already done the dishes - 절 2개 확인"
+   "tag": "현재완료 미완료 (부분 영작 . 뒷절 끝까지)",
+   "ko": "저는 그 이메일을 보냈지만, 그는 아직 답장을 안 했어요.  〔앞절 제공〕 I sent the email, but he ______  〔쓸 표현 : 뒷절 - 현재완료 부정 'has ___ 과거분사' 틀 + 신호어 '아직'(yet). 동사는 '답장하다'(r로 시작, 과거분사 -ied). 주어 he는 3인칭(has) - 뒷절 끝까지〕",
+   "m": "I sent the email, but he hasn't replied yet.",
+   "k": "뒷절만 쓰세요 : hasn't replied yet - 절 2개 확인"
   },
   {
-   "tag": "There is/are 수일치 (부분 영작 . 뒷절 끝까지)",
-   "ko": "주차장에 자리가 많았는데, 빈자리는 딱 하나만 남아 있었어요.  〔앞절 제공〕 There were many spaces in the parking lot, but ______  〔쓸 표현 : 뒷절 - there + be동사(주어가 단수 '빈자리 하나'라서 과거 was로 수일치) + '딱 하나 남은'을 영어로(수량 하나 + 단수명사 + 남다 left) - 뒷절 끝까지〕",
-   "m": "There were many spaces in the parking lot, but there was only one spot left.",
-   "k": "뒷절만 쓰세요 : there was only one spot left - 절 2개 확인"
+   "tag": "관계부사 when (부분 영작 . 뒷절 끝까지)",
+   "ko": "저는 그날을 아직 생생히 기억하는데, 그날 우리가 처음 만났어요.  〔앞절 제공〕 I still clearly remember the day ______  〔쓸 표현 : 뒷절 - 관계부사(때) + 주어 we + '처음'(first) + 동사 '만나다'(과거형, m로 시작) - 뒷절 끝까지〕",
+   "m": "I still clearly remember the day when we first met.",
+   "k": "뒷절만 쓰세요 : when we first met - 절 2개 확인"
   },
   {
-   "tag": "get + 목적어 + 과거분사 (부분 영작 . 뒷절 끝까지)",
-   "ko": "제 안경다리가 부러져서, 저는 그걸 안경점에서 고쳤어요.  〔앞절 제공〕 The arm of my glasses broke, so ______  〔쓸 표현 : 뒷절 - 주어 '나' + get의 과거형 + 목적어 '그것들'(glasses는 복수) + 과거분사(고치다 → 과거분사) + 장소 '그 가게에서'(전치사 at + the + 명사) - 뒷절 끝까지〕",
-   "m": "The arm of my glasses broke, so I got them fixed at the shop.",
-   "k": "뒷절만 쓰세요 : I got them fixed at the shop - 절 2개 확인"
+   "tag": "too ~ to (부분 영작 . 뒷절 끝까지)",
+   "ko": "그 상자가 너무 무거워서, 저 혼자서는 들 수 없었어요.  〔앞절 제공〕 The box was ______  〔쓸 표현 : 뒷절 - 정도 구문 'too ___ to ___' : 형용사 '무거운'(h로 시작), 동사원형 '들다'(l로 시작), 끝에 '혼자서'(전치사 on 으로 시작하는 3단어) - 뒷절 끝까지〕",
+   "m": "The box was too heavy to lift on my own.",
+   "k": "뒷절만 쓰세요 : too heavy to lift on my own - 절 2개 확인"
   },
   {
-   "tag": "used to (부분 영작 . 뒷절 끝까지)",
-   "ko": "저는 예전에 아침마다 조깅을 하곤 했는데, 무릎을 다친 뒤로 그만둬야 했어요.  〔앞절 제공〕 I used to go jogging every morning, but ______  〔쓸 표현 : 뒷절 - 주어 '나' + '~해야 했다'(had to + 동사원형 '그만두다') + 시간절 '무릎을 다친 뒤로'(after I + 과거 '다치다' + my knee) - 뒷절 끝까지〕",
-   "m": "I used to go jogging every morning, but I had to quit after I hurt my knee.",
-   "k": "뒷절만 쓰세요 : I had to quit after I hurt my knee - 절 2개 확인"
+   "tag": "가산 a few + 수일치 (부분 영작 . 뒷절 끝까지)",
+   "ko": "저는 사진을 많이 찍었지만, 좋은 건 몇 장밖에 없었어요.  〔앞절 제공〕 I took many photos, but ______  〔쓸 표현 : 뒷절 - '오직'(only) + 가산 복수 '몇 개'(a f__) + be동사 과거 복수(수일치 w___) + '좋은'(good) - 뒷절 끝까지〕",
+   "m": "I took many photos, but only a few were good.",
+   "k": "뒷절만 쓰세요 : only a few were good - 절 2개 확인"
   },
   {
-   "tag": "while + 과거진행 (전체 영작 . 절 2개)",
-   "ko": "〔전체 영작〕 제가 저녁을 만들고 있는 동안, 제 남동생이 상을 차렸어요.  〔쓸 표현 : 앞절은 'while + 주어(나) + 과거진행(was + 동사-ing : 저녁을 만들다)' . 뒷절은 '남동생(my brother)이 상을 차렸다' : 과거동사 '차리다'(불규칙 과거) + 목적어 '상'(the + 명사) - 절 2개〕",
-   "m": "While I was making dinner, my brother set the table.",
-   "k": "While I was making dinner(while + 주어 + was -ing) / my brother set the table 뒷절(과거 set, 관사 the) - 절 2개 확인"
+   "tag": "가정법 과거 (전체 영작 . 절 2개)",
+   "ko": "〔전체 영작〕 제가 시간이 더 있다면, 저는 새로운 언어를 배울 텐데요.  〔쓸 표현 : 앞절은 'If + 주어 I + 과거동사 had + 목적어 more time'(지금과 반대 가정) . 뒷절은 '주어 I + would + 동사원형' 틀인데 동사는 '배우다'(l로 시작), 목적어 '새로운 언어'는 관사 a + 형용사(n로 시작) + 명사(l로 시작) - 절 2개〕",
+   "m": "If I had more time, I would learn a new language.",
+   "k": "If I had more time(가정법 과거) / I would learn a new language 뒷절(would + 동사원형, 관사 a) - 절 2개 확인"
   }
  ]
 };
@@ -1096,7 +1097,7 @@ function imgPrint(title, sub, blocks, color){
   try{ w = window.open('', '_blank'); }catch(e){ w = null; }
   if(!w) return false;
   var html = '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">'
-    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-07 (수) · 30문제</title><style>'
+    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-05 (월) · 30문제</title><style>'
     + 'body{margin:0;padding:22px;background:#fff;color:#1c2029;line-height:1.6;font-size:15px;'
     + 'font-family:' + IMG_FONT + ';}'
     + '@page{size:A4;margin:11mm;}'
