@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kyle 데일리 영어 퀴즈 · 2026-10-20 (화) · 30문제</title>
+<title>kyle 데일리 영어 퀴즈 · 2026-10-21 (수) · 30문제</title>
 <style>
 :root{
   --bg:#f7f8fa; --card:#ffffff; --line:#e3e6ec; --ink:#1c2029; --sub:#666e7d;
@@ -116,7 +116,7 @@ table.sig td:last-child{font-family:var(--mono);font-size:13.5px;color:var(--acc
 
 <script>
 /* ============================================================
-   kyle 데일리 영어 퀴즈 — 2026-10-20 (화) 30문제
+   kyle 데일리 영어 퀴즈 — 2026-10-21 (수) 30문제
    출제 근거: 주간 종합(일). 점수 미수신(마지막 result=10-07). 10-18 금지=10-16+10-17. 10-15 구조군 재등장(가정법·사역·where·목적격관계대명사생략·should have·used to)+고질 관사/과거/뒷절. 형식 반대: 생산(배열·부분) 비중.
    힌트 정책(kyle 확정 2026-09-21): 부분·전체 영작 〔쓸 표현〕에 영어 정답 문장 금지 → 문법 이름·한국어 가이드만. 배열 칩 셔플.
    채점: 대문자·마침표·쉼표·홑따옴표 미채점 (trAuto / trOK / matchFB + norm). 부분 영작은 뒷절만 써도 자동 맞음.
@@ -126,246 +126,247 @@ var BASE = (location.protocol === 'file:' || !location.origin || location.origin
   ? FALLBACK_BASE : (location.origin + location.pathname);
 
 var QUIZ = {
- "date": "2026-10-20",
- "day": "화요일",
- "edition": "화요일 신규 · 수동태 be+과거분사 · 비교급 -er than / 최상급 the -est·the most · 전달 said would / told me to / asked if · 가산 many·불가산 much + a few / a little · 고질 관사·과거·수일치·뒷절 · 수업 one of my friends made / get off·transfer · 힌트=문법 이름만 · 배열 칩 셔플",
+ "date": "2026-10-21",
+ "day": "수요일",
+ "edition": "수요일 신규 · 가정법 과거 If+과거·would · 사역 make+원형 / What makes me · get+목적어+과거분사 · 관계부사 where · 목적격 관계대명사 생략 · should have+과거분사 · used to · 동사구 run out of/deal with/pick up/drop off · 현재완료 완료 already/yet · so~that · 고질 관사·과거·수일치·뒷절 · 힌트=문법 이름만 · 배열 칩 셔플",
  "badges": [
-  "수동태 be + 과거분사",
-  "비교급 -er than / 최상급 the -est·the most",
-  "전달 said would / told me to / asked if",
-  "many · much + a few / a little",
+  "가정법 과거 If + would",
+  "사역 make + 원형 / get + 과거분사",
+  "관계부사 where · 목적격 관계대명사 생략",
+  "should have + 과거분사 · used to",
+  "동사구 run out of/deal with/pick up · already/yet",
   "★ 관사 · 과거 · 수일치 · 뒷절 (고질)"
  ],
  "diag": [
   [
-   "★ 고질 - 관사: 처음 말하는 셀 수 있는 하나엔 a/an(모음 소리 앞 an), 아는 것엔 the",
-   "I bought umbrella and waited for bus.",
-   "I bought an umbrella and waited for the bus.",
-   "⭕ 쓰세요 an umbrella ~ the bus   ❌ 쓰지 마세요 umbrella ~ bus"
+   "★ 고질 - 관사: 처음 말하는 셀 수 있는 하나엔 a/an, 아는 것엔 the",
+   "I have meeting with client at 3.",
+   "I have a meeting with a client at 3.",
+   "⭕ 쓰세요 a meeting with a client   ❌ 쓰지 마세요 meeting with client"
   ],
   [
-   "★ 고질 - 과거 동사 + 뒷절 끝까지: 과거 이야기는 동사부터 과거로, 뒷절까지 옮기기",
-   "Yesterday my car break down and I take a taxi.",
-   "Yesterday my car broke down, so I took a taxi.",
-   "⭕ 쓰세요 broke down ~ so I took a taxi   ❌ 쓰지 마세요 break down ~ I take"
+   "★ 고질 - 과거 이야기는 동사부터 과거로, 뒷절까지",
+   "Last weekend I go camping and it rain.",
+   "Last weekend I went camping, and it rained.",
+   "⭕ 쓰세요 I went ~ and it rained   ❌ 쓰지 마세요 I go ~ it rain"
   ],
   [
-   "수동태 - 누가 당한 일은 be동사 + 과거분사 (행위자는 by)",
-   "This email send by my manager.",
-   "This email was sent by my manager.",
-   "⭕ 쓰세요 was sent (be + 과거분사)   ❌ 쓰지 마세요 email send"
+   "가정법 과거 - 지금 사실과 반대면 if절은 과거, 주절은 would",
+   "If I have a car, I will drive to work.",
+   "If I had a car, I would drive to work.",
+   "⭕ 쓰세요 If I had ~ I would drive   ❌ 쓰지 마세요 If I have ~ I will"
   ],
   [
-   "전달·시제일치 - said 뒤는 시제 한 칸 뒤 (will → would)",
-   "She said she will help me tomorrow.",
-   "She said she would help me tomorrow.",
-   "⭕ 쓰세요 said she would help   ❌ 쓰지 마세요 said she will help"
+   "사역 make - make + 목적어 뒤에는 꼭 동사원형 (to·-ing 금지)",
+   "This game makes me to feel excited.",
+   "This game makes me feel excited.",
+   "⭕ 쓰세요 makes me feel (목적어 + 원형)   ❌ 쓰지 마세요 makes me to feel"
   ],
   [
-   "비교급 - 짧은 형용사는 -er than, more 금지(이중비교)",
-   "My room is more bigger than yours.",
-   "My room is bigger than yours.",
-   "⭕ 쓰세요 bigger than   ❌ 쓰지 마세요 more bigger than"
+   "used to - 예전엔 ~했다(지금은 아님), 뒤에 동사원형",
+   "I use to play the piano when I was young.",
+   "I used to play the piano when I was young.",
+   "⭕ 쓰세요 used to play (예전 습관)   ❌ 쓰지 마세요 use to play"
   ]
  ],
  "starters": [
   [
-   "I got off at City Hall and walked the rest of the way.",
-   "저는 시청에서 내려서 나머지 길은 걸어갔어요",
-   "수업/get off"
+   "If I had a day off, I'd sleep until noon.",
+   "하루 쉴 수 있으면 정오까지 잘 텐데요",
+   "가정법"
   ],
   [
-   "When I got home, dinner was already on the table.",
-   "집에 도착했을 때 저녁이 벌써 상에 차려져 있었어요",
-   "수업/When I got home"
+   "What makes me nervous is speaking on the phone.",
+   "저를 긴장시키는 건 전화로 말하는 거예요",
+   "사역 make"
   ],
   [
-   "It snowed heavily all morning, so the roads were icy.",
-   "아침 내내 눈이 많이 와서 길이 얼었어요",
-   "수업/heavily"
+   "This is the restaurant where we had our first date.",
+   "여기가 우리가 첫 데이트를 한 식당이에요",
+   "관계부사 where"
   ],
   [
-   "The machine at the cafe wasn't working again.",
-   "그 카페의 기계가 또 작동을 안 했어요",
-   "수업/machine not working"
+   "I should have charged my phone last night.",
+   "어젯밤에 폰을 충전했어야 했는데요",
+   "should have"
   ],
   [
-   "This jacket was made in Italy.",
-   "이 재킷은 이탈리아에서 만들어졌어요",
-   "수동태"
+   "The song you recommended is really good.",
+   "당신이 추천해 준 그 노래 정말 좋아요",
+   "목적격 관계대명사 생략"
   ],
   [
-   "My room is bigger than my brother's.",
-   "제 방이 제 남동생 방보다 더 커요",
-   "비교급"
+   "We ran out of milk, so I had black coffee.",
+   "우유가 다 떨어져서 블랙커피를 마셨어요",
+   "수업/run out of"
   ],
   [
-   "That was the longest meeting of the week.",
-   "그건 이번 주에서 가장 긴 회의였어요",
-   "최상급"
+   "I have already sent you the file.",
+   "제가 이미 그 파일을 보냈어요",
+   "현재완료 완료 already"
   ],
   [
-   "She told me to bring my passport.",
-   "그녀가 저한테 여권을 가져오라고 했어요",
-   "told me to"
+   "I used to commute by subway, but now I drive.",
+   "예전엔 지하철로 출퇴근했는데 지금은 운전해요",
+   "수업/used to commute"
   ],
   [
-   "He said he would text me the address.",
-   "그가 저한테 주소를 문자로 보내겠다고 했어요",
-   "said would"
+   "I got my hair dyed over the weekend.",
+   "주말에 머리를 염색했어요(맡겨서)",
+   "수업/get+과거분사"
   ],
   [
-   "I don't drink much coffee in the evening.",
-   "저는 저녁에는 커피를 많이 안 마셔요",
-   "불가산 much"
+   "I have to deal with a lot of emails on Mondays.",
+   "월요일엔 이메일을 많이 처리해야 해요",
+   "수업/deal with"
   ]
  ],
  "memo": [
   [
-   "This bridge was built over a hundred years ago.",
-   "이 다리는 백 년도 더 전에 지어졌어요."
+   "If I knew his number, I would call him right now.",
+   "제가 그의 번호를 안다면, 지금 당장 전화할 텐데요."
   ],
   [
-   "My suitcase was damaged during the flight.",
-   "제 여행 가방이 비행 중에 망가졌어요."
+   "What makes me happy is a quiet morning.",
+   "저를 행복하게 하는 건 조용한 아침이에요."
   ],
   [
-   "Winter here is colder than I expected.",
-   "여기 겨울은 제가 생각했던 것보다 더 추워요."
+   "This is the office where I spend most of my day.",
+   "여기가 제가 하루의 대부분을 보내는 사무실이에요."
   ],
   [
-   "That was the best pizza in town.",
-   "그건 이 동네에서 최고의 피자였어요."
+   "I should have left home earlier.",
+   "저는 집에서 더 일찍 나왔어야 했어요."
   ],
   [
-   "My manager said the deadline would move to Friday.",
-   "제 매니저가 마감이 금요일로 미뤄질 거라고 했어요."
+   "The movie we watched last night was too long.",
+   "어젯밤에 우리가 본 그 영화는 너무 길었어요."
   ],
   [
-   "The nurse told me to come back next week.",
-   "간호사가 저한테 다음 주에 다시 오라고 했어요."
+   "We ran out of paper, so I couldn't print it.",
+   "종이가 다 떨어져서 저는 그것을 출력할 수 없었어요."
   ],
   [
-   "She asked if I had finished the report.",
-   "그녀가 제가 보고서를 끝냈는지 물어봤어요."
+   "I have already paid the bill.",
+   "저는 이미 그 요금을 냈어요."
   ],
   [
-   "I don't have much cash on me right now.",
-   "저는 지금 현금이 별로 없어요."
+   "I haven't finished the book yet.",
+   "저는 아직 그 책을 다 못 읽었어요."
   ],
   [
-   "We only have a few seats left for tonight.",
-   "오늘 밤 자리가 몇 개밖에 안 남았어요."
+   "I used to live near the beach.",
+   "저는 예전에 해변 근처에 살았어요."
   ],
   [
-   "One of my friends, John, made me an omelet.",
-   "제 친구 중 한 명인 John이 저한테 오믈렛을 만들어 줬어요."
+   "I got my watch repaired downtown.",
+   "저는 시내에서 제 시계를 수리 맡겼어요."
   ],
   [
-   "The machine is not working, so I reported it.",
-   "그 기계가 작동을 안 해서, 저는 그것을 신고했어요."
+   "I had to deal with a broken printer all morning.",
+   "저는 아침 내내 고장 난 프린터를 처리해야 했어요."
   ],
   [
-   "I got off at Sadang and transferred to line 4.",
-   "저는 사당에서 내려서 4호선으로 갈아탔어요."
+   "The soup was so salty that I couldn't eat it.",
+   "그 수프가 너무 짜서 저는 그것을 먹을 수 없었어요."
   ]
  ],
  "signal": [
   [
-   "누가 당한 일(피해·완성) → be동사 + 과거분사 (행위자는 by)",
-   "was built . were baked . was sent by"
+   "현실과 반대로 상상할 때 → If절은 과거, 주절은 would + 원형 (be동사는 were로)",
+   "If I had time, I would go (If I have 금지)"
   ],
   [
-   "'~보다 더' → 짧은 형용사 -er than / 긴 단어 more ~ than (둘 다 쓰면 안 됨)",
-   "bigger than . more expensive than (more bigger 금지)"
+   "누가 나를 ~하게 '시킨다/만든다' → make(s) + 목적어 + 동사원형 (to/-ing 안 됨)",
+   "makes me laugh . made me cry"
   ],
   [
-   "'~중에 가장' → 짧은 형용사 the -est / 긴 단어 the most ~",
-   "the longest . the most useful (the 꼭)"
+   "장소를 꾸미는 절 앞 → where (뒤에 주어+동사 완전한 문장)",
+   "the cafe where we met . the city where I grew up"
   ],
   [
-   "전달 said/told 뒤는 시제 한 칸 뒤 → will → would",
-   "said he would come . knew it would rain"
+   "지난 일을 후회 '~했어야' → should + have + 과거분사",
+   "should have booked . should have left (should of 금지)"
   ],
   [
-   "'~에게 ~하라고 했다' → told + 사람 + to + 동사원형 (said me to 금지)",
-   "told me to wait . told him to call (said me to 금지)"
+   "목적어로 쓰인 관계사는 통째 생략 → 명사 바로 뒤에 주어+동사",
+   "the song you recommended . the bike I bought"
   ],
   [
-   "'~인지 물었다'(예/아니오) → asked if + 주어 + 동사",
-   "asked if I was ready . asked if it worked"
+   "지금은 안 하는 옛 습관 → used to + 동사원형 (used 다음 to)",
+   "used to live . used to walk (use to 금지)"
   ],
   [
-   "셀 수 없는 건 much / 셀 수 있는 복수는 many",
-   "much time . many people (many money 금지)"
+   "덩어리 동사 네 개 → run out of / deal with / pick up / drop off",
+   "ran out of milk . deal with it . picked up . dropped off"
   ],
   [
-   "셀 수 있는 복수 '조금' a few / 셀 수 없는 '조금' a little",
-   "a few friends . a little water (a few water 금지)"
+   "완료 신호 → have + already + 과거분사 / 부정은 haven't + 과거분사 + yet",
+   "have already finished . haven't replied yet"
   ],
   [
-   "🔊 연음 받아쓰기 - going to [거너]",
-   "I'm going to call you = 아임 거너 콜 유"
+   "원인과 결과를 한 문장에 → so + 형용사/부사 + that + 주어 + 동사",
+   "so loud that I covered . so salty that I couldn't eat"
   ],
   [
-   "★ 고질 관사 - 처음 말하는 셀 수 있는 하나 → a/an (모음 소리 앞 an)",
-   "a cat . an umbrella . an hour (cat/umbrella 혼자 금지)"
+   "🔊 연음 받아쓰기 - pick it up [피끼럽]",
+   "I'll pick it up = 아일 피끼럽"
   ]
  ],
  "cards": [
   {
-   "t": "★ 구조 카드 1 - 수동태 be + 과거분사",
-   "f": "누가 '당한' 일 / 누가 했는지 중요치 않은 일 → 주어 + be동사 + 과거분사 (행위자는 by + 사람)\n시제는 be동사로 맞춘다: 현재 is/are + p.p., 과거 was/were + p.p.\n❌ 이렇게 쓰면 안 됩니다 - This email send(→ was sent) . bridge built(→ was built) . was wrote(→ was written)",
+   "t": "★ 구조 카드 1 - 가정법 과거 (지금과 반대 가정)",
+   "f": "지금 사실과 반대를 상상 → If + 주어 + 과거동사 (be동사는 were), 주절은 would + 동사원형\n❌ 이렇게 쓰면 안 됩니다 - If I have money, I will buy(→ If I had money, I would buy) . If I would know(→ If I knew)",
    "ex": [
     [
-     "The report was finished last night.",
-     "그 보고서는 어젯밤에 끝났어요."
+     "If I were you, I would take the job.",
+     "제가 당신이라면, 그 일을 맡을 거예요."
     ],
     [
-     "These shoes were made in Korea.",
-     "이 신발은 한국에서 만들어졌어요."
+     "If it snowed, we would stay inside.",
+     "눈이 온다면, 우리는 안에 있을 거예요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 2 - 비교급 / 최상급 형태",
-   "f": "비교급 '~보다 더': 짧은 형용사 + -er than / 긴 형용사 more + 형용사 + than\n최상급 '~중 가장': the + 짧은 형용사 + -est / the most + 긴 형용사\n불규칙: good→better→best, bad→worse→worst\n❌ 이렇게 쓰면 안 됩니다 - more bigger(→ bigger) . more cheap(→ cheaper) . most long(→ longest) . cheapest(앞에 the)",
+   "t": "★ 구조 카드 2 - 사역 make + 목적어 + 동사원형",
+   "f": "누가 ~를 어떤 상태/행동으로 만든다 → make(s) + 목적어 + 동사원형 (to·-ing 금지)\n'나를 ~하게 하는 것은' → What makes me + 원형 + is ~\n❌ 이렇게 쓰면 안 됩니다 - makes me to cry(→ makes me cry) . make me happy(주어 3인칭이면 makes)",
    "ex": [
     [
-     "Today is warmer than yesterday.",
-     "오늘이 어제보다 더 따뜻해요."
+     "Loud noises make me nervous.",
+     "큰 소리는 저를 불안하게 만들어요."
     ],
     [
-     "This is the most popular dish here.",
-     "이게 여기서 가장 인기 있는 요리예요."
+     "What makes me tired is a long meeting.",
+     "저를 피곤하게 하는 건 긴 회의예요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 3 - 전달·시제일치 (said would / told me to / asked if)",
-   "f": "said (that) + 주어 + 시제 한 칸 뒤 (will→would, can→could)\ntold + 사람 + to + 동사원형 (said me to 금지 — said 뒤엔 사람 목적어 못 씀)\nasked if/whether + 주어 + 동사 (예/아니오 질문 전달)\n❌ 이렇게 쓰면 안 됩니다 - said he will(→ would) . said me to go(→ told me to go) . asked that I was(→ asked if I was)",
+   "t": "★ 구조 카드 3 - should have + 과거분사 / used to + 원형",
+   "f": "'~했어야 했는데'(후회) → should have + 과거분사\n'예전엔 ~했다(지금은 아님)' → used to + 동사원형\n❌ 이렇게 쓰면 안 됩니다 - should of gone(→ should have gone) . use to live(→ used to live)",
    "ex": [
     [
-     "He said he would be there by six.",
-     "그는 6시까지 거기 가겠다고 했어요."
+     "I should have saved the file.",
+     "저는 그 파일을 저장했어야 했어요."
     ],
     [
-     "She asked if I needed a ride.",
-     "그녀가 제가 태워 줘야 하는지 물어봤어요."
+     "I used to walk to school.",
+     "저는 예전에 학교에 걸어다녔어요."
     ]
    ]
   },
   {
-   "t": "★ 구조 카드 4 - many / much + a few / a little (가산·불가산)",
-   "f": "셀 수 있는 복수 → many / a few (조금 있음) / few (거의 없음)\n셀 수 없는 것 → much / a little (조금 있음) / little (거의 없음)\n❌ 이렇게 쓰면 안 됩니다 - many money(→ much money) . a little questions(→ a few questions) . much people(→ many people)",
+   "t": "★ 구조 카드 4 - 동사구 run out of/deal with/pick up & have + already/yet",
+   "f": "덩어리 동사 → run out of(다 떨어지다) . deal with(처리하다) . pick up(찾아오다/태우다) . drop off(내려주다)\n완료 신호 → have + already + 과거분사 / haven't + 과거분사 + yet\n❌ 이렇게 쓰면 안 됩니다 - run out milk(→ run out of milk) . deal it(→ deal with it) . haven't finish yet(→ haven't finished yet)",
    "ex": [
     [
-     "I made a few mistakes on the test.",
-     "저는 시험에서 실수를 몇 개 했어요."
+     "I ran out of time, so I stopped.",
+     "시간이 다 떨어져서 멈췄어요."
     ],
     [
-     "There isn't much milk left.",
-     "우유가 별로 안 남았어요."
+     "Have you eaten yet?",
+     "벌써 먹었어요?"
     ]
    ]
   }
@@ -376,406 +377,406 @@ var QUIZ = {
    "그거 한 번만 더 말해 주실래요?"
   ],
   [
-   "Sorry, I lost my train of thought.",
-   "죄송해요, 하려던 말을 까먹었어요."
+   "I'm still learning this word.",
+   "저는 아직 이 단어를 배우는 중이에요."
   ],
   [
-   "How do you spell that?",
-   "그거 철자가 어떻게 되나요?"
+   "What's another way to say this?",
+   "이걸 다르게 표현하면 어떻게 되나요?"
   ],
   [
-   "What does that word mean?",
-   "그 단어가 무슨 뜻이에요?"
+   "Give me a second to look it up.",
+   "잠깐 찾아볼 시간 주세요."
   ],
   [
-   "Give me a second to think.",
-   "생각할 시간 좀 주세요."
+   "Did I use that correctly?",
+   "제가 그걸 맞게 썼나요?"
   ],
   [
-   "Is this the right way to say it?",
-   "이렇게 말하는 게 맞나요?"
+   "The connection is a bit choppy.",
+   "연결이 좀 끊기네요."
   ],
   [
-   "Can we move on to the next part?",
-   "다음 부분으로 넘어가도 될까요?"
+   "Let me rephrase that.",
+   "제가 다시 말해 볼게요."
   ],
   [
    "Got it, that's clear now.",
-   "알겠어요, 이제 확실해요."
+   "알겠어요, 이제 명확해요."
   ]
  ],
  "pron": [
   [
-   "going to",
-   "거너",
-   "~할 거야 (I'm going to call = 아임 거너 콜)"
+   "pick it up",
+   "[피끼럽]",
+   "pick it up 이 [피끼럽] (I'll pick it up = 아일 피끼럽)"
   ],
   [
    "kind of",
-   "카이너",
-   "약간 (It's kind of cold = 잇츠 카이너 코울)"
+   "[카이너브]",
+   "kind of 가 [카이너브] (It's kind of cold = 잇츠 카이너브 콜드)"
   ],
   [
    "a lot of",
-   "어라러브",
-   "많은 (a lot of people = 어라러브 피플)"
+   "[어라러브]",
+   "a lot of 가 [어라러브] (a lot of people = 어라러브 피플)"
   ],
   [
-   "out of",
-   "아우러브",
-   "~에서 밖으로 (get out of = 게라우러브)"
+   "get out",
+   "[게라웃]",
+   "get out 이 [게라웃] (Let's get out = 렛츠 게라웃)"
   ],
   [
-   "let me",
-   "렛미",
-   "내가 ~할게 (Let me check = 렛미 첵)"
+   "in front of",
+   "[인프러너브]",
+   "in front of 가 [인프러너브] (in front of me = 인프러너브 미)"
   ],
   [
-   "give me",
-   "기미",
-   "나한테 줘 (Give me a minute = 기미 어 미닛)"
+   "used to",
+   "[유스터]",
+   "used to 가 [유스터] (I used to go = 아이 유스터 고)"
   ],
   [
-   "what are you",
-   "워라유",
-   "너 뭐 ~해? (What are you doing = 워라유 두잉)"
+   "deal with",
+   "[디일위드]",
+   "deal with 가 [디일위드] (deal with it = 디일위릿)"
   ]
  ],
  "mc": [
   {
-   "tag": "수동태 be+과거분사",
-   "ko": "이 노래는 유명한 가수가 썼어요.",
+   "tag": "가정법 과거 If + would",
+   "ko": "제가 복권에 당첨된다면, 저는 작은 카페를 열 거예요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "This song was written by a famous singer.",
-    "This song wrote by a famous singer.",
-    "This song was wrote by a famous singer.",
-    "This song is write by a famous singer."
-   ],
-   "a": 0,
-   "bad": "wrote by(수동태는 was written) . was wrote(과거분사 written) . is write(be+과거분사 아님)",
-   "good": "This song was written by a famous singer.",
-   "pt": "⭕ 쓰세요 was written by   ❌ 쓰지 마세요 wrote by"
-  },
-  {
-   "tag": "비교급",
-   "ko": "제 새 폰이 예전 것보다 더 빨라요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "My new phone is more faster than my old one.",
-    "My new phone is faster than my old one.",
-    "My new phone is faster then my old one.",
-    "My new phone is fast than my old one."
+    "If I win the lottery, I will open a small cafe.",
+    "If I won the lottery, I would open a small cafe.",
+    "If I would win the lottery, I would open a small cafe.",
+    "If I won the lottery, I am going to open a small cafe."
    ],
    "a": 1,
-   "bad": "more faster(이중비교 금지) . faster then(than이 맞음) . fast than(비교급 faster)",
-   "good": "My new phone is faster than my old one.",
-   "pt": "⭕ 쓰세요 faster than   ❌ 쓰지 마세요 more faster"
+   "bad": "win/will(가정법은 과거+would) . if I would(if절에 would 금지) . am going to(주절 would)",
+   "good": "If I won the lottery, I would open a small cafe.",
+   "pt": "⭕ 쓰세요 If I won ~ I would open   ❌ 쓰지 마세요 If I win ~ I will"
   },
   {
-   "tag": "최상급",
-   "ko": "이게 메뉴에서 가장 싼 거예요.",
+   "tag": "사역 make + 원형",
+   "ko": "이 팟캐스트는 저를 많이 웃게 만들어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "This is the most cheap option on the menu.",
-    "This is cheapest option on the menu.",
-    "This is the cheapest option on the menu.",
-    "This is the more cheap option on the menu."
+    "This podcast makes me laugh a lot.",
+    "This podcast makes me to laugh a lot.",
+    "This podcast makes me laughing a lot.",
+    "This podcast make me laugh a lot."
+   ],
+   "a": 0,
+   "bad": "makes me to(원형만) . makes me laughing(원형) . make(3인칭 makes)",
+   "good": "This podcast makes me laugh a lot.",
+   "pt": "⭕ 쓰세요 makes me laugh (목적어 + 원형)   ❌ 쓰지 마세요 makes me to laugh / make me"
+  },
+  {
+   "tag": "관계부사 where",
+   "ko": "여기가 제가 주로 일하는 그 공유 오피스예요.",
+   "q": "가장 자연스러운 문장은?",
+   "o": [
+    "This is the shared office what I usually work.",
+    "This is the shared office where I usually working.",
+    "This is the shared office where I usually work.",
+    "This is the shared office I usually work where."
    ],
    "a": 2,
-   "bad": "most cheap(짧은 단어는 -est) . cheapest(앞에 the) . more cheap(최상급 아님)",
-   "good": "This is the cheapest option on the menu.",
-   "pt": "⭕ 쓰세요 the cheapest   ❌ 쓰지 마세요 the most cheap"
+   "bad": "what(관계부사 where) . usually working(현재형 work) . work where(어순)",
+   "good": "This is the shared office where I usually work.",
+   "pt": "⭕ 쓰세요 the office where I work   ❌ 쓰지 마세요 the office what I work"
   },
   {
-   "tag": "전달 said would",
-   "ko": "그녀는 늦을 거라고 했어요.",
+   "tag": "should have + 과거분사(후회)",
+   "ko": "저는 우산을 챙겼어야 했어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "She said she will be late.",
-    "She said she would be late.",
-    "She said she will to be late.",
-    "She say she would be late."
-   ],
-   "a": 1,
-   "bad": "said she will(시제일치 would) . will to be(원형엔 to 없음) . say(과거 said)",
-   "good": "She said she would be late.",
-   "pt": "⭕ 쓰세요 said she would   ❌ 쓰지 마세요 said she will"
-  },
-  {
-   "tag": "told me to",
-   "ko": "의사가 저한테 물을 더 마시라고 했어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "The doctor told me drink more water.",
-    "The doctor said me to drink more water.",
-    "The doctor told to me to drink more water.",
-    "The doctor told me to drink more water."
+    "I should brought an umbrella.",
+    "I should have bring an umbrella.",
+    "I should of brought an umbrella.",
+    "I should have brought an umbrella."
    ],
    "a": 3,
-   "bad": "told me drink(to 빠짐) . said me to(said는 사람 목적어 못 씀) . told to me(to me 아님)",
-   "good": "The doctor told me to drink more water.",
-   "pt": "⭕ 쓰세요 told me to drink   ❌ 쓰지 마세요 told me drink"
+   "bad": "should brought(have 빠짐) . have bring(과거분사 brought) . should of(should have)",
+   "good": "I should have brought an umbrella.",
+   "pt": "⭕ 쓰세요 should have brought   ❌ 쓰지 마세요 should brought / should of"
   },
   {
-   "tag": "asked if",
-   "ko": "그가 저한테 도와줄 수 있냐고 물어봤어요.",
+   "tag": "목적격 관계대명사 생략",
+   "ko": "제가 지난주에 산 그 자전거는 상태가 좋아요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "He asked if I could help him.",
-    "He asked that I could help him.",
-    "He asked do I can help him.",
-    "He asked if can I help him."
+    "The bike I bought last week is in good condition.",
+    "The bike what I bought last week is in good condition.",
+    "The bike I bought it last week is in good condition.",
+    "The bike I buy last week is in good condition."
    ],
    "a": 0,
-   "bad": "asked that(예/아니오는 if) . asked do I can(어순) . if can I(간접은 주어+동사)",
-   "good": "He asked if I could help him.",
-   "pt": "⭕ 쓰세요 asked if I could   ❌ 쓰지 마세요 asked do I can"
+   "bad": "what(생략 또는 that) . bought it(it 중복) . I buy(과거 bought)",
+   "good": "The bike I bought last week is in good condition.",
+   "pt": "⭕ 쓰세요 The bike I bought ~   ❌ 쓰지 마세요 The bike what I bought / bought it"
   },
   {
-   "tag": "불가산 much",
-   "ko": "차에 자리가 많지 않아요.",
+   "tag": "used to + 원형",
+   "ko": "저는 예전에 주말마다 등산을 다녔어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "There isn't many space in the car.",
-    "There isn't a lot space in the car.",
-    "There isn't much space in the car.",
-    "There isn't much spaces in the car."
+    "I used to going hiking every weekend.",
+    "I used to go hiking every weekend.",
+    "I use to go hiking every weekend.",
+    "I used go hiking every weekend."
+   ],
+   "a": 1,
+   "bad": "to going(원형 go) . use to(used to) . used go(to 빠짐)",
+   "good": "I used to go hiking every weekend.",
+   "pt": "⭕ 쓰세요 used to go (예전 습관 + 원형)   ❌ 쓰지 마세요 use to go / used to going"
+  },
+  {
+   "tag": "동사구 run out of + 과거(고질)",
+   "ko": "저는 밀가루가 다 떨어져서 가게에 갔어요.",
+   "q": "가장 자연스러운 문장은?",
+   "o": [
+    "I run out of flour, so I went to the store.",
+    "I ran out flour, so I went to the store.",
+    "I ran out of flour, so I went to the store.",
+    "I was run out of flour, so I went to the store."
    ],
    "a": 2,
-   "bad": "many space(불가산엔 much) . a lot space(a lot of) . much spaces(불가산은 단수)",
-   "good": "There isn't much space in the car.",
-   "pt": "⭕ 쓰세요 much space   ❌ 쓰지 마세요 many space"
+   "bad": "run(과거 ran) . ran out flour(of 빠짐) . was run(be동사 불필요)",
+   "good": "I ran out of flour, so I went to the store.",
+   "pt": "⭕ 쓰세요 ran out of flour   ❌ 쓰지 마세요 run out of / ran out flour"
   },
   {
-   "tag": "a few (가산)",
-   "ko": "저는 그 계획에 대해 질문이 몇 개 있어요.",
+   "tag": "현재완료 완료 already",
+   "ko": "그 택배는 벌써 도착했어요.",
    "q": "가장 자연스러운 문장은?",
    "o": [
-    "I have a little questions about the plan.",
-    "I have a few questions about the plan.",
-    "I have few a questions about the plan.",
-    "I have a few question about the plan."
-   ],
-   "a": 1,
-   "bad": "a little questions(셀 수 있으면 a few) . few a(어순) . a few question(복수 questions)",
-   "good": "I have a few questions about the plan.",
-   "pt": "⭕ 쓰세요 a few questions   ❌ 쓰지 마세요 a little questions"
-  },
-  {
-   "tag": "★ 관사 (고질)",
-   "ko": "저는 차 밑에서 고양이 한 마리를 봤어요.",
-   "q": "가장 자연스러운 문장은?",
-   "o": [
-    "I saw a cat under the car.",
-    "I saw cat under car.",
-    "I saw a cat under car.",
-    "I saw the cat under a car."
+    "The package has already arrived.",
+    "The package arrive already.",
+    "The package was already arriving.",
+    "The package have already arrive."
    ],
    "a": 0,
-   "bad": "cat under car(관사 통째 누락) . a cat under car(the car) . the cat/a car(처음 보는 고양이는 a, 그 차는 the)",
-   "good": "I saw a cat under the car.",
-   "pt": "⭕ 쓰세요 a cat under the car   ❌ 쓰지 마세요 cat under car"
+   "bad": "arrive already(has 빠짐·과거분사) . was arriving(have + 과거분사) . have already arrive(주어는 has + arrived)",
+   "good": "The package has already arrived.",
+   "pt": "⭕ 쓰세요 has already arrived   ❌ 쓰지 마세요 arrive already / have arrive"
   },
   {
-   "tag": "🔊 연음 going to",
-   "ko": "🔊 연음 - 잘 듣고 고르세요: [아임 거너 콜 유 레이러]",
-   "q": "들은 소리와 같은 문장은?",
+   "tag": "so ~ that + 과거(고질)",
+   "ko": "그 소리가 너무 커서 저는 귀를 막았어요.",
+   "q": "가장 자연스러운 문장은?",
    "o": [
-    "I'm gonna called you later.",
-    "I'm going call you later.",
-    "I'm go to call you later.",
-    "I'm going to call you later."
+    "The sound was too loud, so I covered my ears.",
+    "The sound so loud that I covered my ears.",
+    "The sound was loud so that I covered my ears.",
+    "The sound was so loud that I covered my ears."
    ],
    "a": 3,
-   "bad": "going call(going to) . go to call(going to) . gonna called(뒤는 동사원형 call)",
-   "good": "I'm going to call you later. (going to = 거너)",
-   "pt": "⭕ 쓰세요 going to call [거너]   ❌ 쓰지 마세요 going call"
+   "bad": "too loud so(so ~ that 구문) . sound so loud(was 빠짐) . loud so that(어순)",
+   "good": "The sound was so loud that I covered my ears.",
+   "pt": "⭕ 쓰세요 so loud that I covered   ❌ 쓰지 마세요 too loud so / loud so that"
+  },
+  {
+   "tag": "🔊 연음 받아쓰기 (pick it up)",
+   "ko": "🔊 들리는 대로 - [아일 피끼럽 온 마이 웨이] : 올바르게 쓴 문장은?",
+   "q": "들은 대로 올바르게 쓴 것은?",
+   "o": [
+    "I'll pick up it on my way.",
+    "I'll pick it up on my way.",
+    "I'll picking it up on my way.",
+    "I'll pick it on my way."
+   ],
+   "a": 1,
+   "bad": "pick up it(대명사는 pick it up) . picking(will + 원형) . pick it on(up 빠짐)",
+   "good": "I'll pick it up on my way.",
+   "pt": "⭕ 쓰세요 pick it up ([피끼럽] = pick it up)   ❌ 쓰지 마세요 pick up it / pick it on"
   }
  ],
  "fb": [
   {
-   "tag": "수동태 과거분사",
-   "ko": "그 창문이 폭풍에 깨졌어요.",
-   "s": "The window was ______ during the storm.",
-   "a": [
-    "broken"
-   ],
-   "hint": "1단어 . 6글자 . b_____ . (break의 과거분사, be+과거분사)",
-   "bad": "broke(과거분사 broken) . breaked",
-   "good": "The window was broken during the storm.",
-   "pt": "⭕ 쓰세요 was broken   ❌ 쓰지 마세요 was broke"
-  },
-  {
-   "tag": "수동태",
-   "ko": "이 쿠키들은 오늘 아침에 구워졌어요.",
-   "s": "These cookies were ______ this morning.",
-   "a": [
-    "baked"
-   ],
-   "hint": "1단어 . 5글자 . b____ . (bake의 과거분사, be+과거분사)",
-   "bad": "bake(과거분사 baked) . baking",
-   "good": "These cookies were baked this morning.",
-   "pt": "⭕ 쓰세요 were baked   ❌ 쓰지 마세요 were bake"
-  },
-  {
-   "tag": "비교급",
-   "ko": "이 상자가 저것보다 더 무거워요.",
-   "s": "This box is ______ than that one.",
-   "a": [
-    "heavier"
-   ],
-   "hint": "1단어 . 7글자 . h______ . (heavy의 비교급, y→ier)",
-   "bad": "more heavy(짧은 형용사는 -er) . heavyer",
-   "good": "This box is heavier than that one.",
-   "pt": "⭕ 쓰세요 heavier than   ❌ 쓰지 마세요 more heavy"
-  },
-  {
-   "tag": "최상급",
-   "ko": "그건 그 여행에서 가장 긴 날이었어요.",
-   "s": "It was the ______ day of the trip.",
-   "a": [
-    "longest"
-   ],
-   "hint": "1단어 . 7글자 . l______ . (long의 최상급 the -est)",
-   "bad": "most long(짧은 형용사는 -est) . longer(최상급 longest)",
-   "good": "It was the longest day of the trip.",
-   "pt": "⭕ 쓰세요 the longest   ❌ 쓰지 마세요 most long"
-  },
-  {
-   "tag": "전달 시제일치",
-   "ko": "그녀는 저한테 다시 전화하겠다고 했어요.",
-   "s": "She said she ______ call me back.",
+   "tag": "가정법 주절 would",
+   "ko": "제가 시간이 더 있다면, 저는 더 오래 머물 텐데요.",
+   "s": "If I had more time, I ______ stay longer.",
    "a": [
     "would"
    ],
-   "hint": "1단어 . 5글자 . w____ . (said 뒤 will → 시제 한 칸 뒤)",
-   "bad": "will(said 뒤는 would) . could(문맥상 would)",
-   "good": "She said she would call me back.",
-   "pt": "⭕ 쓰세요 said she would   ❌ 쓰지 마세요 said she will"
+   "hint": "1단어 . 5글자 . w____ . (가정법 주절 would + 원형)",
+   "bad": "will(가정법은 would) . could",
+   "good": "If I had more time, I would stay longer.",
+   "pt": "⭕ 쓰세요 I would stay (가정법 would)   ❌ 쓰지 마세요 I will stay"
   },
   {
-   "tag": "told me to",
-   "ko": "제 상사가 저한테 그걸 오늘 끝내라고 했어요.",
-   "s": "My boss told me ______ finish it today.",
+   "tag": "사역 makes 수일치",
+   "ko": "이 노래는 저를 차분하게 만들어요.",
+   "s": "This song ______ me feel calm.",
    "a": [
-    "to"
+    "makes"
    ],
-   "hint": "1단어 . 2글자 . t_ . (told + 사람 + to + 동사원형)",
-   "bad": "(to 없이 told me finish 금지) . that",
-   "good": "My boss told me to finish it today.",
-   "pt": "⭕ 쓰세요 told me to finish   ❌ 쓰지 마세요 told me finish"
+   "hint": "1단어 . 5글자 . m____ . (3인칭 주어 makes + 목적어 + 원형)",
+   "bad": "make(3인칭 -s) . makes to",
+   "good": "This song makes me feel calm.",
+   "pt": "⭕ 쓰세요 This song makes me feel (3인칭 -s + 원형)   ❌ 쓰지 마세요 make me / makes me to feel"
   },
   {
-   "tag": "asked if",
-   "ko": "그는 제가 바쁜지 물어봤어요.",
-   "s": "He asked ______ I was busy.",
+   "tag": "get + 목적어 + 과거분사",
+   "ko": "저는 어제 제 차를 세차 맡겼어요.",
+   "s": "I ______ my car washed yesterday.",
    "a": [
-    "if",
-    "whether"
+    "got"
    ],
-   "hint": "1단어 . 2글자 . i_ . (asked + if + 주어 + 동사)",
-   "bad": "that(예/아니오 질문은 if) . do",
-   "good": "He asked if I was busy.",
-   "pt": "⭕ 쓰세요 asked if I was   ❌ 쓰지 마세요 asked that I was"
+   "hint": "1단어 . 3글자 . g__ . (get의 과거, get + 목적어 + 과거분사)",
+   "bad": "get(과거 got) . had washed my car(어순)",
+   "good": "I got my car washed yesterday.",
+   "pt": "⭕ 쓰세요 got my car washed (get + 목적어 + 과거분사)   ❌ 쓰지 마세요 got washed my car"
   },
   {
-   "tag": "불가산 much",
-   "ko": "저는 오늘 기운이 별로 없어요.",
-   "s": "I don't have ______ energy today.",
+   "tag": "관계부사 where",
+   "ko": "여기가 우리가 자주 만나던 그 카페예요.",
+   "s": "This is the cafe ______ we often met.",
    "a": [
-    "much"
+    "where"
    ],
-   "hint": "1단어 . 4글자 . m___ . (셀 수 없는 명사엔 much)",
-   "bad": "many(불가산엔 much) . lot(a lot of)",
-   "good": "I don't have much energy today.",
-   "pt": "⭕ 쓰세요 much energy   ❌ 쓰지 마세요 many energy"
+   "hint": "1단어 . 5글자 . w____ . (장소 + where + 완전한 절)",
+   "bad": "which(완전한 절 앞 where) . that",
+   "good": "This is the cafe where we often met.",
+   "pt": "⭕ 쓰세요 the cafe where we met   ❌ 쓰지 마세요 the cafe which we met"
   },
   {
-   "tag": "★ 관사 a/an (고질)",
-   "ko": "비가 와서 저는 우산을 하나 샀어요.",
-   "s": "I bought ______ umbrella because it was raining.",
+   "tag": "should have + 과거분사",
+   "ko": "저는 그 표를 더 일찍 예매했어야 했어요.",
+   "s": "I should have ______ the tickets earlier.",
+   "a": [
+    "booked",
+    "reserved"
+   ],
+   "hint": "1단어 . 6글자 . b_____ . (book의 과거분사)",
+   "bad": "book(과거분사 booked) . buy",
+   "good": "I should have booked the tickets earlier.",
+   "pt": "⭕ 쓰세요 should have booked (should have + 과거분사)   ❌ 쓰지 마세요 should have book"
+  },
+  {
+   "tag": "used to + 원형",
+   "ko": "이 자리에는 예전에 작은 서점이 하나 있었어요.",
+   "s": "There ______ to be a small bookstore here.",
+   "a": [
+    "used"
+   ],
+   "hint": "1단어 . 4글자 . u___ . (예전 습관·상태 used to)",
+   "bad": "use(used to) . used to be(문장 완성형 아님)",
+   "good": "There used to be a small bookstore here.",
+   "pt": "⭕ 쓰세요 used to be (예전엔 ~였다)   ❌ 쓰지 마세요 use to be"
+  },
+  {
+   "tag": "동사구 deal with",
+   "ko": "저는 오늘 까다로운 고객을 상대해야 했어요.",
+   "s": "I had to ______ with a difficult customer today.",
+   "a": [
+    "deal"
+   ],
+   "hint": "1단어 . 4글자 . d___ . (상대하다·처리하다 deal with)",
+   "bad": "deal 없이 handle 어순 . do",
+   "good": "I had to deal with a difficult customer today.",
+   "pt": "⭕ 쓰세요 deal with a customer   ❌ 쓰지 마세요 deal a customer"
+  },
+  {
+   "tag": "현재완료 완료 yet",
+   "ko": "저는 아직 그 이메일에 답장을 안 했어요.",
+   "s": "I haven't replied to the email ______.",
+   "a": [
+    "yet"
+   ],
+   "hint": "1단어 . 3글자 . y__ . (아직 ~ 안 했다 haven't ~ yet)",
+   "bad": "already(부정문은 yet) . still",
+   "good": "I haven't replied to the email yet.",
+   "pt": "⭕ 쓰세요 haven't replied ~ yet   ❌ 쓰지 마세요 haven't replied already"
+  },
+  {
+   "tag": "★ 관사 an (고질)",
+   "ko": "저는 한 시간 전에 점심을 먹었어요.",
+   "s": "I had lunch ______ hour ago.",
    "a": [
     "an"
    ],
-   "hint": "1단어 . 2글자 . a_ . (모음 소리 앞에는 an)",
-   "bad": "a(모음 앞 an) . the(처음 말하는 하나는 a/an)",
-   "good": "I bought an umbrella because it was raining.",
-   "pt": "⭕ 쓰세요 an umbrella   ❌ 쓰지 마세요 a umbrella"
+   "hint": "1단어 . 2글자 . a_ . (모음 소리 앞 an)",
+   "bad": "a(모음 소리 앞 an) . the",
+   "good": "I had lunch an hour ago.",
+   "pt": "⭕ 쓰세요 an hour (모음 소리 앞 an)   ❌ 쓰지 마세요 a hour"
   },
   {
-   "tag": "★ 과거 수일치 one of ~ (고질)",
-   "ko": "제 친구 중 한 명이 어제 저한테 오믈렛을 만들어 줬어요.",
-   "s": "One of my friends ______ me an omelet yesterday.",
+   "tag": "★ 과거 동사(고질) + drop off",
+   "ko": "저는 아침에 아이를 학교에 내려줬어요.",
+   "s": "I ______ my kid off at school this morning.",
    "a": [
-    "made"
+    "dropped"
    ],
-   "hint": "1단어 . 4글자 . m___ . (make의 과거, 주어 One = 단수)",
-   "bad": "make(과거 made) . makes(과거 이야기)",
-   "good": "One of my friends made me an omelet yesterday.",
-   "pt": "⭕ 쓰세요 One of my friends made   ❌ 쓰지 마세요 One of my friends make"
+   "hint": "1단어 . 7글자 . d______ . (drop의 과거 -ped)",
+   "bad": "drop(과거 dropped) . dropping",
+   "good": "I dropped my kid off at school this morning.",
+   "pt": "⭕ 쓰세요 dropped my kid off (과거 -ped)   ❌ 쓰지 마세요 drop my kid off"
   }
  ],
  "tr": [
   {
-   "tag": "수동태 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so we stayed home. / by snow, / The road was blocked ] - 길이 눈으로 막혀서, 우리는 집에 있었어요.",
-   "m": "The road was blocked by snow, so we stayed home.",
-   "k": "The road was blocked by snow 앞절(수동태 was blocked) / so we stayed home 뒷절(과거 stayed) - 절 2개 확인"
+   "tag": "가정법 과거 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ I would swim / every morning. / If I lived near the sea, ] - 제가 바다 근처에 산다면, 저는 매일 아침 수영할 텐데요.",
+   "m": "If I lived near the sea, I would swim every morning.",
+   "k": "If I lived near the sea 앞절(If + 과거) / I would swim every morning 뒷절(would + 원형) - 절 2개 확인"
   },
   {
-   "tag": "비교급 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ than I expected, / so I finished early. / The test was easier ] - 그 시험이 제가 생각했던 것보다 쉬워서, 저는 일찍 끝냈어요.",
-   "m": "The test was easier than I expected, so I finished early.",
-   "k": "The test was easier than I expected 앞절(비교급 easier than) / so I finished early 뒷절(과거 finished) - 절 2개 확인"
+   "tag": "사역 make + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I couldn't stop / thinking about it. / The movie made me cry, ] - 그 영화가 저를 울게 만들어서, 저는 그것에 대한 생각을 멈출 수 없었어요.",
+   "m": "The movie made me cry, so I couldn't stop thinking about it.",
+   "k": "The movie made me cry 앞절(made me + 원형) / so I couldn't stop thinking about it 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "told me to + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ to speak slowly, / so I practiced every day. / The teacher told me ] - 선생님이 저한테 천천히 말하라고 해서, 저는 매일 연습했어요.",
-   "m": "The teacher told me to speak slowly, so I practiced every day.",
-   "k": "The teacher told me to speak slowly 앞절(told me to + 원형) / so I practiced every day 뒷절(과거 practiced) - 절 2개 확인"
+   "tag": "관계부사 where + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ where I jog, / so I come here often. / This is the park ] - 여기가 제가 조깅하는 그 공원이라서, 저는 여기 자주 와요.",
+   "m": "This is the park where I jog, so I come here often.",
+   "k": "This is the park where I jog 앞절(where + 완전한 절) / so I come here often 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "불가산 much + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ yesterday, / I didn't have much time / so I skipped lunch. ] - 저는 어제 시간이 많지 않아서, 점심을 걸렀어요.",
-   "m": "I didn't have much time yesterday, so I skipped lunch.",
-   "k": "I didn't have much time yesterday 앞절(불가산 much time) / so I skipped lunch 뒷절(과거 skipped) - 절 2개 확인"
+   "tag": "동사구 pick up + 과거 + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ and I wore it to the party. / I picked up my suit / from the cleaners, ] - 저는 세탁소에서 제 정장을 찾아와서, 파티에 그것을 입고 갔어요.",
+   "m": "I picked up my suit from the cleaners, and I wore it to the party.",
+   "k": "I picked up my suit from the cleaners 앞절(과거 picked up) / and I wore it to the party 뒷절(과거 wore) - 절 2개 확인"
   },
   {
-   "tag": "★ 관사 + 뒷절 (단어 배열 . 절 2개)",
-   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ on the street, / and I took it to the police station. / I found a wallet ] - 저는 길에서 지갑을 하나 주워서, 그것을 경찰서에 가져다줬어요.",
-   "m": "I found a wallet on the street, and I took it to the police station.",
-   "k": "I found a wallet on the street 앞절(관사 a wallet) / and I took it to the police station 뒷절(관사 the, 과거 took) - 절 2개 확인"
+   "tag": "현재완료 완료 already + 뒷절 (단어 배열 . 절 2개)",
+   "ko": "〔단어 배열〕 순서를 맞추세요(칩은 섞여 있어요): [ so I can relax / I have already finished the report, / tonight. ] - 저는 이미 그 보고서를 끝내서, 저는 오늘 밤 쉴 수 있어요.",
+   "m": "I have already finished the report, so I can relax tonight.",
+   "k": "I have already finished the report 앞절(have already + 과거분사) / so I can relax tonight 뒷절 - 절 2개 확인"
   },
   {
-   "tag": "수동태 + 뒷절 (부분 영작)",
-   "ko": "제 휴대폰이 어제 수리돼서, 저는 그것을 다시 쓸 수 있었어요.  〔앞절 제공〕 My phone was fixed yesterday, ______  〔쓸 표현 : 뒷절 - '그래서' so + 주어(나) + 가능 과거(could + 동사원형) + '쓰다'(use) + 그것을 + 다시 - 과거 . 뒷절 끝까지〕",
-   "m": "My phone was fixed yesterday, so I could use it again.",
-   "k": "뒷절만 쓰세요 : so I could use it again - 절 2개 확인"
+   "tag": "should have + 뒷절 (부분 영작)",
+   "ko": "저는 알람을 맞췄어야 했는데, 그래서 저는 늦잠을 잤어요.  〔앞절 제공〕 I should have set an alarm, ______  〔쓸 표현 : 뒷절 - 그래서(so) + 주어(나) + 과거동사 '늦잠을 잤다'(oversleep의 과거) . 뒷절 끝까지〕",
+   "m": "I should have set an alarm, so I overslept.",
+   "k": "뒷절만 쓰세요 : so I overslept - 절 2개 확인"
   },
   {
-   "tag": "최상급 + 뒷절 (부분 영작)",
-   "ko": "그건 이번 달에 제가 먹은 최고의 식사여서, 저는 그 식당을 친구들에게 추천했어요.  〔앞절 제공〕 It was the best meal I had this month, ______  〔쓸 표현 : 뒷절 - '그래서' so + 주어(나) + '추천했다'(recommend 과거형) + 그 식당을 + 친구들에게 - 과거 . 뒷절 끝까지〕",
-   "m": "It was the best meal I had this month, so I recommended the restaurant to my friends.",
-   "k": "뒷절만 쓰세요 : so I recommended the restaurant to my friends - 절 2개 확인"
+   "tag": "used to + 뒷절 (부분 영작)",
+   "ko": "저는 예전에 매일 커피를 마셨는데, 지금은 차를 마셔요.  〔앞절 제공〕 I used to drink coffee every day, ______  〔쓸 표현 : 뒷절 - 역접 '그런데 지금은'(but now) + 주어(나) + 현재동사 '마시다'(drink) + 목적어(차를) . 뒷절 끝까지〕",
+   "m": "I used to drink coffee every day, but now I drink tea.",
+   "k": "뒷절만 쓰세요 : but now I drink tea - 절 2개 확인"
   },
   {
-   "tag": "asked if + 뒷절 (부분 영작)",
-   "ko": "제 친구가 제가 일요일에 시간 있는지 물어봐서, 저는 같이 등산 가자고 했어요.  〔앞절 제공〕 My friend asked if I was free on Sunday, ______  〔쓸 표현 : 뒷절 - '그래서' so + 주어(나) + '제안했다'(suggest 과거형) + 같이 등산 가는 것(동명사 -ing) - 과거 . 뒷절 끝까지〕",
-   "m": "My friend asked if I was free on Sunday, so I suggested going hiking together.",
-   "k": "뒷절만 쓰세요 : so I suggested going hiking together - 절 2개 확인"
+   "tag": "동사구 run out of + 뒷절 (부분 영작)",
+   "ko": "저는 현금이 다 떨어져서, 저는 카드로 결제했어요.  〔앞절 제공〕 I ran out of cash, ______  〔쓸 표현 : 뒷절 - 그래서(so) + 주어(나) + 과거동사 '결제하다'(pay)의 과거 + 수단 '카드로'(전치사 by + 카드) . 뒷절 끝까지〕",
+   "m": "I ran out of cash, so I paid by card.",
+   "k": "뒷절만 쓰세요 : so I paid by card - 절 2개 확인"
   },
   {
-   "tag": "★ 전달 said would + 뒷절 (부분 영작)",
-   "ko": "매니저가 가게가 일찍 닫을 거라고 해서, 저는 서둘러 빵을 좀 샀어요.  〔앞절 제공〕 The manager said the store would close early, ______  〔쓸 표현 : 뒷절 - '그래서' so + 주어(나) + '서둘러 ~했다'(hurry 과거형) + '사다'(buy) + 빵을 좀 - 과거 . 뒷절 끝까지〕",
-   "m": "The manager said the store would close early, so I hurried to buy some bread.",
-   "k": "뒷절만 쓰세요 : so I hurried to buy some bread - 절 2개 확인"
+   "tag": "so ~ that + 뒷절 (부분 영작)",
+   "ko": "그 가방이 너무 비싸서, 저는 그것을 사지 않았어요.  〔앞절 제공〕 The bag was so expensive ______  〔쓸 표현 : 뒷절 - 접속사 that + 주어(나) + 과거 부정형 '안 샀다'(동사 buy를 did not과 함께) + 목적어(그것을) . 뒷절 끝까지〕",
+   "m": "The bag was so expensive that I didn't buy it.",
+   "k": "뒷절만 쓰세요 : that I didn't buy it - 절 2개 확인"
   },
   {
-   "tag": "★ 수동태 + 관사 (전체 영작 . 절 2개)",
-   "ko": "〔전체 영작〕 제 지갑을 어제 도둑맞아서, 저는 새 카드를 신청해야 했어요.  〔쓸 표현 : 앞부분 - 주어(내 지갑 my wallet) + 수동태 과거(was + 과거분사) + 어제 . 뒷부분 - '그래서' so + 주어(나) + 과거 의무(had + to + 동사원형) + '신청하다'(동사 한 단어로) + 새 카드 . 절 2개〕",
-   "m": "My wallet was stolen yesterday, so I had to apply for a new card.",
-   "k": "My wallet was stolen yesterday 앞부분(수동태 was stolen) / so I had to apply for a new card 뒷부분(관사 a new card) - 절 2개 확인"
+   "tag": "★ get + 과거분사 + 뒷절 (전체 영작 . 절 2개)",
+   "ko": "〔전체 영작〕 제 노트북이 갑자기 꺼져서, 저는 그것을 서비스 센터에서 수리 맡겨 고쳤어요.  〔쓸 표현 : 앞부분 - 주어(제 노트북 my laptop) + 과거동사 '꺼졌다'(turn off의 과거) + 갑자기(suddenly) . 뒷부분 - 그래서(so) + 주어(나) + 'get + 목적어 + 과거분사' 어순으로 '맡겨서 고쳤다'(동사 get, 과거분사는 fix의 fixed) + 장소(서비스 센터에서) . 절 2개〕",
+   "m": "My laptop suddenly turned off, so I got it fixed at the service center.",
+   "k": "My laptop suddenly turned off 앞부분(과거 turned off) / so I got it fixed at the service center 뒷부분(get + 목적어 + 과거분사) - 절 2개 확인"
   }
  ]
 };
@@ -1094,7 +1095,7 @@ function imgPrint(title, sub, blocks, color){
   try{ w = window.open('', '_blank'); }catch(e){ w = null; }
   if(!w) return false;
   var html = '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">'
-    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-20 (화) · 30문제</title><style>'
+    + '<title>kyle 데일리 영어 퀴즈 · 2026-10-21 (수) · 30문제</title><style>'
     + 'body{margin:0;padding:22px;background:#fff;color:#1c2029;line-height:1.6;font-size:15px;'
     + 'font-family:' + IMG_FONT + ';}'
     + '@page{size:A4;margin:11mm;}'
